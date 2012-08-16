@@ -8,15 +8,25 @@
 
 %% uncomment the following and create mythesis-macros.sty for all your
 %% own macros.  This keeps this top level file looking fairly neat.
-% \usepackage{mythesis-macros}
+%\usepackage{mythesis-macros}
+\usepackage{natbib}
+
+% Get the ADS journal command (like \apj) from 
+%  http://doc.adsabs.harvard.edu/abs_doc/aas_macros.sty
+\usepackage{aas_macros}
+
+%nat This prevents commas between authors and years with natbib
+\citestyle{aa}
 
 
-    \title{An Analysis of the Spatial and Spectral Characteristics of Galactic Sources Detected by the Fermi Large Area Telescope}
-    \author{Joshua Jeremy Lande}
-    \dept{Physics}
-    \principaladviser{Stefan Funk}
-    \firstreader{Elliott Bloom}
-    \secondreader{Roger Romani}
+
+\title{An Analysis of the Spatial and Spectral Characteristics of Galactic Sources Detected by the Fermi Large Area Telescope}
+\author{Joshua Jeremy Lande}
+\dept{Physics}
+\principaladviser{Stefan Funk}
+\firstreader{Elliott Bloom}
+\secondreader{Roger Romani}
+
 
 %the following command would (if uncommented) allow  only chapter1 and
 %chapter2 to be processed
@@ -30,19 +40,11 @@
 
 % this includes the file preface.tex which should include the
 % following commands
-% \beforepreface
-% \prefacesection{preface}
-% body of the preface
-\include{preface}
+\beforepreface
+\include{other_text/preface}
+\include{other_text/acknowledgement}
+\afterpreface
 
-% any other preface sections
-
-% the last preface section (e.g., acknowledgement.tex)
-% should look like
-% \prefacesection{Acknowledgement}
-% body 
-% \afterpreface
-\include{acknowledgement}
 
 
 % now for the body of the thesis, modify the number of these lines as needed
@@ -62,12 +64,11 @@
 %\include{appendix3}
 
 
-% bibliography.tex should include either 
-% \bibliographystyle{...}
-% \bibliography{mythesis}
-% or some other way of doing the bibliography
-\bibliographystyle{plain}
-\bibliography{bibliography}
+% bibliography style came from 
+%  http://ads.harvard.edu/pubs/bibtex/astronat/apj/apj.bst
+\bibliographystyle{apj}
+
+\bibliography{lande_thesis_stanford}
 
 \end{document}
 
