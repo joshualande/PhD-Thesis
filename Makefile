@@ -12,6 +12,6 @@ lande_thesis_stanford:
 clean:
 	-rm -f $(base).aux $(base).log $(base).out \
       $(base).toc $(base).dvi $(base).bbl \
-      $(base).blg $(base).ps
+      $(base).blg $(base).ps $(base).lot $(base).lof
 
 
