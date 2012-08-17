@@ -2,7 +2,7 @@
 %   http://help-csli.stanford.edu/tex/suthesis/
 \documentclass[12pt]{report}
 
-\usepackage{suthesis-2e}
+\usepackage{macros/suthesis-2e}
 
 %% load other packages you need
 
@@ -13,7 +13,9 @@
 
 % Get the ADS journal command (like \apj) from 
 %  http://doc.adsabs.harvard.edu/abs_doc/aas_macros.sty
-\usepackage{aas_macros}
+\usepackage{macros/aas_macros}
+
+\usepackage{macros/thesis_packages}
 
 %nat This prevents commas between authors and years with natbib
 \citestyle{aa}
@@ -51,9 +53,8 @@
 
 % this includes chapter1.tex which should start with a \chapter{...}
 % command 
-%\include{chapters/sed_fitting/sed_fitting}
+\include{chapters/introduction/introduction}
 
-\cite{second_lat_catalog_2012}
 
 % and the end material
 
@@ -66,7 +67,7 @@
 
 % bibliography style came from 
 %  http://ads.harvard.edu/pubs/bibtex/astronat/apj/apj.bst
-\bibliographystyle{apj}
+\bibliographystyle{macros/apj}
 
 \bibliography{lande_thesis_stanford}
 
