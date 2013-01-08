@@ -1,0 +1,59 @@
+
+
+The performance of the LAT is composted of two effects.
+The efficiency of the LAT referes to its ability to to
+reconstruct a photon which comes into the detect.
+The disperson of the LAT refers to the probability of
+misreconstructing an event. 
+
+The efficiency is written as \efficiency and is measured in units of area ($\cm^2$).
+
+The dispersion is the probability of a photon with true energy \energy
+and incoming direction $\solidangle$ at time \time being reconstructed to 
+to have an energy $\energy'$, an incomming direction $\solidangle'$ at a time $\time'$.
+The dispersion is written as $\dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle)$.
+It represents a probability and is therefore normalized such that
+\begin{equation}
+  \int \int \int \denergy \dsolidangle \dtime \dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle) = 1
+\end{equation}
+Therefore, $\dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle)$ 
+has units of 1/energy/solid angle/time
+
+%We further break the diseprsion into two components, once associated with the
+%spatial 
+
+%\todo[inline]{What about temporal dispersion}
+
+We assume these two factors to decouple and write the LAT's instrument response as
+\begin{equation}
+  \response(\energy',\solidangle',\time'|\energy,\solidangle,\time) = \efficiency \dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle)
+\end{equation}
+Therefore, the instrument response has units of area/energy/solid angle/time
+
+The convolution of the flux of a model with the instrument response 
+produces the expected counts per unit energy/time/solid angle
+begin reconstructed to have 
+an energy $\energy'$ 
+at a position $\solidangle'$ and at a time $\time'$:
+\begin{equation}
+  \eqnlabel{eventrate}
+  \eventrate(\energy',\solidangle',\time'|\modelparams)
+  = \int \int \int \denergy \, \dsolidangle \, \dtime \,
+  \fluxdensity(\energy,\time,\vec\Omega|\modelparams) \response(\energy',\solidangle',\time'|\energy,\solidangle,\time)
+\end{equation}
+Here, this integral is performed over all true energies, solid angles, and times
+for which the source model has support.
+
+For LAT analysis, we conventionally make the simplifying assumption that
+the energy , spatial , and time dispersion decouple:
+\begin{equation}
+  \dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle) = 
+  \psf(\solidangle'|E,\solidangle) \times \edisp(\energy'|\energy) \times \tdisp(\time'|\time)
+\end{equation}
+
+Here, \psf is the point-spread function and represents 
+
+\edisp is the energy dispersion. \todo{Why do we discard energy dispersion. Find reference.}
+
+\tdisp is the time dispersion. \todo{Why discard time dispersion}
+

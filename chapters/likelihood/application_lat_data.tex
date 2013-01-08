@@ -1,0 +1,51 @@
+
+% Terminology from James Chiang:
+%   http://www-glast.slac.stanford.edu/software/datachallenges/dc2/JuneWorkshop/Downloads/Likelihood_performance.pdf
+%   https://confluence.slac.stanford.edu/download/attachments/28521/likelihood.pdf
+%   https://confluence.slac.stanford.edu/download/attachments/3342362/binned.pdf
+\begin{itemize}
+  \item For a standard LAT analysis, we perform a binned maximum-likelihood analysis:
+  \item In the standard science tools, the data is binned in position and energy.
+    and integrated in energy.
+  \item For time-serires analysis, typically a time-summed analysyis is performed successivly in
+    multiple time bins.
+  \item The likelihood comes from a sum over each bin
+  \item The likelihood is defined as
+    \begin{equation}
+      \likelihood=\prod_j \frac{\theta_j^{n_j} e^{-\theta_j}}{n_j!}
+    \end{equation}
+    \begin{itemize}
+      \item Here, $j$ is a sum over position/energy bins.
+      \item $\theta_j$ is the counts predicted by the model, which
+        is defiend followign the discussion in \secref{defining_model}.
+      \item $n_j$ are the observed counts in the spatial/energy bin $j$
+    \end{itemize}
+  \item The model counts are computed by integrating the differential
+    counts defined in \eqnref{eventrate} over the energy bin:
+    \begin{equation}
+      \theta_{ij} = \int_j \intspace \denergy \intspace 
+      \dsolidangle \intspace \dtime \intspace 
+      \eventrate(\energy,\solidangle,\time|\modelparams_i)
+    \end{equation}
+    Here, $j$ represents the integral over the $j$th position/energy bin,
+    $i$ represents the $i$th source, and $\modelparams_i$ refers to the
+    parmeters defining the $i$th source. The total model counts
+    is computed by summing over all sources:
+    \begin{equation}
+      \theta_j = \sum_i \theta_{ij}
+    \end{equation}
+  \item In the standard \fermi science tools, 
+    the binning of photons over position in the sky and energy to compute $n_j$ 
+    is done with \gtbin.
+  \item In the standard \fermi science tools, the 
+    model counts $\theta_j$ are computed in several steps \ldots
+
+  \item The instrument response is computed with a combination of \gtltcube,
+    \gtexpcube.
+
+  \item Convert a model of the sky into model predicted counts
+  \item poisson likelihood
+  \item Particular implemenation of maximum likelihood anlaysis
+  \item Describe \gtbin, \gtselect, \gtlike
+\end{itemize}
+

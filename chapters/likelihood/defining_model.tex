@@ -1,0 +1,26 @@
+
+\begin{itemize}
+  \item
+% THis notation is roughly taken from page 23 of Matthew Kerr's Thesis.
+% with some parts adapted from 
+%   http://www-glast.slac.stanford.edu/software/datachallenges/dc2/JuneWorkshop/Downloads/Likelihood_performance.pdf
+Each source can be characterized by its photon flux density 
+  $\fluxdensity(\energy,\time,\vec\Omega|\modelparams)$.
+This is the number of photons emitted per unit energy, time, into a unit solid angle $d\Omega$
+at a given energy, time, and position $\vec\Omega$ in the sky.
+
+\item Typically, spatial and spectral model's are indepndent of time
+  with the spatial and spectral component decopuling:
+  \begin{equation}
+    \fluxdensity(\energy,\time,\vec\Omega|\modelparams) = A(E) B(\vec\Omega)
+  \end{equation}
+  Presumably, $A$ takes in some of the \modelparams parameters
+  and $B$ takes in the other parameters.
+\item In situations where there is a time dependence, likelihoood assuming constant
+  source is performed in smaller time bins.
+\item In situations where spatial and spectral components couple, typical to make
+  multiple spatial templates, each with an indepdnet spectra (e.g. the Puppis A paper's
+  fitting multiple hemispheres).
+\item Discuss how diffuse background is more complciated.
+\item Show some examples spectral models: point source, extended source.
+\end{itemize}
