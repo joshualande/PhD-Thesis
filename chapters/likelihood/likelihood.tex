@@ -1,34 +1,79 @@
 \chapter{Maximum-likelihood analysis of LAT data}
+
 \chaplabel{maximum_likelihood_analysis}
+
+\begin{itemize}
+  \item The notation and terminology follows the convetion in 
+\end{itemize}
 
 \section{Motivations for Maximum-Likelihood Analysis of Gamma-ray Data}
 
-\begin{enumerate}
-  \item Why maximum likelihod analysis is important for LAT data
-\end{enumerate}
+\begin{itemize}
+  \item Traditonal astrophysical analysis involves an on minus of background estimation.
+  \item Analysis of LAT data more complciated due to:
+    \begin{itemize}
+      \item Anisotrpic background. See \secref{modeling_background}.
+      \item Energy-dependent PSF
+      \item High source density, espeically in the Galactic plane.
+    \end{itemize}
+  \item To avoid issues assocaited with this, we perform a maximum likelihood analysis
+  \item Define a model of the sky.
+  \item likelihood $L$ is defiend as $L=P(data|model)$, where $L=L(model parameters)$.
+  \item Benefits: XXX
+\end{itemize}
 
 \section{Defining a Model of the Sources in the Sky}
 
+\begin{itemize}
+  \item Sky model must predict the emisson 
+  \item Issues with maximum 
+\end{itemize}
+
+% THis notation is roughly taken from page 23 of Matthew Kerr's Thesis.
+% with some parts adapted from 
+%   http://www-glast.slac.stanford.edu/software/datachallenges/dc2/JuneWorkshop/Downloads/Likelihood_performance.pdf
+Each source can be characterized by its photon flux density (number
+of photons emitted per unit energy, time, into a unit solid angle $d\Omega$)
+at a given energy, time, and position $\vec\Omega$ in the sky:
+\begin{equation}
+  \mathcal{F}(E,t,\vec\Omega)
+\end{equation}
+
 \section{The LAT Instrument Response Functions}
+
+\begin{itemize}
+  \item The instrument response of the LAT can be factored
+  \item The exposure
+  \item
+\end{itemize}
 
 \section{Application of Binned Maximum-Likelihood to LAT Data with the Science Tools}
 
-\begin{enumerate}
+\begin{itemize}
+  \item In the standard science tools, the data is binned in position and energy.
+    The counts in each bin are
+  \item In the standard science tools, 
+    \begin{itemize}
+      \item the binning is done with \gtbin.
+      \item The instrument response is computed with a combination of \gtltcube,
+        \gtexpcube
+      \item The integral over 
+    \end{itemize}
   \item Bin the LAT data
   \item Convert a model of the sky into model predicted counts
   \item poisson likelihood
   \item Particular implemenation of maximum likelihood anlaysis
   \item Describe \gtbin, \gtselect, \gtlike
-\end{enumerate}
+\end{itemize}
 
 
 
 
-\section{pointlike}
+\section{The Alternate Maximum-Likelihood Pacakge \pointlike}
 
-\begin{enumerate}
+\begin{itemize}
 \item Developed for Speed
 \item Sparce Matricies, 
-\end{enumerate}
+\end{itemize}
 
-\section{Extended Source Analysis in pointlike}
+\section{Extended Source Analysis in \pointlike}
