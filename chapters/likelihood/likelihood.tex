@@ -1,99 +1,29 @@
 \chapter{Maximum-likelihood analysis of LAT data}
-
 \chaplabel{maximum_likelihood_analysis}
 
 \begin{itemize}
-  \item The notation and terminology follows the convetion in 
+  \item The notation and terminology in this section 
+    is primarily taken from \cite{matthew_kerr_thesis}.
 \end{itemize}
 
 \section{Motivations for Maximum-Likelihood Analysis of Gamma-ray Data}
-
-\begin{itemize}
-  \item Traditonal astrophysical analysis involves an on minus of background estimation.
-  \item Analysis of LAT data more complciated due to:
-    \begin{itemize}
-      \item Anisotrpic background. See \secref{modeling_background}.
-      \item Energy-dependent PSF
-      \item High source density, espeically in the Galactic plane.
-    \end{itemize}
-  \item To avoid issues assocaited with this, we perform a maximum likelihood analysis
-  \item Define a model of the sky.
-  \item likelihood $L$ is defiend as $L=P(data|model)$, where $L=L(model parameters)$.
-  \item Benefits: XXX
-\end{itemize}
+\seclabel{motivations_maximum_likelihood}
+\input{chapters/likelihood/motivations_maximum_likelihood}
 
 \section{Defining a Model of the Sources in the Sky}
 \seclabel{defining_model}
-
-\begin{itemize}
-  \item Sky model must predict the emisson 
-  \item Issues with maximum 
-\end{itemize}
-
-% THis notation is roughly taken from page 23 of Matthew Kerr's Thesis.
-% with some parts adapted from 
-%   http://www-glast.slac.stanford.edu/software/datachallenges/dc2/JuneWorkshop/Downloads/Likelihood_performance.pdf
-Each source can be characterized by its photon flux density (number
-of photons emitted per unit energy, time, into a unit solid angle $d\Omega$)
-at a given energy, time, and position $\vec\Omega$ in the sky:
-\begin{equation}
-  \fluxdensity(E,t,\vec\Omega)
-\end{equation}
+\input{chapters/likelihood/defining_model}
 
 \section{The LAT Instrument Response Functions}
-
-\begin{itemize}
-  \item The instrument response of the LAT can be factored
-  \item Define the response matrix
-  \item Decompose it into expsoure x PSF x energy dispersion x temporal dispersion.
-  \item
-\end{itemize}
+\input{chapters/likelihood/lat_irf}
 
 \section{Application of Binned Maximum-Likelihood to LAT Data with the Science Tools}
+\seclabel{application_lat_data}
+\input{chapters/likelihood/application_lat_data}
 
 
-% Terminology from:
-%   http://www-glast.slac.stanford.edu/software/datachallenges/dc2/JuneWorkshop/Downloads/Likelihood_performance.pdf
-\begin{itemize}
-  \item For a standard LAT analysis, we perform a binned maximum-likelihood analysis:
-  \item In the standard science tools, the data is binned in position and energy.
-    and integrated in energy.
-  \item For time-serires analysis, typically a time-summed analysyis is performed successivly in
-    multiple time bins.
-  \item The likelihood comes from a sum over each bin
-  \item The likelihood is defined as
-    \begin{equation}
-      \likelihood=\prod_j \frac{\theta_j^{n_j} e^{-\theta_j}}{n_j!}
-    \end{equation}
-    \begin{itemize}
-      \item Here, $j$ is a sum over position/energy bins.
-      \item $\theta_j$ is the counts predicted by the model, which
-        is defiend followign the discussion in \secref{defining_model}.
-      \item $n_j$ are the observed counts in the spatial/energy bin $j$
-    \end{itemize}
-  \item In the standard \fermi science tools, 
-    the binning of photons over position in the sky and energy to compute $n_j$ 
-    is done with \gtbin.
-  \item In the standard \fermi science tools, the 
-    model counts $\theta_j$ are computed in several steps \ldots
-
-  \item The instrument response is computed with a combination of \gtltcube,
-    \gtexpcube.
-
-  \item Convert a model of the sky into model predicted counts
-  \item poisson likelihood
-  \item Particular implemenation of maximum likelihood anlaysis
-  \item Describe \gtbin, \gtselect, \gtlike
-\end{itemize}
-
-
-
-
-\section{The Alternate Maximum-Likelihood Pacakge \pointlike}
-
-\begin{itemize}
-\item Developed for Speed
-\item Sparce Matricies, 
-\end{itemize}
+\section{The Alternate Maximum-Likelihood Package \pointlike}
+\seclabel{pointlike_pacakge}
+\input{chapters/likelihood/pointlike_package}
 
 \section{Extended Source Analysis in \pointlike}
