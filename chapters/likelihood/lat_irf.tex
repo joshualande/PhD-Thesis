@@ -16,6 +16,7 @@ It represents a probability and is therefore normalized such that
 \begin{equation}
   \int \int \int \denergy \dsolidangle \dtime \dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle) = 1
 \end{equation}
+\todo[inline]{What is the range of the integrals}
 Therefore, $\dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle)$ 
 has units of 1/energy/solid angle/time
 
@@ -53,7 +54,30 @@ the energy , spatial , and time dispersion decouple:
 
 Here, \psf is the point-spread function and represents 
 
-\edisp is the energy dispersion. \todo{Why do we discard energy dispersion. Find reference.}
+% Information from section 7.1.3 of Eric Charles' calibration paper (arXiv:1206.1896)
+\edisp represents the energy dispersion of the LAT.
+The energy dispersion of the LAT is a function of both the
+incident energy and incident angle of the photon. It varies
+from $\sim$ 5\% to 20\%, degrading at lower energies due to energy
+losses in the tracker and at higher energy due to electromagnetic
+shower losses outside the calorimiter. Similarly, it improves
+for photons with higher incident angles that are 
+allowed a longer path through the calorimieter \citep{lat_calibration_2012}.
 
-\tdisp is the time dispersion. \todo{Why discard time dispersion}
+% This information comes from seciton 7.4 of Eric Charles' calibration paper (arXiv:1206.1896)
+For sources with smoothly-varying spectra, the effects of ignoring
+the inherent energy dispersion of the LAT are typically small.
+\cite{lat_calibration_2012} performed a monte carlo simulation to show
+that for power-law point-like sources, the bias introduced by ignoring
+energy dispersion was on the level of a few perect.  Therefore, energy
+dispersion is typicially ignored for standard likelihood analysis.
+We cauation that for analysis of sources extended to energies below 100
+MeV and for sources expected to have spectra that do not smoothly vary,
+the effects of energy dispersion could be more severe.
+
+\begin{itemize}
+  \item \tdisp is the time dispersion. 
+  \item \todo{Why discard time dispersion}
+  \item The timing dispersion is $<10$ \microsecond\cite{lat_mission_atwood_2009}
+\end{itemize}
 
