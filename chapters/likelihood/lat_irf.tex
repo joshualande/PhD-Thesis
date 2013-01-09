@@ -6,7 +6,14 @@ reconstruct a photon which comes into the detect.
 The disperson of the LAT refers to the probability of
 misreconstructing an event. 
 
-The efficiency is written as \efficiency and is measured in units of area ($\cm^2$).
+The efficiency is typically called the effective area.
+We write it as $\effectivearea(\energy,\time,\solidangle)$ 
+and measure it in units of area ($\cm^2$).
+
+\todo[inline]{LINK TO arXiv:1206.1896 for MORE THOUROUGH
+DISCUSSION OF EFFECTIVE AREA}
+
+\todo[inline]{DISCUSS HOW EFFECTIVE AREA IS A FUNCTION OF DIFFERENT THINGS}
 
 The dispersion is the probability of a photon with true energy \energy
 and incoming direction $\solidangle$ at time \time being reconstructed to 
@@ -27,7 +34,8 @@ has units of 1/energy/solid angle/time
 
 We assume these two factors to decouple and write the LAT's instrument response as
 \begin{equation}
-  \response(\energy',\solidangle',\time'|\energy,\solidangle,\time) = \efficiency \dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle)
+  \response(\energy',\solidangle',\time'|\energy,\solidangle,\time) = 
+\effectivearea(\energy,\time,\solidangle) \dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle)
 \end{equation}
 Therefore, the instrument response has units of area/energy/solid angle/time
 
@@ -70,7 +78,10 @@ the inherent energy dispersion of the LAT are typically small.
 \cite{lat_calibration_2012} performed a monte carlo simulation to show
 that for power-law point-like sources, the bias introduced by ignoring
 energy dispersion was on the level of a few perect.  Therefore, energy
-dispersion is typicially ignored for standard likelihood analysis.
+dispersion is typicially ignored for standard likelihood analysis:
+\begin{equation}
+\edisp = \delta(\energy-\energy')
+\end{equation}
 We cauation that for analysis of sources extended to energies below 100
 MeV and for sources expected to have spectra that do not smoothly vary,
 the effects of energy dispersion could be more severe.
@@ -79,5 +90,32 @@ the effects of energy dispersion could be more severe.
   \item \tdisp is the time dispersion. 
   \item \todo{Why discard time dispersion}
   \item The timing dispersion is $<10$ \microsecond\cite{lat_mission_atwood_2009}
+\item \todo[inline]{WRITE ENERGY DISPERSION AS A DELTA FUNCTION}
 \end{itemize}
+
+\todo{FINISH}
+Therefore, the instrument response is typically approximated as
+\begin{equation}
+  \response(\energy',\solidangle',\time'|\energy,\solidangle,) = 
+  \effectivearea(\energy,\time',\solidangle) \psf(\solidangle'|E,\solidangle)
+\end{equation}
+The expected count rate is then typically integrated over time
+to compute the total counts. Assuming that the source model
+is time indepdendent, we get: 
+\begin{equation}
+  \eventrate(\energy',\solidangle'|\modelparams)
+  = \int \dsolidangle \,
+  \fluxdensity(\energy,\vec\Omega|\modelparams) 
+\left(
+\int \dtime \intspace \effectivearea(\energy,\time,\solidangle) 
+\right)
+\psf(\solidangle'|E,\solidangle)
+\end{equation}
+This equation essentially says that the counts expected by the LAT
+for the particular model
+is the product of the source's flux with the effective area and then
+convolved with the point-spread function.
+
+\todo[inline]{Figure out how the $\theta$ depedence of the IRFs factors into this calcualtion}
+
 
