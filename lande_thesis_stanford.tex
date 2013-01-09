@@ -40,8 +40,12 @@
 \include{other_text/acknowledgement}
 \afterpreface
 
+\input{commands/acronyms.tex}
 
 % now for the body of the thesis, modify the number of these lines as needed
+
+% Reset the acronym counts in the main text
+\acresetall
 
 \include{chapters/introduction/introduction}
 
@@ -53,9 +57,9 @@
 
 \include{chapters/tevcat/tevcat}
 
-\chapter{Search for PWNe associated with High Edot Pulsars}
+\chapter{Search for \acp{PWN} associated with High Edot Pulsars}
 
-\chapter{Population Study of LAT-detected PWNe}
+\chapter{Population Study of LAT-detected \acp{PWN}}
 
 % and the end material
 

@@ -6,9 +6,11 @@ reconstruct a photon which comes into the detect.
 The disperson of the LAT refers to the probability of
 misreconstructing an event. 
 
+
 The efficiency is typically called the effective area.
-We write it as $\effectivearea(\energy,\time,\solidangle)$ 
-and measure it in units of area ($\cm^2$).
+We write it as $\effectivearea(\energy,\time,\solidangle)$.
+It is a function of energy, time, and \ac{SA}.
+It is measured in units of area ($\cm^2$).
 
 \todo[inline]{LINK TO arXiv:1206.1896 for MORE THOUROUGH
 DISCUSSION OF EFFECTIVE AREA}
@@ -25,7 +27,7 @@ It represents a probability and is therefore normalized such that
 \end{equation}
 \todo[inline]{What is the range of the integrals}
 Therefore, $\dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle)$ 
-has units of 1/energy/solid angle/time
+has units of 1/energy/\ac{SA}/time
 
 %We further break the diseprsion into two components, once associated with the
 %spatial 
@@ -37,10 +39,10 @@ We assume these two factors to decouple and write the LAT's instrument response 
   \response(\energy',\solidangle',\time'|\energy,\solidangle,\time) = 
 \effectivearea(\energy,\time,\solidangle) \dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle)
 \end{equation}
-Therefore, the instrument response has units of area/energy/solid angle/time
+Therefore, the instrument response has units of area/energy/\ac{SA}/time
 
 The convolution of the flux of a model with the instrument response 
-produces the expected counts per unit energy/time/solid angle
+produces the expected counts per unit energy/time/\ac{SA}
 begin reconstructed to have 
 an energy $\energy'$ 
 at a position $\solidangle'$ and at a time $\time'$:
@@ -50,7 +52,7 @@ at a position $\solidangle'$ and at a time $\time'$:
   = \int \int \int \denergy \, \dsolidangle \, \dtime \,
   \fluxdensity(\energy,\time,\vec\Omega|\modelparams) \response(\energy',\solidangle',\time'|\energy,\solidangle,\time)
 \end{equation}
-Here, this integral is performed over all true energies, solid angles, and times
+Here, this integral is performed over all true energies, \acp{SA}, and times
 for which the source model has support.
 
 For LAT analysis, we conventionally make the simplifying assumption that
