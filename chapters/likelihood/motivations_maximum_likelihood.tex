@@ -16,24 +16,15 @@ TeV experiments such as H.E.S.S., this analysis method is described in
 \cite{background_estimation_li_ma_1983}.
 
 Unfortunately, this simpler analysis method is inadequate for dealing
-with the complexities introduced in analyzing LAT data.  The first issue
-is due to the large energy range of LAT observations.  A typical spectral
-analysis studies a source from an energy of 100 \mev to energies above
-100 \gev. Over this energy range, the Galactic and isotropic diffuse
-background level varies significantly (see \secref{modeling_background}).
-For sources with a typical spectra, then, the signal to background
-can vary significantly over the energy ranges and so summing the
-source photons (along with the background) over all energies would
-cause a substantial loss in sensitivity.  Similarly, as was shown in
-\todo{what section discusses energy dependent psf?}, the PSF of the LAT
-is rather broad ($\gtrsim 1\degree$) at low energy and much narrower
-($\sim 0.1\degree$) at higher energies. Due to the improved
-pointing sensitivty, one can be much more sure that higher energy
-photons belong to a putative source, and simple aperture photometry
-method would ignore this effect and weight each photon equally.
+with the complexities introduced in analyzing LAT data.  
 
+Most importantly, aperture photometry assumed that the
+background is istropic so that the background level below the source
+can be estimated from nearby regions.
+As was discussed in \secref{modeling_background},
+the Galactic diffuse emission is highly anistropic,
+rendering this assumption invalid.
 
-\todo[inline]{Put note about anisotropic background}
 
 % Note, number of square degrees in whole sky is 
 %  * solid angle = 4*pi(180/pi)^2 = 129600/pi ~ 41,253 deg^2
@@ -49,31 +40,24 @@ method would ignore this effect and weight each photon equally.
 
 % Approximate Solid angle of plane ~ 90deg * 1deg = 90 deg^2
 
-Finally, this method is not optimal due to the high density
-of sources detected in the Gamma-ray sky. 
-\ac{2FGL} reported on the detection of 1873
-sources,
-which corresponds to an average source spacing of $\sim5\degree$. 
-But within the inner $45\degree$ of the galactic plane
-in longitude and $0.5\degree$ of the galactic
-plane in latitidue, there are 73 sources, corresponding to
-a source density of $\sim 1$ source per square degree.
+In addition,
+this method is not optimal due to the high density of sources
+detected in the Gamma-ray sky.  \ac{2FGL} reported on the detection
+of 1873 sources, which corresponds to an average source spacing of
+$\sim5\degree$.  But within the inner $45\degree$ of the galactic plane
+in longitude and $0.5\degree$ of the galactic plane in latitidue, there
+are 73 sources, corresponding to a source density of $\sim 1$ source per
+square degree.  The aperature photometry method is unable to effecitvly
+fit multiple sources when the tails of the PSF overlap and furthermore
+make background estimation problematic.
 
+Finally, this method is suboptimal due to the large energy range of
+LAT observations.  A typical spectral analysis studies a source from
+an energy of 100 \mev to energies above 100 \gev.  Similarly, as was
+shown in \todo{what section discusses energy dependent psf?}, the PSF
+of the LAT is rather broad ($\gtrsim 1\degree$) at low energy and much
+narrower ($\sim 0.1\degree$) at higher energies. Therefore, there is a
+much higher sensitivty to the higher energy photons coming from a source.
+But simple aperture photometry method would ignore this improvement by
+weighting each photon equally.
 
-
-
-
-\begin{itemize}
-  \item Analysis of LAT data more complciated due to:
-    \begin{itemize}
-      \item Anisotrpic background. See \secref{modeling_background}.
-      \item Energy-dependent PSF
-      \item High source density, espeically in the Galactic plane.
-    \end{itemize}
-  \item To avoid issues assocaited with this, we perform a maximum likelihood analysis
-  \item Define a model of the sky.
-  \item likelihood $L$ is defiend as $L=P(data|model)$, where $L=L(model parameters)$.
-  \item \todo[inline]{What are the benefits of maximum likelihood}
-  \item \todo[inline]{How are errors computed using maximum likelihood}
-  \item \todo[inline]{How is statistical signifiance computed using maximum likelihood}
-\end{itemize}

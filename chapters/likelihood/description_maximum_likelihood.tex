@@ -1,0 +1,37 @@
+
+The field of $\gamma$-ray astrophysics has generally found
+maximum-likelihood to be a dependable method to avoid the issues
+discussed above.  The term likelihood was first introduced by
+\cite{likelihood_fisher_1925}.  Maximum-likelihood was applied
+to photon-counting experiments in the context of astrophysics by
+\cite{likelihood_cash_1979}.  \cite{likelihood_egret_mattox_1996}
+described the maximum-likelihood analysis framework devoped to analyze
+EGRET data.
+
+In the formulation, one relies upon primarily upon the likelihood
+function.  The likelihood, denoted $\likelihood$, is quite simply the
+probability of obtaining the observed data given an assumed model:
+\begin{equation}
+  \likelihood = P(\data|\model)
+\end{equation}
+\secref{defining_model} will provide describe the
+components that go into a model of the data.
+
+Generaly, a model of the sky depends upon a list
+of parameters that we done as $\modelparams$.
+Therefore, the likelihood function itself becomes
+a function of the parameters of the model:
+\begin{equation}
+  \likelihood = \likelihood(\modelparams)
+\end{equation}
+The term maximum-likelihood refers to the fact that
+the best-fit parameters of a model can be estimated
+by maximizing the likelihood function.
+
+  \todo[inline]{What are the benefits of maximum likelihood}
+
+  \todo[inline]{How are errors computed using maximum likelihood}
+
+The use of the likelihood-ratio test to compute statistical
+signifiances will be discussed in section \secref{likelihood_ratio_test}.
+
