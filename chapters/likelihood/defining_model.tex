@@ -3,33 +3,38 @@
 %   http://www-glast.slac.stanford.edu/software/datachallenges/dc2/JuneWorkshop/Downloads/Likelihood_performance.pdf
 
 In order to perform a maximum-likelihood analysis, one requires
-a parameters model of the sky.
-
-Each source can be characterized by its photon flux density 
+a parameterized model of the sky. A model of the sky
+is composed of a set of $\gamma$-ray sources,
+each characterized by its photon flux density 
   $\fluxdensity(\energy,\time,\solidangle|\modelparams)$.
-This is the number of photons emitted per unit energy, time, into a unit solid angle
+This represents
+the number of photons emitted per unit energy, per unit
+time, per units solid angle
 at a given energy, time, and position in the sky.
 In \ac{CGS}, it has units of \fluxdensityunits.
 
+Often, the spatial and spectral part of the source model
+are separable and independent of time. When that is the case,
+we like to write the source model as
+\begin{equation}
+  \fluxdensity(\energy,\time,\solidangle|\modelparams) = \dnde \pdf(\solidangle).
+\end{equation}
+Here, \dnde is only a function of energy and \pdf(\solidangle) is only
+a function of position (\solidangle).  In this formulation, some of the
+model parameters \modelparams are taken by the $\dnde$ function and some
+by the $\pdf(\solidangle)$ function.
+
+The spectrum \dnde is typically modeled by simple geometric functions.
+The most popular spectral model is a power law:
+  \begin{equation}
+    \dnde = \prefactor \left(\frac{E}{\energyscale}\right)^{-\spectralindex}
+  \end{equation}
+Here, \dnde is a function of energy and also fo the two model parameters
+(the prefactor $\prefactor$ and the spectral index $\spectralindex$). The
+parameter \energyscale is often called the energy scale or the pivot
+energy and is not considered a model parameter.
 
 \begin{itemize}
-\item Often, spatial and spectral model's are indepndent of time
-  with the spatial and spectral component of a source model decopuling:
-  \begin{equation}
-    \fluxdensity(\energy,\time,\solidangle|\modelparams) = \dnde \pdf(\solidangle)
-  \end{equation}
-\item Here, \dnde is a function of energy and \pdf(\solidangle) is a
-function of position (\solidangle).
-\item In this formulation $\dnde$ takes in some of the \modelparams parameters
-  and $\pdf(\solidangle)$ takes in the other parameters.
-\item
-  We discuss a few example \dnde functions.
-  A power-law spectral model
-  \begin{equation}
-    \dnde = N_0 \left(\frac{E}{E_0}\right)^{-\gamma}
-  \end{equation}
-  Here, \dnde is a function of energy and also fo the two model parameters (the prefactor $N_0$ and
-  the spectral index $\gamma$.
 
 \item In \ac{CGS}, \dnde is in units of \prefunits.
 
