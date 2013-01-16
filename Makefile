@@ -1,13 +1,9 @@
 base = lande_thesis_stanford
 lande_thesis_stanford:
-	latex $(base)
+	pdflatex $(base)
 	bibtex $(base) 
-	latex  $(base)
-	latex  $(base)
-	dvips $(base)
-	# These commands make sure no compression is applied
-	# # http://cosmocoffee.info/viewtopic.php?p=213
-	ps2pdf -dAutoFilterColorImages=false -dColorImageFilter=/FlateEncode $(base).ps
+	pdflatex  $(base)
+	pdflatex  $(base)
 
 clean:
 	-rm -f $(base).aux $(base).log $(base).out \
