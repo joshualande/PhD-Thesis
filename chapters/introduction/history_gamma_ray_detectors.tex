@@ -76,6 +76,13 @@ Balloon experiments (page 8) for references
 to galactic plane emission being measured
 by balloon experiments in 1970.}
 
+Attempts were made in the 1940s and 1950s to determine the
+composition of cosmic rays using balloon-based experiments. See,
+for example \cite{critchfield_1952_radiation-balloon} and
+\cite{hulsizer_1948_search-electrons}.  But the attempt to observe
+cosmic $\gamma$-rays was hampered by the strong background of atmospheric
+albedo $\gamma$-rays.
+
 
     % Links on Explorer 11
 % en.wikipedia.org/wiki/Explorer_11
@@ -149,14 +156,23 @@ detected by \ac{OSO-3}. This figure is from
 \cite{kraushaar_1972_high-energy-cosmic}. }
 \end{figure}
 
+
+
+Concurently with the major adavnces in space-based $\gamma$-ray detects
+came improved balloon-based $\gamma$-ray detectors.
+
+\todo[inline]{Discuss
+\cite{kniffen_1970_study-gamma} and \cite{browning_1971_detection-pulsed}.
+Do a literature seach to see if there are other balloon experiments
+which detected similar stuff.
+}
+
 % ``The field of gamma-ray astronomy took great leaps forward'' -- wikipedia
 
   % ``Additional gamma-ray experiments flew on the OGO, OSO, Vela, and Russian
   % Cosmos series of satellites. However, the first satellite designed as a
   % ``dedicated'' gamma-ray mission was the second Small Astronomy Satellite
   % (SAS-2) in 1972.`` - http://imagine.gsfc.nasa.gov/docs/science/know_l1/history_gamma.html
-
-
 
 The next major advancement in $\gamma$-ray astronomy came from
 the \ac{SAS-2} and \cosb missions.
@@ -166,7 +182,7 @@ launched by \ac{NASA} in November 15, 1972.  \ac{SAS-2} was
 \cite{fichtel_1975_high-energy-gamma-ray} It improved upon \ac{OSO-3}
 by incorporating a spark chamber and having an overall larger size.
 The size of the active area of the detector was 640 $\cm^2$ and the
-experiment had a much improved effective area of $\sim 115\,cm^2$. The
+experiment had a much improved effective area of $\sim 115\unitspace cm^2$. The
 spark chamber allowed for a seperate measurement of the electron and
 positron tracks, which allowd for improved directional reconstruction
 of the incident $\gamma$-ray. \ac{SAS-2} had a PSF $\sim5\degree$ at 30
@@ -207,41 +223,52 @@ was eventually discovered to be a pulsar by \ac{EGRET}
 %   http://www.rssd.esa.int/index.php?page=gr-tele&project=COSB
 
 \cosb, an \ac{ESA} mission, was launched shortly after, on August
-9, 1975.  Similar to \ac{SAS-2}, \cosb includd a spark chamber for
-reading out the $\gamma$-ray events and had a peak effective area
-of $\sim 50\,cm^2$ at $\sim400\,MeV$ It improved upon the design
-\ac{SAS-2} by including a calorimiter below the spark chamber which
-improved the energy resolution to $<100\%$ for energies $\sim 3\,\gev$
-\citep{bignami_1975_cos-b-experiment}.
+9, 1975.  Similar to \ac{SAS-2}, \cosb included a spark chamber
+for reading out the $\gamma$-ray events and had a peak effective
+area of $\sim 50\unitspace\cm^2$ at $\sim400\unitspace\mev$
+\citep{bignami_1975_cos-b-experiment}.  It improved upon the design
+\ac{SAS-2} by including a calorimiter below the spark chamber
+which improved the energy resolution to $<100\%$ for energies $\sim
+3\unitspace\gev$ \citep{bignami_1975_cos-b-experiment}.
 
-\cosb operated successfully for over 6 years and produced
-the first detailed catalog of the $\gamma$-ray sky.
-\ac{2CG} detailed the detection 25 $gamma$-ray sources
-for $E>100\,\mev$ \citep{swanenburg_1981_second-catalog}.
+\todo[inline]{Over what energy range did \cosb observe photons?}
+
+\cosb operated successfully for over 6 years and produced the first
+detailed catalog of the $\gamma$-ray sky.  In total, \cosb observed $\sim
+80,000$ photons \cite{mayer-hasselwander_1982_large-scale-distribution}.
+\ac{2CG} detailed
+the detection 25 $\gamma$-ray sources for $E>100\unitspace\mev$
+\citep{swanenburg_1981_second-catalog}.  \figref{cos_b_skymap}
+shows a map of these sources.  Of these sources, the vast majority
+lay along the galactic plane and could not be positivly identified
+with sources observed at other wavelenths.  In addition, \cosb
+observed the first ever extragalactic $\gamma$-ray source,
+\citep[3C273,][]{swanenburg_1978_observation-high-energy}.
 
 \begin{figure}[htb]
 \includegraphics{chapters/introduction/figures/cos_b_2nd_catalog.pdf}
 \figlabel{cos_b_skymap}
 \caption{
-The figure is from \cite{swanenburg_1981_second-catalog}.
+A map of the sources observed by \cosb. The filled circles
+represent brighter sources. The unshaded region corresponds to
+the parts of the sky observed by \cosb.  This figure is from
+\cite{swanenburg_1981_second-catalog}.
 }
 \end{figure}
 
+% Good summary of EGRET Results:
+%  http://arxiv.org/pdf/0811.0738.pdf
 
-\todo[inline][3C27]
-
-% 6 years and 8 months. During this time an extensive survey of the Galaxy was made in the energy range 50 MeV to 5 GeV.
-
-: 2 Year catalog: 
-\todo[inline]{Describe COS-B. What was its effective area}
+% EGRET: http://en.wikipedia.org/wiki/Energetic_Gamma_Ray_Experiment_Telescope
+\ac{EGRET} was
 
 
+\todo[inline]{How many $\gamma$-rays \ac{EGRET} detect?}
+\todo[inline]{How many pulsars did \ac{EGRET} detect?}
 
 \begin{itemize}
-  \item EGRET
-    % Good summary of EGRET Results:
-    %  http://arxiv.org/pdf/0811.0738.pdf
   \item AGILE
+\item \fermi
   \item \todo[inline]{Short description of the history
     of TeV astronomy}
 \end{itemize}
