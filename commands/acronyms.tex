@@ -1,49 +1,93 @@
+% Note, we had to override the acronyms a little bit to allow some
+% customization.
+% Following the discussion from https://groups.google.com/d/msg/comp.text.tex/_NBZd1p8g8Q/X9QOZID_wm4J
+% now:
+%  * user1=stores the indefinite article for the expanded version
+%  * user2=stores the indefinite article for the abbreviation version
+%  * user3=The expanded acronym in title case
+%  * user4=The expanded plural acronym in title case.
+%
+% The defaults are: user1='a', user2='a', 
+% user3='the expanded title (not title case),
+% user4='the expanded title (not title case & not plural),
+
+% We defined the new commands:
+%  * \agls: puts the indefinite article in front of the acronym 
+%    e.g. "an IDN" or "a identification number (IDN)"
+%  * \Agls: same as \agls, but in upper case
+%    e.g. "An IDN" or "A identification number (IDN)"
+%  * \Glstitle: writes out the title in full
+%    e.g. "Pulsar Wind Nebula"
+%  * \Glspltitle: writes out the plural title in full
+%    e.g. "Pulsar Wind Nebulae"
+
+
+\newcommand{\mynewacronym}[4][]{%
+   \newacronym[user1=a,user2=a,user3=#4, user4=#4, #1]{#2}{#3}{#4}}
+
+\newcommand{\agls}[1]{%
+   \ifglsused{#1}{\glsentryuserii{#1}}{\glsentryuseri{#1}}
+   \gls{#1}%
+}
+
+\newcommand{\Agls}[1]{%
+   \ifglsused{#1}{\Glsentryuserii{#1}}{\Glsentryuseri{#1}}
+   \gls{#1}%
+}
+
+\newcommand{\Glstitle}[1]{\glsentryuserii{#1}}
+\newcommand{\Glspltitle}[1]{\glsentryuseriiii{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Math stuff
 
-\newacronym{SA}{SA}{solid angle}
-\newacronym{FWHM}{FWHM}{full width at half maximum}
+\mynewacronym{SA}{SA}{solid angle}
+\mynewacronym{FWHM}{FWHM}{full width at half maximum}
 
 % Fermi Stuff
 
-\newacronym{LAT}{LAT}{Large Area Telescope}
+\mynewacronym{LAT}{LAT}{Large Area Telescope}
 
 
-\newacronym{ACD}{ACD}{Anti-Coincidence Detector}
-\newacronym{GBM}{GBM}{Gamma-ray Burst Monitor}
+\mynewacronym{ACD}{ACD}{Anti-Coincidence Detector}
+\mynewacronym{GBM}{GBM}{Gamma-ray Burst Monitor}
 
 % Astrophysical sources
 
-\newacronym[longplural=pulsar wind nebulae,shortplural=PWNe]{PWN}{PWN}{pulsar wind nebula}
-\newacronym{SNR}{SNR}{supernova remnant}
+\mynewacronym[longplural=pulsar wind nebulae,
+            shortplural=PWNe,
+            user3=Pulsr Wind Nebula,
+            user4=Pulsar Wind Nebulae]{PWN}{PWN}{pulsar wind nebula}
+\mynewacronym{SNR}{SNR}{supernova remnant}
 
 % radiation mechanisms
-\newacronym{IC}{IC}{inverse Compoton}
+\mynewacronym{IC}{IC}{inverse Compoton}
 
 % catalogs
-\newacronym{2CG}{2CG}{the second \cosb catalog}
-\newacronym{2FGL}{2FGL}{the second \fermi catalog}
-\newacronym{2PC}{2PC}{the second \fermi pulsar catalog}
+\mynewacronym{2CG}{2CG}{the second \cosb catalog}
+\mynewacronym{2FGL}{2FGL}{the second \fermi catalog}
+\mynewacronym{2PC}{2PC}{the second \fermi pulsar catalog}
 
 % math stuff
-\newacronym{CGS}{CGS}{the Centimetre-Gram-Second System of Units}
+\mynewacronym{CGS}{CGS}{the Centimetre-Gram-Second System of Units}
 
 % source models
-\newacronym{PL}{PL}{power law}
-\newacronym{ECPL}{ECPL}{exponentially-cutoff power law}
-\newacronym{BPL}{BPL}{broken-power law}
+\mynewacronym{PL}{PL}{power law}
+\mynewacronym{ECPL}{ECPL}{exponentially-cutoff power law}
+\mynewacronym{BPL}{BPL}{broken-power law}
 
 % schools
-\newacronym{MIT}{MIT}{the Massachusetts Institute of Technology}
+\mynewacronym{MIT}{MIT}{the Massachusetts Institute of Technology}
 
 % experiments
-\newacronym{OSO-3}{OSO-3}{the Third Orbiting Solar Observatory}
-\newacronym{SAS-2}{SAS-2}{the second Small Astronomy Satellite}
-\newacronym{EGRET}{EGRET}{the Energetic Gamma Ray Experiment Telescope}
-\newacronym{CGRO}{CGRO}{the Compton Gamma Ray Observatory}
+\mynewacronym{OSO-3}{OSO-3}{the Third Orbiting Solar Observatory}
+\mynewacronym{SAS-2}{SAS-2}{the second Small Astronomy Satellite}
+\mynewacronym{EGRET}{EGRET}{the Energetic Gamma Ray Experiment Telescope}
+\mynewacronym{CGRO}{CGRO}{the Compton Gamma Ray Observatory}
 
 % Goverment Stuff
-\newacronym{ESA}{ESA}{the European Space Agency}
-\newacronym{NASA}{NASA}{the National Aeronautics and Space Administration}
-\newacronym{NRL}{NRL}{the Naval Research Laboratory}
+\mynewacronym{ESA}{ESA}{the European Space Agency}
+\mynewacronym{NASA}{NASA}{the National Aeronautics and Space Administration}
+\mynewacronym{NRL}{NRL}{the Naval Research Laboratory}
 
