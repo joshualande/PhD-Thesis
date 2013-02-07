@@ -4,6 +4,7 @@
 
 \input{commands/packages}
 \input{commands/commands}
+\input{commands/acronyms}
 
 %nat This prevents commas between authors and years with natbib
 \citestyle{aa}
@@ -40,12 +41,16 @@
 \include{other_text/acknowledgement}
 \afterpreface
 
-\input{commands/acronyms.tex}
+
+\renewcommand*{\acronymname}{List of Acronyms}
+\printglossary[type=\acronymtype]
+% prints just the list of acronyms
+
 
 % now for the body of the thesis, modify the number of these lines as needed
 
 % Reset the acronym counts in the main text
-%\acresetall
+\glsresetall
 
 \include{chapters/overview/overview}
 

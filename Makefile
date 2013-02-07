@@ -2,6 +2,7 @@ base = lande_thesis_stanford
 lande_thesis_stanford:
 	pdflatex $(base)
 	bibtex $(base) 
+	makeglossaries $(base)
 	pdflatex  $(base)
 	pdflatex  $(base)
 
@@ -9,6 +10,7 @@ introduction_include=\includeonly{chapters/introduction/introduction}
 introduction : $(texfiles)
 	pdflatex "$(introduction_include) \input{$(base)}"
 	bibtex $(base)
+	makeglossaries $(base)
 	pdflatex "$(introduction_include) \input{$(base)}"
 	pdflatex "$(introduction_include) \input{$(base)}"
 
