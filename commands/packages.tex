@@ -1,6 +1,11 @@
 \usepackage{todonotes}
 
-\usepackage[acronym]{glossaries}
+% Better links in document
+\usepackage{hyperref}
+
+
+% note, must come after hyperref
+\usepackage[acronym,shortcuts]{glossaries}
 \makeglossaries
 
 
@@ -16,9 +21,6 @@
 
 % allow the \url command
 \usepackage{url}
-
-% Better links
-\usepackage{hyperref}
 
 % For the command \IfEqCase
 \usepackage{xstring}

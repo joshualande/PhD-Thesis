@@ -16,14 +16,14 @@
 %    e.g. "an IDN" or "a identification number (IDN)"
 %  * \Agls: same as \agls, but in upper case
 %    e.g. "An IDN" or "A identification number (IDN)"
-%  * \Glstitle: writes out the title in full
+%  * \Actitle: writes out the title in full
 %    e.g. "Pulsar Wind Nebula"
-%  * \Glspltitle: writes out the plural title in full
+%  * \Acptitle: writes out the plural title in full
 %    e.g. "Pulsar Wind Nebulae"
 
 
 \newcommand{\mynewacronym}[4][]{%
-   \newacronym[user1=a,user2=a,user3=#4, user4=#4, #1]{#2}{#3}{#4}}
+   \newacronym[user1=a,user2=a,user3=#4,user4=#4, #1]{#2}{#3}{#4}}
 
 \newcommand{\agls}[1]{%
    \ifglsused{#1}{\glsentryuserii{#1}}{\glsentryuseri{#1}}
@@ -35,8 +35,8 @@
    \gls{#1}%
 }
 
-\newcommand{\Glstitle}[1]{\glsentryuserii{#1}}
-\newcommand{\Glspltitle}[1]{\glsentryuseriiii{#1}}
+\newcommand{\Actitle}[1]{\glsentryuseriii{#1}}
+\newcommand{\Acptitle}[1]{\glsentryuseriv{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -47,7 +47,7 @@
 
 % Fermi Stuff
 
-\mynewacronym{LAT}{LAT}{Large Area Telescope}
+\mynewacronym{LAT}{LAT}{the Large Area Telescope}
 
 
 \mynewacronym{ACD}{ACD}{Anti-Coincidence Detector}
