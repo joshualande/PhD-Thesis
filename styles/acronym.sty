@@ -482,6 +482,15 @@
 \newcommand*{\@Iac}[1]{%
    \@firstupper{\@iaci{#1}} \ifAC@starred\ac*{#1}\else\ac{#1}\fi%
 }
+
+%\newcommand{\Ac}[1]{\@firstupper{\protect\ac{#1}}}
+%\newcommand{\Ac}[1]{X\protect\ac{#1}}}
+%\newcommand{\Ac}[1]{
+%\def\temp{\protect\ac{#1}}
+%  \StrLeft{\temp}{2}[\firstletter]%
+%\firstletter}
+\newcommand{\Ac}[1]{\StrLeft{TEST}{2}[\firstletter]\firstletter}
+
 \newcommand*{\acsp}{\AC@starredfalse\protect\acspa}%
 \WithSuffix\newcommand\acsp*{\AC@starredtrue\protect\acspa}%
 \newcommand*{\acspa}[1]{%
