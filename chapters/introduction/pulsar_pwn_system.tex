@@ -23,11 +23,12 @@ approximated as \citep{chandrasekhar_1931_maximum-ideal}
 \end{equation}
 where $\hbar$ is the reduced Planck constant, \speedoflight is the
 speed of light, \gravitationalconstant is the gravitational constant,
-\MassHydrogen is the mas sof hydrogen, \NumberProtons is the
+\MassHydrogen is the mass of hydrogen, \NumberProtons is the
 number of protons, \NumberNucleons is the number of nucleons, and
 \solarmass is the mass of the sun.  This formula can be found in
 \citep{carroll_2006_introduction-modern}.
-More precisely, $\MassChandrasekhar = 1.44 \solarmass$.
+When this formula is computed more exactly, 
+one finds $\MassChandrasekhar = 1.44 \solarmass$.
 
 Because neutron starts are supported by a
 neutron degeneracy pressure,
@@ -144,68 +145,78 @@ described as \citep{gunn_1969_magnetic-dipole}
 
 Combinding equationts \eqnref{edot_from_rotation} and
 \eqnref{edot_pure_dipole}, we find that for a pure dipole magnet,
-$\angularfrequencydot \propto \angularfrequency^3$.
-In reality, the breaking index of :q
+\begin{equation}\eqnlabel{breaking_index_dipole}
+\angularfrequencydot \propto \angularfrequency^3.
+\end{equation}
 
-\begin{itemize}
-  \item ``.All these six braking indices are smaller than
-the value (n = 3) predicted by pure dipole magnetic field
-configuration, which may suggest that other spin-down
-torques do work besides the energy loss via dipole
-radiation'' -- \url{http://vega.bac.pku.edu.cn/rxxu/publications/P/yxz07.pdf}
-\end{itemize}
-
-
-\begin{itemize}
-  \item ``though n has only been confidently measured for five pulsars,
-  in each case falling in the range 2 < n < 3 (Livingstone et al. (2007)
-  and references therein).'' -- Adam Van Etten's thesis
-\end{itemize}
-
-We conventionally assume that the period and period derivative are related
-by the equation
+In the few situations in which this relationship has been
+definitivly measured, this relationship does has not hold.
+We generalize \eqnref{breaking_index_dipole} as:
 \begin{equation}\eqnlabel{angular_frequency_derivative_relation}
   \angularfrequencydot \propto \angularfrequency^\breakingindex
 \end{equation}
-where $\angularfrequency=2\pi/\period$, and $\breakingindex$
-is the pulsar breaking index. 
-
-\begin{itemize}
-\item ``The braking index is the power to which the slowdown in angular
-velocity occurs, and is defined as:
-  \begin{equation}
-    n = \frac{\period \perioddotdot}{\perioddot} + 2
-  \end{equation}
-  '' -- keogh\_2010\_search-pulsar
-\end{itemize}
-
-Equation \eqnref{angular_frequency_derivative_relation} is
-a Bernoulli differential equation which can be integrated to solve for time
-
+where $\breakingindex$ is what we call the pulsar breaking index. 
+And we note that \eqnref{angular_frequency_derivative_relation}
+we can can solve for \breakingindex by taking the derivative of the equation
 \begin{equation}
-  T = \frac{\period}{(\breakingindex-1) |\perioddot|}
+  \breakingindex = \frac{\angularfrequency \angularfrequencydotdot}{\angularfrequencydot^2}
+\end{equation}
+
+The breaking index is hard to measure due to timing noise and glitches
+in the pulsar's phase. To this date, it has been meausred in eight 
+pulsars (cite \url{http://iopscience.iop.org/2041-8205/741/1/L13/pdf/2041-8205_741_1_L13.pdf}),
+and in all situations $\breakingindex<3$. This suggests 
+that there are additional processes besides magnetic
+dipole radiation that contribute to the energy release
+(cite Blandford \& Romani 1988 \url{http://adsabs.harvard.edu/abs/1988MNRAS.234P..57B})
+
+\eqnref{angular_frequency_derivative_relation} is
+a Bernoulli differential equation which can be integrated to solve for time:
+\begin{equation}\eqnlabel{pulsar_age}
+  T = \frac{\period}{(\breakingindex-1) \absval{\perioddot}}
   \left(
   1-\left(\frac{\period_0}{\period}\right)^{(\breakingindex-1)}
   \right)
 \end{equation}
-
-\begin{itemize}
-  \item TODO: cite Manchester \& Taylor 1977
-\end{itemize}
-
-
-
+For a canonical $\breakingindex=3$ pulsars which is
+relativly old $\period_0 \ll \period$, we obtain
+what is called the characteristic age of the pulsar:
 \begin{equation}
-  \pulsarage = \period/2\perioddot
+  \pulsarage = \period/2\perioddot.
+\end{equation}
+
+Using \eqnref{edot_from_rotation} and \eqnref{breaking_index_dipole}, we can solve
+for the spin-down evolution of the pulsar
+as a function of time
+\citep{pacini_1973_evolution-supernova}
+\begin{equation}\eqnlabel{energy_dot_vs_time}
+    \energydot(t) = \energydot_0
+    \left(
+    1 + \frac{\time}{\SpinDownTimescale}
+    \right)^{-\frac{(n+1)}{(n-1)}}
+\end{equation}
+where
+\begin{equation}
+  \SpinDownTimescale \equiv \frac{\period_0}{(\breakingindex-1)\absval{\perioddot_0}}.
 \end{equation}
 
 
-\begin{itemize}
-  \item What is a typical moment of inertia, typical dE/dT
-  \item What fraction of pulsar energy is released observationally
-\end{itemize}
+\eqnref{angular_frequency_derivative_relation}, \eqnref{pulsar_age},
+and \eqnref{energy_dot_vs_time} show us that given the current \period,
+\perioddot, \energydot, $\period_0$, and breaking index \breakingindex,
+we can calculate the pulsar's age and energy-emission history.
+
+In a few situations, the pulsar's age is well known and the breaking index can be
+measured, so $\period_0$ can be infered. See \cite{kaspi_2002_constraining-birth}
+for a review of the topic. For other sources, attempts have been
+made to infer the initial spin-down age based on the dynamics of an
+associated \ac{SNR}/\ac{PWN} \citep{van-der-swaluw_2001_inferring-initial}.
 
 \subsection{Pulsar Magnetosphere}
+
+\begin{itemize}
+  \item What fraction of pulsar energy is released observationally
+\end{itemize}
 
 \subsection{Pulsar Wind Nebulae}
 
