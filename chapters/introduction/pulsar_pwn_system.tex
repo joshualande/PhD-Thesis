@@ -1,5 +1,7 @@
-\section{The Pulsar/\Acptitle{PWN} System}
+\section{The Pulsar/\Actitle{PWN} System}
 \seclabel{pulsar_pwn_system}
+
+\subsection{Neutron Star Formation}
 
 As was discussed in \secref{astrophysical_sources}, pulsars, 
 \acp{PWN},
@@ -7,28 +9,59 @@ and supernova remnants are all the end products of supernovas.  When a
 star undergoes a supernova, the ejecta forms a supernova rememant.  If the
 remaining stellar core has a mass above the Chandrasekhar limit,
 then the core's electron degeneracy pressure cannot counteract the core's
-gravilational force and the core can collapse into a neutron star.
-The Chandrasekhar mass limit is written as \citep{chandrasekhar_1931_maximum-ideal}
+gravitational force and the core will collapse into a neutron star.
+The Chandrasekhar mass limit can be
+approximated as \citep{chandrasekhar_1931_maximum-ideal}
 \begin{equation}
-  \MassChandrasekhar \approx \left(\frac{\hbar\speedoflight}{\gravitationalconstant}\right)^{\tfrac{2}{3}}
-  \frac{1}{\protonmass^2}
-  = 1.44 M
+  \MassChandrasekhar \approx 
+  \frac{3\sqrt{2\pi}}{8}
+  \left(\frac{\hbar\speedoflight}{\gravitationalconstant}\right)^{3/2}
+  \left[
+  \left(\frac{\NumberProtons}{\NumberNucleons}\right)
+  \frac{1}{\MassHydrogen^2}
+  \right]
 \end{equation}
-where $\hbar$ is the reduced Planck constant, \speedoflight
-is the speed of light, \gravitationalconstant is the gravitational
-constant, and \protonmass is the proton mass.
+where $\hbar$ is the reduced Planck constant, \speedoflight is the
+speed of light, \gravitationalconstant is the gravitational constant,
+\MassHydrogen is the mas sof hydrogen, \NumberProtons is the
+number of protons, \NumberNucleons is the number of nucleons, and
+\solarmass is the mass of the sun.  This formula can be found in
+\citep{carroll_2006_introduction-modern}.
+More precisely, $\MassChandrasekhar = 1.44 \solarmass$.
 
-\todo[inline]{If the star is much bigger, then it will collapse into 
-black hole}
-\todo[inline]{pulsars are heild together by neutron degeneracy pressure}
-\todo[inline]{Typical radius/density of neutron star}
+Because neutron starts are supported by a
+neutron degeneracy pressure,
+the radius of a neutron star can be approximated as
+\begin{equation}
+  \RadiusNeutronStar \approx \frac{(18 \pi)^{2/3}}{10}
+  \frac{\hbar^2}{\gravitationalconstant \MassNeutronStar^{1/3}}
+  \left(\frac{1}{\MassHydrogen}\right)^{8/3}
+\end{equation}
+This formula can be found in \citep{carroll_2006_introduction-modern}.
+The canonical radius for neutron stars is $\sim 10\unitspace\km$.
+
+In these very dense enviroments, the protons and electrons in the neutron
+star form into neutrons through inverse $\beta$ decay:
+\begin{equation}
+  \proton^\positive + \electron^\negative 
+  \processarrow \neutron + \electronneutrino.
+\end{equation}
+
+But if a neutron star had a sufficiency large mass, the graviational
+force would overpower the neutron degeneracy pressure and the
+object would collapse into a black hole. The maximum mass of a
+neutron star is unknown because it depends on the equation of state
+inside the star, but is comonly predicted to be $\sim 2.5\solarmass$
+Recently, a pulsar with a mass of $\sim 2\solarmass$ was discovered
+\citep{demorest_2010_two-solar-mass-neutron}, constrainging
+theories of the equation of state.
+
+
 
 \todo[inline]{3 Types of pulsars (rotationalally powered pulsars,
 magnetars, accretion powered pulsars,}
 
-\subsection{Pulsar Properties}
-
-\todo[inline]{XXXXXXXXXXXXXXXX}
+\subsection{Pulsar Evolution}
 
 % Good discussion of PWN physics with some simple formulas: 
 %   ``The Evolution and Structure of Pulsar Wind Nebulae''
@@ -66,15 +99,32 @@ magnetars, accretion powered pulsars,}
 \end{itemize}
 
 
-\todo[inline]{Find a plot of a rotating pulsar. The simplest
-rotating dipole model}
+\begin{figure}[htpb]
+  \begin{center}
+    \includegraphics[width=\textwidth]{chapters/introduction/figures/pulsar_model.pdf}
+  \end{center}
+  \caption{The simplest model of a puslar. This
+  figure is taken from \citep{carroll_2006_introduction-modern}.
+  }
+  \figlabel{pulsar_model}
+\end{figure}
 
-The energy powering pulsars and \glspl{PWN} is comonly
-believed to originate in rotational kintetic energy stored in
-the netutron star. 
+The simplest model of a pulsar is that it is a rotating dipole magnet
+with the rotation axis and the magnetic axis offset by an angle
+$\theta$.
+A diagram of this model is shown in \figref{pulsar_model}.
+The energy output from the pulsar is
+then assumed 
+to come from rotational kintetic energy stored in
+the netutron star which is released as the pulsar
+spins down. 
+
 Both the period \period and the period derivative
-$\perioddot=d\period/d\time$ can be directly observed for a pulsar
-and typically the pulsar is slowing down (\perioddot<0).
+$\perioddot=d\period/d\time$ can be directly observed for a pulsar.
+Except in a few millisecond pulsars which are being sped up
+through accreition (see for example \cite{falanga_2005_integral-observations}),
+pulsars are slowing down (\perioddot<0).
+
 We write the rotational kinetic energy as
 \begin{equation}
   \energyrotational = \tfrac{1}{2} I \angularfrequency^2
