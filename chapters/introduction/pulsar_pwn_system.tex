@@ -80,25 +80,6 @@ magnetars, accretion powered pulsars,}
 
 % good refernce on PWN physics: \cite{fuste_2007_g-ray-observations}
 
-\begin{itemize}
-  \item ``Following this discovery, a theoretical understanding was
-  soon developed in which the central pulsar generates a magnetized
-  particle wind, whose ultrarelativistic electrons and positrons radiate
-  synchrotron emission across the electromagnetic spectrum (Pacini \&
-  Salvati 1973, Rees \& Gunn 1974). The pulsar has steadily released
-  about a third of its total reservoir of ???? ergs
-  of rotational energy into its surrounding nebula over the last 950
-  years. This is in sharp contrast to shell-like SNRs, in which the
-  dominant energy source is the ??? ergs of kinetic energy
-  released at the moment of the original SN explosion.''  -- \cite{gaensler_2006_evolution-structure}
-  \item 
-    % described in Adam Van Etten's thesis
-    What is terminaltion shock of \glspl{PWN}.
-  \item 
-    How is pulsar outflow accelerated at shock?
-\end{itemize}
-
-
 \begin{figure}[htpb]
   \begin{center}
     \includegraphics[width=\textwidth]{chapters/introduction/figures/pulsar_model.pdf}
@@ -111,7 +92,7 @@ magnetars, accretion powered pulsars,}
 
 The simplest model of a pulsar is that it is a rotating dipole magnet
 with the rotation axis and the magnetic axis offset by an angle
-$\theta$.
+$\PulsarRotationAngle$.
 A diagram of this model is shown in \figref{pulsar_model}.
 The energy output from the pulsar is
 then assumed 
@@ -123,41 +104,63 @@ Both the period \period and the period derivative
 $\perioddot=d\period/d\time$ can be directly observed for a pulsar.
 Except in a few millisecond pulsars which are being sped up
 through accreition (see for example \cite{falanga_2005_integral-observations}),
-pulsars are slowing down (\perioddot<0).
+pulsars are slowing down ($\perioddot<0$).
 
 We write the rotational kinetic energy as
-\begin{equation}
+\begin{equation}\eqnlabel{rotational_energy}
   \energyrotational = \tfrac{1}{2} I \angularfrequency^2
 \end{equation}
-where $\omega = 2\pi/\period$ and \period is the period of
-rotation of the pulsar. We make the conection between
-the pulsar's spin-down energy and the rotational kintecit energy as
-$\energydot = - \derivative\energyrotational/\dtime$
+where $\angularfrequency = 2\pi/\period$ is
+the angular frequency of the pulsar and
+\momentofinertia is the moment of inertia.
 
-The rotational kinetic energy in a pulsar can be written as
-\begin{equation}
-  \energydot = 4\pi^2 \momentofinertia \perioddot/\period^2,
-\end{equation}
-where \momentofinertia is the moment of inertia.
-For a uniform sphwere,
+For a uniform sphere,
 \begin{equation}
   \momentofinertia = \frac{2}{5} M R^2
 \end{equation}
-Pulsars are assumed to be uniform spheres with $R=10\unitspace\km$
-and $M=1.4\solarmass$, which leads to a canonical moment of inertia of
-$\momentofinertia=10^{45}\unitspace\gram\cm^{-2}$.
+Assuming a canonical pulsar as was described in \secref{pulsar_pwn_system},
+we find a canonical moment of inertia of 
+$\momentofinertia=10^{45}\unitspace\gram\unitspace\cm^{-2}$.
+
+We make the conection between the pulsar's spin-down
+energy and the rotational kinetic energy as $\energydot = -
+\derivative\energyrotational/\dtime$. Using this,
+\eqnref{rotational_energy} can be rewritten as
+\begin{equation}\eqnlabel{edot_from_rotation}
+  \energydot = I \angularfrequency \angularfrequencydot
+\end{equation}
 
 It is believed that as the pulsar spins down, the this rotational energy
 is released as pulsed electromagnetic radiation and also as a wind of
 electrons and positrons accelerated in the magnetic field of the pulsar.
 
-As the pulsar slows down, it released the rotational kinetic energy
-\begin{equation}
-  \energydot = - \frac{4 \pi^2 \momentofinertia \perioddot}{\period^3}
+If the pulsar were a pure dipole magnet, its radiation would be
+described as \citep{gunn_1969_magnetic-dipole}
+\begin{equation}\eqnlabel{edot_pure_dipole}
+  \energydot \propto \frac{\MagneticField^2 \PulsarRadius^6 
+  \angularfrequency^4 \sin^2\PulsarRotationAngle}{
+  \speedoflight^3}
 \end{equation}
-where \perioddot is the rate of decrease in the period of the pulsar.
 
-\todo[inline]{Discuss uniform dipole model}
+Combinding equationts \eqnref{edot_from_rotation} and
+\eqnref{edot_pure_dipole}, we find that for a pure dipole magnet,
+$\angularfrequencydot \propto \angularfrequency^3$.
+In reality, the breaking index of :q
+
+\begin{itemize}
+  \item ``.All these six braking indices are smaller than
+the value (n = 3) predicted by pure dipole magnetic field
+configuration, which may suggest that other spin-down
+torques do work besides the energy loss via dipole
+radiation'' -- \url{http://vega.bac.pku.edu.cn/rxxu/publications/P/yxz07.pdf}
+\end{itemize}
+
+
+\begin{itemize}
+  \item ``though n has only been confidently measured for five pulsars,
+  in each case falling in the range 2 < n < 3 (Livingstone et al. (2007)
+  and references therein).'' -- Adam Van Etten's thesis
+\end{itemize}
 
 We conventionally assume that the period and period derivative are related
 by the equation
@@ -168,9 +171,6 @@ where $\angularfrequency=2\pi/\period$, and $\breakingindex$
 is the pulsar breaking index. 
 
 \begin{itemize}
-  \item ``though n has only been confidently measured for five pulsars,
-  in each case falling in the range 2 < n < 3 (Livingstone et al. (2007)
-  and references therein).'' -- Adam Van Etten's thesis
 \item ``The braking index is the power to which the slowdown in angular
 velocity occurs, and is defined as:
   \begin{equation}
@@ -208,6 +208,26 @@ a Bernoulli differential equation which can be integrated to solve for time
 \subsection{Pulsar Magnetosphere}
 
 \subsection{Pulsar Wind Nebulae}
+
+\begin{itemize}
+  \item ``Following this discovery, a theoretical understanding was
+  soon developed in which the central pulsar generates a magnetized
+  particle wind, whose ultrarelativistic electrons and positrons radiate
+  synchrotron emission across the electromagnetic spectrum (Pacini \&
+  Salvati 1973, Rees \& Gunn 1974). The pulsar has steadily released
+  about a third of its total reservoir of ???? ergs
+  of rotational energy into its surrounding nebula over the last 950
+  years. This is in sharp contrast to shell-like SNRs, in which the
+  dominant energy source is the ??? ergs of kinetic energy
+  released at the moment of the original SN explosion.''  -- \cite{gaensler_2006_evolution-structure}
+  \item 
+    % described in Adam Van Etten's thesis
+    What is terminaltion shock of \glspl{PWN}.
+  \item 
+    How is pulsar outflow accelerated at shock?
+\end{itemize}
+
+
 
 \begin{itemize}
   \item Discuss termination shock (i.e. section 3.3.2 of dalton\_2011\_identication-gamma-ray
