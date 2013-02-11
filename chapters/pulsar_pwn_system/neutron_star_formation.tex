@@ -1,0 +1,66 @@
+\section{Neutron Star Formation}
+
+As was discussed in \secref{astrophysical_sources}, pulsars, 
+\acp{PWN},
+and supernova remnants are all the end products of supernovas.  When a
+star undergoes a supernova, the ejecta forms a supernova rememant.  If the
+remaining stellar core has a mass above the Chandrasekhar limit,
+then the core's electron degeneracy pressure cannot counteract the core's
+gravitational force and the core will collapse into a \ac{NS}.
+The Chandrasekhar mass limit can be
+approximated as \citep{chandrasekhar_1931_maximum-ideal}
+\begin{equation}
+  \MassChandrasekhar \approx 
+  \frac{3\sqrt{2\pi}}{8}
+  \left(\frac{\hbar\speedoflight}{\gravitationalconstant}\right)^{3/2}
+  \left[
+  \left(\frac{\NumberProtons}{\NumberNucleons}\right)
+  \frac{1}{\MassHydrogen^2}
+  \right]
+\end{equation}
+where $\hbar$ is the reduced Planck constant, \speedoflight is the
+speed of light, \gravitationalconstant is the gravitational constant,
+\MassHydrogen is the mass of hydrogen, \NumberProtons is the
+number of protons, \NumberNucleons is the number of nucleons, and
+\solarmass is the mass of the sun.  This formula can be found in
+\citep{carroll_2006_introduction-modern}.
+When this formula is computed more exactly, 
+one finds $\MassChandrasekhar = 1.44 \solarmass$.
+
+Because \acp{NS} are supported by a
+neutron degeneracy pressure,
+the radius of a neutron star can be approximated as
+\begin{equation}
+  \RadiusNeutronStar \approx \frac{(18 \pi)^{2/3}}{10}
+  \frac{\hbar^2}{\gravitationalconstant \MassNeutronStar^{1/3}}
+  \left(\frac{1}{\MassHydrogen}\right)^{8/3}
+\end{equation}
+This formula can be found in \citep{carroll_2006_introduction-modern}.
+The canonical radius for \acp{NS} is $\sim 10\unitspace\km$.
+
+In these very dense enviroments, the protons and electrons in the \ac{NS}
+form into neutrons through inverse $\beta$ decay:
+\begin{equation}
+  \proton^\positive + \electron^\negative 
+  \processarrow \neutron + \electronneutrino.
+\end{equation}
+
+But if a \ac{NS} had a sufficiency large mass, the graviational
+force would overpower the neutron degeneracy pressure and the
+object would collapse into a black hole. The maximum mass of a
+\ac{NS} is unknown because it depends on the equation of state
+inside the star, but is comonly predicted to be $\sim 2.5\solarmass$
+Recently, a pulsar with a mass of $\sim 2\solarmass$ was discovered
+\citep{demorest_2010_two-solar-mass-neutron}, constrainging
+theories of the equation of state.
+
+In addition to rotationally-powered pulsars, the primary class of
+observed pulsars, there are two additional source classes of pulsars
+with a different mechanism powering the source.  The first class is
+accretion-powered pulsars, also called X-ray pulsars, are a bright
+and populous source class at X-ray energies. In these sources, the
+emission energy comes from the accretion of matter from a donor star. See
+\cite{caballero_2012a_x-ray-pulsars:} for a review.  The second class
+is magnetars which have a very strong magnetic field and a relativly
+slow rotational perioid. In magnetars, the strong magnetic field powers
+the emission.  See \cite{rea_2011a_magnetar-outbursts:} for a review.
