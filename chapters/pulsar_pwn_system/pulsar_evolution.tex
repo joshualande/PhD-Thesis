@@ -45,9 +45,9 @@ pulsars are slowing down ($\perioddot<0$).
 
 We write the rotational kinetic energy as
 \begin{equation}\eqnlabel{rotational_energy}
-  \energyrotational = \tfrac{1}{2} I \angularfrequency^2
+  \energyrotational = \tfrac{1}{2} I \PulsarAngularFrequency^2
 \end{equation}
-where $\angularfrequency = 2\pi/\period$ is
+where $\PulsarAngularFrequency = 2\pi/\period$ is
 the angular frequency of the pulsar and
 \momentofinertia is the moment of inertia.
 
@@ -64,7 +64,7 @@ energy and the rotational kinetic energy as $\energydot = -
 \derivative\energyrotational/\dtime$. Using this,
 \eqnref{rotational_energy} can be rewritten as
 \begin{equation}\eqnlabel{edot_from_rotation}
-  \energydot = I \angularfrequency \angularfrequencydot
+  \energydot = I \PulsarAngularFrequency \PulsarAngularFrequencyDot
 \end{equation}
 
 It is believed that as the pulsar spins down, the this rotational energy
@@ -75,27 +75,27 @@ If the pulsar were a pure dipole magnet, its radiation would be
 described as \citep{gunn_1969_magnetic-dipole}
 \begin{equation}\eqnlabel{edot_pure_dipole}
   \energydot = \frac{2\MagneticField^2 \PulsarRadius^6 
-  \angularfrequency^4 \sin^2\PulsarRotationAngle}{
+  \PulsarAngularFrequency^4 \sin^2\PulsarRotationAngle}{
   3\speedoflight^3}.
 \end{equation}
 
 Combining equations \eqnref{edot_from_rotation} and
 \eqnref{edot_pure_dipole}, we find that for a pure dipole magnet,
 \begin{equation}\eqnlabel{breaking_index_dipole}
-\angularfrequencydot \propto \angularfrequency^3.
+\PulsarAngularFrequencyDot \propto \PulsarAngularFrequency^3.
 \end{equation}
 
 In the few situations in which this relationship has been
 definitivly measured, this relationship does has not hold.
 We generalize \eqnref{breaking_index_dipole} as:
 \begin{equation}\eqnlabel{angular_frequency_derivative_relation}
-  \angularfrequencydot \propto \angularfrequency^\breakingindex
+  \PulsarAngularFrequencyDot \propto \PulsarAngularFrequency^\breakingindex
 \end{equation}
 where $\breakingindex$ is what we call the pulsar breaking index. 
 And we note that \eqnref{angular_frequency_derivative_relation}
 we can can solve for \breakingindex by taking the derivative of the equation
 \begin{equation}
-  \breakingindex = \frac{\angularfrequency \angularfrequencydotdot}{\angularfrequencydot^2}
+  \breakingindex = \frac{\PulsarAngularFrequency \PulsarAngularFrequencyDotDot}{\PulsarAngularFrequencyDot^2}
 \end{equation}
 
 The breaking index is hard to measure due to timing noise and glitches

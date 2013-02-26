@@ -1,5 +1,6 @@
-
 \section{Radiation Processes in Gamma-ray Astrophysics}
+
+\todo[inline]{XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}
 
 \begin{itemize}
   \item The non-thermal radiation processes typical
@@ -8,12 +9,59 @@
 
 \subsection{Synchrotron}
 
-\subsection{\Acrlong{IC}}
+Charged particles in magnetic fields experince an electromagnetic force:
+% equation 6.1a in R&L 1979
+\begin{align}
+  \dbydt (\gamma m \VelocityVector) = & \frac{q}{c} \cross{\VelocityVector}{\MagneticFieldVector}
+\end{align}
+
+The energy output per unit frequency due to syncrotron radiation is
+% equation 6.33 in R&L 1979
+\begin{equation}
+  P(\angularfrequency) = \frac{\sqrt{3} q^3 B \sin\alpha}{2\pi \mass \speedoflight^2} F(x)
+\end{equation}
+
+Where
+% equation 6.31c in R&L 1979
+\begin{equation}
+  F(x) \equiv x \int_x^\infty K_{\tfrac{5}{3}} (\eta) d\eta
+\end{equation}
+and
+\begin{equation}
+x \equiv \omega/\omega_c
+\end{equation}
+
+and
+% equation 6.4 in R&L 1979
+\begin{equation}
+  \omega_B = \frac{qB}{\gamma m c}
+\end{equation}
+
+We assume a particle distribution of electrons, written 
+The electron spectrum is often
+% equation 6.20a in R&L 1979
+\begin{equation}
+  N(\energy) \denergy = C \energy^{-\spectralindex} \denergy
+\end{equation}
+
+The total power output per unit frequency 
+
+\begin{equation}
+  P(\angularfrequency) = \int P(\angularfrequency) N(\energy) \denergy 
+\end{equation}
+
+\subsection{\Actitle{IC}}
+
+\todo[inline]{Why don't protons syncrotron radiate?}
 
 \Gls{IC} emission is \ldots
 
-\Gls{IC}
 
 \subsection{Bremsstrahlung}
 
+\todo[inline]{Why no Bremsstrahlung radiation from PWN.  Maybe a back-of-the-eveolope estimate}
+
 \subsection{Pi0 Decay}
+
+\todo[inline]{Describe the characteristic pi0 cutoff energy}
+
