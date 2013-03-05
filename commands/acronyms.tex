@@ -23,7 +23,7 @@
 
 
 \newcommand{\mynewacronym}[4][]{%
-   \newacronym[user1=a,user2=a,user3=#4,user4=#4, #1]{#2}{#3}{#4}}
+   \newacronym[user1=a,user2=a,user3=#4,user4=#4s, #1]{#2}{#3}{#4}}
 
 \newcommand{\agls}[1]{%
    \ifglsused{#1}{\glsentryuserii{#1}}{\glsentryuseri{#1}}
@@ -64,7 +64,7 @@
 \mynewacronym{MSP}{MSP}{millisecond pulsar}
 
 % radiation mechanisms
-\mynewacronym{IC}{IC}{inverse Compoton}
+\mynewacronym[user3=Inverse Compton]{IC}{IC}{inverse Compoton}
 
 % catalogs
 \mynewacronym{2CG}{2CG}{the second \cosb catalog}

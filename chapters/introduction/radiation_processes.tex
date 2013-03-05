@@ -12,64 +12,124 @@
 
 \todo[inline]{Get image of Synchrotron radiation (from R\&L to include in discussion.}
 
-Charged particles in magnetic fields experince an electromagnetic force:
-% equation 6.1a in R&L 1979
+The syncrotron radiation processes is commonly observed
+in astrophysics. It is caused when charged particles,
+typically electrons, spiral around magnetic field lines.
+This discussion of syncrotron radiation follows
+the derivation in \cite{rybicki_1979a_radiative-processes}.
+
+A charged particle of 
+mass $\mass$ and charge $\charge$ in a magnetic field
+of strength 
+\MagneticFieldVector
+will experince an
+electromagnetic force:
 \begin{align}
+% equation 6.1a in R&L 1979
   \dbydt (\gamma m \VelocityVector) = & \frac{q}{c} \cross{\VelocityVector}{\MagneticFieldVector}
 \end{align}
-
-The energy output per unit frequency due to syncrotron radiation is
-% equation 6.33 in R&L 1979
+This force will cause a particle to accelerate around
+the magnetic field lines, causing it
+to radiate by maxwell's equations.
+This radiation will have the following spectrum 
 \begin{equation}
-  P(\angularfrequency) = \frac{\sqrt{3} q^3 B \sin\alpha}{2\pi \mass \speedoflight^2} F(x)
+% equation 6.33 in R&L 1979
+  \power(\angularfrequency) = \frac{\sqrt{3} \charge^3 B \sin\alpha}{2\pi \mass \speedoflight^2} F(x)
 \end{equation}
-
-Where
+Here,
 % equation 6.31c in R&L 1979
 \begin{equation}
-  F(x) \equiv x \int_x^\infty K_{\tfrac{5}{3}} (\eta) d\eta
+  F(x) \equiv x \int_x^\infty K_{\tfrac{5}{3}} (\eta) d\eta,
 \end{equation}
-and
+$x$ is proportional to the angular frequency as
 \begin{equation}
-x \equiv \omega/\omega_c
+x \equiv \angularfrequency/\angularfrequency_c,
 \end{equation}
-
-and
+where
+\begin{equation}
+% equation 6.11a in R&L 1979
+\angularfrequency_c = \frac{3}{2} \gamma^4 \angularfrequency_B \sin\alpha
+\end{equation}
+and $\angularfrequency_B$ is the gyration frequency:
+\begin{equation}
 % equation 6.4 in R&L 1979
-\begin{equation}
-  \omega_B = \frac{qB}{\gamma m c}
+  \angularfrequency_B = \frac{qB}{\gamma m c}.
 \end{equation}
 
-We assume a particle distribution of electrons, written 
-The electron spectrum is often
+We now assume an an astrophysical object
+as a population of electrons with an energy
+distribution given by $\ParticleDistribution(\energy)$.
+The total power output per unit frequency by this distribution
+of electrons is
+\begin{equation}
+\TotalPower(\angularfrequency) = 
+\int \power(\angularfrequency) \ParticleDistribution(\energy) \denergy 
+\end{equation}
+
+It is typical in astrophysics to assume a 
+a power-law distribution of electrons written as
+\begin{equation}
 % equation 6.20a in R&L 1979
-\begin{equation}
-  N(\energy) \denergy = C \energy^{-\spectralindex} \denergy
+  \ParticleDistribution(\energy) \denergy = C \energy^{-\spectralindex} \denergy.
 \end{equation}
-
-The total power output per unit frequency 
-
+For a powerlaw distribution of photons integrated over
+pitch angle, we find 
 \begin{equation}
-  P(\angularfrequency) = \int P(\angularfrequency) N(\energy) \denergy 
+\TotalPower(\angularfrequency) \propto C \MagneticField^{(p+1)/2} 
+\omega^{-(p-1)/2}.
 \end{equation}
-
-For a power-lwa 
+See, \cite{rybicki_1979a_radiative-processes} 
+or \cite{longair_2013a_energy-astrophysics} for a full derivation.
+This shows that, assuming a power-law electron distribution,
+the electron spectrum can be related to the photon spectrum 
+for a given magnetic field.
 
 \subsection{\Actitle{IC}}
 
+``Inverse Compton scattering involves the scattering of low
+energy photons to high energies by ultrarelativistic electrons
+so that the photons gain and the electrons lose energy.'' --
+\url{http://eud.gsfc.nasa.gov/Volker.Beckmann/school/download/Longair_Radiation3.pdf}
+
+``In normal Compton scattering a photon
+collides with a (quasi-)free electron and transfers to it a part if
+its energy. In inverse Compton scattering the inverse process happens:
+a photon interacts with an energetic electron and gains energy in the
+collision. This process is important in regions with a high density of
+photons and with the presence of hot electrons.'' -- rando\_2004\_glast-mission:
+
 \todo[inline]{Why don't protons syncrotron radiate?}
 
-\Gls{IC} emission is \ldots
+\Gls{IC} emission is \todo[inline]{Describe IC emission...}.
 
 You need a photon and an electron spectrum for \ac{IC} emission.
 
 What about ``Klein-Nishina formula''
 % This is equation 2.48 in Blumenthal & Gould 1970
 \begin{equation}
-  F(q) = 2q \ln q + (1+2q)(1-q) 
-  + \frac{1}{2} \frac{(\Tau_e q)^2}{1+\Tau_e q} (1-q)
+  \frac{\derivative N_{\gamma,\epsilon}}{\derivative t \derivative E_1} =
+  \frac{2\pi r_0^2 m c^3}{\gamma} 
+  \frac{n(\epsilon) \derivative \epsilon}{\epsilon}
+  \left[
+  2q \ln q + (1+2q)(1-q) 
+  + \frac{1}{2} \frac{(\tau_e q)^2}{1+\tau_e q} (1-q)
+  \right]
 \end{equation}
 
+\todo[inline]{Compare formula to equation 9.44 in longair 2011 }
+
+The total energy released by inverse compton from a population of electrons is
+\begin{equation}
+  \frac{\derivative N_\text{tot}}{\derivative t \derivative \epsilon_1}
+ = 
+ \int \int
+ \derivative \gamma
+ \derivative 
+  \frac{\derivative N_{\gamma,\epsilon}}{\derivative t \derivative E_1} =
+\end{equation}
+
+\todo[inline]{Look up scaling relationsips for IC and Sync
+radiation from Adam Van Etten's thesis}
 
 \subsection{Bremsstrahlung}
 
