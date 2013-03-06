@@ -15,8 +15,12 @@
 The syncrotron radiation processes is commonly observed
 in astrophysics. It is caused when charged particles,
 typically electrons, spiral around magnetic field lines.
-This discussion of syncrotron radiation follows
-the derivation in \cite{rybicki_1979a_radiative-processes}.
+
+This emission is discussed thoroughly in
+\cite{blumenthal_1970a_bremsstrahlung-synchrotron} and
+\cite{rybicki_1979a_radiative-processes}.
+In what follows, we adopt the notation from
+\cite{houck_2006a_models-nonthermal}.
 
 A charged particle of 
 mass $\mass$ and charge $\charge$ in a magnetic field
@@ -31,39 +35,61 @@ electromagnetic force:
 This force will cause a particle to accelerate around
 the magnetic field lines, causing it
 to radiate by maxwell's equations.
-This radiation will have the following spectrum 
+
+The power emitted at a frequency $\frequency$ 
+by particle spiraling will be
 \begin{equation}
 % equation 6.33 in R&L 1979
-  \power(\angularfrequency) = \frac{\sqrt{3} \charge^3 B \sin\alpha}{2\pi \mass \speedoflight^2} F(x)
+  \eqnlabel{power_emitted_particle_sync}
+  \power_\text{emitted}(\frequency) = 
+  \frac{\sqrt{3} \charge^3 B \sin\alpha}{\mass \speedoflight^2} F(\frequency/\frequency_c)
 \end{equation}
+where $\alpha$ is the angle between the particle's velocity vector and
+magnetic field vector.
 Here,
 % equation 6.31c in R&L 1979
 \begin{equation}
-  F(x) \equiv x \int_x^\infty K_{\tfrac{5}{3}} (\eta) d\eta,
+  F(x) \equiv x \int_x^\infty K_{\tfrac{5}{3}} (\xi) d\xi,
 \end{equation}
-$x$ is proportional to the angular frequency as
+and
 \begin{equation}
-x \equiv \angularfrequency/\angularfrequency_c,
+% equation 6.11a in R&L 1979
+\frequency_c = \frac{3q \MagneticField \gamma^2}{4\pi \mass \speedoflight} 
+\sin\alpha \equiv \nu_0 \gamma^2 \sin\alpha
+\end{equation}
+
+Because power is inversely-proportional to mass, synchotron radiation
+is almost always assumed to come from electrons.
+
+Now, we assume a population of particles and compute the total
+emission. We say that $N(\momentum,\alpha)$ is the number of particles
+per unit momentum and solid angle with a momentum $\momentum$ and
+pitch angle $\alpha$.
+
+We find the total power emitted by integrating over particle
+momentum and distribution
+\begin{equation}
+  \frac{\derivative W}{\derivative\time}=
+  \int \derivative \momentum 
+  \int \derivative \solidangle
+  \power_\text{emitted}(\frequency)
+  N(\momentum,\alpha)
+\end{equation}
+If we assume the pitch angles of the particles to be isotropically
+distributed and include \eqnref{power_emitted_particle_sync}, we
+find that the photon emission per unit energy and time is
+\begin{equation}
+  \frac{\derivative n}{\derivative \omega \derivative \time} =
+  \frac{\sqrt{3}q^3 B}{h m_e c^2 \angularfrequency}
+  \int \derivative\momentum
+  N(\momentum)
+  R \left(\frac{\omega}{\omega_0 \gamma^2}\right)
 \end{equation}
 where
 \begin{equation}
-% equation 6.11a in R&L 1979
-\angularfrequency_c = \frac{3}{2} \gamma^4 \angularfrequency_B \sin\alpha
-\end{equation}
-and $\angularfrequency_B$ is the gyration frequency:
-\begin{equation}
-% equation 6.4 in R&L 1979
-  \angularfrequency_B = \frac{qB}{\gamma m c}.
-\end{equation}
-
-We now assume an an astrophysical object
-as a population of electrons with an energy
-distribution given by $\ParticleDistribution(\energy)$.
-The total power output per unit frequency by this distribution
-of electrons is
-\begin{equation}
-\TotalPower(\angularfrequency) = 
-\int \power(\angularfrequency) \ParticleDistribution(\energy) \denergy 
+  R(x) \equiv \frac{1}{2} \int_0^\pi
+  \derivative \alpha \sin^2 \alpha
+  F\left(\frac{x}{\sin\alpha}\right)
 \end{equation}
 
 It is typical in astrophysics to assume a 
@@ -71,26 +97,27 @@ a power-law distribution of electrons written as
 \begin{equation}
 % equation 6.20a in R&L 1979
 \eqnlabel{ElectronPowerLawEnergyDistribution}
-  \ParticleDistribution(\energy) \denergy = C \energy^{-\spectralindex} \denergy.
+  \ParticleDistribution(\momentum) \derivative\momentum = 
+  \kappa \momentum^{-\spectralindex} \derivative\momentum.
 \end{equation}
 For a powerlaw distribution of photons integrated over
-pitch angle, we find 
+pitch angle, we find
 \begin{equation}
-\TotalPower(\angularfrequency) \propto C \MagneticField^{(p+1)/2} 
-\omega^{-(p-1)/2}.
+\TotalPower(\angularfrequency) \propto \kappa \MagneticField^{(p+1)/2} 
+\angularfrequency^{-(p-1)/2}.
 \end{equation}
 See, \cite{rybicki_1979a_radiative-processes} 
 or \cite{longair_2013a_energy-astrophysics} for a full derivation.
 This shows that, assuming a power-law electron distribution,
-the electron spectrum can be related to the photon spectrum 
-for a given magnetic field.
+the electron spectral index can be related to the photon spectral
+index.
 
 \subsection{\Actitle{IC}}
 
 Normal compoton scattering involves a photon colliding with a free electron
 and transfering energy to it. In \ac{IC} scattering, a high-energy 
 electron interacts with a low-energy photon imparting energy to it.
-This process occurs when a highly-energetic electrons interact with
+This process occurs when highly-energetic electrons interact with
 a dense photon field.
 
 The derivation of \Ac{IC} emission requires a quantum
@@ -100,9 +127,12 @@ in \cite{blumenthal_1970a_bremsstrahlung-synchrotron}.  In what follows, we foll
 the notational convetion of \cite{houck_2006a_models-nonthermal}.
 
 We assume a population of relativistic ($\gamma\gg1$) electrons
-written as $N(\momentum)$ which is inside of an isotropic distribution
-of photons with a number density $n(\omega_i)$.
-The distribution of emitted photons can be written as
+written as $N(\momentum)$ which is contained inside isotropic 
+photon distribution with number density $n(\omega_i)$.
+
+The distribution of photons 
+emitted by \ac{IC} scatter is
+written as
 \begin{equation}
   \frac{\derivative\ParticleDistribution}{\derivative\omega\derivative\time} = 
   c \int d \omega_i n(\omega_i)
@@ -111,15 +141,14 @@ The distribution of emitted photons can be written as
  \KleinNishinaCrossSection(\gamma,\omega_i,\omega)
 \end{equation}
 where $\omega$ is the outgoing photon energy written
-in units of the electron rest mass energy $\omega\equiv h\nu/(m_e c^2)$.
+in units of the electron rest mass energy $\omega\equiv h\nu/(m_e c^2)$
 and $\KleinNishinaCrossSection$ is the Klein-Nishina cross section.
 
 The Klein-Nishina cross section is
 \begin{equation}
 \KleinNishinaCrossSection(\gamma,\omega_i,\omega) = \frac{2\pi r_0^2}{\omega_i \gamma^2}
-  \times 
   \left[
-  1 + q - 2q^2 + 2q\ln q + \frac{\tau^2 q^2 (1-q)}{2(1+\tau q}
+  1 + q - 2q^2 + 2q\ln q + \frac{\tau^2 q^2 (1-q)}{2(1+\tau q)}
   \right]
 \end{equation}
 Here,
@@ -128,7 +157,7 @@ Here,
 \end{equation}
 $\tau \equiv 4\omega_i \gamma$, and $r_0 = e^2/(m_e c^2)$ is the classical
 electron radius.
-The threshold electron lorgenz factor is
+The threshold electron lorentz factor is
 \begin{equation}
   \gamma_\text{min} =
   \frac{1}{2} 
@@ -148,13 +177,29 @@ a thermal photon distribution
   \frac{\omega_i^2}{e^{\omega_i/\Theta} -1}
 \end{equation}
 where $\lambda=\hbar/(m_e c)$ and $\Theta=kT/(m_e c^2)$.
-
-\todo[inline]{Look up scaling relationsips for IC and Sync
-radiation from Adam Van Etten's thesis}
+Typically, \ac{IC} emission happens off CMB photons
+with $T=2.725\unitspace\kelvin$.
+We conclude by noting that the free-parameters of 
+\ac{IC} emission are the the assumed particle spectrum
+and photon field.
 
 \subsection{Bremsstrahlung}
 
-\todo[inline]{Why no Bremsstrahlung radiation from PWN.  Maybe a back-of-the-eveolope estimate}
+electron-electron bremsstrahlung.
+electron-ion bremsstrahlung.
+
+\begin{equation}
+  \frac{\derivative n}{\derivative\omega\derivative\time} =
+  n_e \int d\momentum N(p) v \frac{\derivative\simga_{ee}}{\derivative\omega} +
+  n_Z \int d\momentum N(p) v \frac{\derivative\sigma_{eZ}}{\derivative\omega}
+\end{equation}
+
+Detailed clear desciption 
+of the calcuation can be found in \cite{houck_2006a_models-nonthermal}
+and references therein.
+
+\todo[inline]{Why no Bremsstrahlung radiation from PWN.  Maybe a
+back-of-the-eveolope estimate}
 
 \subsection{Pi0 Decay}
 
