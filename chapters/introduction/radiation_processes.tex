@@ -62,7 +62,7 @@ Because power is inversely-proportional to mass, synchotron radiation
 is almost always assumed to come from electrons.
 
 Now, we assume a population of particles and compute the total
-emission. We say that $N(\momentum,\alpha)$ is the number of particles
+emission. We say that $\ParticleDistribution(\momentum,\alpha)$ is the number of particles
 per unit momentum and solid angle with a momentum $\momentum$ and
 pitch angle $\alpha$.
 
@@ -73,16 +73,16 @@ momentum and distribution
   \int \derivative \momentum 
   \int \derivative \solidangle
   \power_\text{emitted}(\frequency)
-  N(\momentum,\alpha)
+  \ParticleDistribution(\momentum,\alpha)
 \end{equation}
 If we assume the pitch angles of the particles to be isotropically
 distributed and include \eqnref{power_emitted_particle_sync}, we
 find that the photon emission per unit energy and time is
 \begin{equation}
-  \frac{\derivative n}{\derivative \omega \derivative \time} =
+  \frac{\derivative \ParticleDistribution}{\derivative \omega \derivative \time} =
   \frac{\sqrt{3}q^3 B}{h m_e c^2 \angularfrequency}
   \int \derivative\momentum
-  N(\momentum)
+  \ParticleDistribution(\momentum)
   R \left(\frac{\omega}{\omega_0 \gamma^2}\right)
 \end{equation}
 where
@@ -127,7 +127,7 @@ in \cite{blumenthal_1970a_bremsstrahlung-synchrotron}.  In what follows, we foll
 the notational convetion of \cite{houck_2006a_models-nonthermal}.
 
 We assume a population of relativistic ($\gamma\gg1$) electrons
-written as $N(\momentum)$ which is contained inside isotropic 
+written as $\ParticleDistribution(\momentum)$ which is contained inside isotropic 
 photon distribution with number density $n(\omega_i)$.
 
 The distribution of photons 
@@ -137,11 +137,11 @@ written as
   \frac{\derivative\ParticleDistribution}{\derivative\omega\derivative\time} = 
   c \int d \omega_i n(\omega_i)
   \int_{p_\text{min}}^\infty  dp
-  N(p) 
+  \ParticleDistribution(p) 
  \KleinNishinaCrossSection(\gamma,\omega_i,\omega)
 \end{equation}
 where $\omega$ is the outgoing photon energy written
-in units of the electron rest mass energy $\omega\equiv h\nu/(m_e c^2)$
+in units of the electron rest mass energy, $\omega\equiv h\nu/(m_e c^2)$,
 and $\KleinNishinaCrossSection$ is the Klein-Nishina cross section.
 
 The Klein-Nishina cross section is
@@ -185,23 +185,54 @@ and photon field.
 
 \subsection{Bremsstrahlung}
 
-electron-electron bremsstrahlung.
-electron-ion bremsstrahlung.
+Bremsstrahlung radiation is compoosed of electron-electron and electron-ion interactions.
+In either case, 
+we assume a 
+differential spectrum of accelerated electrons $\ParticleDistribution_\electron(\energy)$ 
+that interacts with a target density of electrons (\ElectronDensity) or ions (\IonDensity).
 
 \begin{equation}
-  \frac{\derivative n}{\derivative\omega\derivative\time} =
-  n_e \int d\momentum N(p) v \frac{\derivative\simga_{ee}}{\derivative\omega} +
-  n_Z \int d\momentum N(p) v \frac{\derivative\sigma_{eZ}}{\derivative\omega}
+  \frac{\derivative \ParticleDistribution}{\derivative\energy\derivative\time} =
+  \ElectronDensity \int \derivative\energy
+  \ParticleDistribution_\electron(\energy) \velocity_\electron
+  \frac{\derivative\CrossSection_{\electron\electron}}{\derivative\energy} +
+  \IonDensity \int d\energy
+  \ParticleDistribution_\electron(\energy) \velocity_\electron
+  \frac{\derivative\CrossSection_{\electron\AtomicNumber}}{\derivative\energy}
 \end{equation}
 
-Detailed clear desciption 
-of the calcuation can be found in \cite{houck_2006a_models-nonthermal}
-and references therein.
+Here, $\velocity_\electron$ is the velcoity of a the electron,
+and $\CrossSection_{\electron\electron}$ and $\CrossSection_{\electron\AtomicNumber}$
+are the electron-electron and electron-ion cross sections.
+
+The actual evaluation of these cross sections is quite involved.
+The electron-electron cross section was worked out in \cite{haug_1975a_bremsstrahlung-production}.
+The electron-ion cross section XXXXX.
+
+We refer to \cite{houck_2006a_models-nonthermal} for a detailed
+description of the calculation of this cross section.
 
 \todo[inline]{Why no Bremsstrahlung radiation from PWN.  Maybe a
 back-of-the-eveolope estimate}
 
-\subsection{Pi0 Decay}
+\subsection{Pion Decay}
+
+Neutral pion decay occurs when highly-energetic protons interact with
+thermal protons. This
+emission happens when protons dectay into neutral pions through $pp \processarrow
+\pi^0 + X$ and subsequently decay through $\pi^0 \processarrow 2\gamma$.
+
+The gamma-ray emission from neutral pion decay can be computed
+as
+\begin{equation}
+  \frac{\derivative\ParticleDistribution}{\derivative\energy\derivative\time} = 
+  \HydrogenDensity \int \velocity_\proton \ParticleDistribution_\proton(\energy) 
+  \frac{\derivative\CrossSection_{\proton\proton}}{\derivative\energy}
+\end{equation}
+Here, $\ParticleDistribution_\proton(\energy)$ is the differential proton
+distribution,
+$\sigma_{\proton\proton}$ is gamma-ray cross section through proton-proton interactions,
+and $\HydrogenDensity$ is the target hydrogen density.
 
 \todo[inline]{Describe the characteristic pi0 cutoff energy}
 
