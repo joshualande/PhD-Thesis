@@ -196,7 +196,7 @@ that interacts with a target density of electrons (\ElectronDensity) or ions (\I
   \ElectronDensity \int \derivative\energy
   \ParticleDistribution_\electron(\energy) \velocity_\electron
   \frac{\derivative\CrossSection_{\electron\electron}}{\derivative\energy} +
-  \IonDensity \int d\energy
+  \IonDensity \int \denergy
   \ParticleDistribution_\electron(\energy) \velocity_\electron
   \frac{\derivative\CrossSection_{\electron\AtomicNumber}}{\derivative\energy}
 \end{equation}
@@ -226,7 +226,7 @@ The gamma-ray emission from neutral pion decay can be computed
 as
 \begin{equation}
   \frac{\derivative\ParticleDistribution}{\derivative\energy\derivative\time} = 
-  \HydrogenDensity \int \velocity_\proton \ParticleDistribution_\proton(\energy) 
+  \HydrogenDensity \int \denergy \velocity_\proton \ParticleDistribution_\proton(\energy) 
   \frac{\derivative\CrossSection_{\proton\proton}}{\derivative\energy}
 \end{equation}
 Here, $\ParticleDistribution_\proton(\energy)$ is the differential proton
