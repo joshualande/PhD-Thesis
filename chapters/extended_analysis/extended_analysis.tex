@@ -103,7 +103,7 @@ we present a new systematic method for analyzing spatially extended LAT
 sources.  In \secref{validate_ts}, we demonstrate that this method
 can be used to test the statistical significance of the extension of a LAT
 source and we assess the expected level of bias introduced by assuming
-an incorrect spatial model.  In \secref{extension_sensitivity},
+an incorrect spatial model.  In \subsecref{extension_sensitivity},
 we calculate the LAT detection threshold to resolve the extension
 of a source.  In \secref{dual_localization_method}, we study
 the ability of the LAT to distinguish between a single extended
@@ -205,7 +205,7 @@ and $X(E)$ is the spectral distribution.  To fit an extended source,
 of energy) and uses the \minuit library \citep{james_1975a_minuit-system}
 to maximize the likelihood by simultaneously varying the position,
 extension, and spectrum of the source.  As will be described in
-\secref{monte_carlo_validation}, simultaneously fitting the
+\subsecref{monte_carlo_validation}, simultaneously fitting the
 position, extension, and spectrum is important to maximize
 the statistical significance of the detection of the extension of a source.
 To avoid projection effects, the longitude and latitude 
@@ -229,7 +229,7 @@ when assuming the source has either a point-like or spatially extended spatial m
 \pointlike calculates \tsext by fitting a source first with a spatially
 extended model and then as a point-like source.  The interpretation
 of \tsext in terms of a statistical significance is discussed in
-\secref{monte_carlo_validation}.
+\subsecref{monte_carlo_validation}.
 
 For extended sources with an assumed radially-symmetric shape,
 we optimized the calculation by performing one
@@ -353,7 +353,7 @@ For sources that are comparable in size to the PSF,
 the differences in the PDF for
 different spatial models are lost in the noise and the LAT is not sensitive
 to the detailed spatial structure of these sources.  
-In \secref{bias_wrong_spatial_model}, we perform a dedicated Monte Carlo simulation
+In \subsecref{bias_wrong_spatial_model}, we perform a dedicated Monte Carlo simulation
 that shows there is little bias due to incorrectly modeling the spatial structure
 of an extended source.
 Therefore, in our search for extended sources we use only a radially-symmetric uniform
@@ -365,9 +365,6 @@ we quote the radius to the edge ($\sigma$) as the size of the source.
 
 \subsection{Point-like Source Simulations Over a Uniform Background}
 \subseclabel{monte_carlo_validation}
-
-
-
 
 We tested the theoretical distribution for \tsext
 to evaluate the false detection probability for measuring source extension.
@@ -427,16 +424,16 @@ and were discarded.  \tabref{ts_ext_num_sims}
 shows the different spectral models used in our study as well as the
 number of simulations and the average point-like source
 significance.  The cumulative density of \tsext is plotted in
-Figures~\ref{ts_ext_mc_1000} and \ref{ts_ext_mc_10000} 
+\figref{ts_ext_mc_1000} and \figref{ts_ext_mc_10000} 
 and compared to the $\chi^2_1/2$ distribution of
-Equation~\ref{ts_ext_distribution}.
+\eqnref{ts_ext_distribution}.
 
 Our study shows broad agreement between simulations and
-Equation~\ref{ts_ext_distribution}. To the extent that there is
+\eqnref{ts_ext_distribution}. To the extent that there is
 a discrepancy, the simulations tended to produce smaller than expected
 values of \tsext which would make the formal significance conservative.
-Considering the distribution in Figures~\ref{ts_ext_mc_1000} and
-\ref{ts_ext_mc_10000}, the choice of a threshold \tsext set to 16
+Considering the distribution in \figref{ts_ext_mc_1000} and
+\figref{ts_ext_mc_10000}, the choice of a threshold \tsext set to 16
 (corresponding to a formal $4\sigma$ significance) is reasonable.
 
 
@@ -478,10 +475,10 @@ is the same quantity if the source was at the Galactic center, $B$
 is the integral of the Galactic diffuse and isotropic emission
 from 1 \gev to 100 \gev at the position of the source, and $B(\text{GC})$ is the same quantity
 if the source was at the Galactic center.  For the four spectral models,
-Table~\ref{ts_ext_num_sims} lists $F(\text{GC})$ and the average value of \ts.
+\tabref{ts_ext_num_sims} lists $F(\text{GC})$ and the average value of \ts.
 
 For each spectrum, we performed $\sim90,000$ simulations.
-Figure~\ref{tsext_plane_plot} shows the cumulative density
+\figref{tsext_plane_plot} shows the cumulative density
 of \tsext for each spectrum. For small values of \tsext,
 there is good agreement between the simulations and
 theory.  For the highest values of \tsext, there is possibly
@@ -510,7 +507,7 @@ measured East of celestial North, and the ring's inner radius is 75\% of
 the outer radius.
 
 We used a simulation setup similar to that described in
-\secref{validation_over_plane}, but the simulations
+\subsecref{validation_over_plane}, but the simulations
 were over the 2-year interval of the 2FGL catalog.
 In the simulations, 
 we did not include the finite energy resolution of the LAT
@@ -572,7 +569,7 @@ $\langle\tsext\rangle=16$
 for a source of a given extension.
 
 We used a simulation setup similar to that described in
-\secref{monte_carlo_validation}, but instead of point-like sources
+\subsecref{monte_carlo_validation}, but instead of point-like sources
 we simulated extended sources with radially-symmetric uniform disk spatial 
 models. Additionally, we simulated our sources over the two-year
 time range included in the 2FGL catalog.  For each extension and spectral index,
@@ -624,7 +621,7 @@ even weaker when considering only photons with energies above 10 \gev
 because the PSF changes little from 10 \gev to 100 \gev.
 Overlaid on \figref{all_sensitivity} are the LAT-detected extended
 sources that will be discussed in \secref{validate_known} and
-sec\ref{new_ext_srcs_section}.  The extension thresholds are tabulated in
+\secref{new_ext_srcs_section}.  The extension thresholds are tabulated in
 \tabref{all_sensitivity_table}.
 
 Finally, \figref{time_sensitivity} shows the projected
@@ -709,7 +706,7 @@ hypotheses. By comparing the distribution of \tsinc and \tsext computed by
 test is at rejecting cases of source confusion as well as how
 likely it is to incorrectly reject that an extended source is spatially
 extended.  All sources were simulated using the same time range as in
-\secref{extension_sensitivity} against a background 10 times the
+\subsecref{extension_sensitivity} against a background 10 times the
 isotropic background measured by EGRET, representative of the background
 near the Galactic plane.
 
@@ -740,13 +737,13 @@ and the other an index of 2.5.
 These indices are representative of the range of indices of LAT-detected
 sources.
 
-The same four plots are shown in Figure~\ref{confusion_extended_plot}b, \ref{confusion_extended_plot}d, 
-\ref{confusion_2pts_plot}b, and \ref{confusion_2pts_plot}d but this
+The same four plots are shown in \figref{confusion_extended_plot}b, \figref{confusion_extended_plot}d, 
+\figref{confusion_2pts_plot}b, and \figref{confusion_2pts_plot}d but this
 time when analyzing a source of flux $10^{-9}$ \fluxunits (integrated from
 10 \gev to 100 \gev) only in the 10 \gev to 100 \gev energy range.
 This flux is typical of the new extended sources discovered
 using only photons with energies between 10 \gev and 100 \gev (see
-Section~\ref{new_ext_srcs_section}).
+\secref{new_ext_srcs_section}).
 
 Several interesting conclusions can be made from this study.  As one would
 expect, $\tsext-\tsinc$ is mostly positive when fitting the simulated
@@ -771,8 +768,8 @@ test is powerful at discarding cases in which the true emission comes
 from two point-like sources.
 
 
-The other interesting feature in Figure~\ref{confusion_extended_plot}a
-and \ref{confusion_extended_plot}b is that for simulated extended
+The other interesting feature in \figref{confusion_extended_plot}a
+and \figref{confusion_extended_plot}b is that for simulated extended
 sources with typical sizes ($\sigma\sim0\fdg5$), one can often obtain
 almost as large an increase in likelihood fitting the source as two
 point-like sources ($\tsinc\sim\tsext$).  This is because although the
@@ -784,7 +781,7 @@ pronounced when using photons with energies between 1 \gev and 100 \gev
 where the PSF is broader.
 
 From this Monte Carlo study, we can see the limits of an analysis with
-LAT data of spatially extended sources.  Section~\ref{monte_carlo_validation}
+LAT data of spatially extended sources.  \subsecref{monte_carlo_validation}
 showed that we have a statistical test that finds when a LAT source is
 not well described by the PSF.  But this test does not uniquely prove
 that the emission originates from spatially extended emission instead
@@ -855,18 +852,18 @@ the diffuse emission.
 Of the 885 clean AGN, we selected the 733 of these 2FGL sources which
 were significantly detected above 1 \gev and fit each of them for
 extension.  The cumulative density of \tsext for these AGN is compared
-to the $\chi^2_1/2$ distribution of Equation~\ref{ts_ext_distribution}
-in Figure~\ref{agn_ts_ext}.  The \tsext distribution
+to the $\chi^2_1/2$ distribution of \eqnref{ts_ext_distribution}
+in \figref{agn_ts_ext}.  The \tsext distribution
 for the AGN shows reasonable agreement with the theoretical
 distribution and no AGN was found to be significantly extended
 ($\tsext>16$).  The observed discrepancy from the theoretical
 distribution is likely due to small systematics
 in our model of the LAT PSF and the Galactic diffuse emission (see
-Section~\ref{systematic_errors_on_extension}).  
+\secref{systematic_errors_on_extension}).  
 The discrepancy could
 also in a few cases be due to confusion with a nearby undetected source.
 We note that the Monte Carlo study
-of section~\ref{monte_carlo_validation} effectively used perfect
+of \subsecref{monte_carlo_validation} effectively used perfect
 IRFs and a perfect model of the sky.
 The overall agreement with the expected distribution demonstrates that
 we can use \tsext as a measure of the statistical significance of the
@@ -874,7 +871,7 @@ detection of the extension of a source.
 
 We note that the LAT PSF used in this study was determined
 empirically by fitting the distributions of gamma rays around bright AGN (see
-Section~\ref{systematic_errors_on_extension}). Finding that the AGN we
+\secref{systematic_errors_on_extension}). Finding that the AGN we
 test are not extended is not surprising.  This validation analysis is
 not suitable to reject any hypotheses about the existence of megaparsec-scale
 halos around AGN.
@@ -1038,7 +1035,7 @@ in the Galactic center. The actual fluxes are scaled by \eqnref{scale_flux_by_ba
     \fi
     % this plot came from /u/gl/lande/work/fermi/extended_catalog/monte_carlo/ts_ext/v4/plot.py
     \caption{
-    The same plot as Figure~\ref{ts_ext_mc_1000} but fitting in the 10 \gev to 100 \gev energy 
+    The same plot as \figref{ts_ext_mc_1000} but fitting in the 10 \gev to 100 \gev energy 
     range.
     }\figlabel{ts_ext_mc_10000}
   \end{figure}
@@ -1311,7 +1308,7 @@ in the Galactic center. The actual fluxes are scaled by \eqnref{scale_flux_by_ba
     and with \gtlike (solid line colored black).  AGN are too far
     and too small to be resolved by the LAT. Therefore, the cumulative
     density of $\tsext$ is expected to follow a $\chi^2_1/2$ distribution
-    (Equation~\ref{ts_ext_distribution}, the dash-dotted line colored
+    (\eqnref{ts_ext_distribution}, the dash-dotted line colored
     red).
     }\figlabel{agn_ts_ext}
   \end{figure}
@@ -1379,7 +1376,7 @@ All sources were fit using a radially-symmetric uniform disk spatial model.
 \glon and \glat are Galactic longitude
 and latitude of the best fit extended source respectively.  The first
 error on $\sigma$ is statistical and the second is systematic (see
-Section~\ref{systematic_errors_on_extension}).  
+\secref{systematic_errors_on_extension}).  
 The errors on the integral fluxes and the spectral indices
 are statistical only.
 Pos Err is the error on
@@ -1498,7 +1495,7 @@ to \cite{abdo_2011a_observations-young} is due to fitting over a different energ
 
 \tablecomments{
     The columns in this table have the same meaning as those in
-    Table~\ref{known_extended_sources}.
+    \tabref{known_extended_sources}.
     RX\,J1713.7$-$3946 and Vela Jr. were previously studied in dedicated publications \citep{abdo_2011a_observations-young,tanaka_2011a_gamma-ray-observations}.
 }
 \end{deluxetable}
@@ -1938,7 +1935,7 @@ modeling the extensions of nearby extended sources.
     Vela X is from \cite{abdo_2010c_fermi-large}. 
     The \tev sources were fit assuming a 2D Gaussian surface brightness profile
     so the plotted \gev and \tev extensions were first converted to
-    \rsixeight (see Section~\ref{compare_source_size}).  
+    \rsixeight (see \subsecref{compare_source_size}).  
     Because of
     their large sizes, the shape of RX\,J1713.7$-$3946 and Vela Jr.
     were not directly fit at \tev energies and so are not included
