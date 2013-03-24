@@ -7,7 +7,7 @@
   by Lande et at al. 2012 ApJ, 756, 5}
 
   Following the work in \chapref{extended_analysis},
-  we then test all sources
+  we next test all sources
   in the second \fermi-LAT catalog (2FGL) for extension.
   We report the detection of seven new spatially extended sources.
 
@@ -738,6 +738,28 @@ in $\gamma$-Cygni \citep{weinstein_2009a_veritas-survey}.
 
 \section{Discussion}
 
+\clearpage
+  \begin{figure}
+      \ifcolorfigure
+      \includegraphics{summary_plots/allsky_extended_sources_color.pdf}
+      \else
+      \includegraphics{summary_plots/allsky_extended_sources_bw.pdf}
+      \fi
+      % this plot came from /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/allsky/v2/run.py
+      \caption{The 21
+      spatially extended sources detected by the LAT
+      at \gev energies 
+      with 2 years of data.  The twelve extended sources included in
+      2FGL are represented by the circular markers (colored red in the online
+      version).  The nine new extended sources are represented by
+      the triangular markers (colored orange).
+      The source positions are overlaid on a 100 \mev to 100 \gev 
+      Aitoff projection sky map of the LAT data in Galactic coordinates.
+}
+\figlabel{allsky_extended_sources}
+  \end{figure}
+
+
 Twelve extended sources were included in the 2FGL catalog and two additional extended
 sources were studied in dedicated publications.  Using 2 years of
 LAT data and a new analysis method, we presented the detection of seven
@@ -750,6 +772,47 @@ origin as the distances of extragalactic sources (with the exception of
 the local group Galaxies) are typically too large to be able to resolve
 them at $\gamma$-ray energies.
 
+
+\clearpage
+\begin{figure}
+    \ifcolorfigure
+      \includegraphics{summary_plots/gev_vs_tev_plot_color.pdf}
+    \else
+      \includegraphics{summary_plots/gev_vs_tev_plot_bw.pdf}
+      \fi
+    % this plot came from /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/compare_tev_gev_sizes/v5/run.py
+    \caption{
+    A comparison of the sizes of extended sources detected at
+    both \gev and \tev energies.  The \tev sizes of W30,
+    2FGL\,J1837.3$-$0700c, 2FGL\,J1632.4$-$4753c, 2FGL\,J1615.0$-$5051,
+    and 2FGL\,J1615.2$-$5138 are from \cite{aharonian_2006_h.e.s.s.-survey}.
+    The \tev sizes of MSH\,15$-$52, HESS\,J1825$-$137,
+    Vela X, Vela Jr., RX\,J1713.7$-$3946 and W28 are from
+    \cite{aharonian_2005a_discovery-extended,aharonian_2006_energy-dependent,aharonian_2006a_first-detection,aharonian_2007a_h.e.s.s.-observations,aharonian_2007a_primary-particle,aharonian_2008a_discovery-energy}.
+    The \tev size of IC~443 is from \cite{acciari_2009a_observation-extended} and
+    W51C is from \cite{krause_2011a_probing-proton}.  The \tev
+    sizes of MSH\,15$-$52, HESS\,J1614$-$518, HESS\,J1632$-$478, and
+    HESS\,J1837$-$069 have only been reported with an elliptical 2D
+    Gaussian fit and so the plotted sizes are the geometric 
+    mean of the semi-major and semi-minor axis.
+    The LAT extension of
+    Vela X is from \cite{abdo_2010c_fermi-large}. 
+    The \tev sources were fit assuming a 2D Gaussian surface brightness profile
+    so the plotted \gev and \tev extensions were first converted to
+    \rsixeight (see \subsecref{compare_source_size}).  
+    Because of
+    their large sizes, the shape of RX\,J1713.7$-$3946 and Vela Jr.
+    were not directly fit at \tev energies and so are not included
+    in this comparison. On the other hand, dedicated publications by the 
+    LAT collaboration on
+    these sources showed that their morphologies are consistent
+    \citep{abdo_2011a_observations-young,tanaka_2011a_gamma-ray-observations}.
+    The LAT
+    extension errors are the statistical and systematic errors added
+    in quadrature. 
+}\figlabel{gev_vs_tev_plot}
+  \end{figure}
+
 For the LAT extended sources also seen at \tev energies,
 \figref{gev_vs_tev_plot} shows that there is a good correlation
 between the sizes of the sources at \gev and \tev energies. Even so,
@@ -759,6 +822,32 @@ range and the size of HESS\,J1825$-$137 is significantly larger at
 to compare the sizes of other PWN candidates at \gev and \tev energies,
 but definitively measuring a difference in size would require a more in-depth analysis
 of the LAT data using the same elliptical Gaussian spatial model.
+
+
+\clearpage
+\begin{figure}
+    \ifcolorfigure
+      \includegraphics{summary_plots/gev_vs_tev_histogram_color.pdf}
+    \else
+      \includegraphics{summary_plots/gev_vs_tev_histogram_bw.pdf}
+    \fi
+    % this plot came from /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/extension_histogram/v5/extension_histogram.py
+    \caption{
+    The distributions of the sizes of 18 extended LAT sources
+    at \gev energies
+    (colored blue in the electronic version) and the sizes of the
+    40 extended H.E.S.S. sources at \tev energies
+    (colored red).  
+    The H.E.S.S. sources were fit with a 2D Gaussian surface
+    brightness profile so the LAT and H.E.S.S. sizes were first converted
+    to \rsixeight. 
+    The \gev size of Vela X is taken from \cite{abdo_2010c_fermi-large}.  
+    Because of their large sizes, the shape of RX\,J1713.7$-$3946 and
+    Vela Jr. were not directly fit at \tev energies
+    and are not included in this comparison.
+    Centaurus A is not included because of its large size.
+    }\figlabel{gev_vs_tev_histogram}
+  \end{figure}
 
 \figref{gev_vs_tev_histogram} compares the sizes of the 21 extended
 LAT sources to the 42 extended H.E.S.S. sources.\footnote{The 
@@ -779,6 +868,24 @@ these smaller sources to improve by a factor greater than the square root
 of the relative exposures.  With increasing exposure, the LAT will likely begin to
 detect and resolve some of these smaller \tev sources.
 
+\clearpage
+\begin{figure}
+    \ifcolorfigure
+      \includegraphics{summary_plots/compare_index_2FGL_color.pdf}
+    \else
+      \includegraphics{summary_plots/compare_index_2FGL_bw.pdf}
+    \fi
+    % plot taken from /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/compare_index_2fgl/v3/run.py
+    \caption{
+    The distribution of spectral indices of the 1873 2FGL sources
+    (colored red in the electronic version) and the 21 spatially extended
+    sources (colored blue).  The index of Centaurus A is taken from
+    \cite{nolan_2012_fermi-large} and the index of Vela X is taken from \cite{abdo_2010c_fermi-large}.
+    }\figlabel{compare_index_2FGL}
+  \end{figure}
+
+
+
 \figref{compare_index_2FGL} compares the spectral indices of LAT
 detected extended sources and of all sources in the 2FGL catalog. This, and
 \tabref{known_extended_sources} and \tabref{new_ext_srcs_table},
@@ -798,3 +905,6 @@ observations will be necessary to understand these particle accelerators.
 Extending the spectra of these \tev sources towards lower energies
 with LAT observations may help to determine the origin and nature of
 the high-energy emission.
+
+
+

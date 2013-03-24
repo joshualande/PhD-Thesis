@@ -281,6 +281,34 @@ spatial model to the likelihood when the extension is
 fixed to a very small value ($10^{-10}$ degrees in radius 
 for a uniform disk model).
 
+\clearpage
+\begin{figure}
+    \ifcolorfigure
+    \includegraphics{ic443_plots/four_plots_ic443_color.pdf}
+    \else
+    \includegraphics{ic443_plots/four_plots_ic443_bw.pdf}
+    \fi
+    % taken from /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/four_plots_ic443/v3/run.py
+    \caption{
+    Counts maps and TS profiles for the SNR IC~443. (a) \ts
+    vs. extension of the source. (b) \tsext for individual energy
+    bands. (c) observed radial profile of counts in comparison to the
+    expected profiles for a spatially extended source (solid and colored
+    red in the online version) and for a point-like source (dashed and colored
+    blue in the online version).  (d) smoothed counts map after subtraction
+    of the diffuse emission compared to the smoothed
+    LAT PSF (inset). Both were smoothed by a 0\fdg1 2D Gaussian kernel.
+    Plots (a),
+    (c), and (d) use only 
+    photons with energies between
+    1 \gev and 100 \gev.  Plots (c) and (d) include
+    only photons which converted in the front part of the tracker and
+    have an improved angular resolution \citep{atwood_2009a_large-telescope}.
+    }
+    \figlabel{four_plots_ic443}
+\end{figure}
+
+
 We estimate the error on the extension of a source by fixing
 the position of the source and varying the extension until the
 log of the likelihood has decreased by 1/2, corresponding to a $1\sigma$ error
@@ -316,8 +344,32 @@ mentioned, all \ts, \tsext, and spectral parameters were calculated using
 
 
 \subsection{Comparing Source Sizes}
-
 \subseclabel{compare_source_size}
+
+
+\clearpage
+\begin{figure}
+    \ifcolorfigure
+      \includegraphics{mc_plots/compare_disk_gauss_color.pdf}
+    \else
+      \includegraphics{mc_plots/compare_disk_gauss_bw.pdf}
+    \fi
+    % this plot came from /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/compare_disk_gauss/v3/plot.py
+    \caption{
+    A comparison of a 2D Gaussian and uniform disk spatial model
+    of extended sources before and after convolving with the PSF for two
+    energy ranges.  The solid black line is the PSF that would be observed
+    for a power-law source of spectral index 2. The dashed line
+    and the dash-dotted lines are 
+    the brightness profile of a Gaussian with $\rsixeight=0\fdg5$
+    and the convolution of this profile with the LAT PSF respectively
+    (colored red in the online version).
+    The dash-dot-dotted and the dot-dotted lines are the brightness profile
+    of a uniform disk with $\rsixeight=0\fdg5$ and the convolution
+    of this profile with the LAT PSF respectively (colored blue in the online version).
+    }\figlabel{compare_disk_gauss}
+  \end{figure}
+
 
 We considered two models for the
 surface brightness profile for extended sources: a 2D Gaussian model
@@ -878,57 +930,6 @@ halos around AGN.
 
 
 
-
-
-\clearpage
-\begin{figure}
-    \ifcolorfigure
-    \includegraphics{ic443_plots/four_plots_ic443_color.pdf}
-    \else
-    \includegraphics{ic443_plots/four_plots_ic443_bw.pdf}
-    \fi
-    % taken from /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/four_plots_ic443/v3/run.py
-    \caption{
-    Counts maps and TS profiles for the SNR IC~443. (a) \ts
-    vs. extension of the source. (b) \tsext for individual energy
-    bands. (c) observed radial profile of counts in comparison to the
-    expected profiles for a spatially extended source (solid and colored
-    red in the online version) and for a point-like source (dashed and colored
-    blue in the online version).  (d) smoothed counts map after subtraction
-    of the diffuse emission compared to the smoothed
-    LAT PSF (inset). Both were smoothed by a 0\fdg1 2D Gaussian kernel.
-    Plots (a),
-    (c), and (d) use only 
-    photons with energies between
-    1 \gev and 100 \gev.  Plots (c) and (d) include
-    only photons which converted in the front part of the tracker and
-    have an improved angular resolution \citep{atwood_2009a_large-telescope}.
-    }
-    \figlabel{four_plots_ic443}
-\end{figure}
-
-\clearpage
-\begin{figure}
-    \ifcolorfigure
-      \includegraphics{mc_plots/compare_disk_gauss_color.pdf}
-    \else
-      \includegraphics{mc_plots/compare_disk_gauss_bw.pdf}
-    \fi
-    % this plot came from /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/compare_disk_gauss/v3/plot.py
-    \caption{
-    A comparison of a 2D Gaussian and uniform disk spatial model
-    of extended sources before and after convolving with the PSF for two
-    energy ranges.  The solid black line is the PSF that would be observed
-    for a power-law source of spectral index 2. The dashed line
-    and the dash-dotted lines are 
-    the brightness profile of a Gaussian with $\rsixeight=0\fdg5$
-    and the convolution of this profile with the LAT PSF respectively
-    (colored red in the online version).
-    The dash-dot-dotted and the dot-dotted lines are the brightness profile
-    of a uniform disk with $\rsixeight=0\fdg5$ and the convolution
-    of this profile with the LAT PSF respectively (colored blue in the online version).
-    }\figlabel{compare_disk_gauss}
-  \end{figure}
 
 
 \clearpage
@@ -1885,109 +1886,5 @@ modeling the extensions of nearby extended sources.
   observed by the Canadian Galactic Plane Survey \citep{taylor_2003a_canadian-galactic}.
   }\figlabel{1FGL_J2020.0+4049}
 \end{figure}
-
-
-\clearpage
-  \begin{figure}
-      \ifcolorfigure
-      \includegraphics{summary_plots/allsky_extended_sources_color.pdf}
-      \else
-      \includegraphics{summary_plots/allsky_extended_sources_bw.pdf}
-      \fi
-      % this plot came from /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/allsky/v2/run.py
-      \caption{The 21
-      spatially extended sources detected by the LAT
-      at \gev energies 
-      with 2 years of data.  The twelve extended sources included in
-      2FGL are represented by the circular markers (colored red in the online
-      version).  The nine new extended sources are represented by
-      the triangular markers (colored orange).
-      The source positions are overlaid on a 100 \mev to 100 \gev 
-      Aitoff projection sky map of the LAT data in Galactic coordinates.
-}
-\figlabel{allsky_extended_sources}
-  \end{figure}
-
-
-\clearpage
-\begin{figure}
-    \ifcolorfigure
-      \includegraphics{summary_plots/gev_vs_tev_plot_color.pdf}
-    \else
-      \includegraphics{summary_plots/gev_vs_tev_plot_bw.pdf}
-      \fi
-    % this plot came from /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/compare_tev_gev_sizes/v5/run.py
-    \caption{
-    A comparison of the sizes of extended sources detected at
-    both \gev and \tev energies.  The \tev sizes of W30,
-    2FGL\,J1837.3$-$0700c, 2FGL\,J1632.4$-$4753c, 2FGL\,J1615.0$-$5051,
-    and 2FGL\,J1615.2$-$5138 are from \cite{aharonian_2006_h.e.s.s.-survey}.
-    The \tev sizes of MSH\,15$-$52, HESS\,J1825$-$137,
-    Vela X, Vela Jr., RX\,J1713.7$-$3946 and W28 are from
-    \cite{aharonian_2005a_discovery-extended,aharonian_2006_energy-dependent,aharonian_2006a_first-detection,aharonian_2007a_h.e.s.s.-observations,aharonian_2007a_primary-particle,aharonian_2008a_discovery-energy}.
-    The \tev size of IC~443 is from \cite{acciari_2009a_observation-extended} and
-    W51C is from \cite{krause_2011a_probing-proton}.  The \tev
-    sizes of MSH\,15$-$52, HESS\,J1614$-$518, HESS\,J1632$-$478, and
-    HESS\,J1837$-$069 have only been reported with an elliptical 2D
-    Gaussian fit and so the plotted sizes are the geometric 
-    mean of the semi-major and semi-minor axis.
-    The LAT extension of
-    Vela X is from \cite{abdo_2010c_fermi-large}. 
-    The \tev sources were fit assuming a 2D Gaussian surface brightness profile
-    so the plotted \gev and \tev extensions were first converted to
-    \rsixeight (see \subsecref{compare_source_size}).  
-    Because of
-    their large sizes, the shape of RX\,J1713.7$-$3946 and Vela Jr.
-    were not directly fit at \tev energies and so are not included
-    in this comparison. On the other hand, dedicated publications by the 
-    LAT collaboration on
-    these sources showed that their morphologies are consistent
-    \citep{abdo_2011a_observations-young,tanaka_2011a_gamma-ray-observations}.
-    The LAT
-    extension errors are the statistical and systematic errors added
-    in quadrature. 
-}\figlabel{gev_vs_tev_plot}
-  \end{figure}
-
-\clearpage
-\begin{figure}
-    \ifcolorfigure
-      \includegraphics{summary_plots/gev_vs_tev_histogram_color.pdf}
-    \else
-      \includegraphics{summary_plots/gev_vs_tev_histogram_bw.pdf}
-    \fi
-    % this plot came from /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/extension_histogram/v5/extension_histogram.py
-    \caption{
-    The distributions of the sizes of 18 extended LAT sources
-    at \gev energies
-    (colored blue in the electronic version) and the sizes of the
-    40 extended H.E.S.S. sources at \tev energies
-    (colored red).  
-    The H.E.S.S. sources were fit with a 2D Gaussian surface
-    brightness profile so the LAT and H.E.S.S. sizes were first converted
-    to \rsixeight. 
-    The \gev size of Vela X is taken from \cite{abdo_2010c_fermi-large}.  
-    Because of their large sizes, the shape of RX\,J1713.7$-$3946 and
-    Vela Jr. were not directly fit at \tev energies
-    and are not included in this comparison.
-    Centaurus A is not included because of its large size.
-    }\figlabel{gev_vs_tev_histogram}
-  \end{figure}
-
-\clearpage
-\begin{figure}
-    \ifcolorfigure
-      \includegraphics{summary_plots/compare_index_2FGL_color.pdf}
-    \else
-      \includegraphics{summary_plots/compare_index_2FGL_bw.pdf}
-    \fi
-    % plot taken from /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/compare_index_2fgl/v3/run.py
-    \caption{
-    The distribution of spectral indices of the 1873 2FGL sources
-    (colored red in the electronic version) and the 21 spatially extended
-    sources (colored blue).  The index of Centaurus A is taken from
-    \cite{nolan_2012_fermi-large} and the index of Vela X is taken from \cite{abdo_2010c_fermi-large}.
-    }\figlabel{compare_index_2FGL}
-  \end{figure}
 
 
