@@ -1,5 +1,6 @@
 \documentclass[12pt]{report}
 
+
 \usepackage{styles/thesis_packages}
 
 \newif\ifcolorfigure
@@ -13,6 +14,8 @@
 %nat This prevents commas between authors and years with natbib
 \citestyle{aa}
 
+% package taken from http://fits.gsfc.nasa.gov/standard30/deluxetable.sty
+\usepackage{styles/deluxetable}
 
 
 \title{Observations of PWNe with the Fermi Gamma-ray Space Telescope}
@@ -66,7 +69,7 @@
 
 \include{chapters/extended_analysis/extended_analysis}
 
-\include{chapters/extended_search/extended_search}
+%\include{chapters/extended_search/extended_search}
 
 \include{chapters/offpeak/offpeak}
 

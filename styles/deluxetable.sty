@@ -127,8 +127,8 @@
  \pt@ncol=#1\relax 
  \global\let\pt@addcol\@empty 
 }% 
-\newcommand\tablecaption[1]{\gdef\pt@caption{#1}}% 
-\newcommand\tablehead[1]{% 
+\renewcommand\tablecaption[1]{\gdef\pt@caption{#1}}% 
+\renewcommand\tablehead[1]{% 
  \gdef\pt@head{% 
   \hline\hline 
   \relax\\[-1.7ex]% 
@@ -148,7 +148,7 @@
 }% 
 \newif\if@pt@rot 
 \newcommand\rotate{\@pt@rottrue}% 
-\newcommand\tabletail[1]{\gdef\pt@tail{#1}}% 
+\renewcommand\tabletail[1]{\gdef\pt@tail{#1}}% 
 \newcommand\tablewidth[1]{\pt@width=#1\relax}% 
 \newcommand\tableheadfrac[1]{\gdef\pt@headfrac{#1}}% 
 \AtBeginDocument{% 
