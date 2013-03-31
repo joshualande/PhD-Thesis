@@ -2,8 +2,6 @@
 
 % fermi sources
 
-\newcommand{\velax}{Vela~X\xspace}
-
 % IfEqCase comes from xstring.
 % The DeclareRobustCommand is somewhat criptic, but
 % has something to do with the fact that IfEqCase
@@ -15,6 +13,9 @@
 \IfEqCase{#1}{
 {J1825}{\basehess{1825}{-}{137}}
 {J1640}{\basehess{1640}{-}{465}}
+{J1837}{\basehess{1837}{-}{069}}
+{J1632}{\basehess{1632}{-}{478}}
+{J1616}{\basehess{1616}{-}{508}}
 }[\PackageError{hess}{Undefined option to hess#1}{}]
 }
 
@@ -25,3 +26,7 @@
 {X}{X}
 }[\PackageError{hess}{Undefined option to hess#1}{}]
 }
+
+\newcommand{\mshfifteenfiftytwo}{MSH\,15$-$52\xspace}
+\newcommand{\velax}{Vela$-$X\xspace}
+\newcommand{\threecfiftyeight}{3C\,58\xspace}
