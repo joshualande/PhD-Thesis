@@ -1,0 +1,74 @@
+
+\clearpage
+\begin{deluxetable}{rrrrrr}
+\tabletypesize{\scriptsize}
+\tablecaption{Monte Carlo Spectral Parameters
+\tablabel{ts_ext_num_sims}
+}
+\tablecolumns{6}
+\tablewidth{0pt}
+\tablehead{
+\colhead{Spectral Index}&
+\colhead{Flux\tablenotemark{(a)}}&
+\colhead{$N_{1-100\gev}$}&
+\colhead{$\langle\ts\rangle_{1-100\gev}$}&
+\colhead{$N_{10-100\gev}$}&
+\colhead{$\langle\ts\rangle_{10-100\gev}$}\\
+\colhead{}&
+\colhead{(\fluxunits)}&
+\colhead{}&
+\colhead{}&
+\colhead{}&
+\colhead{}
+}
+
+\startdata
+\multicolumn{6}{c}{Isotropic Background} \\
+\hline
+      1.5 &  $3\times 10^{-7}$ &           18938 &  22233    &     18938   &    8084     \\
+          &          $10^{-7}$ &           19079 &   5827    &     19079   &    2258     \\
+          &  $3\times 10^{-8}$ &           19303 &   1276    &     19303   &     541     \\
+          &          $10^{-8}$ &           19385 &    303    &     19381   &     142     \\
+          &  $3\times 10^{-9}$ &           18694 &     62    &     12442   &      43     \\
+      \hline
+        2 &          $10^{-6}$ &           18760 &  22101    &     18760   &    3033     \\
+          &  $3\times 10^{-7}$ &           18775 &   4913    &     18775   &     730     \\
+          &          $10^{-7}$ &           18804 &   1170    &     18803   &     192     \\
+          &  $3\times 10^{-8}$ &           18836 &    224    &     15256   &      50     \\
+          &          $10^{-8}$ &           17060 &     50    &   \nodata   & \nodata     \\
+      \hline
+      2.5 &  $3\times 10^{-6}$ &           18597 &  19036    &     18597   &     786    \\
+          &          $10^{-6}$ &           18609 &   4738    &     18608   &     208    \\
+          &  $3\times 10^{-7}$ &           18613 &    954    &     15958   &      53    \\
+          &          $10^{-7}$ &           18658 &    203    &   \nodata   & \nodata    \\
+          &  $3\times 10^{-8}$ &           14072 &     41    &   \nodata   & \nodata    \\
+      \hline                                                
+        3 &          $10^{-5}$ &           18354 &  19466    &     18354   &     215    \\
+          &  $3\times 10^{-6}$ &           18381 &   4205    &     15973   &      54    \\
+          &          $10^{-6}$ &           18449 &    966    &   \nodata   & \nodata    \\
+          &  $3\times 10^{-7}$ &           18517 &    174    &   \nodata   & \nodata    \\
+          &          $10^{-7}$ &           13714 &     41    &   \nodata   & \nodata    \\
+\cutinhead{Galactic Diffuse and Isotropic Background\tablenotemark{(b)}}
+      1.5 &  $2.3\times 10^{-8}$ &           90741 &     63    &   \nodata   & \nodata     \\
+        2 &  $1.2\times 10^{-7}$ &           92161 &     60    &   \nodata   & \nodata     \\
+      2.5 &  $4.5\times 10^{-7}$ &           86226 &     47    &   \nodata   & \nodata    \\
+        3 &  $2.0\times 10^{-6}$ &           94412 &     61    &   \nodata   & \nodata    \\
+\enddata
+
+\tablenotetext{(a)}{Integral 100 \mev to 100 \gev flux.}
+\tablenotetext{(b)}{
+For the Galactic simulations, the quoted fluxes are
+the fluxes for sources placed 
+in the Galactic center. The actual fluxes are scaled by \eqnref{scale_flux_by_background}.
+}
+
+\tablecomments{
+    A list of the spectral models of the simulated point-like sources
+    which were tested for extension.  For each model, the number of
+    statistically independent simulations and the average value of \ts is
+    also tabulated.  
+    The top rows are the simulations on top of an isotropic background and
+    the bottom rows are the simulations on top of the Galactic diffuse and isotropic
+    background.
+}
+\end{deluxetable}

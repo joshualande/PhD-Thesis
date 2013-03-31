@@ -1,5 +1,5 @@
 
-\chapter{Analysis of Spatially Extended LAT Sources}
+\chapter{Analysis of Spatially Extended \Acstitle{LAT} Sources}
 \chaplabel{extended_analysis}
 
 \paperref{This chapter is based the first part of the the paper
@@ -111,16 +111,10 @@ source and unresolved closely-spaced point-like sources In
 \secref{test_2lac_sources}, we further demonstrate that our
 detection method does not misidentify point-like sources as being
 extended by testing the extension of active Galactic nuclei (AGN)
-believed to be unresolvable.  In \secref{validate_known}, we
-systematically reanalyze the twelve extended sources included in the
-2FGL catalog and in \secref{systematic_errors_on_extension}
-we describe a way to estimate systematic errors on the measured
-extension of a source.  In \secref{extended_source_search_method},
-we describe a search for new spatially extended LAT sources. Finally,
-in \secref{new_ext_srcs_section} we present the detection of the
-extension of nine spatially extended sources that were reported in the
-2FGL catalog but treated as point-like in the analysis.  Two of these
-sources have been previously analyzed in dedicated publications.
+believed to be unresolvable.  
+In \chapref{extended_search}, we take the analysis
+method developed in this chapter and use it to 
+search for new spatially-extended sources.
 
 
 \section{Analysis Method}
@@ -354,7 +348,6 @@ mentioned, all \ts, \tsext, and spectral parameters were calculated using
     \else
       \includegraphics{mc_plots/compare_disk_gauss_bw.pdf}
     \fi
-    % this plot came from /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/compare_disk_gauss/v3/plot.py
     \caption{
     A comparison of a 2D Gaussian and uniform disk spatial model
     of extended sources before and after convolving with the PSF for two
@@ -469,6 +462,44 @@ This entire procedure was performed twice, once fitting in the 1 \gev
 to 100 \gev energy range and once fitting in the 10 \gev to 100 \gev
 energy range.
 
+
+\clearpage
+\begin{figure}
+    \ifcolorfigure
+    \includegraphics{mc_plots/ts_ext_emin_1000_color.pdf}
+    \else
+    \includegraphics{mc_plots/ts_ext_emin_1000_bw.pdf}
+    \fi
+    \caption{
+    Cumulative distribution of the TS for the extension test when fitting
+    simulated point-like sources in the 1 GeV to 100 GeV energy range.
+    The four plots
+    represent simulated sources of different spectral indices and
+    the different lines (colored in the online version) 
+    represent point-like sources with different 100 \mev
+    to 100 \gev integral fluxes.  The dashed line (colored red)
+    is the cumulative
+    density function of \eqnref{ts_ext_distribution}.
+    }\figlabel{ts_ext_mc_1000}
+  \end{figure}
+
+
+\clearpage
+\begin{figure}
+    \ifcolorfigure
+    \includegraphics{mc_plots/ts_ext_emin_10000_color.pdf}
+    \else
+    \includegraphics{mc_plots/ts_ext_emin_10000_bw.pdf}
+    \fi
+    \caption{
+    The same plot as \figref{ts_ext_mc_1000} but fitting in the 10 \gev to 100 \gev energy 
+    range.
+    }\figlabel{ts_ext_mc_10000}
+  \end{figure}
+
+
+\input{chapters/extended_analysis/tables/ts_ext_num_sims.tex}
+
 For each set of spectral parameters, $\sim20,000$ statistically independent
 simulations were performed. For lower-flux spectral models, many of the
 simulations left the source insignificant ($\ts<25$)
@@ -529,6 +560,21 @@ from 1 \gev to 100 \gev at the position of the source, and $B(\text{GC})$ is the
 if the source was at the Galactic center.  For the four spectral models,
 \tabref{ts_ext_num_sims} lists $F(\text{GC})$ and the average value of \ts.
 
+\clearpage
+\begin{figure}
+    \ifcolorfigure
+    \includegraphics{mc_plots/plot_tsext_plane_color.pdf}
+    \else
+    \includegraphics{mc_plots/plot_tsext_plane_bw.pdf}
+    \fi
+    \caption{
+    Cumulative distribution of \tsext
+    for sources simulated on top of the Galactic diffuse and isotropic background.
+    }\figlabel{tsext_plane_plot}
+  \end{figure}
+
+
+
 For each spectrum, we performed $\sim90,000$ simulations.
 \figref{tsext_plane_plot} shows the cumulative density
 of \tsext for each spectrum. For small values of \tsext,
@@ -577,6 +623,28 @@ We obtained the best fit spatial parameters using \pointlike and,
 with these parameters, obtained the best fit spectral parameters 
 using \gtlike. 
 
+\clearpage
+\begin{figure}
+    \ifcolorfigure
+    \includegraphics{mc_plots/ts_comparison_w44sim_color.pdf}
+    \else
+    \includegraphics{mc_plots/ts_comparison_w44sim_bw.pdf}
+    \fi
+    \caption{
+    The distribution of \ts values when fitting 985 statistically
+    independent simulations of W44. (a) is the distribution of \ts values
+    when fitting W44 as a point-like source and (b) is the
+    distribution of \tsext when fitting the source with a uniform disk or a 
+    radially-symmetric Gaussian
+    spatial model. (c) is the distribution of the change in TS when
+    fitting the source with an elliptical disk spatial model compared to
+    fitting it with a radially-symmetric disk spatial model and (d) 
+    when fitting the source with an elliptical ring spatial model compared
+    to an elliptical disk spatial model.
+    }\figlabel{ts_comparison_w44sim}
+\end{figure}
+
+
 \figref{ts_comparison_w44sim}a 
 shows that
 the significance of W44 in the simulations is very large ($\ts\sim3500$) 
@@ -596,6 +664,24 @@ fit somewhat better assuming an elliptical ring spatial model
 compared to an elliptical disk spatial model ($\ts_\text{elliptical\
 ring}-\ts_\text{elliptical\ disk}\sim9$). This shows that the LAT has
 some additional power to resolve substructure in bright extended sources.
+
+\clearpage
+\begin{figure}
+    \ifcolorfigure
+    \includegraphics{mc_plots/bias_w44sim_color.pdf}
+    \else
+    \includegraphics{mc_plots/bias_w44sim_bw.pdf}
+    \fi
+    \caption{
+    The distribution of fit parameters
+    for the Monte Carlo simulations of W44.
+    The plots show the distribution of 
+    best fit (a) flux (b) spectral index and (c) 68\% containment
+    radius. The dashed vertical lines represent
+    the simulated values of the parameters.
+    }\figlabel{bias_w44sim}
+\end{figure}
+
 
 
 \figref{bias_w44sim}a and \figref{bias_w44sim}b clearly show that
@@ -630,6 +716,26 @@ extension test for $>100$ independent realizations of ten fluxes in
 the range.  We calculated $\langle\tsext\rangle=16$ by fitting a line
 to the flux and $\tsext$ values in the narrow range.
 
+\clearpage
+\begin{figure}
+    \ifcolorfigure
+    \includegraphics{mc_plots/index_sensitivity_color.pdf}
+    \else
+    \includegraphics{mc_plots/index_sensitivity_bw.pdf}
+    \fi
+    \caption{
+    The detection threshold to resolve an
+    extended source with a uniform disk model for a two-year exposure.  All sources have an
+    assumed power-law spectrum and the different line styles (colors in
+    the electronic version) correspond to different simulated spectral
+    indices.  The lines with no markers correspond to the detection
+    threshold using photons with energies between 100 \mev and 100 \gev,
+    while the lines with star-shaped markers correspond to the threshold
+    using photons with energies between 1 \gev and 100 \gev.
+    }\figlabel{index_sensitivity}
+  \end{figure}
+
+
 \figref{index_sensitivity} shows the threshold for sources of four
 spectral indices from 1.5 to 3 and extensions varying from $\sigma=0\fdg1$
 to $2\fdg0$.  
@@ -659,6 +765,36 @@ become increasingly large at low energy. For our extension search
 (\secref{extended_source_search_method}),
 we therefore used only photons with energies above 1 \gev.
 
+\input{chapters/extended_analysis/tables/all_sensitivity_table}
+
+\clearpage
+\begin{figure}
+    \ifcolorfigure
+    \includegraphics{mc_plots/all_sensitivity_color.pdf}
+    \else
+    \includegraphics{mc_plots/all_sensitivity_bw.pdf}
+    \fi
+    \caption{The LAT detection threshold for four spectral indices
+    and three backgrounds ($1\times$, $10\times$, and $100\times$ the
+    Sreekumar-like isotropic background) for a two-year exposure. The
+    left-hand plots are the detection threshold when using 
+    photons with energies between
+    1 \gev and 100 \gev
+    and the right-hand plots are the detection threshold when using
+    photons with energies between
+    10 \gev and 100 \gev.  The flux is integrated only in the
+    selected energy range.  Overlaid on this plot are the LAT-detected
+    extended sources placed by the magnitude of the nearby Galactic
+    diffuse emission and the energy range they were analyzed with.
+    The star-shaped markers (colored red in the electronic version)
+    are sources with a spectral index closer to 1.5, the triangular
+    markers (colored blue) an index closer to 2, and the circular markers
+    (colored green) an index closer to 2.5.  The triangular marker in plot
+    (d) below the sensitivity line is MSH\,15$-$52.
+    }\figlabel{all_sensitivity} 
+  \end{figure}
+
+
 \figref{all_sensitivity} shows the flux threshold as a function of
 source extension for different background levels ($1\times$, $10\times$,
 and $100\times$ the nominal background), different spectral indices,
@@ -675,6 +811,30 @@ Overlaid on \figref{all_sensitivity} are the LAT-detected extended
 sources that will be discussed in \secref{validate_known} and
 \secref{new_ext_srcs_section}.  The extension thresholds are tabulated in
 \tabref{all_sensitivity_table}.
+
+
+\begin{figure}
+    \ifcolorfigure
+      \includegraphics{mc_plots/time_sensitivity_color.pdf}
+    \else
+      \includegraphics{mc_plots/time_sensitivity_bw.pdf}
+    \fi
+    \caption{
+    The projected detection threshold of the LAT to extension after 10 years
+    for a power-law
+    source of spectral index 2 against 10 times the isotropic background
+    in the energy range from 1 \gev to 100 \gev (solid line colored red in the electronic
+    version) and 10 \gev to 100 \gev
+    (dashed line colored blue). The shaded gray regions represent the
+    detection threshold assuming the sensitivity improves from 2 to 10
+    years by the square root of the exposure (top edge) and linearly with
+    exposure (bottom edge).  The lower plot shows the factor increase in
+    sensitivity.  For small extended sources, the detection threshold of the LAT
+    to the extension of a source will improve by a factor larger than the square root of 
+    the exposure.
+    }\figlabel{time_sensitivity}
+  \end{figure}
+
 
 Finally, \figref{time_sensitivity} shows the projected
 detection threshold of the LAT to extension with a 10 year
@@ -762,6 +922,28 @@ extended.  All sources were simulated using the same time range as in
 isotropic background measured by EGRET, representative of the background
 near the Galactic plane.
 
+\clearpage
+\begin{figure}
+    \ifcolorfigure
+    \includegraphics{mc_plots/confusion_extended_plot_color.pdf}
+    \else
+    \includegraphics{mc_plots/confusion_extended_plot_bw.pdf}
+    \fi
+    \caption{
+    (a) and (b) are the distribution of \tsext and of \tsinc when
+    fitting simulated spatially extended sources of varying sizes as
+    both an extended source and as two point-like sources.  (c) and
+    (d) are the distribution of $\tsext-\tsinc$ for the same simulated sources.
+    (a) and (c) represent sources fit in the 1 \gev to 100 \gev energy
+    range and (b) and (d) represent sources fit in the 10 \gev to
+    100 \gev energy range.  In (c) and (d), the plus-shaped markers
+    (colored red in the electronic version) are fits where $\tsext\ge16$.
+    }\figlabel{confusion_extended_plot}
+  \end{figure}
+
+
+
+
 We did this study first in the energy range from 1 \gev to 100 \gev by
 simulating extended sources of flux $4\times10^{-9}$ \fluxunits integrated
 from 1 \gev to 100 \gev and a power-law spectral model with
@@ -778,6 +960,28 @@ of \tsext and \tsinc and
 the distribution of $\tsext-\tsinc$ as a
 function of the simulated extension of the source
 for 200 statistically independent simulations.
+
+
+\clearpage
+\begin{figure}
+    \ifcolorfigure
+    \includegraphics{mc_plots/confusion_2pts_plot_color.pdf}
+    \else
+    \includegraphics{mc_plots/confusion_2pts_plot_bw.pdf}
+    \fi
+    \caption{
+    The distribution of $\tsext-\tsinc$ when fitting two simulated
+    point-like sources of varying separations as
+    both an extended source and as two point-like sources.  (a),
+    and (b) represent simulations of two point-like sources with the
+    same spectral index and (c) and (d) represent simulations of two
+    point-like sources with different spectral indices.  (a) and (c)
+    fit the simulated sources in the 1 \gev to 100 \gev energy range
+    and (b) and (d) fit in the 10 \gev to 100 \gev energy range.
+    The plus-shaped markers (colored red in the electronic version)
+    are fits where $\tsext\ge16$.
+    }\figlabel{confusion_2pts_plot}
+  \end{figure}
 
 \figref{confusion_2pts_plot}a shows the same plot but when fitting
 two simulated point-like sources each with half of the flux of
@@ -901,6 +1105,26 @@ analysis. Source confusion may look like a spatially extended source
 and flagged 2FGL sources may correlate with unmodeled structure in
 the diffuse emission.
 
+\clearpage
+\begin{figure}
+    \ifcolorfigure
+      \includegraphics{source_plots/agn_color.pdf}
+    \else
+      \includegraphics{source_plots/agn_bw.pdf}
+    \fi
+    \caption{The cumulative density of \tsext for the 733 clean
+    AGN in 2LAC that were significant above 1 \gev calculated with \pointlike (dashed line
+    colored blue in the electronic version)
+    and with \gtlike (solid line colored black).  AGN are too far
+    and too small to be resolved by the LAT. Therefore, the cumulative
+    density of $\tsext$ is expected to follow a $\chi^2_1/2$ distribution
+    (\eqnref{ts_ext_distribution}, the dash-dotted line colored
+    red).
+    }\figlabel{agn_ts_ext}
+  \end{figure}
+
+
+
 Of the 885 clean AGN, we selected the 733 of these 2FGL sources which
 were significantly detected above 1 \gev and fit each of them for
 extension.  The cumulative density of \tsext for these AGN is compared
@@ -927,964 +1151,4 @@ empirically by fitting the distributions of gamma rays around bright AGN (see
 test are not extended is not surprising.  This validation analysis is
 not suitable to reject any hypotheses about the existence of megaparsec-scale
 halos around AGN.
-
-
-
-
-
-\clearpage
-\begin{deluxetable}{rrrrrr}
-\tabletypesize{\scriptsize}
-\tablecaption{Monte Carlo Spectral Parameters
-\tablabel{ts_ext_num_sims}
-}
-\tablecolumns{6}
-\tablewidth{0pt}
-\tablehead{
-\colhead{Spectral Index}&
-\colhead{Flux\tablenotemark{(a)}}&
-\colhead{$N_{1-100\gev}$}&
-\colhead{$\langle\ts\rangle_{1-100\gev}$}&
-\colhead{$N_{10-100\gev}$}&
-\colhead{$\langle\ts\rangle_{10-100\gev}$}\\
-\colhead{}&
-\colhead{(\fluxunits)}&
-\colhead{}&
-\colhead{}&
-\colhead{}&
-\colhead{}
-}
-
-\startdata
-\multicolumn{6}{c}{Isotropic Background} \\
-\hline
-      1.5 &  $3\times 10^{-7}$ &           18938 &  22233    &     18938   &    8084     \\
-          &          $10^{-7}$ &           19079 &   5827    &     19079   &    2258     \\
-          &  $3\times 10^{-8}$ &           19303 &   1276    &     19303   &     541     \\
-          &          $10^{-8}$ &           19385 &    303    &     19381   &     142     \\
-          &  $3\times 10^{-9}$ &           18694 &     62    &     12442   &      43     \\
-      \hline
-        2 &          $10^{-6}$ &           18760 &  22101    &     18760   &    3033     \\
-          &  $3\times 10^{-7}$ &           18775 &   4913    &     18775   &     730     \\
-          &          $10^{-7}$ &           18804 &   1170    &     18803   &     192     \\
-          &  $3\times 10^{-8}$ &           18836 &    224    &     15256   &      50     \\
-          &          $10^{-8}$ &           17060 &     50    &   \nodata   & \nodata     \\
-      \hline
-      2.5 &  $3\times 10^{-6}$ &           18597 &  19036    &     18597   &     786    \\
-          &          $10^{-6}$ &           18609 &   4738    &     18608   &     208    \\
-          &  $3\times 10^{-7}$ &           18613 &    954    &     15958   &      53    \\
-          &          $10^{-7}$ &           18658 &    203    &   \nodata   & \nodata    \\
-          &  $3\times 10^{-8}$ &           14072 &     41    &   \nodata   & \nodata    \\
-      \hline                                                
-        3 &          $10^{-5}$ &           18354 &  19466    &     18354   &     215    \\
-          &  $3\times 10^{-6}$ &           18381 &   4205    &     15973   &      54    \\
-          &          $10^{-6}$ &           18449 &    966    &   \nodata   & \nodata    \\
-          &  $3\times 10^{-7}$ &           18517 &    174    &   \nodata   & \nodata    \\
-          &          $10^{-7}$ &           13714 &     41    &   \nodata   & \nodata    \\
-\cutinhead{Galactic Diffuse and Isotropic Background\tablenotemark{(b)}}
-      1.5 &  $2.3\times 10^{-8}$ &           90741 &     63    &   \nodata   & \nodata     \\
-        2 &  $1.2\times 10^{-7}$ &           92161 &     60    &   \nodata   & \nodata     \\
-      2.5 &  $4.5\times 10^{-7}$ &           86226 &     47    &   \nodata   & \nodata    \\
-        3 &  $2.0\times 10^{-6}$ &           94412 &     61    &   \nodata   & \nodata    \\
-\enddata
-
-\tablenotetext{(a)}{Integral 100 \mev to 100 \gev flux.}
-\tablenotetext{(b)}{
-For the Galactic simulations, the quoted fluxes are
-the fluxes for sources placed 
-in the Galactic center. The actual fluxes are scaled by \eqnref{scale_flux_by_background}.
-}
-
-\tablecomments{
-    A list of the spectral models of the simulated point-like sources
-    which were tested for extension.  For each model, the number of
-    statistically independent simulations and the average value of \ts is
-    also tabulated.  
-    The top rows are the simulations on top of an isotropic background and
-    the bottom rows are the simulations on top of the Galactic diffuse and isotropic
-    background.
-}
-\end{deluxetable}
-
-\clearpage
-\begin{figure}
-    \ifcolorfigure
-    \includegraphics{mc_plots/ts_ext_emin_1000_color.pdf}
-    \else
-    \includegraphics{mc_plots/ts_ext_emin_1000_bw.pdf}
-    \fi
-    % this plot came from /u/gl/lande/work/fermi/extended_catalog/monte_carlo/ts_ext/v4/plot.py
-    \caption{
-    Cumulative distribution of the TS for the extension test when fitting
-    simulated point-like sources in the 1 GeV to 100 GeV energy range.
-    The four plots
-    represent simulated sources of different spectral indices and
-    the different lines (colored in the online version) 
-    represent point-like sources with different 100 \mev
-    to 100 \gev integral fluxes.  The dashed line (colored red)
-    is the cumulative
-    density function of \eqnref{ts_ext_distribution}.
-    }\figlabel{ts_ext_mc_1000}
-  \end{figure}
-
-\clearpage
-\begin{figure}
-    \ifcolorfigure
-    \includegraphics{mc_plots/ts_ext_emin_10000_color.pdf}
-    \else
-    \includegraphics{mc_plots/ts_ext_emin_10000_bw.pdf}
-    \fi
-    % this plot came from /u/gl/lande/work/fermi/extended_catalog/monte_carlo/ts_ext/v4/plot.py
-    \caption{
-    The same plot as \figref{ts_ext_mc_1000} but fitting in the 10 \gev to 100 \gev energy 
-    range.
-    }\figlabel{ts_ext_mc_10000}
-  \end{figure}
-
-
-\clearpage
-\begin{figure}
-    \ifcolorfigure
-    \includegraphics{mc_plots/plot_tsext_plane_color.pdf}
-    \else
-    \includegraphics{mc_plots/plot_tsext_plane_bw.pdf}
-    \fi
-    % this plot came from $tsext_plot_plane/tsext_plane_plot.py
-    \caption{
-    Cumulative distribution of \tsext
-    for sources simulated on top of the Galactic diffuse and isotropic background.
-    }\figlabel{tsext_plane_plot}
-  \end{figure}
-
-
-\clearpage
-\begin{figure}
-    \ifcolorfigure
-    \includegraphics{mc_plots/ts_comparison_w44sim_color.pdf}
-    \else
-    \includegraphics{mc_plots/ts_comparison_w44sim_bw.pdf}
-    \fi
-    % this plot came from $w44simplots/plot_ts_values.py
-    \caption{
-    The distribution of \ts values when fitting 985 statistically
-    independent simulations of W44. (a) is the distribution of \ts values
-    when fitting W44 as a point-like source and (b) is the
-    distribution of \tsext when fitting the source with a uniform disk or a 
-    radially-symmetric Gaussian
-    spatial model. (c) is the distribution of the change in TS when
-    fitting the source with an elliptical disk spatial model compared to
-    fitting it with a radially-symmetric disk spatial model and (d) 
-    when fitting the source with an elliptical ring spatial model compared
-    to an elliptical disk spatial model.
-    }\figlabel{ts_comparison_w44sim}
-\end{figure}
-
-\clearpage
-\begin{figure}
-    \ifcolorfigure
-    \includegraphics{mc_plots/bias_w44sim_color.pdf}
-    \else
-    \includegraphics{mc_plots/bias_w44sim_bw.pdf}
-    \fi
-    % this plot came from $w44simplots/plot_bias
-    \caption{
-    The distribution of fit parameters
-    for the Monte Carlo simulations of W44.
-    The plots show the distribution of 
-    best fit (a) flux (b) spectral index and (c) 68\% containment
-    radius. The dashed vertical lines represent
-    the simulated values of the parameters.
-    }\figlabel{bias_w44sim}
-\end{figure}
-
-
-\clearpage
-\begin{figure}
-    \ifcolorfigure
-    \includegraphics{mc_plots/index_sensitivity_color.pdf}
-    \else
-    \includegraphics{mc_plots/index_sensitivity_bw.pdf}
-    \fi
-    % this plot came from /u/gl/lande/work/fermi/extended_catalog/monte_carlo/sensitivity/v12/plot/plot_vs_index.py
-    \caption{
-    The detection threshold to resolve an
-    extended source with a uniform disk model for a two-year exposure.  All sources have an
-    assumed power-law spectrum and the different line styles (colors in
-    the electronic version) correspond to different simulated spectral
-    indices.  The lines with no markers correspond to the detection
-    threshold using photons with energies between 100 \mev and 100 \gev,
-    while the lines with star-shaped markers correspond to the threshold
-    using photons with energies between 1 \gev and 100 \gev.
-    }\figlabel{index_sensitivity}
-  \end{figure}
-
-\clearpage
-\begin{figure}
-    \ifcolorfigure
-    \includegraphics{mc_plots/all_sensitivity_color.pdf}
-    \else
-    \includegraphics{mc_plots/all_sensitivity_bw.pdf}
-    \fi
-    % this plot came from /u/gl/lande/work/fermi/extended_catalog/monte_carlo/sensitivity/v12/plot/plot_all.py
-    \caption{The LAT detection threshold for four spectral indices
-    and three backgrounds ($1\times$, $10\times$, and $100\times$ the
-    Sreekumar-like isotropic background) for a two-year exposure. The
-    left-hand plots are the detection threshold when using 
-    photons with energies between
-    1 \gev and 100 \gev
-    and the right-hand plots are the detection threshold when using
-    photons with energies between
-    10 \gev and 100 \gev.  The flux is integrated only in the
-    selected energy range.  Overlaid on this plot are the LAT-detected
-    extended sources placed by the magnitude of the nearby Galactic
-    diffuse emission and the energy range they were analyzed with.
-    The star-shaped markers (colored red in the electronic version)
-    are sources with a spectral index closer to 1.5, the triangular
-    markers (colored blue) an index closer to 2, and the circular markers
-    (colored green) an index closer to 2.5.  The triangular marker in plot
-    (d) below the sensitivity line is MSH\,15$-$52.
-    }\figlabel{all_sensitivity} 
-  \end{figure}
-
-  \clearpage
-  \thispagestyle{empty}
-\begin{deluxetable}{rr|rrrrrrrrrrrrrrrrrrrrr}
-\tablecolumns{22}
-\tabletypesize{\scriptsize}
-\rotate
-\tablewidth{0pt}
-\tablecaption{Extension Detection Threshold
-\tablabel{all_sensitivity_table}
-}
-\tablehead{
-\colhead{$\gamma$}&       
-\colhead{BG}&
-\colhead{$0.1$}&
-\colhead{$0.2$}&
-\colhead{$0.3$}&
-\colhead{$0.4$}&
-\colhead{$0.5$}&
-\colhead{$0.6$}&
-\colhead{$0.7$}&
-\colhead{$0.8$}&
-\colhead{$0.9$}&
-\colhead{$1.0$}&
-\colhead{$1.1$}&
-\colhead{$1.2$}&
-\colhead{$1.3$}&
-\colhead{$1.4$}&
-\colhead{$1.5$}&
-\colhead{$1.6$}&
-\colhead{$1.7$}&
-\colhead{$1.8$}&
-\colhead{$1.9$}&
-\colhead{$2.0$}
-}
-\startdata
-\multicolumn{22}{c}{E$>$1 \gev} \\
-\hline
-     1.5 &      $1\times$ &      148.1 &       23.3 &       11.3 &        8.0 &        7.2 &        6.9 &        6.7 &        6.8 &        7.1 &        7.4 &        7.6 &        7.9 &        8.1 &        8.5 &        9.2 &        9.9 &        9.1 &        9.2 &        9.0 &       10.3 \\
-         &     $10\times$ &      148.4 &       29.0 &       18.7 &       15.2 &       15.4 &       15.0 &       16.1 &       16.0 &       16.8 &       17.7 &       18.2 &       19.3 &       20.9 &       22.5 &       23.8 &       24.8 &       21.3 &       22.8 &       23.4 &       23.7 \\
-         &    $100\times$ &      186.8 &       55.0 &       43.4 &       40.7 &       41.0 &       41.8 &       40.9 &       40.9 &       42.7 &       43.6 &       38.4 &       39.9 &       40.6 &       38.4 &       36.9 &       36.3 &       37.1 &       38.8 &       37.2 &       37.6 \\
-       2 &      $1\times$ &      328.4 &       43.4 &       18.9 &       13.4 &       11.2 &       10.4 &       10.2 &       10.2 &       10.2 &       10.4 &       10.7 &       10.9 &       11.2 &       11.5 &       12.4 &       12.6 &       13.0 &       13.4 &       14.0 &       14.4 \\
-         &     $10\times$ &      341.0 &       55.9 &       32.3 &       27.6 &       26.5 &       25.4 &       25.6 &       25.9 &       27.4 &       26.8 &       27.8 &       28.7 &       29.8 &       30.1 &       31.0 &       31.5 &       31.7 &       34.0 &       34.3 &       35.9 \\
-         &    $100\times$ &      420.5 &      128.3 &       90.2 &       77.3 &       73.3 &       70.8 &       67.5 &       64.3 &       64.2 &       64.1 &       62.8 &       63.6 &       61.7 &       61.9 &       58.4 &       59.0 &       61.4 &       63.3 &       60.1 &       58.1 \\
-     2.5 &      $1\times$ &      627.1 &       75.6 &       29.8 &       19.3 &       15.5 &       13.5 &       12.8 &       12.6 &       12.5 &       12.5 &       12.6 &       12.9 &       12.9 &       13.1 &       13.5 &       13.7 &       14.3 &       14.8 &       15.2 &       15.8 \\
-         &     $10\times$ &      638.9 &       99.1 &       52.1 &       39.1 &       34.6 &       33.0 &       32.5 &       32.5 &       32.8 &       33.2 &       34.1 &       34.3 &       34.5 &       35.1 &       36.6 &       36.9 &       35.5 &       36.0 &       36.5 &       37.3 \\
-         &    $100\times$ &      795.0 &      262.1 &      140.9 &      104.3 &       90.4 &       81.2 &       77.2 &       75.1 &       69.7 &       70.9 &       66.5 &       65.6 &       64.9 &       64.0 &       58.9 &       58.1 &       60.2 &       58.4 &       57.5 &       55.8 \\
-       3 &      $1\times$ &      841.5 &      110.6 &       43.2 &       25.5 &       18.7 &       16.1 &       14.4 &       13.6 &       13.3 &       13.2 &       13.1 &       13.1 &       13.4 &       13.6 &       13.5 &       13.8 &       14.2 &       14.4 &       14.8 &       15.4 \\
-         &     $10\times$ &      921.6 &      151.3 &       69.1 &       47.8 &       40.7 &       37.1 &       35.5 &       34.5 &       35.1 &       35.5 &       35.3 &       35.3 &       35.4 &       35.5 &       36.8 &       37.6 &       35.3 &       35.4 &       36.3 &       36.6 \\
-         &    $100\times$ &     1124.1 &      282.9 &      181.1 &      119.8 &      100.7 &       91.1 &       84.3 &       77.9 &       73.3 &       71.8 &       67.6 &       66.4 &       65.5 &       63.9 &       59.0 &       58.6 &       58.8 &       57.5 &       55.4 &       54.4 \\
-\cutinhead{E$>$10 \gev}
-     1.5 &      $1\times$ &       44.6 &        8.0 &        4.3 &        3.2 &        2.7 &        2.6 &        2.5 &        2.5 &        2.4 &        2.5 &        2.5 &        2.6 &        2.7 &        2.8 &        2.9 &        2.9 &        3.1 &        3.2 &        3.3 &        3.4 \\
-         &     $10\times$ &       45.2 &        9.2 &        5.8 &        5.0 &        4.9 &        4.9 &        5.0 &        5.2 &        5.3 &        5.7 &        5.9 &        6.3 &        6.6 &        6.5 &        6.8 &        7.6 &        7.8 &        8.2 &        8.5 &        8.7 \\
-         &    $100\times$ &       47.3 &       13.4 &       11.6 &       10.6 &       10.8 &       10.8 &       12.0 &       12.7 &       13.2 &       13.7 &       15.3 &       16.1 &       17.2 &       18.2 &       18.9 &       19.5 &       20.4 &       21.0 &       21.7 &       22.9 \\
-       2 &      $1\times$ &       49.7 &        8.4 &        4.4 &        3.3 &        2.8 &        2.6 &        2.6 &        2.6 &        2.6 &        2.6 &        2.7 &        2.7 &        2.8 &        2.9 &        3.0 &        3.2 &        3.2 &        3.4 &        3.5 &        3.5 \\
-         &     $10\times$ &       48.6 &        9.5 &        6.0 &        5.2 &        5.0 &        5.2 &        5.2 &        5.3 &        5.4 &        5.8 &        6.4 &        6.6 &        7.0 &        7.1 &        7.5 &        8.0 &        8.3 &        8.6 &        9.0 &        9.2 \\
-         &    $100\times$ &       51.8 &       14.7 &       11.8 &       11.5 &       11.5 &       11.9 &       13.2 &       14.0 &       14.3 &       15.3 &       16.2 &       16.9 &       18.4 &       19.2 &       19.8 &       21.0 &       22.0 &       22.8 &       23.2 &       24.3 \\
-     2.5 &      $1\times$ &       53.1 &        9.1 &        4.5 &        3.3 &        2.8 &        2.7 &        2.6 &        2.5 &        2.5 &        2.6 &        2.7 &        2.7 &        2.8 &        2.8 &        2.9 &        3.1 &        3.2 &        3.3 &        3.5 &        3.6 \\
-         &     $10\times$ &       53.7 &       10.5 &        6.3 &        5.4 &        5.1 &        5.1 &        5.3 &        5.4 &        5.7 &        6.0 &        6.3 &        6.6 &        6.8 &        6.9 &        7.5 &        8.1 &        8.3 &        8.6 &        8.9 &        9.2 \\
-         &    $100\times$ &       57.0 &       15.6 &       12.7 &       11.9 &       11.8 &       12.2 &       13.1 &       14.3 &       14.6 &       15.2 &       16.3 &       17.0 &       18.8 &       19.2 &       19.9 &       21.0 &       21.9 &       22.3 &       23.3 &       23.7 \\
-       3 &      $1\times$ &       55.5 &        9.4 &        4.8 &        3.4 &        2.9 &        2.7 &        2.6 &        2.5 &        2.5 &        2.5 &        2.6 &        2.7 &        2.7 &        2.8 &        2.9 &        3.0 &        3.1 &        3.2 &        3.4 &        3.4 \\
-         &     $10\times$ &       56.0 &       10.5 &        6.2 &        5.3 &        5.1 &        5.1 &        5.1 &        5.3 &        5.5 &        5.7 &        5.9 &        6.4 &        6.4 &        6.6 &        7.0 &        7.8 &        8.0 &        8.3 &        8.6 &        8.9 \\
-         &    $100\times$ &       60.3 &       16.2 &       12.7 &       11.7 &       11.8 &       12.2 &       12.6 &       13.8 &       14.2 &       14.6 &       15.8 &       16.5 &       17.6 &       18.5 &       19.4 &       19.8 &       20.7 &       21.0 &       21.8 &       22.5 \\
-\enddata
-\tablecomments{
-      The detection threshold to resolve spatially extended
-      sources with a uniform disk spatial model for a two-year exposure
-      The threshold is calculated for
-      sources of varying energy
-      ranges, spectral indices, and background levels.  The sensitivity
-      was calculated against
-      a Sreekumar-like isotropic background
-      and the second column is the factor that the simulated background
-      was scaled by. The remaining columns are varying sizes of the source. 
-      The table quotes
-      integral fluxes in the analyzed energy range (1 \gev to 100 \gev or 10 \gev to 100
-      \gev) in units of $10^{-10}$ \fluxunits.
-      }
-\end{deluxetable}
-
-
-
-
-\begin{figure}
-    \ifcolorfigure
-      \includegraphics{mc_plots/time_sensitivity_color.pdf}
-    \else
-      \includegraphics{mc_plots/time_sensitivity_bw.pdf}
-    \fi
-    % this plot came from /u/gl/lande/work/fermi/extended_catalog/monte_carlo/sensitivity/v12/plot/plot_vs_time.py
-    \caption{
-    The projected detection threshold of the LAT to extension after 10 years
-    for a power-law
-    source of spectral index 2 against 10 times the isotropic background
-    in the energy range from 1 \gev to 100 \gev (solid line colored red in the electronic
-    version) and 10 \gev to 100 \gev
-    (dashed line colored blue). The shaded gray regions represent the
-    detection threshold assuming the sensitivity improves from 2 to 10
-    years by the square root of the exposure (top edge) and linearly with
-    exposure (bottom edge).  The lower plot shows the factor increase in
-    sensitivity.  For small extended sources, the detection threshold of the LAT
-    to the extension of a source will improve by a factor larger than the square root of 
-    the exposure.
-    }\figlabel{time_sensitivity}
-  \end{figure}
-
-\clearpage
-\begin{figure}
-    \ifcolorfigure
-    \includegraphics{mc_plots/confusion_extended_plot_color.pdf}
-    \else
-    \includegraphics{mc_plots/confusion_extended_plot_bw.pdf}
-    \fi
-    % this plot came from 
-    \caption{
-    (a) and (b) are the distribution of \tsext and of \tsinc when
-    fitting simulated spatially extended sources of varying sizes as
-    both an extended source and as two point-like sources.  (c) and
-    (d) are the distribution of $\tsext-\tsinc$ for the same simulated sources.
-    (a) and (c) represent sources fit in the 1 \gev to 100 \gev energy
-    range and (b) and (d) represent sources fit in the 10 \gev to
-    100 \gev energy range.  In (c) and (d), the plus-shaped markers
-    (colored red in the electronic version) are fits where $\tsext\ge16$.
-    }\figlabel{confusion_extended_plot}
-  \end{figure}
-
-
-\clearpage
-\begin{figure}
-    \ifcolorfigure
-    \includegraphics{mc_plots/confusion_2pts_plot_color.pdf}
-    \else
-    \includegraphics{mc_plots/confusion_2pts_plot_bw.pdf}
-    \fi
-    % this plot came from 
-    \caption{
-    The distribution of $\tsext-\tsinc$ when fitting two simulated
-    point-like sources of varying separations as
-    both an extended source and as two point-like sources.  (a),
-    and (b) represent simulations of two point-like sources with the
-    same spectral index and (c) and (d) represent simulations of two
-    point-like sources with different spectral indices.  (a) and (c)
-    fit the simulated sources in the 1 \gev to 100 \gev energy range
-    and (b) and (d) fit in the 10 \gev to 100 \gev energy range.
-    The plus-shaped markers (colored red in the electronic version)
-    are fits where $\tsext\ge16$.
-    }\figlabel{confusion_2pts_plot}
-  \end{figure}
-
-
-\clearpage
-\begin{figure}
-    \ifcolorfigure
-      \includegraphics{source_plots/agn_color.pdf}
-    \else
-      \includegraphics{source_plots/agn_bw.pdf}
-    \fi
-    % this plot came from /u/gl/lande/work/fermi/extended_catalog/2FGL/agn/v6/agn.py
-    \caption{The cumulative density of \tsext for the 733 clean
-    AGN in 2LAC that were significant above 1 \gev calculated with \pointlike (dashed line
-    colored blue in the electronic version)
-    and with \gtlike (solid line colored black).  AGN are too far
-    and too small to be resolved by the LAT. Therefore, the cumulative
-    density of $\tsext$ is expected to follow a $\chi^2_1/2$ distribution
-    (\eqnref{ts_ext_distribution}, the dash-dotted line colored
-    red).
-    }\figlabel{agn_ts_ext}
-  \end{figure}
-
-
-\begin{deluxetable}{lrrrrrrrr}
-\tablecolumns{9}
-\rotate
-\tabletypesize{\footnotesize}
-\tablewidth{0pt}
-\tablecaption{Analysis of the twelve extended sources included in the 2FGL catalog
-\tablabel{known_extended_sources}
-}
-\tablehead{
-\colhead{Name}&
-\colhead{\glon}&
-\colhead{\glat}&
-\colhead{$\sigma$}&
-\colhead{\ts}&
-\colhead{\tsext}&
-\colhead{Pos Err}&
-\colhead{Flux\tablenotemark{(a)}}&
-\colhead{Index}\\
-\colhead{}&
-\colhead{(deg.)}&
-\colhead{(deg.)}&
-\colhead{(deg.)}&
-\colhead{}&
-\colhead{}&
-\colhead{(deg.)}&
-\colhead{}&
-\colhead{}
-}
-
-\startdata
-\multicolumn{9}{c}{E$>$1 \gev} \\
-\hline
-SMC                                  &     302.59 &   $-$44.42 & $  1.32 \pm   0.15 \pm   0.31 $ &       95.0 &       52.9 &   0.14 & $    2.7 \pm     0.3$ & $   2.48 \pm    0.19$  \\
-LMC                                  &     279.26 &   $-$32.31 & $  1.37 \pm   0.04 \pm   0.11 $ &     1127.9 &      909.9 &   0.04 & $   13.6 \pm     0.6$ & $   2.43 \pm    0.06$  \\
-IC~443                               &     189.05 &       3.04 & $  0.35 \pm   0.01 \pm   0.04 $ &    10692.9 &      554.4 &   0.01 & $   62.4 \pm     1.1$ & $   2.22 \pm    0.02$  \\
-Vela X                               &     263.34 &    $-$3.11 & $                         0.88$ &            &            &        &                       &                        \\
-Centaurus A                          &     309.52 &      19.42 &                        $\sim10$ &            &            &        &                       &                        \\
-W28                                  &       6.50 &    $-$0.27 & $  0.42 \pm   0.02 \pm   0.05 $ &     1330.8 &      163.8 &   0.01 & $   56.5 \pm     1.8$ & $   2.60 \pm    0.03$  \\
-W30                                  &       8.61 &    $-$0.20 & $  0.34 \pm   0.02 \pm   0.02 $ &      464.8 &       76.0 &   0.02 & $   29.1 \pm     1.5$ & $   2.56 \pm    0.05$  \\
-W44                                  &      34.69 &    $-$0.39 & $  0.35 \pm   0.02 \pm   0.02 $ &     1917.0 &      224.8 &   0.01 & $   71.2 \pm     0.5$ & $   2.66 \pm    0.00$  \\
-W51C                                 &      49.12 &    $-$0.45 & $  0.27 \pm   0.02 \pm   0.04 $ &     1823.4 &      118.9 &   0.01 & $   37.2 \pm     1.3$ & $   2.34 \pm    0.03$  \\
-Cygnus Loop                          &      74.21 &    $-$8.48 & $  1.71 \pm   0.05 \pm   0.06 $ &      357.9 &      246.0 &   0.06 & $   11.4 \pm     0.7$ & $   2.50 \pm    0.10$  \\
-\cutinhead{E$>$10 \gev}
-MSH\,15$-$52\tablenotemark{(b)}      &     320.39 &    $-$1.22 & $  0.21 \pm   0.04 \pm   0.04 $ &       76.3 &        6.6 &   0.03 & $    0.6 \pm     0.1$ & $   2.20 \pm    0.22$  \\
-HESS\,J1825$-$137\tablenotemark{(b)} &      17.56 &    $-$0.47 & $  0.65 \pm   0.04 \pm   0.02 $ &       59.7 &       33.8 &   0.05 & $    1.6 \pm     0.2$ & $   1.63 \pm    0.22$  \\
-\enddata
-
-\tablenotetext{(a)}{
-Integral Flux in units of $10^{-9}$ \fluxunits and integrated in the fit
-energy range (either 1 \gev to 100 \gev or 10 \gev to 100 \gev).
-}
-\tablenotetext{(b)}{
-The discrepancy in the best fit spectra of MSH\,15$-$52 and HESS\,J1825$-$137
-compared to \cite{abdo_2010a_detection-energetic} and
-\cite{grondin_2011_detection-pulsar} is due to fitting over a different energy range.
-}
-
-\tablecomments{
-All sources were fit using a radially-symmetric uniform disk spatial model.
-\glon and \glat are Galactic longitude
-and latitude of the best fit extended source respectively.  The first
-error on $\sigma$ is statistical and the second is systematic (see
-\secref{systematic_errors_on_extension}).  
-The errors on the integral fluxes and the spectral indices
-are statistical only.
-Pos Err is the error on
-the position of the source.  Vela X and the Centaurus A Lobes were
-not fit in our analysis but are included for completeness.
-}
-\end{deluxetable}
-
-
-
-\begin{figure}
-  \ifcolorfigure
-    \includegraphics{ic443_plots/res_tsmap_ic443_color.pdf}
-    \else
-    \includegraphics{ic443_plots/res_tsmap_ic443_bw.pdf}
-    \fi
-  % plot from /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/res_tsmap_ic443/v2
-
-  \caption{
-  A TS map generated for the region around the SNR 
-  IC~443 using 
-  photons with energies between
-  1 \gev and 100 \gev.  (a) TS map after
-  subtracting IC~443 modeled as a point-like source. (b) same as (a), but
-  IC~443 modeled as an extended source. The cross represents the best
-  fit position of IC~443.
-  }
-  \figlabel{res_tsmaps}
-\end{figure}
-
-\clearpage
-\begin{figure}
-    \ifcolorfigure
-    \includegraphics{source_plots/example_bad_fit_color.pdf}
-    \else
-    \includegraphics{source_plots/example_bad_fit_bw.pdf}
-    \fi
-    % taken from /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/example_bad_fit/v3/run.py
-    \caption{
-    A diffuse-emission-subtracted 1 \gev to 100 \gev counts map of the
-    region around 2FGL\,J1856.2+0450c smoothed by a 0\fdg1 2D Gaussian
-    kernel. The plus-shaped marker and circle (colored red in
-    the online version) represent the center and size of the source
-    fit with a
-    radially-symmetric uniform disk spatial model.  The black
-    crosses represent the positions of other 2FGL sources.  The extension
-    is statistically significant, but the extension encompasses many 2FGL
-    sources and the emission does not look to be uniform. Although
-    the fit is statistically significant, it likely corresponds to
-    residual features of inaccurately modeled diffuse emission picked
-    up by the fit. 
-    }
-    \figlabel{example_bad_fit}
-\end{figure}
-
-
-
-\clearpage
-\thispagestyle{empty}
-\begin{deluxetable}{lrrrrrrrrl}
-\tablecolumns{10}
-\tabletypesize{\small}
-\rotate
-\tablewidth{0pt}
-\tablecaption{Extension fit for the nine additional extended sources
-\tablabel{new_ext_srcs_table}
-}
-\tablehead{
-\colhead{Name}&
-\colhead{\glon}&
-\colhead{\glat}&
-\colhead{$\sigma$}&
-\colhead{\ts}&
-\colhead{\tsext}&
-\colhead{Pos Err}&
-\colhead{Flux\tablenotemark{(a)}}&
-\colhead{Index}&
-\colhead{Counterpart}\\
-\colhead{}&
-\colhead{(deg.)}&
-\colhead{(deg.)}&
-\colhead{(deg.)}&
-\colhead{}&
-\colhead{}&
-\colhead{(deg.)}&
-\colhead{}&
-\colhead{}&
-\colhead{}
-}
-
-\startdata
-\multicolumn{10}{c}{E$>$1 \gev} \\
-\hline
-2FGL\,J0823.0$-$4246                       &     260.32 &    $-$3.28 & $  0.37 \pm   0.03 \pm   0.02 $ &      322.2 &       48.0 &   0.02 & $    8.4 \pm     0.6$ & $   2.21 \pm    0.09$ &                  Puppis A \\
-2FGL\,J1627.0$-$2425c                      &     353.07 &      16.80 & $  0.42 \pm   0.05 \pm   0.16 $ &      139.9 &       32.4 &   0.04 & $    6.3 \pm     0.6$ & $   2.50 \pm    0.14$ &                 Ophiuchus \\
-\cutinhead{E$>$10 \gev}
-2FGL\,J0851.7$-$4635                       &     266.31 &    $-$1.43 & $  1.15 \pm   0.08 \pm   0.02 $ &      116.6 &       86.8 &   0.07 & $    1.3 \pm     0.2$ & $   1.74 \pm    0.21$ &                  Vela Jr. \\
-2FGL\,J1615.0$-$5051                       &     332.37 &    $-$0.13 & $  0.32 \pm   0.04 \pm   0.01 $ &       50.4 &       16.7 &   0.04 & $    1.0 \pm     0.2$ & $   2.19 \pm    0.28$ &         HESS\,J1616$-$508 \\
-2FGL\,J1615.2$-$5138                       &     331.66 &    $-$0.66 & $  0.42 \pm   0.04 \pm   0.02 $ &       76.1 &       46.5 &   0.04 & $    1.1 \pm     0.2$ & $   1.79 \pm    0.26$ &         HESS\,J1614$-$518 \\
-2FGL\,J1632.4$-$4753c                      &     336.52 &       0.12 & $  0.35 \pm   0.04 \pm   0.02 $ &       64.4 &       26.9 &   0.04 & $    1.4 \pm     0.2$ & $   2.66 \pm    0.30$ &         HESS\,J1632$-$478 \\
-2FGL\,J1712.4$-$3941\tablenotemark{(b)}    &     347.26 &    $-$0.53 & $  0.56 \pm   0.04 \pm   0.02 $ &       59.4 &       38.5 &   0.05 & $    1.2 \pm     0.2$ & $   1.87 \pm    0.22$ &        RX\,J1713.7$-$3946 \\
-2FGL\,J1837.3$-$0700c                      &      25.08 &       0.13 & $  0.33 \pm   0.07 \pm   0.05 $ &       47.0 &       18.5 &   0.07 & $    1.0 \pm     0.2$ & $   1.65 \pm    0.29$ &         HESS\,J1837$-$069 \\
-2FGL\,J2021.5+4026                         &      78.24 &       2.20 & $  0.63 \pm   0.05 \pm   0.04 $ &      237.2 &      128.9 &   0.05 & $    2.0 \pm     0.2$ & $   2.42 \pm    0.19$ &            $\gamma$-Cygni \\
-\enddata
-
-\tablenotetext{(a)}{
-Integral Flux in units of $10^{-9}$ \fluxunits and integrated in the fit
-energy range (either 1 \gev to 100 \gev or 10 \gev to 100 \gev).
-}
-
-\tablenotetext{(b)}{
-The discrepancy in the best fit spectra of 2FGL\,J1712.4$-$3941 compared
-to \cite{abdo_2011a_observations-young} is due to fitting over a different energy range.
-}
-
-
-\tablecomments{
-    The columns in this table have the same meaning as those in
-    \tabref{known_extended_sources}.
-    RX\,J1713.7$-$3946 and Vela Jr. were previously studied in dedicated publications \citep{abdo_2011a_observations-young,tanaka_2011a_gamma-ray-observations}.
-}
-\end{deluxetable}
-
-
-
-\clearpage
-\thispagestyle{empty}
-\begin{deluxetable}{lrrrrrrrrrr}
-  \tabletypesize{\small}
-  \tablecolumns{11}
-  \rotate
-  \tablewidth{0pt}
-  \tablecaption{Dual localization, alternative PSF, and alternative approach to modeling the diffuse emission
-  \tablabel{alt_diff_model_results}
-  }
-  \tablehead{
-  \colhead{Name}&
-  \colhead{$\tspointlike$}&
-  \colhead{$\tsgtlike$}&
-  \colhead{$\tsaltdiff$}&
-  \colhead{$\tsextpointlike$}&
-  \colhead{$\tsextgtlike$}&
-  \colhead{$\tsextaltdiff$}&
-  \colhead{$\sigma$}&
-  \colhead{$\sigma_\altdiff$}&
-  \colhead{$\sigma_\altpsf$}&
-  \colhead{$\tsinc$}\\
-  \colhead{}&
-  \colhead{}&
-  \colhead{}&
-  \colhead{}&
-  \colhead{}&
-  \colhead{}&
-  \colhead{}&
-  \colhead{(deg.)}&
-  \colhead{(deg.)}&
-  \colhead{(deg.)}&
-  \colhead{}
-  }
-  \startdata
-\multicolumn{11}{c}{E$>$1 \gev} \\
-\hline
-2FGL\,J0823.0$-$4246      &                331.9 &                322.2 &                356.0 &                 60.0 &                 48.0 &                 56.0 &                 0.37 &                 0.39 &                 0.39 &                 23.0 \\
-2FGL\,J1627.0$-$2425c     &                154.8 &                139.9 &                105.7 &                 39.4 &                 32.4 &                 24.8 &                 0.42 &                
- 0.40 &                 0.58 &                 24.5 \\
-\cutinhead{E$>$10 \gev}
-2FGL\,J0851.7$-$4635      &                115.2 &                116.6 &                123.1 &                 83.9 &                 86.8 &                 89.8 &                 1.15 &                 1.16 &                 1.17 &                 15.5 \\
-2FGL\,J1615.0$-$5051\tablenotemark{(a)} &                 48.2 &                 50.4 &                 56.6 &                 15.2 &                 16.7 &                 17.8 &                 0.32 &                 0.33 &                 0.32 &                 13.1 \\
-2FGL\,J1615.2$-$5138      &                 75.0 &                 76.1 &                 83.8 &                 42.9 &                 46.5 &                 54.1 &                 0.42 &                 0.43 &                 0.43 &                 35.1 \\
-2FGL\,J1632.4$-$4753c     &                 64.5 &                 64.4 &                 66.8 &                 23.0 &                 26.9 &                 25.5 &                 0.35 &                 0.36 &                 0.37 &                 10.9 \\
-2FGL\,J1712.4$-$3941      &                 59.8 &                 59.4 &                 39.9 &                 38.4 &                 38.5 &                 30.7 &                 0.56 &                 0.55 &                 0.53 &                  2.7 \\
-2FGL\,J1837.3$-$0700c     &                 44.5 &                 47.0 &                 39.2 &                 17.6 &                 18.5 &                 16.1 &                 0.33 &                 0.32 &                 0.38 &                 10.8 \\
-2FGL\,J2021.5+4026        &                239.1 &                237.2 &                255.8 &                139.1 &                128.9 &                138.0 &                 0.63 &                 0.65 &                 0.59 &                 37.3 \\
-  \enddata
-
-\tablenotetext{(a)}{
-Using \pointlike, \tsext for 2FGL\,J1615.0$-$5051 was sligthly below
-16 when the source was fit in the 10 \gev to 100 \gev energy range. To
-confirm the extension measure, the extension was refit in \pointlike
-using a slightly lower energy.  In the 5.6 \gev to 100 \gev energy range,
-we obtained a consistent extension and \tsext=28.0.  In the rest of
-this paper, we quote the $E>10 \gev$ results for consistency with the
-other sources.
-}
-
-\tablecomments{
-$\tspointlike$, $\tsgtlike$, and $\tsaltdiff$ are the test
-statistic values from \pointlike, \gtlike, and \gtlike with the alternative
-approach to modeling the diffuse emission respectively.  $\tsextpointlike$, $\tsextgtlike$,
-and $\tsextaltdiff$ are the TS values from \pointlike, \gtlike, and \gtlike with the alternative 
-approach to modeling the diffuse emission respectively.  $\sigma$, $\sigma_\altdiff$, and $\sigma_\altpsf$
-are the fit sizes assuming
-a radially-symmetric uniform disk model
-with the standard analysis, the alternative 
-approach to modeling the diffuse emission, and the alternative PSF respectively.  
-}
-\end{deluxetable}
-
-\clearpage
-\begin{deluxetable}{lr}
-\tablecolumns{2}
-\tablewidth{0pt}
-\tablecaption{Nearby Residual-induced Sources
-\tablabel{fake_2fgl_sources}
-}
-\tablehead{
-\colhead{Extended Source}&
-\colhead{Residual-induced Sources}
-}
-\startdata
-\hline
-2FGL\,J0823.0$-$4246    & 2FGL\,J0821.0$-$4254, 2FGL\,J0823.4$-$4305 \\
-2FGL\,J1627.0$-$2425c   & \nodata \\
-2FGL\,J0851.7$-$4635    & 2FGL\,J0848.5$-$4535, 2FGL\,J0853.5$-$4711, 2FGL\,J0855.4$-$4625 \\
-2FGL\,J1615.0$-$5051    & \nodata \\
-2FGL\,J1615.2$-$5138    & 2FGL\,J1614.9$-$5212  \\
-2FGL\,J1632.4$-$4753c   & 2FGL\,J1634.4$-$4743c \\
-2FGL\,J1712.4$-$3941    & \nodata \\
-2FGL\,J1837.3$-$0700c   & 2FGL\,J1835.5$-$0649 \\
-2FGL\,J2021.5+4026      & 2FGL\,J2019.1+4040 \\
-\enddata
-
-
-\tablecomments{
-For each new extended source, we list nearby 2FGL
-soruces that we have concluded here correspond to residuals induced by not
-modeling the extensions of nearby extended sources.
-}
-\end{deluxetable}
-
-
-
-\begin{figure}
-    \ifcolorfigure
-      \includegraphics{source_plots/source_Puppis_A_color.pdf}
-    \else
-      \includegraphics{source_plots/source_Puppis_A_bw.pdf}
-    \fi
-  % this plot came from 
-  % /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/source_plots/1FGL_J0823.3-4248/v8/run.py
-  \caption{A diffuse-emission-subtracted 1 \gev to 100 \gev counts map
-  of 2FGL\,J0823.0$-$4246 smoothed by a 0\fdg1 2D
-  Gaussian kernel.  The triangular marker 
-  (colored red in the online version)
-  represents the 2FGL position of this source.  The plus-shaped
-  marker and the circle (colored
-  red) represent 
-  the best fit position and extension of this source assuming a
-  radially-symmetric uniform disk model.  The two 
-  star-shaped markers (colored
-  green) represent 2FGL sources that were
-  removed from the background model.
-  From left to right, these sources are 2FGL\,J0823.4$-$4305 and 2FGL\,J0821.0$-$4254.
-  The lower right inset is the model predicted emission from a point-like
-  source with the same spectrum as 2FGL\,J0823.4$-$4305 smoothed by the
-  same kernel.  This source is spatially coincident with the Puppis A
-  SNR. The light blue contours correspond to the X-ray image of Puppis
-  A observed by \rosat \citep{petre_1996a_central-stellar}.
-  }\figlabel{1FGL_J0823.3-4248}
-\end{figure}
-
-\clearpage
-\begin{figure}
-    \ifcolorfigure
-      \includegraphics{summary_plots/snr_seds_color.pdf}
-    \else
-      \includegraphics{summary_plots/snr_seds_bw.pdf}
-    \fi
-    % this plot came from /u/gl/lande/work/fermi/extended_catalog/2FGL/seds/v4/plot_seds/plot_snr_seds.py
-    \caption{
-    The spectral energy distribution of the extended sources 
-    Puppis A (2FGL\,J0823.0$-$4246) and $\gamma$-Cygni 
-    (2FGL\,J2021.5+4026).
-    The lines (colored red in the online version)
-    are the best fit power-law spectral models of
-    these sources. Puppis A has a spectral index of
-    $2.21\pm0.09$ and $\gamma$-Cygni has an
-    index of $2.42\pm0.19$.
-    The spectral errors are statistical only.
-    The upper limit is at the 95\% confidence level.
-    }
-    \figlabel{snr_seds}
-  \end{figure}
-
-
-
-
-\begin{figure}
-    \ifcolorfigure
-      \includegraphics{source_plots/source_Vela_Jr_color.pdf}
-    \else
-      \includegraphics{source_plots/source_Vela_Jr_bw.pdf}
-    \fi
-  % this plot came from 
-  % /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/source_plots/Vela_Jr/v8/run.py
-  \caption{A diffuse-emission-subtracted 10 \gev to 100 \gev counts map of
-  2FGL\,J0851.7$-$4635 smoothed by a 0\fdg25 2D Gaussian
-  kernel. The triangular marker (colored red in the electronic version)
-  represents the 2FGL position of this source.  The plus-shaped marker
-  and the circle (colored red) are the best fit position and extension of
-  this source assuming a radially-symmetric uniform disk model.
-  The three black crosses represent background 2FGL sources.
-  The three star-shaped markers (colored green) represent other 2FGL sources
-  that were removed from the background model.
-  They are (from left to right) 2FGL\,J0853.5$-$4711, 2FGL\,J0855.4$-$4625, and 
-  2FGL\,J0848.5$-$4535.
-  The circular and square-shaped
-  marker (colored blue) represents the 2FGL and relocalized position of another 2FGL source.  
-  This extended source is spatially
-  coincident with the Vela Jr. SNR.  The contours (colored light blue)
-  correspond to the \tev image of Vela Jr.
-  \citep{aharonian_2007a_h.e.s.s.-observations}.
-  }\figlabel{Vela_Jr}
-\end{figure}
-
-\begin{figure}
-    \ifcolorfigure
-      \includegraphics{source_plots/source_HESS_J1614-518_color.pdf}
-    \else
-      \includegraphics{source_plots/source_HESS_J1614-518_bw.pdf}
-    \fi
-  % this plot came from 
-  % /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/source_plots/1FGL_J1613.6-5100c/v8/run.py
-  \caption{
-    A diffuse-emission-subtracted 10 \gev to 100 \gev counts
-    map of 2FGL\,J1615.0$-$5051 (upper left)
-    and 2FGL\,J1615.2$-$5138 (lower right) smoothed by a 0\fdg1
-    2D Gaussian kernel.  The triangular markers (colored red in the
-    electronic version) represent the 2FGL positions of these sources.
-    The cross-shaped markers and the
-    circles (colored red) represent the best fit
-    positions and extensions of these sources assuming a radially
-    symmetric uniform disk model.  
-    The two black crosses represent  background 2FGL sources and
-    the star-shaped
-    marker (colored green) represents 2FGL J1614.9-5212, another 2FGL
-    source that was removed from the background
-    model. The contours (colored light blue) correspond to the \tev
-    image of HESS\,J1616$-$508 (left) and HESS\,J1614$-$518 (right)
-    \citep{aharonian_2006_h.e.s.s.-survey}.   
-    }\figlabel{1FGL_J1613.6-5100c}
-\end{figure}
-
-
-\clearpage
-\begin{figure}
-    \ifcolorfigure
-      \includegraphics{summary_plots/hess_seds_color.pdf}
-    \else
-      \includegraphics{summary_plots/hess_seds_bw.pdf}
-    \fi
-    % this plot came from /u/gl/lande/work/fermi/extended_catalog/2FGL/seds/v4/plot_seds/plot_hess_seds.py
-    \caption{
-    The spectral energy distribution of four extended
-    sources associated with unidentified
-    extended \tev sources.  The black points
-    with circular markers are obtained by the LAT. The points with
-    plus-shaped markers (colored red in the electronic version) are
-    for the associated H.E.S.S sources.  (a) the
-    LAT SED of 2FGL\,J1615.0$-$5051 together with the H.E.S.S. SED
-    of HESS\,J1616$-$508. (b) 2FGL\,J1615.2$-$5138
-    and HESS\,J1614$-$518. (c) 2FGL\,J1632.4$-$4753c
-    and HESS\,J1632$-$478. (d) 2FGL\,J1837.3$-$0700c
-    and HESS\,J1837$-$069. The H.E.S.S. data points are from
-    \citep{aharonian_2006_h.e.s.s.-survey}. Both LAT and H.E.S.S. spectral errors are
-    statistical only.}
-    \figlabel{hess_seds}
-  \end{figure}
-
-\begin{figure}
-    \ifcolorfigure
-      \includegraphics{source_plots/source_Ophiuchus_color.pdf}
-    \else
-      \includegraphics{source_plots/source_Ophiuchus_bw.pdf}
-    \fi
-  % this plot came from 
-  % /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/source_plots/1FGL_J1628.6-2419c/v8/run.py
-  \caption{
-  A diffuse-emission-subtracted 1 \gev to 100 \gev counts map of (a) the region
-  around 2FGL\,J1627.0$-$2425 smoothed by a 0\fdg1 2D Gaussian kernel and (b)
-  with the emission from 2FGL\,J1625.7$-$2526
-  subtracted.  The triangular marker 
-  (colored red in the
-  online version) represents the 2FGL position of this source.
-  The plus-shaped marker and the circle (colored red) 
-  represent the best fit position and extension of this
-  source assuming a radially-symmetric uniform disk model
-  and the black cross represents a background 2FGL source. 
-  The
-  contours in (a) correspond to the 100 $\mu$m image observed by
-  IRAS \citep{young_1986a_high-resolution-observations}.  The contours in (b) correspond to
-  CO ($J=1\rightarrow 0$) emission integrated from $-$8 $\km\,\second^{-1}$
-  to 20 $\km\,\second^{-1}$.  They are from \cite{de-geus_1990a_survey-clouds}, were cleaned using
-  the moment-masking technique \citep{dame_2011a_optimization-moment}, and have
-  been smoothed by a 0\fdg25 2D Gaussian kernel.
-  }\figlabel{1FGL_J1628.6-2419c}
-\end{figure}
-
-\begin{figure}
-    \ifcolorfigure
-      \includegraphics{source_plots/source_HESS_J1632-478_color.pdf}
-    \else
-      \includegraphics{source_plots/source_HESS_J1632-478_bw.pdf}
-    \fi
-  % this plot came from 
-  % /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/source_plots/1FGL_J1632.9-4802c/v8/run.py
-  \caption{
-  A diffuse-emission-subtracted 10 \gev to 100 \gev counts map of
-  2FGL\,J1632.4$-$4753c (a) smoothed by a 0\fdg1 2D Gaussian
-  kernel and (b) with the emission from the background sources subtracted.  
-  The triangular marker (colored red in the electronic version)
-  represents the 2FGL position of this source.  The plus-shaped marker
-  and the circle (colored red) are the best fit position and extension of
-  2FGL\,J1632.4$-$4753c assuming a radially-symmetric uniform disk model.  
-  The four black crosses represent background 2FGL
-  sources subtracted in (b).  The 
-  circular and square-shaped markers (colored blue) represent 
-  the 2FGL and relocalized positions respectively of two
-  additional background 2FGL sources subtracted in (b).
-  The star-shaped marker (colored green) represents 
-  2FGL\,J1634.4$-$4743c, another 2FGL source that was removed from the background model.
-  The contours (colored light blue) correspond to the \tev image of
-  HESS\,J1632$-$478 \citep{aharonian_2006_h.e.s.s.-survey}.
-  }\figlabel{1FGL_J1632.9-4802c}
-\end{figure}
-
-\begin{figure}
-    \ifcolorfigure
-      \includegraphics{source_plots/source_RX_J1713d7-3946_color.pdf}
-    \else
-      \includegraphics{source_plots/source_RX_J1713d7-3946_bw.pdf}
-    \fi
-    % this plot came from
-  % /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/source_plots/RX_J1713.7-3946/v8/run.py
-  \caption{
-  A diffuse-emission-subtracted 10 \gev to 100 \gev counts map
-  of 2FGL\,J1712.4$-$3941 (a) smoothed by a 0\fdg15 2D
-  Gaussian kernel and (b) with the emission from the background sources
-  subtracted.  This source is spatially coincident with RX\,J1713.7$-$3946
-  and was recently studied in \cite{abdo_2011a_observations-young}.  The triangular marker
-  (colored red in the online version) represents the 2FGL position of
-  this source.  The plus-shaped marker and the circle (colored red) are
-  the best fit position and extension of this source assuming a radially
-  symmetric uniform disk model.  
-  The two black crosses represent background 2FGL sources subtracted in (b).
-  The contours (colored light blue)
-  correspond to the \tev image \citep{aharonian_2007a_primary-particle}.  
-  }\figlabel{2FGL_J1712.4-3941}
-\end{figure}
-
-
-\begin{figure}
-    \ifcolorfigure
-      \includegraphics{source_plots/source_HESS_J1837-069_color.pdf}
-    \else
-      \includegraphics{source_plots/source_HESS_J1837-069_bw.pdf}
-    \fi
-  % this plot came from 
-  % /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/source_plots/1FGL_J1837.5-0659c/v8/run.py
-  \caption{
-  A diffuse-emission-subtracted 10 \gev to 100 \gev counts map of the
-  region around 2FGL\,J1837.3$-$0700c (a) smoothed by a 0\fdg15 2D Gaussian
-  kernel and (b) with the emission from the background sources subtracted.
-  The triangular marker (colored red in the online version) represents
-  the 2FGL
-  position of this source. 
-  The plus-shaped marker and 
-  the circle (colored red) represent the best fit position and extension
-  of 2FGL\,J1837.3$-$0700c assuming a radially-symmetric uniform disk model. 
-  The circular and square-shaped markers (colored
-  blue) represent the 2FGL and the relocalized positions respectively of
-  two background 2FGL sources subtracted in (b).  The star-shaped marker
-  (colored green) represents 2FGL\,J1835.5$-$0649, another 2FGL source that was removed from the
-  background model.  The contours (colored light blue) correspond to
-  the \tev image of HESS\,J1837$-$069
-  \citep{aharonian_2006_h.e.s.s.-survey}.
-  The diamond-shaped marker (colored orange) represents the position of PSR\,J1838$-$0655
-  and the hexagonal-shaped marker (colored purple) represents the position AX\,J1837.3$-$0652
-  \citep{gotthelf_2008a_discovery-young}.
-  }\figlabel{1FGL_J1837.5-0659c}
-\end{figure}
-
-
-\begin{figure}
-    \ifcolorfigure
-      \includegraphics{source_plots/source_Gamma_Cygni_color.pdf}
-    \else
-      \includegraphics{source_plots/source_Gamma_Cygni_bw.pdf}
-    \fi
-  % this plot came from 
-  % /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/source_plots/Gamma_Cygni/v8/run.py
-  \caption{A diffuse-emission-subtracted 
-  10 \gev to 100 \gev counts map of the
-  region around 2FGL\,J2021.5+4026 smoothed by a 0\fdg1 2D Gaussian
-  kernel. The triangular marker (colored red in the online version)
-  represents the 2FGL position of this source.  The plus-shaped
-  marker and the circle (colored red) represent the best fit position
-  and extension of 2FGL\,J2021.5+4026 assuming a radially-symmetric
-  uniform disk model.  
-  The star-shaped marker (colored green)
-  represents 2FGL\,J2019.1+4040,
-  a 2FGL source that was removed from the background model.
-  2FGL\,J2021.5+4026
-  is spatially coincident with the $\gamma$-Cygni SNR.  The contours
-  (colored light blue) correspond to the 408MHz image of $\gamma$-Cygni
-  observed by the Canadian Galactic Plane Survey \citep{taylor_2003a_canadian-galactic}.
-  }\figlabel{1FGL_J2020.0+4049}
-\end{figure}
-
 

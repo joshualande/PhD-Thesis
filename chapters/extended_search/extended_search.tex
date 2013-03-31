@@ -1,15 +1,25 @@
 
-\chapter{Search for Spatially-extended \Acs{LAT} Sources}
+\chapter{Search for Spatially-extended \Acstitle{LAT} Sources}
+\chaplabel{extended_search}
 
 \paperref{
   This chapter is based the second part of the the paper
   ``Search for Spatially Extended Fermi-LAT Sources Using Two Years of Data''
   by Lande et at al. 2012 ApJ, 756, 5}
 
-  Following the work in \chapref{extended_analysis},
-  we next test all sources
-  in the second \fermi-LAT catalog (2FGL) for extension.
-  We report the detection of seven new spatially extended sources.
+In \chapref{extended_analysis}, we developed a new method to studdy
+spatially-extended sources.  In this chapter, we apply this method to
+search for new spatially-extended sources.  In \secref{validate_known},
+we systematically reanalyze the twelve extended sources included in the
+2FGL catalog and in \secref{systematic_errors_on_extension} we describe a
+way to estimate systematic errors on the measured extension of a source.
+In \secref{extended_source_search_method}, we describe a search for new
+spatially extended LAT sources. Finally, in \secref{new_ext_srcs_section}
+we present the detection of the extension of nine spatially extended
+sources that were reported in the 2FGL catalog but treated as point-like
+in the analysis.  Two of these sources have been previously analyzed in
+dedicated publications.
+
 
 \section{Analysis of Extended Sources Identified in the 2FGL Catalog}
 \seclabel{validate_known}
@@ -61,6 +71,8 @@ scope of this paper.  Our analysis also failed to detect a significant
 extension for the Centaurus A Lobes because
 the shape of the source is significantly different from a uniform
 radially-symmetric disk\citep{abdo_2010a_fermi-gamma-ray}.
+
+\input{chapters/extended_search/tables/known_extended_sources}
 
 Our analysis of these sources is summarized in
 \tabref{known_extended_sources}.  This table includes the best fit
@@ -238,6 +250,29 @@ and 2FGL\,J1636.3$-$4740c were all found to be spatially extended in the
 positions and sizes.  For these situations, we manually discarded all
 but one of the 2FGL sources.
 
+
+\begin{figure}
+  \ifcolorfigure
+    \includegraphics{ic443_plots/res_tsmap_ic443_color.pdf}
+    \else
+    \includegraphics{ic443_plots/res_tsmap_ic443_bw.pdf}
+    \fi
+  % plot from /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/res_tsmap_ic443/v2
+
+  \caption{
+  A TS map generated for the region around the SNR 
+  IC~443 using 
+  photons with energies between
+  1 \gev and 100 \gev.  (a) TS map after
+  subtracting IC~443 modeled as a point-like source. (b) same as (a), but
+  IC~443 modeled as an extended source. The cross represents the best
+  fit position of IC~443.
+  }
+  \figlabel{res_tsmaps}
+\end{figure}
+
+
+
 Similarly, many of these sources were confused with nearby
 point-like sources or influenced by large-scale residuals in the
 diffuse emission.  To help determine which of these fits found
@@ -260,6 +295,33 @@ is shown for the extended source IC~443 in \figref{four_plots_ic443}.
 For each source, we also made diffuse-emission-subtracted smoothed counts
 maps (shown for IC~443 in \figref{four_plots_ic443}).
 
+\clearpage
+\begin{figure}
+    \ifcolorfigure
+    \includegraphics{source_plots/example_bad_fit_color.pdf}
+    \else
+    \includegraphics{source_plots/example_bad_fit_bw.pdf}
+    \fi
+    % taken from /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/example_bad_fit/v3/run.py
+    \caption{
+    A diffuse-emission-subtracted 1 \gev to 100 \gev counts map of the
+    region around 2FGL\,J1856.2+0450c smoothed by a 0\fdg1 2D Gaussian
+    kernel. The plus-shaped marker and circle (colored red in
+    the online version) represent the center and size of the source
+    fit with a
+    radially-symmetric uniform disk spatial model.  The black
+    crosses represent the positions of other 2FGL sources.  The extension
+    is statistically significant, but the extension encompasses many 2FGL
+    sources and the emission does not look to be uniform. Although
+    the fit is statistically significant, it likely corresponds to
+    residual features of inaccurately modeled diffuse emission picked
+    up by the fit. 
+    }
+    \figlabel{example_bad_fit}
+\end{figure}
+
+
+
 We found by visual inspection that in many
 cases our results were strongly influenced by large-scale residuals in the
 diffuse emission and hence the extension measure was unreliable.  This was
@@ -281,6 +343,8 @@ where there was a multiwavelength
 counterpart. Because of these systematic issues, this search can not be
 expected to be complete and it is likely that there are other spatially
 extended sources that this method missed.
+
+\input{chapters/extended_search/tables/fake_2fgl_sources.tex}
 
 For each candidate that was not biased by neighboring point-like
 sources or by large-scale residuals in the diffuse emission model, we
@@ -344,6 +408,12 @@ radially-symmetric uniform disk model that we assume.
 \section{New Extended Sources}
 \seclabel{new_ext_srcs_section}
 
+
+\input{chapters/extended_search/tables/new_ext_srcs_table.tex}
+
+\input{chapters/extended_search/tables/alt_diff_model_results.tex}
+
+
 Nine extended sources not included in the 2FGL catalog were found by our
 extended source search. Two of these have been previously
 studied in dedicated publications: RX\,J1713.7$-$3946 and Vela
@@ -378,6 +448,34 @@ emission model and uncertainties in the PSF.
 \subsection{2FGL\,J0823.0$-$4246}
 \subseclabel{section_2FGL_J0823.0-4246}
 
+\begin{figure}
+    \ifcolorfigure
+      \includegraphics{source_plots/source_Puppis_A_color.pdf}
+    \else
+      \includegraphics{source_plots/source_Puppis_A_bw.pdf}
+    \fi
+  \caption{A diffuse-emission-subtracted 1 \gev to 100 \gev counts map
+  of 2FGL\,J0823.0$-$4246 smoothed by a 0\fdg1 2D
+  Gaussian kernel.  The triangular marker 
+  (colored red in the online version)
+  represents the 2FGL position of this source.  The plus-shaped
+  marker and the circle (colored
+  red) represent 
+  the best fit position and extension of this source assuming a
+  radially-symmetric uniform disk model.  The two 
+  star-shaped markers (colored
+  green) represent 2FGL sources that were
+  removed from the background model.
+  From left to right, these sources are 2FGL\,J0823.4$-$4305 and 2FGL\,J0821.0$-$4254.
+  The lower right inset is the model predicted emission from a point-like
+  source with the same spectrum as 2FGL\,J0823.4$-$4305 smoothed by the
+  same kernel.  This source is spatially coincident with the Puppis A
+  SNR. The light blue contours correspond to the X-ray image of Puppis
+  A observed by \rosat \citep{petre_1996a_central-stellar}.
+  }\figlabel{1FGL_J0823.3-4248}
+\end{figure}
+
+
 2FGL\,J0823.0$-$4246 was found by our search to be an extended source
 candidate in the 1 \gev to 100 \gev energy range and is spatially
 coincident with the SNR Puppis A.  \figref{1FGL_J0823.3-4248} shows
@@ -408,6 +506,33 @@ than that of other SNRs believed to interact with molecular clouds
 
 \subsection{2FGL\,J0851.7$-$4635}
 \subseclabel{section_2FGL_J0851.7-4635}
+
+
+\begin{figure}
+    \ifcolorfigure
+      \includegraphics{source_plots/source_Vela_Jr_color.pdf}
+    \else
+      \includegraphics{source_plots/source_Vela_Jr_bw.pdf}
+    \fi
+  \caption{A diffuse-emission-subtracted 10 \gev to 100 \gev counts map of
+  2FGL\,J0851.7$-$4635 smoothed by a 0\fdg25 2D Gaussian
+  kernel. The triangular marker (colored red in the electronic version)
+  represents the 2FGL position of this source.  The plus-shaped marker
+  and the circle (colored red) are the best fit position and extension of
+  this source assuming a radially-symmetric uniform disk model.
+  The three black crosses represent background 2FGL sources.
+  The three star-shaped markers (colored green) represent other 2FGL sources
+  that were removed from the background model.
+  They are (from left to right) 2FGL\,J0853.5$-$4711, 2FGL\,J0855.4$-$4625, and 
+  2FGL\,J0848.5$-$4535.
+  The circular and square-shaped
+  marker (colored blue) represents the 2FGL and relocalized position of another 2FGL source.  
+  This extended source is spatially
+  coincident with the Vela Jr. SNR.  The contours (colored light blue)
+  correspond to the \tev image of Vela Jr.
+  \citep{aharonian_2007a_h.e.s.s.-observations}.
+  }\figlabel{Vela_Jr}
+\end{figure}
 
 2FGL\,J0851.7$-$4635 was found by our search to be an extended source
 candidate in the 10 \gev to 100 \gev energy range and is spatially
@@ -440,6 +565,34 @@ $(l,b)=(266\fdg24,0\fdg49)$ to better fit its position at high energies.
 
 \subsection{2FGL\,J1615.0$-$5051}
 \subseclabel{section_2FGL_J1615.0-5051}
+
+\begin{figure}
+    \ifcolorfigure
+      \includegraphics{source_plots/source_HESS_J1614-518_color.pdf}
+    \else
+      \includegraphics{source_plots/source_HESS_J1614-518_bw.pdf}
+    \fi
+  \caption{
+    A diffuse-emission-subtracted 10 \gev to 100 \gev counts
+    map of 2FGL\,J1615.0$-$5051 (upper left)
+    and 2FGL\,J1615.2$-$5138 (lower right) smoothed by a 0\fdg1
+    2D Gaussian kernel.  The triangular markers (colored red in the
+    electronic version) represent the 2FGL positions of these sources.
+    The cross-shaped markers and the
+    circles (colored red) represent the best fit
+    positions and extensions of these sources assuming a radially
+    symmetric uniform disk model.  
+    The two black crosses represent  background 2FGL sources and
+    the star-shaped
+    marker (colored green) represents 2FGL J1614.9-5212, another 2FGL
+    source that was removed from the background
+    model. The contours (colored light blue) correspond to the \tev
+    image of HESS\,J1616$-$508 (left) and HESS\,J1614$-$518 (right)
+    \citep{aharonian_2006_h.e.s.s.-survey}.   
+    }\figlabel{1FGL_J1613.6-5100c}
+\end{figure}
+
+
 
 2FGL\,J1615.0$-$5051 and 2FGL\,J1615.2$-$5138 were both found to be
 extended source candidates in the 10 \gev to 100 \gev energy range. Because
@@ -539,6 +692,34 @@ acceleration in the stellar winds of Pismis 22 \citep{mizukami_2011a_cangaroo-ii
 \subsection{2FGL\,J1627.0$-$2425c}
 \subseclabel{section_2FGL_J1627.0-2425c}
 
+\begin{figure}
+    \ifcolorfigure
+      \includegraphics{source_plots/source_Ophiuchus_color.pdf}
+    \else
+      \includegraphics{source_plots/source_Ophiuchus_bw.pdf}
+    \fi
+  \caption{
+  A diffuse-emission-subtracted 1 \gev to 100 \gev counts map of (a) the region
+  around 2FGL\,J1627.0$-$2425 smoothed by a 0\fdg1 2D Gaussian kernel and (b)
+  with the emission from 2FGL\,J1625.7$-$2526
+  subtracted.  The triangular marker 
+  (colored red in the
+  online version) represents the 2FGL position of this source.
+  The plus-shaped marker and the circle (colored red) 
+  represent the best fit position and extension of this
+  source assuming a radially-symmetric uniform disk model
+  and the black cross represents a background 2FGL source. 
+  The
+  contours in (a) correspond to the 100 $\mu$m image observed by
+  IRAS \citep{young_1986a_high-resolution-observations}.  The contours in (b) correspond to
+  CO ($J=1\rightarrow 0$) emission integrated from $-$8 $\km\,\second^{-1}$
+  to 20 $\km\,\second^{-1}$.  They are from \cite{de-geus_1990a_survey-clouds}, were cleaned using
+  the moment-masking technique \citep{dame_2011a_optimization-moment}, and have
+  been smoothed by a 0\fdg25 2D Gaussian kernel.
+  }\figlabel{1FGL_J1628.6-2419c}
+\end{figure}
+
+
 2FGL\,J1627.0$-$2425c was found by our search to
 have an extension $\sigma=0\fdg42\pm0\fdg05_\stat\pm0\fdg16_\sys$ with
 $\tsext=32.4$
@@ -565,6 +746,33 @@ emission model.
 \subsection{2FGL\,J1632.4$-$4753c}
 \subseclabel{section_2FGL_J1632.4-4753c}
 
+\begin{figure}
+    \ifcolorfigure
+      \includegraphics{source_plots/source_HESS_J1632-478_color.pdf}
+    \else
+      \includegraphics{source_plots/source_HESS_J1632-478_bw.pdf}
+    \fi
+  \caption{
+  A diffuse-emission-subtracted 10 \gev to 100 \gev counts map of
+  2FGL\,J1632.4$-$4753c (a) smoothed by a 0\fdg1 2D Gaussian
+  kernel and (b) with the emission from the background sources subtracted.  
+  The triangular marker (colored red in the electronic version)
+  represents the 2FGL position of this source.  The plus-shaped marker
+  and the circle (colored red) are the best fit position and extension of
+  2FGL\,J1632.4$-$4753c assuming a radially-symmetric uniform disk model.  
+  The four black crosses represent background 2FGL
+  sources subtracted in (b).  The 
+  circular and square-shaped markers (colored blue) represent 
+  the 2FGL and relocalized positions respectively of two
+  additional background 2FGL sources subtracted in (b).
+  The star-shaped marker (colored green) represents 
+  2FGL\,J1634.4$-$4743c, another 2FGL source that was removed from the background model.
+  The contours (colored light blue) correspond to the \tev image of
+  HESS\,J1632$-$478 \citep{aharonian_2006_h.e.s.s.-survey}.
+  }\figlabel{1FGL_J1632.9-4802c}
+\end{figure}
+
+
 2FGL\,J1632.4$-$4753c was found by our search to be an extended source
 candidate in the 10 \gev to 100 \gev energy range but is in a crowded
 region of the sky.  It is spatially coincident with the \tev source
@@ -588,6 +796,31 @@ with $\tsext=26.9$.  While fitting the
 extension of 2FGL\,J1632.4$-$4753c, we iteratively relocalized
 2FGL\,J1635.4$-$4717c to $(l,b)=(337\fdg23,0\fdg35)$ and
 2FGL\,J1636.3$-$4740c to $(l,b)=(336\fdg97,-0\fdg07)$.
+
+\clearpage
+\begin{figure}
+    \ifcolorfigure
+      \includegraphics{summary_plots/hess_seds_color.pdf}
+    \else
+      \includegraphics{summary_plots/hess_seds_bw.pdf}
+    \fi
+    \caption{
+    The spectral energy distribution of four extended
+    sources associated with unidentified
+    extended \tev sources.  The black points
+    with circular markers are obtained by the LAT. The points with
+    plus-shaped markers (colored red in the electronic version) are
+    for the associated H.E.S.S sources.  (a) the
+    LAT SED of 2FGL\,J1615.0$-$5051 together with the H.E.S.S. SED
+    of HESS\,J1616$-$508. (b) 2FGL\,J1615.2$-$5138
+    and HESS\,J1614$-$518. (c) 2FGL\,J1632.4$-$4753c
+    and HESS\,J1632$-$478. (d) 2FGL\,J1837.3$-$0700c
+    and HESS\,J1837$-$069. The H.E.S.S. data points are from
+    \citep{aharonian_2006_h.e.s.s.-survey}. Both LAT and H.E.S.S. spectral errors are
+    statistical only.}
+    \figlabel{hess_seds}
+  \end{figure}
+
 
 H.E.S.S measured an extension of $\sigma=0\fdg21\pm0\fdg05$ and
 $0\fdg06\pm0\fdg04$ along the semi-major and semi-minor axes when
@@ -623,6 +856,29 @@ and $\gamma$-rays.
 \subsection{2FGL\,J1712.4$-$3941}
 \subseclabel{section_2FGL_J1712.4-3941}
 
+\begin{figure}
+    \ifcolorfigure
+      \includegraphics{source_plots/source_RX_J1713d7-3946_color.pdf}
+    \else
+      \includegraphics{source_plots/source_RX_J1713d7-3946_bw.pdf}
+    \fi
+  \caption{
+  A diffuse-emission-subtracted 10 \gev to 100 \gev counts map
+  of 2FGL\,J1712.4$-$3941 (a) smoothed by a 0\fdg15 2D
+  Gaussian kernel and (b) with the emission from the background sources
+  subtracted.  This source is spatially coincident with RX\,J1713.7$-$3946
+  and was recently studied in \cite{abdo_2011a_observations-young}.  The triangular marker
+  (colored red in the online version) represents the 2FGL position of
+  this source.  The plus-shaped marker and the circle (colored red) are
+  the best fit position and extension of this source assuming a radially
+  symmetric uniform disk model.  
+  The two black crosses represent background 2FGL sources subtracted in (b).
+  The contours (colored light blue)
+  correspond to the \tev image \citep{aharonian_2007a_primary-particle}.  
+  }\figlabel{2FGL_J1712.4-3941}
+\end{figure}
+
+
 2FGL\,J1712.4$-$3941 was found by our search to be spatially extended
 using photons with energies between 1 \gev and 100 \gev.  This source
 is spatially coincident with the SNR RX\,J1713.7$-$3946 and was
@@ -637,6 +893,38 @@ $\sigma=0\fdg56\pm0\fdg04_\stat\pm0\fdg02_\sys$ with $\tsext=38.5$.
 
 \subsection{2FGL\,J1837.3$-$0700c}
 \subseclabel{section_2FGL_J1837.3-0700c}
+
+
+\begin{figure}
+    \ifcolorfigure
+      \includegraphics{source_plots/source_HESS_J1837-069_color.pdf}
+    \else
+      \includegraphics{source_plots/source_HESS_J1837-069_bw.pdf}
+    \fi
+  \caption{
+  A diffuse-emission-subtracted 10 \gev to 100 \gev counts map of the
+  region around 2FGL\,J1837.3$-$0700c (a) smoothed by a 0\fdg15 2D Gaussian
+  kernel and (b) with the emission from the background sources subtracted.
+  The triangular marker (colored red in the online version) represents
+  the 2FGL
+  position of this source. 
+  The plus-shaped marker and 
+  the circle (colored red) represent the best fit position and extension
+  of 2FGL\,J1837.3$-$0700c assuming a radially-symmetric uniform disk model. 
+  The circular and square-shaped markers (colored
+  blue) represent the 2FGL and the relocalized positions respectively of
+  two background 2FGL sources subtracted in (b).  The star-shaped marker
+  (colored green) represents 2FGL\,J1835.5$-$0649, another 2FGL source that was removed from the
+  background model.  The contours (colored light blue) correspond to
+  the \tev image of HESS\,J1837$-$069
+  \citep{aharonian_2006_h.e.s.s.-survey}.
+  The diamond-shaped marker (colored orange) represents the position of PSR\,J1838$-$0655
+  and the hexagonal-shaped marker (colored purple) represents the position AX\,J1837.3$-$0652
+  \citep{gotthelf_2008a_discovery-young}.
+  }\figlabel{1FGL_J1837.5-0659c}
+\end{figure}
+
+
 
 2FGL\,J1837.3$-$0700c was found by our search to be an extended source
 candidate in the 10 \gev to 100 \gev energy range and is spatially
@@ -712,12 +1000,63 @@ association was disfavored when the \gev emission from this source
 was detected to be pulsed \citep[PSR\,J2021+4026,][]{abdo_2010a_first-fermi}.
 This pulsar was also observed by AGILE \citep{chen_2011a_study-gamma-ray}.
 
+\begin{figure}
+    \ifcolorfigure
+      \includegraphics{source_plots/source_Gamma_Cygni_color.pdf}
+    \else
+      \includegraphics{source_plots/source_Gamma_Cygni_bw.pdf}
+    \fi
+  % this plot came from 
+  % /u/gl/lande/work/fermi/extended_catalog/2FGL/plots_for_paper/source_plots/Gamma_Cygni/v8/run.py
+  \caption{A diffuse-emission-subtracted 
+  10 \gev to 100 \gev counts map of the
+  region around 2FGL\,J2021.5+4026 smoothed by a 0\fdg1 2D Gaussian
+  kernel. The triangular marker (colored red in the online version)
+  represents the 2FGL position of this source.  The plus-shaped
+  marker and the circle (colored red) represent the best fit position
+  and extension of 2FGL\,J2021.5+4026 assuming a radially-symmetric
+  uniform disk model.  
+  The star-shaped marker (colored green)
+  represents 2FGL\,J2019.1+4040,
+  a 2FGL source that was removed from the background model.
+  2FGL\,J2021.5+4026
+  is spatially coincident with the $\gamma$-Cygni SNR.  The contours
+  (colored light blue) correspond to the 408MHz image of $\gamma$-Cygni
+  observed by the Canadian Galactic Plane Survey \citep{taylor_2003a_canadian-galactic}.
+  }\figlabel{1FGL_J2020.0+4049}
+\end{figure}
+
+
+
 Looking at the same region at energies above 10 \gev, the pulsar is
 no longer significant but we instead found in our search an extended
 source candidate.  \figref{1FGL_J2020.0+4049} shows a counts map
 of this source and overlays radio contours of $\gamma$-Cygni from the
 Canadian Galactic Plane Survey \citep{taylor_2003a_canadian-galactic}.
 There is good spatial overlap between the SNR and the \gev emission.
+
+\clearpage
+\begin{figure}
+    \ifcolorfigure
+      \includegraphics{summary_plots/snr_seds_color.pdf}
+    \else
+      \includegraphics{summary_plots/snr_seds_bw.pdf}
+    \fi
+    \caption{
+    The spectral energy distribution of the extended sources 
+    Puppis A (2FGL\,J0823.0$-$4246) and $\gamma$-Cygni 
+    (2FGL\,J2021.5+4026).
+    The lines (colored red in the online version)
+    are the best fit power-law spectral models of
+    these sources. Puppis A has a spectral index of
+    $2.21\pm0.09$ and $\gamma$-Cygni has an
+    index of $2.42\pm0.19$.
+    The spectral errors are statistical only.
+    The upper limit is at the 95\% confidence level.
+    }
+    \figlabel{snr_seds}
+  \end{figure}
+
 
 There is a nearby source 2FGL\,J2019.1+4040 that correlates with the radio
 emission of $\gamma$-Cygni and at \gev energies 
