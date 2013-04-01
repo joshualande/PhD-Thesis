@@ -5,6 +5,12 @@
   ``Constraints on the Galactic Population of TeV Pulsar Wind Nebulae using Fermi Large Area Telescope Observations''
   by Acero et al which is currently in prep.}
 
+TODO:
+\begin{itemize}
+  \item Strip out sources not classified as PWN/PSR
+  \item Remove the fit without the LAT PSR included in the background model.
+\end{itemize}
+
 In \chapref{extended_search}, we searched for spatially-extended sources
 in the 2FGL catalog.  This search showed that the spatial analysis of
 \fermi sources is important in identifying $\gamma$-ray emitting \acp{PWN}.
@@ -20,10 +26,10 @@ candidates (\velax, the Crab Nebula, \mshfifteenfiftytwo, and \threecfiftyeight)
 
 In this chapter, we continue our search for $\gamma$-ray emitting
 \acp{PWN} by searching for \acp{PWN} which had previously been detected
-at \tev energies by \acp{IACT}. We note that the work presented here is
-a very condensed version of the results presented in the accompanying work.
-We refer to that publication for a more detailed discussion of
-the analysis.
+at \tev energies by \acp{IACT}. We note that the work presented here is a
+very condensed version of the results presented in the accompanying work
+\citep{acero_2013a_constraints-galactic}.  We refer to that publication
+for a more detailed discussion of the analysis.
 
 \section{Introduction}
 
@@ -39,7 +45,9 @@ discover new $\gamma$-ray emitting \acp{PWN} not previously discovered
 either in the off-peak search discussed in \chapref{offpeak} or in other
 dedicated analyses.
 
-\section{List of Candidates}
+\section{List of \tev \Acstitle{PWN} Candidates}
+
+\input{chapters/tevcat/tables/list_tev_sources}
 
 We used \tevcat to define the list of \tev sources to saerch for \gev
 \acp{PWN}. \tevcat is a catalog of sources detcted at \tev energies by 
@@ -52,18 +60,74 @@ could potentially be due to a \ac{PWN}.
 Finally, we included \hess{J1023} which, although classified as a
 massive star cluster in the \tevcat, was suggested to be a \ac{PWN} in 
 \cite{de-naurois_2013a_galactic-h.e.s.s.}. The list of all sources
-included in our analysis is listed in \todo[inline]{ADD TABLE}.
-
-
+included in our analysis as well as their classification in \tevcat
+can be found in \tabref{TeV_sources}.
 
 \section{Analysis Method}
 
-\begin{itemize}
-  \item $\energy>10\unitspace\gev$.
-  \item 
-\end{itemize}
+In this search, our analysis method was very similar to the analysis
+in \chapref{offpeak}. We used the same hybrid \pointlike/\gtlike
+approach for studying the spatial and spectral character of each source
+and modeled the region using the same standard background models.
+
+The major difference was that this analysis
+was performed only for $\energy>10\unitspace\gev$.  As can be seen in
+\chapref{offpeak}, for energies much lower than $10\unitspace\gev$,
+source analysis becomes strongly influenced by Galactic-diffuse
+emission and systematic errors associated with incorrectly modeling
+the emission. On the other hand, the $\gamma$-ray emission from \ac{PWN}
+is expected to be the rising component of an \ac{IC} peak which falls
+at \tev energies. Therefore, the emission observed by the \ac{LAT} is
+expected to be hard and most significant at higher energies. Therefore,
+we expect that starting the analysis  at $10\unitspace\gev$ will
+significantly reduce systematics associated with this analysis while
+preserving most of the space for discovery.
+
+Because the analysis was performed only in this high energy range where
+the \ac{PSF} of the \ac{LAT} is much improved, we were able to use
+a smaller region of interest (a radius of $5\degree$ in \pointlike 
+and a square of size $7\degree\times7\degree$ in \gtlike).
+
+Another differences it that we used an event class with less background
+contamination (Pass 7 Clean instead of Pass 7 Source) and modeled
+nearby background sources using \ac{1FHL} \cite{ackermann_2013a_first-fermi-lat}.
+
+For our analysis, we assume the \gev emission to have a power law spectral
+model and to have whatever was the best-fit spatial model observed at
+\tev energies.  We define \tstev as the likelihood-ratio test for the
+significance of the source assuming it to have the power-law spectral
+model and \tev spatial model.  We consider a source to be detected when
+$\tstev > 16$.  Our significance test has only two degrees of freedom:
+the flux and spectral index.  Therefore, following Wilk's Theorem (see
+\subsecref{monte_carlo_validation}), this corresponds to a $3.6\sigma$
+detection threshold. When the source is significantly-detected, we quote
+the best-fit spectral parameters and otherwise we derive a upper limit
+on the flux of any potential emission.
+
+We note that \cite{acero_2013a_constraints-galactic} performs a more
+detailed morphological analysis which fits the positions of the sources
+assuming the emissions to be point-like and spatially-extended.  The work
+uses the \tsext test defined in \subsecref{extension_fitting} to test if
+the emission is spatially-extended and otherwise computes an upper limit
+on any potential spatial extension.  This additional analysis is relevant
+for comparing the spatial overlap between the GeV and TeV emission. But
+for brevity, we omit the details and refer to that publication.
+
+TODO, discuss issue about soruces with a nearby LAT-detcted pulsar.
+Which soruces have a LAT-dtected pulasr, what does 
+\cite{acero_2013a_constraints-galactic} do about this?
+
+In addition \cite{acero_2013a_constraints-galactic} performs
+a careful study of the systematics associated with this analysi.
+\todo[inline]{WHAT SYSTEMATICS}.
 
 \section{Sources Detected}
+
+The spectral and spatial results for significanlty-detected sources is prestended in
+\todo[inline]{WHERE ARE RESULTS PRESENTED}. We don't quote upper limits, for some reason\ldots.
+
+\input{chapters/tevcat/tables/spatial_results}
+
 
 \begin{itemize}
   \item
