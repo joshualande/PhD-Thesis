@@ -9,8 +9,7 @@
 % See http://tex.stackexchange.com/questions/4736/what-is-the-difference-between-fragile-and-robust-commands
 % Or http://tex.stackexchange.com/questions/61503/newcommand-vs-declarerobustcommand
 \newcommand{\basehess}[3]{HESS$\,$J#1$#2$#3\xspace}
-\DeclareRobustCommand{\hess}[1]{
-\IfEqCase{#1}{
+\DeclareRobustCommand{\hess}[1]{\IfEqCase{#1}{
 {J1825}{\basehess{1825}{-}{137}}
 {J1640}{\basehess{1640}{-}{465}}
 {J1837}{\basehess{1837}{-}{069}}
@@ -21,8 +20,8 @@
 {J1420}{\basehess{1420}{-}{607}}
 {J1841}{\basehess{1841}{-}{055}}
 {J1356}{\basehess{1356}{-}{645}}
-}[\PackageError{hess}{Undefined option to hess#1}{}]
-}
+{J1023}{\basehess{1023}{-}{575}}
+}[\PackageError{hess}{Undefined option to hess#1}{}]}
 
 \newcommand{\basetwofgl}[3]{2FGL$\,$J#1$#2$#3\xspace}
 \DeclareRobustCommand{\twofgl}[1]{
