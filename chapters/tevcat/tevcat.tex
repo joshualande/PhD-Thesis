@@ -48,16 +48,17 @@ dedicated analyses.
 
 \input{chapters/tevcat/tables/list_tev_sources}
 
-We used \tevcat to define the list of \tev sources to search
-for \gev \acp{PWN}. \tevcat is a catalog of sources detcted at
-\tev energies by \acp{IACT}\footnote{\tevcat can be found at
-\url{http://tevcat.uchicago.edu}.}.  We selected all sources from
+We used \tevcat to define the our target list of \tev sources.
+\tevcat is a catalog of sources detcted at
+\tev energies by \acp{IACT}.\footnote{\tevcat can be found at
+\url{http://tevcat.uchicago.edu}.}  We selected all sources from
 this catalog where the emission was classified as being due to a
 \ac{PWN}. In addition, we included all \ac{UNID} sources within
-5\degree of the galactic plane which could be \ac{PWN}.  Finally,
-we included \hess{J1023} which, although classified as a massive
-star cluster in the \tevcat, was suggested to be a \ac{PWN} in
-\cite{de-naurois_2013a_galactic-h.e.s.s.}. The list of all sources
+5\degree of the galactic plane since they could be due to a \ac{PWN}.  Finally,
+we included \hess{J1023}. Although this source is classified as a massive
+star cluster in the \tevcat, 
+\cite{de-naurois_2013a_galactic-h.e.s.s.}
+suggested that the emission could be due to \ac{PWN}. The list of all sources
 included in our analysis as well as their classification in \tevcat can
 be found in \tabref{TeV_sources}.
 
@@ -87,16 +88,16 @@ the \ac{PSF} of the \ac{LAT} is much improved, we were able to use
 a smaller region of interest (a radius of $5\degree$ in \pointlike 
 and a square of size $7\degree\times7\degree$ in \gtlike).
 
-Another differences it that we used an event class with less background
+Another differences is that we used an event class with less background
 contamination (Pass 7 Clean instead of Pass 7 Source) and modeled
-nearby background sources using \ac{1FHL} \cite{ackermann_2013a_first-fermi-lat}.
+nearby background sources using \ac{1FHL} \citep{ackermann_2013a_first-fermi-lat}.
 
-For our analysis, we assume the \gev emission to have a power law spectral
-model and to have whatever was the best-fit spatial model observed at
+For our analysis, we assume the \gev emission to have a power-law spectral
+model and to have whatever was the publisehd spatial model observed at
 \tev energies.  We define \tstev as the likelihood-ratio test for the
 significance of the source assuming it to have the power-law spectral
-model and \tev spatial model.  We consider a source to be detected when
-$\tstev > 16$.  Our significance test has only two degrees of freedom:
+model and the published \tev spatial model.  We claim a detection
+when $\tstev > 16$.  Our significance test has only two degrees of freedom:
 the flux and spectral index.  Therefore, following Wilk's Theorem (see
 \subsecref{monte_carlo_validation}), this corresponds to a $3.6\sigma$
 detection threshold. When the source is significantly-detected, we quote
@@ -104,31 +105,49 @@ the best-fit spectral parameters and otherwise we derive a upper limit
 on the flux of any potential emission.
 
 We note that \cite{acero_2013a_constraints-galactic} performs a more
-detailed morphological analysis which fits the positions of the sources
-assuming the emissions to be point-like and spatially-extended.  The work
-uses the \tsext test defined in \subsecref{extension_fitting} to test if
-the emission is spatially-extended and otherwise computes an upper limit
-on any potential spatial extension.  This additional analysis is relevant
-for comparing the spatial overlap between the GeV and TeV emission. But
-for brevity, we omit the details and refer to that publication.
+detailed morphological analysis which also fits the positions of the
+sources assuming their emissions to be point-like and spatially-extended.
+That work then uses \tsext (See \subsecref{extension_fitting}) to test
+if the emission is spatially-extended and otherwise computes an upper
+limit on any potential spatial extension.  The more detailed analysis in
+\cite{acero_2013a_constraints-galactic} is needed to compare the spatial
+overlap between the GeV and TeV emission. But for brevity, we omit the
+details and simply use the results.
 
-TODO, discuss issue about soruces with a nearby LAT-detcted pulsar.
-Which soruces have a LAT-dtected pulasr, what does 
-\cite{acero_2013a_constraints-galactic} do about this?
+We note that many of these \acp{PWN} candidates are
+in regions with \ac{LAT}-detected pulars.  For these sources,
+\cite{acero_2013a_constraints-galactic} presents the spectral and
+spatial results both with and without the \ac{LAT}-detected pulsar in the
+background model. For the analysis, the spectrum of these soruces of thse
+background pulsars was taken from the \ac{2FGL} catalog.  For simplicity,
+we present only the analysis with the pulsar included in the background
+model. This analysis presents our best-guess at the true spectrum of
+any \ac{PWN} emission.  But we caution that this method could be biased
+in either oversubtracting or undersubtracting the pulsar depending upon
+systematics in the fit of the pulsar.
 
-In addition \cite{acero_2013a_constraints-galactic} performs
-a careful study of the systematics associated with this analysi.
-\todo[inline]{WHAT SYSTEMATICS}.
+There are three major sources of systematic uncertainty
+effect the spectrum of these sources. The first systematic
+is due to uncertainty in our modeling of the Galactic diffuse
+emission.  We estiamte this uncertainty following the method of
+\secref{systematic_errors_on_extension}.  The second systematic is due
+to uncertainty in the effective area.  We estimated the systematic
+using the method described in \cite{ackermann_2012a_fermi-large}.
+The final systematic is due to our uncertainty in the true morphology of
+of the source. We used as our systematic error on this the difference
+in spectrum when the source is fit assuming the published \tev spatial
+model and when using the spatial model measured by the LAT.
 
 \section{Sources Detected}
 \seclabel{tevcat_sources_detected}
 
-We detect 22 sources which are statistically significant. We
-present the spatial and spectarl results for these sources in
+We detect 22 statistically-significant sources. 
+We present the spatial and spectral results for these sources in
 \tabref{tevcat_spatial_spectral}.
 
-We classify these sources into four categories.
-The first category is ``PWN'' which is when there is 
+We attempt to classify the \gev emission into four categories.
+The first category is ``PWN'' which is when the emission can be clearly
+identified as being due to a \ac{PWN}.
 
 The second category is ``PWNc''\ldots
 
