@@ -12,9 +12,9 @@
 % user4='the expanded title (not title case & not plural),
 
 % We defined the new commands:
-%  * \agls: puts the indefinite article in front of the acronym 
+%  * \aac puts the indefinite article in front of the acronym 
 %    e.g. "an IDN" or "a identification number (IDN)"
-%  * \Agls: same as \agls, but in upper case
+%  * \Aac same as \agls, but in upper case
 %    e.g. "An IDN" or "A identification number (IDN)"
 %  * \Actitle: writes out the title in full
 %    e.g. "Pulsar Wind Nebula"
@@ -25,12 +25,12 @@
 \newcommand{\mynewacronym}[4][]{%
    \newacronym[user1=a,user2=a,user3=#4,user4=#4s, #1]{#2}{#3}{#4}}
 
-\newcommand{\agls}[1]{%
+\newcommand{\aac}[1]{%
    \ifglsused{#1}{\glsentryuserii{#1}}{\glsentryuseri{#1}}
    \gls{#1}%
 }
 
-\newcommand{\Agls}[1]{%
+\newcommand{\Aac}[1]{%
    \ifglsused{#1}{\Glsentryuserii{#1}}{\Glsentryuseri{#1}}
    \gls{#1}%
 }
@@ -71,6 +71,8 @@
 \mynewacronym{SNR}{SNR}{supernova remnant}
 \mynewacronym{NS}{NS}{neutron star}
 \mynewacronym{MSP}{MSP}{millisecond pulsar}
+\mynewacronym{MSC}{MSC}{massive star cluster}
+\mynewacronym{UNID}{UNID}{unidentified source}
 
 % radiation mechanisms
 \mynewacronym[user3=Inverse Compton]{IC}{IC}{inverse Compoton}
