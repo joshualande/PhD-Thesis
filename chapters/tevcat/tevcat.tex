@@ -6,23 +6,20 @@
   by Acero et al which is currently in prep.}
 
 TODO:
-\begin{itemize}
-  \item Strip out sources not classified as PWN/PSR
-  \item Remove the fit without the LAT PSR included in the background model.
-\end{itemize}
 
 In \chapref{extended_search}, we searched for spatially-extended sources
 in the 2FGL catalog.  This search showed that the spatial analysis of
 \fermi sources is important in identifying $\gamma$-ray emitting \acp{PWN}.
-In this work, we analyzed the $\gamma$-ray emitting \acp{PWN} \hess{J1825}
+In that work, we analyzed the $\gamma$-ray emitting \acp{PWN} \hess{J1825}
 and \mshfifteenfiftytwo which had previously been detected in \ac{2FGL}.
 In addition, this analysis discovered that there were three additional
-spatially-extended \fermi soruces coincident with \acp{PWN} candidates
+spatially-extended \fermi sources coincident with \acp{PWN} candidates
 (\hess{J1616}, \hess{J1632}, \hess{J1837}).
+
 In \chapref{offpeak}, we then searched for $\gamma$-ray emitting \acp{PWN}
 by looking in the off-peak emission of \ac{LAT}-detected
-pulsars. In this analysis, we detected four $\gamma$-ray emitting \acp{PWN}
-candidates (\velax, the Crab Nebula, \mshfifteenfiftytwo, and \threecfiftyeight).
+pulsars. In that analysis, we detected four $\gamma$-ray emitting \acp{PWN}
+(\velax, the Crab Nebula, \mshfifteenfiftytwo, and \threecfiftyeight).
 
 In this chapter, we continue our search for $\gamma$-ray emitting
 \acp{PWN} by searching for \acp{PWN} which had previously been detected
@@ -33,15 +30,17 @@ for a more detailed discussion of the analysis.
 
 \section{Introduction}
 
-In this analysis, we took all sources detected at \tev energies and
-potentially associated with \acp{PWN} and performed a search at \gev
-energies for $\gamma$-ray emission. As was seen in previous sections,
-many sources such as the Crab Nebula and \velax had been observed at
-both \gev and \tev energies. In addition, there are several \ac{PWN}
-which have been detected at \tev energies which do not have an associated
-$\gamma$-ray pulsar (such as \hess{J1825} and \hess{J1837}).  We therefore
-suspect that a thorough search of all \tev \acp{PWN} candidates might
-discover new $\gamma$-ray emitting \acp{PWN} not previously discovered
+We took all sources detected at \tev energies and potentially associated
+with \acp{PWN} and performed a search at \gev energies for $\gamma$-ray
+emission. As was seen in previous chapters, many \acp{PWN} have been
+detected both at \gev and \tev energies. Therefore, we suspect that by
+searching \ac{LAT} data in the regiongs of \tev \acp{PWN} might yield
+the discovery of new LAT-detecting \ac{PWN}.
+
+In addition, there are several \ac{PWN} which have been detected at \tev
+energies which do not have an associated $\gamma$-ray pulsar (such as
+\hess{J1825} and \hess{J1837}).  We therefore suspect that this search
+strategy may discovery new \ac{PWN} which were not previously discovered
 either in the off-peak search discussed in \chapref{offpeak} or in other
 dedicated analyses.
 
@@ -49,19 +48,18 @@ dedicated analyses.
 
 \input{chapters/tevcat/tables/list_tev_sources}
 
-We used \tevcat to define the list of \tev sources to saerch for \gev
-\acp{PWN}. \tevcat is a catalog of sources detcted at \tev energies by 
-\acp{IACT}\footnote{\tevcat can be found at \url{http://tevcat.uchicago.edu}.}.
-We selected all sources from this catalog 
-where the emission was classified as being
-due to a \ac{PWN}. In addition, we included all sources with an UNID classification
-(unidientifed emission) within 5\degree of the galactic plane, since they
-could potentially be due to a \ac{PWN}.
-Finally, we included \hess{J1023} which, although classified as a
-massive star cluster in the \tevcat, was suggested to be a \ac{PWN} in 
+We used \tevcat to define the list of \tev sources to search
+for \gev \acp{PWN}. \tevcat is a catalog of sources detcted at
+\tev energies by \acp{IACT}\footnote{\tevcat can be found at
+\url{http://tevcat.uchicago.edu}.}.  We selected all sources from
+this catalog where the emission was classified as being due to a
+\ac{PWN}. In addition, we included all \ac{UNID} sources within
+5\degree of the galactic plane which could be \ac{PWN}.  Finally,
+we included \hess{J1023} which, although classified as a massive
+star cluster in the \tevcat, was suggested to be a \ac{PWN} in
 \cite{de-naurois_2013a_galactic-h.e.s.s.}. The list of all sources
-included in our analysis as well as their classification in \tevcat
-can be found in \tabref{TeV_sources}.
+included in our analysis as well as their classification in \tevcat can
+be found in \tabref{TeV_sources}.
 
 \section{Analysis Method}
 \seclabel{tevcat_analysis_method}
