@@ -23,34 +23,34 @@ pulsars. In that analysis, we detected four $\gamma$-ray emitting \acp{PWN}
 
 In this chapter, we continue our search for $\gamma$-ray emitting
 \acp{PWN} by searching for \acp{PWN} which had previously been detected
-at \tev energies by \acp{IACT}. We note that the work presented here is a
+at \ac{VHE} energies by \acp{IACT}. We note that the work presented here is a
 very condensed version of the results presented in the accompanying work
 \citep{acero_2013a_constraints-galactic}.  We refer to that publication
 for a more detailed discussion of the analysis.
 
 \section{Introduction}
 
-We took all sources detected at \tev energies and potentially associated
+We took all sources detected at \ac{VHE} energies and potentially associated
 with \acp{PWN} and performed a search at \gev energies for $\gamma$-ray
 emission. As was seen in previous chapters, many \acp{PWN} have been
-detected both at \gev and \tev energies. Therefore, we suspect that by
-searching \ac{LAT} data in the regiongs of \tev \acp{PWN} might yield
+detected both at \gev and \ac{VHE} energies. Therefore, we suspect that by
+searching \ac{LAT} data in the regiongs of \ac{VHE} \acp{PWN} might yield
 the discovery of new LAT-detecting \ac{PWN}.
 
-In addition, there are several \ac{PWN} which have been detected at \tev
+In addition, there are several \ac{PWN} which have been detected at \ac{VHE}
 energies which do not have an associated $\gamma$-ray pulsar (such as
 \hess{J1825} and \hess{J1837}).  We therefore suspect that this search
 strategy may discovery new \ac{PWN} which were not previously discovered
 either in the off-peak search discussed in \chapref{offpeak} or in other
 dedicated analyses.
 
-\section{List of \tev \Acstitle{PWN} Candidates}
+\section{List of \ac{VHE} \Acstitle{PWN} Candidates}
 
 \input{chapters/tevcat/tables/list_tev_sources}
 
-We used \tevcat to define the our target list of \tev sources.
-\tevcat is a catalog of sources detcted at
-\tev energies by \acp{IACT}.\footnote{\tevcat can be found at
+We used \tevcat to define the our target list of \ac{VHE} sources.
+\tevcat is a catalog of sources detected at
+\ac{VHE} energies by \acp{IACT}.\footnote{\tevcat can be found at
 \url{http://tevcat.uchicago.edu}.}  We selected all sources from
 this catalog where the emission was classified as being due to a
 \ac{PWN}. In addition, we included all \ac{UNID} sources within
@@ -77,7 +77,7 @@ source analysis becomes strongly influenced by Galactic-diffuse
 emission and systematic errors associated with incorrectly modeling
 the emission. On the other hand, the $\gamma$-ray emission from \ac{PWN}
 is expected to be the rising component of an \ac{IC} peak which falls
-at \tev energies. Therefore, the emission observed by the \ac{LAT} is
+at \ac{VHE} energies. Therefore, the emission observed by the \ac{LAT} is
 expected to be hard and most significant at higher energies. Therefore,
 we expect that starting the analysis  at $10\unitspace\gev$ will
 significantly reduce systematics associated with this analysis while
@@ -94,9 +94,9 @@ nearby background sources using \ac{1FHL} \citep{ackermann_2013a_first-fermi-lat
 
 For our analysis, we assume the \gev emission to have a power-law spectral
 model and to have whatever was the publisehd spatial model observed at
-\tev energies.  We define \tstev as the likelihood-ratio test for the
+\ac{VHE} energies.  We define \tstev as the likelihood-ratio test for the
 significance of the source assuming it to have the power-law spectral
-model and the published \tev spatial model.  We claim a detection
+model and the published \ac{VHE} spatial model.  We claim a detection
 when $\tstev > 16$.  Our significance test has only two degrees of freedom:
 the flux and spectral index.  Therefore, following Wilk's Theorem (see
 \subsecref{monte_carlo_validation}), this corresponds to a $3.6\sigma$
@@ -111,7 +111,7 @@ That work then uses \tsext (See \subsecref{extension_fitting}) to test
 if the emission is spatially-extended and otherwise computes an upper
 limit on any potential spatial extension.  The more detailed analysis in
 \cite{acero_2013a_constraints-galactic} is needed to compare the spatial
-overlap between the GeV and TeV emission. But for brevity, we omit the
+overlap between the \gev and \ac{VHE} emission. But for brevity, we omit the
 details and simply use the results.
 
 We note that many of these \acp{PWN} candidates are
@@ -135,7 +135,7 @@ to uncertainty in the effective area.  We estimated the systematic
 using the method described in \cite{ackermann_2012a_fermi-large}.
 The final systematic is due to our uncertainty in the true morphology of
 of the source. We used as our systematic error on this the difference
-in spectrum when the source is fit assuming the published \tev spatial
+in spectrum when the source is fit assuming the published \ac{VHE} spatial
 model and when using the spatial model measured by the LAT.
 
 \section{Sources Detected}
@@ -146,7 +146,10 @@ We present the spatial and spectral results for these sources in
 \tabref{tevcat_spatial_spectral}.
 
 We attempt to classify the \gev emission into four categories.
-The first category is ``PWN'' which is when the emission can be clearly
+A source is categories as ``PWN'' and ``PWNc'' when the emission
+is hard and connects to the \ac{VHE} spectrum.
+
+which is when the emission can be clearly
 identified as being due to a \ac{PWN}.
 
 The second category is ``PWNc''\ldots
@@ -158,6 +161,9 @@ The final category is ``O''\ldots
 TODO, mention how modeling pulsar in background could be somewaht biased.
 
 \todo[inline]{WHERE ARE RESULTS PRESENTED}. We don't quote upper limits, for some reason\ldots.
+
+Mention that \cite{acero_2013a_constraints-galactic} has a better discussion of the sources
+detected.
 
 \input{chapters/tevcat/tables/spatial_results}
 
