@@ -14,6 +14,10 @@ tevcat_include=\includeonly{chapters/tevcat/tevcat}
 tevcat : $(texfiles)
 	pdflatex "$(tevcat_include) \input{$(base)}"
 
+population_study_include=\includeonly{chapters/population_study/population_study}
+population_study: $(texfiles)
+	pdflatex "$(population_study_include) \input{$(base)}"
+
 clean:
 	-rm -f $(base).aux $(base).log $(base).out \
       $(base).toc $(base).dvi $(base).bbl \
