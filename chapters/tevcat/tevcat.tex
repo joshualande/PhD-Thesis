@@ -5,8 +5,6 @@
   ``Constraints on the Galactic Population of TeV Pulsar Wind Nebulae using Fermi Large Area Telescope Observations''
   by Acero et al which is currently in prep.}
 
-TODO:
-
 In \chapref{extended_search}, we searched for spatially-extended sources
 in the 2FGL catalog.  This search showed that the spatial analysis of
 \fermi sources is important in identifying $\gamma$-ray emitting \acp{PWN}.
@@ -143,9 +141,15 @@ model and when using the spatial model measured by the LAT.
 
 \input{chapters/tevcat/tables/spatial_results}
 
-We detected 22 sources.  We present
+We detected 22 sources.  For significantly-detected
+sources, we present
 the spatial and spectral results for these sources in
 \tabref{tevcat_spatial_spectral}.
+Flux upper limits for non-detected sources
+as well as spectral points in three independent energy
+bins are can be found in
+\cite{acero_2013a_constraints-galactic}.
+
 
 We attempt to classify the \gev emission into four categories: \PWNClass
 for sources where the \gev emission is clearly identified \ac{PWN},
@@ -154,8 +158,9 @@ to a \ac{PWN}, \PSRClass for sources where the emission is mostl likely
 due to pulsed emission inside the pulsar's magnetosphere, and \OtherClass
 (for other) when the true nature of emission is uncertaint.
 
-A source is categories as \PWNClass or \PWNcClass when the emission has a
-hard spectrum which connects spectrally to the \ac{VHE} spectrum, and when
+W categorize a source 
+as \PWNClass or \PWNcClass when the emission has a
+hard spectrum which connects spectrally to the \ac{VHE} spectrum and when
 there is some muliwavelenth evidence that the \gev and \ac{VHE} emission
 should be due to a pulsar-wind nebula.  We put a source in the \PWNClass
 when the \ac{VHE} emission suggests more strongly that the emission is
@@ -163,15 +168,19 @@ due to the pulsar wind nebula. We will discuss the muliwavelent evidence
 for each \PWNClass source in \subsecref{pwn_pwnc_sources}.  We include
 in \tabref{tevcat_spatial_spectral} the source classifications.
 
-\todo[inline]{Make note about how we don't quote upper limits, for some reason\ldots. Refer
-to Romain's paper}
+\todo[inline]{Mention that 
+\cite{acero_2013a_constraints-galactic}.
+ has a better discussion of the sources}
 
 
 \subsection{\PWNClass and \PWNcClass Sources}
 \subseclabel{pwn_pwnc_sources}
 
 In total, we detect fourteen sources which we classify as \PWNClass or
-\PWNcClass.  Of these sources, three are classified as \PWNClass.  They
+\PWNcClass. Five of these \ac{PWN} and \ac{PWN} candidates are first
+reported in this analysis.
+
+Of these fourteen sources, three are classified as \PWNClass.  They
 are \hess{J1356}, \mshfifteenfiftytwo (\hess{J1514}), and \hess{J1825}.
 \hess{J1356} and \mshfifteenfiftytwo are classified as \PWNClass
 because of the correlation between the X-ray and \ac{VHE} emission
@@ -183,8 +192,25 @@ was first presented as an \ac{PWN} in this work.  Once we add the Crab
 Nebula and \velax (not analyzed in this work) to this list, the total
 number of clearly-identified \acp{PWN} detected at \gev energies is five.
 
-In addition, we detect 11 \PWNcClass sources.
-Of these sources, seven have been previously publisehd
+In addition, we detect 11 \PWNcClass-type sources.  
+Four of tehse sources are first reported in this work:
+\hess{J1119}, \hess{J1303}, \hess{J1420}, and \hess{J1841}.
+These sources are all powered by pulsars energetic
+enough to power the observed emission
+(\psrj{1119}, ...).
+
+
+Of these
+sources, the detection of seven were previously published:
+\hess{J1023} \citep{ackermann_2011_fermi-lat-search},
+\hess{J1640} \citep{slane_2010a_fermi-detection}, \hess{J1616}
+\citep{lande_2012_search-spatially}, \hess{J1632}
+\citep{lande_2012_search-spatially}, \hess{J1837}
+\citep{lande_2012_search-spatially}, \hess{J1848}
+\citep{tam_2010a_search-counterparts}, and \hess{J1857}
+\citep{rousseau_2012a_fermi-lat-constraints}.
+
+
 
 We add \hess{J1848} to the list of \PWNcClass sources even
 though the \gev emission has a soft spectrum because of
@@ -212,5 +238,5 @@ The final category is ``PSR''\ldots
 
 
 
-todo[inline]{Forward reference population study in \chaplabel{population_study}.}
+\todo[inline]{Forward reference population study in \chaplabel{population_study}.}
 

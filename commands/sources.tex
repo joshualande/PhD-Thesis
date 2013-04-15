@@ -23,7 +23,14 @@
 {J1023}{\basehess{1023}{-}{575}}
 {J1848}{\basehess{1848}{-}{018}}
 {J1514}{\basehess{1514}{-}{591}}
+{J1857}{\basehess{1857}{+}{026}}
 }[\PackageError{hess}{Undefined option to hess#1}{}]}
+
+
+\newcommand{\basepsrj}[3]{SPR$\,$J#1$#2$#3\xspace}
+\DeclareRobustCommand{\psrj}[1]{\IfEqCase{#1}{
+{1119}{\basepsrj{1119}{-}{6127}}
+}[\PackageError{psrj}{Undefined option to psrj#1}{}]}
 
 \newcommand{\basetwofgl}[3]{2FGL$\,$J#1$#2$#3\xspace}
 \DeclareRobustCommand{\twofgl}[1]{
@@ -39,7 +46,7 @@
 
 
 % PWN Classifications
-\newcommand{\PWNClass}{``PWN''}
-\newcommand{\PWNcClass}{``PWNc''}
-\newcommand{\OtherClass}{``O''}
-\newcommand{\PSRClass}{``PSR''}
+\newcommand{\PWNClass}{``PWN''\xspace}
+\newcommand{\PWNcClass}{``PWNc''\xspace}
+\newcommand{\OtherClass}{``O''\xspace}
+\newcommand{\PSRClass}{``PSR''\xspace}
