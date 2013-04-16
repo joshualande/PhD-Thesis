@@ -8,26 +8,35 @@
 % is fragile and does not work well in section titles.
 % See http://tex.stackexchange.com/questions/4736/what-is-the-difference-between-fragile-and-robust-commands
 % Or http://tex.stackexchange.com/questions/61503/newcommand-vs-declarerobustcommand
-\newcommand{\basehess}[3]{HESS$\,$J#1$#2$#3\xspace}
-\DeclareRobustCommand{\hess}[1]{\IfEqCase{#1}{
-{J1825}{\basehess{1825}{-}{137}}
-{J1640}{\basehess{1640}{-}{465}}
-{J1837}{\basehess{1837}{-}{069}}
-{J1632}{\basehess{1632}{-}{478}}
-{J1614}{\basehess{1614}{-}{518}}
-{J1616}{\basehess{1616}{-}{508}}
-{J1119}{\basehess{1119}{-}{614}}
-{J1303}{\basehess{1303}{-}{631}}
-{J1420}{\basehess{1420}{-}{607}}
-{J1841}{\basehess{1841}{-}{055}}
-{J1356}{\basehess{1356}{-}{645}}
-{J1023}{\basehess{1023}{-}{575}}
-{J1848}{\basehess{1848}{-}{018}}
-{J1514}{\basehess{1514}{-}{591}}
-{J1857}{\basehess{1857}{+}{026}}
-{J1804}{\basehess{1804}{-}{216}}
-{J1634}{\basehess{1634}{-}{472}}
-}[\PackageError{hess}{Undefined option to hess#1}{}]}
+\newcommand{\basehessj}[3]{HESS$\,$J#1$#2$#3\xspace}
+\DeclareRobustCommand{\hessj}[1]{\IfEqCase{#1}{
+{1825}{\basehessj{1825}{-}{137}}
+{1640}{\basehessj{1640}{-}{465}}
+{1837}{\basehessj{1837}{-}{069}}
+{1632}{\basehessj{1632}{-}{478}}
+{1614}{\basehessj{1614}{-}{518}}
+{1616}{\basehessj{1616}{-}{508}}
+{1119}{\basehessj{1119}{-}{614}}
+{1303}{\basehessj{1303}{-}{631}}
+{1420}{\basehessj{1420}{-}{607}}
+{1841}{\basehessj{1841}{-}{055}}
+{1356}{\basehessj{1356}{-}{645}}
+{1023}{\basehessj{1023}{-}{575}}
+{1848}{\basehessj{1848}{-}{018}}
+{1514}{\basehessj{1514}{-}{591}}
+{1857}{\basehessj{1857}{+}{026}}
+{1804}{\basehessj{1804}{-}{216}}
+{1634}{\basehessj{1634}{-}{472}}
+{1018}{\basehessj{1018}{-}{589}}
+{1507}{\basehessj{1507}{-}{622}}
+{1834}{\basehessj{1834}{-}{087}}
+}[\PackageError{hess}{Undefined option to \\hessj: #1}{}]}
+
+\newcommand{\baseverj}[3]{VER$\,$J#1$#2$#3\xspace}
+\DeclareRobustCommand{\verj}[1]{\IfEqCase{#1}{
+{2016}{\baseverj{2016}{+}{372}}
+}[\PackageError{psrj}{Undefined option to \\verj: #1}{}]}
+
 
 
 \newcommand{\basepsrj}[3]{PSR$\,$J#1$#2$#3\xspace}
@@ -36,7 +45,7 @@
 {1301}{\basepsrj{1301}{-}{6305}}
 {1420}{\basepsrj{1420}{-}{6048}}
 {1838}{\basepsrj{1838}{-}{0537}}
-}[\PackageError{psrj}{Undefined option to psrj#1}{}]}
+}[\PackageError{psrj}{Undefined option to \\psrj: #1}{}]}
 
 \newcommand{\basetwofgl}[3]{2FGL$\,$J#1$#2$#3\xspace}
 \DeclareRobustCommand{\twofgl}[1]{
