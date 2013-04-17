@@ -48,12 +48,25 @@
 {1838}{\basepsrj{1838}{-}{0537}}
 }[\PackageError{psrj}{Undefined option to \\psrj: #1}{}]}
 
-\newcommand{\basetwofgl}[3]{2FGL$\,$J#1$#2$#3\xspace}
-\DeclareRobustCommand{\twofgl}[1]{
+\newcommand{\basetwofglj}[3]{2FGL$\,$J#1$#2$#3\xspace}
+\DeclareRobustCommand{\twofglj}[1]{
 \IfEqCase{#1}{
-{J1857}{\basetwofgl{1857}{+}{026}}
-{X}{X}
-}[\PackageError{hess}{Undefined option to hess#1}{}]
+%{1857}{\basetwofglj{1857}{+}{026}}
+}[\PackageError{hess}{Undefined option to \\twofglj: #1}{}]
+}
+
+\newcommand{\baseonefglj}[3]{1FGL$\,$J#1$#2$#3\xspace}
+\DeclareRobustCommand{\onefglj}[1]{
+\IfEqCase{#1}{
+{1018.6}{\baseonefglj{1018.6}{-}{5856}}
+}[\PackageError{hess}{Undefined option to \\onefglj: #1}{}]
+}
+
+\newcommand{\basesnrg}[3]{SNR G$\,$J#1$#2$#3\xspace}
+\DeclareRobustCommand{\snrg}[1]{
+\IfEqCase{#1}{
+{284.3}{\basesnrg{284.3}{-}{1.8}}
+}[\PackageError{hess}{Undefined option to \\snrg: #1}{}]
 }
 
 \newcommand{\mshfifteenfiftytwo}{MSH\,15$-$52\xspace}
