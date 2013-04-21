@@ -6,12 +6,21 @@ is typically believed to originate in syncrotron
 
 \subsection{Synchrotron}
 
-\todo[inline]{Get image of Synchrotron radiation (from R\&L to include in discussion.}
 
-The syncrotron radiation processes is commonly observed
-in astrophysics. It is caused when charged particles,
-typically electrons, spiral around magnetic field lines.
+\begin{figure}[htbp]
+  \centering 
+    \includegraphics{chapters/introduction/figures/syncrotron_radiation_spiral.pdf}
+    \caption{In synchrotron radiation, charged particles spiral along
+      magnetic filed lines, radiating photons as they accelerate.}
+  \figlabel{syncrotron_radiation_spiral}
+\end{figure}
 
+
+The synchrotron radiation processes is commonly observed in
+astrophysics. It is caused when charged particles, typically
+electrons, spiral around magnetic field lines.  As they
+accelerate, they radiate photons.  This process is illustrated in
+\figref{syncrotron_radiation_spiral}.
 This emission is discussed thoroughly in
 \cite{blumenthal_1970a_bremsstrahlung-synchrotron} and
 \cite{rybicki_1979a_radiative-processes}.
@@ -197,18 +206,23 @@ that interacts with a target density of electrons (\ElectronDensity) or ions (\I
   \frac{\derivative\CrossSection_{\electron\AtomicNumber}}{\derivative\energy}
 \end{equation}
 
-Here, $\velocity_\electron$ is the velcoity of a the
+Here, $\velocity_\electron$ is the velocity of the
 electron, and $\CrossSection_{\electron\electron}$ and
 $\CrossSection_{\electron\AtomicNumber}$ are the electron-electron and
 electron-ion cross sections.
-
-The actual evaluation of these cross sections is quite
-involved.  The electron-electron cross section was worked out in
-\cite{haug_1975a_bremsstrahlung-production}.  The electron-ion cross
-section XXXXX.
-
-We refer to \cite{houck_2006a_models-nonthermal} for a detailed
-description of the calculation of this cross section.
+The actual formulas for 
+$\derivative\CrossSection_{\electron\electron}/\derivative\energy$
+and 
+$\derivative\CrossSection_{\electron\AtomicNumber}/\derivative\energy$
+are quite involved.  The electron-electron cross section was worked out
+in \cite{haug_1975a_bremsstrahlung-production}.  The electron-ion cross
+section is called the The Bethe-Heitler cross-section and is worked
+out in the Born approximation in \cite{heitler_1953a_quantum-theory}
+and \cite{koch_1959a_bremsstrahlung-cross-section}.  A more
+accurate relativisatic correction to this formula is given in
+\cite{haug_1997a_nonrelativistic-bremsstrahlung}.  We refer
+to \cite{houck_2006a_models-nonthermal} for a detailed numerical
+implementation of these formulas.
 
 \subsection{Pion Decay}
 
