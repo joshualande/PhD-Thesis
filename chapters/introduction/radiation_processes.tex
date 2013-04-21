@@ -228,9 +228,8 @@ implementation of these formulas.
 
 Neutral \pion decay occurs when highly-energetic protons interact with
 thermal protons. This
-emission happens when protons dectay into neutral pions through $pp \processarrow
-\pi^0 + X$ and subsequently decay through $\pi^0 \processarrow 2\gamma$.
-
+emission happens when protons decay into neutral pions through $pp \processarrow
+\pion + X$ and the $\pion$ subsequently decay through $\pion \processarrow 2\gamma$.
 The gamma-ray emission from neutral pion decay can be computed
 as
 \begin{equation}
@@ -238,12 +237,12 @@ as
   \HydrogenDensity \int \denergy \velocity_\proton \ParticleDistribution_\proton(\energy) 
   \frac{\derivative\CrossSection_{\proton\proton}}{\derivative\energy}
 \end{equation}
-Here, $\ParticleDistribution_\proton(\energy)$ is the differential proton
-distribution,
-$\sigma_{\proton\proton}$ is gamma-ray cross section through proton-proton interactions,
-and $\HydrogenDensity$ is the target hydrogen density.
-
-\todo[inline]{Describe the characteristic pi0 cutoff energy}
-
-\todo[inline]{Cite the Kamae crosssection paper for detailed calcuations.}
-
+Here, $\ParticleDistribution_\proton(\energy)$
+is the differential proton distribution,
+$\derivative\CrossSection_{\proton\proton}/\derivative\energy$
+is $\gamma$-ray cross section through proton-proton interactions, and
+$\HydrogenDensity$ is the target hydrogen density.  The computation
+of $\derivative\CrossSection_{\proton\proton}/\derivative\energy$ is
+rather invovled. Typically, people employ a parmaeteriztaion of 
+a very detaield calcuation of the cross section 
+from \cite{kamae_2006a_parameterization-gamma}.
