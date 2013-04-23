@@ -71,6 +71,78 @@ angular resolution ($\sim3\fdg5$ at $\energy=100\unitspace\mev$
 and decreasing to $\lesssim0\fdg15$ for $\energy>10\unitspace\gev$)
 \citep{atwood_2009a_large-telescope}.
 
-With its $2.4\unitspace\steradian$ filed of view,
+\begin{figure}[htbp]
+  \centering
+  \includegraphics{chapters/introduction/figures/lat_point_source_sensitivity.pdf}
+  \caption{
+  The \ac{LAT} point-source sensitivity for exposures of
+  $100\unitspace\second$, 1 orbit, $1\unitspace\day$,
+  and $1\unitspace\year$.  This figure is from
+  \cite{atwood_2009a_large-telescope}.
+  }
+  \figlabel{lat_point_source_sensitivity}
+\end{figure} 
 
-\todo[inline]{forward reference description of analysis of LAT data}
+
+With its $2.4\unitspace\steradian$ filed of view, \fermi can observe
+the entire sky almost unifomly every $\sim3\unitspace\hour$.
+With one year of observations, the \ac{LAT} has a point-source
+flux sensitivity ($E>100\unitspace\mev$) of $3 \times 10^{-9}
+\ph \cm^{-2}\second{-1}$ assuming a high-latitidue diffuse flux
+($E>100\unitspace\mev$) of $1.5\times10^{-5}\cm^{-2}\second^{-1}\steradian^{-1}$
+\figref{lat_point_source_sensitivity} plots the sensitivity
+for exposures of varying timescales.
+
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics{chapters/introduction/figures/lat_effective_area.pdf}
+  \caption{
+  The \ac{LAT} effecitve area (a) as a function of energy for
+  $\gamma$-rays that are incident on the \ac{LAT} perpendicularly from
+  above and (b) as a function of incident angle for photons with an
+  energy of $10\unitspace\gev$.  The \ac{LAT} performance is computed
+  for the \psevensourcevsix event classification.  This figure is from
+  \cite{ackermann_2012a_fermi-large}.
+  }
+  \figlabel{lat_effective_area}
+\end{figure} 
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics{chapters/introduction/figures/lat_psf.pdf}
+  \caption{
+  The angular resolution (68\% and 95\% containment radius)
+  as a function of energy.
+  The \ac{LAT} performance is computed for the \psevensourcevsix
+  event classification.
+  This figure is from \cite{ackermann_2012a_fermi-large}.
+  }
+  \figlabel{lat_psf}
+\end{figure} 
+
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics{chapters/introduction/figures/lat_energy_dispersion.pdf}
+  \caption{
+  The energy disperion (a) as a function of energy for $\gamma$-rays that
+  are incident on the \ac{LAT} perpendicularly from above and (b) as a function
+  of the incident angle for photons with an energy of $10\unitspace\gev$.
+  The \ac{LAT} performance is computed for the \psevensourcevsix
+  event classification.
+  This figure is from \cite{ackermann_2012a_fermi-large}.
+  }
+  \figlabel{lat_energy_dispersion}
+\end{figure} 
+
+The effective area, \ac{PSF}, and energy dixpersion are both a function
+of energy and of incident angle.  \figlabel{lat_effective_area}
+plots the effective area as a function of energy and incident angle.
+\figlabel{lat_psf} plots the \ac{PSF} as a function of energy.  Finally,
+\figlabel{lat_energy_dispersion} plots the energy disperison as a function
+of energy and incident angle.  Given the strongly-nonlinear response of
+the \ac{LAT}, we will describe in \chapref{maximum_likelihood_analysis}
+the analysis methods used to analyze \ac{LAT} data.
+
+
