@@ -11,7 +11,7 @@ This represents
 the number of photons emitted per unit energy, per unit
 time, per units solid angle
 at a given energy, time, and position in the sky.
-In \gls{CGS}, it has units of \fluxdensityunits.
+In \ac{CGS}, it has units of \fluxdensityunits.
 
 Often, the spatial and spectral part of the source model
 are separable and independent of time. When that is the case,
@@ -23,10 +23,10 @@ Here, \dnde is only a function of energy and \pdf(\solidangle) is only
 a function of position (\solidangle).  In this formulation, some of the
 model parameters \modelparams are taken by the $\dnde$ function and some
 by the $\pdf(\solidangle)$ function.
-In \gls{CGS}, \dnde is in units of \prefunits.
+In \ac{CGS}, \dnde is in units of \prefunits.
 
 The spectrum \dnde is typically modeled by simple geometric functions.
-The most popular spectral model is a \gls{PL}:
+The most popular spectral model is a \ac{PL}:
 \begin{equation}
   \dnde = \prefactor \left(\frac{E}{\Escale}\right)^{-\spectralindex}
 \end{equation}
@@ -35,7 +35,7 @@ Here, \dnde is a function of energy and also fo the two model parameters
 parameter \Escale is often called the energy scale or the pivot
 energy and is not considered a model parameter.
 
-Another common spectral model is the \gls{BPL} spectral model
+Another common spectral model is the \ac{BPL} spectral model
 \begin{equation}
   \dnde = \prefactor \times
     \begin{cases}
@@ -47,15 +47,15 @@ This model represents a powerlaw with an index
 of $\spectralindex_1$ which has a break at energy \Ebreak
 to having an index of $\spectralindex_2$.
 
-Finally, the \gls{ECPL} spectral model is often
+Finally, the \ac{ECPL} spectral model is often
 used to model the $\gamma$-ray emission from pulsars:
 \begin{equation}
   \dnde = \prefactor \left(\frac{E}{\Escale}\right)^{-\spectralindex}
   \exp\left(-\frac{E}{\Ecutoff}\right).
 \end{equation}
 For energies much below \Ecutoff, 
-the \gls{ECPL} is a \gls{PL} with spectral index \spectralindex.
-For energies much larger than \Ecutoff, the \gls{ECPL}
+the \ac{ECPL} is a \ac{PL} with spectral index \spectralindex.
+For energies much larger than \Ecutoff, the \ac{ECPL}
 exponentially decreases.
 
 \pdf represents the spatial distribution of the emisison.
@@ -63,7 +63,7 @@ It is traditionally normalized as though it was a probability:
   \begin{equation}
     \int \dsolidangle \intspace \pdf(\solidangle).
   \end{equation}
-Therefore, in \gls{CGS} \pdf has units of \pdfunits
+Therefore, in \ac{CGS} \pdf has units of \pdfunits
 For a point-like source at a position $\solidangle'$, the spatial model is:
   \begin{equation}
     \pdf(\solidangle) = \delta(\solidangle - \solidangle')
@@ -81,7 +81,7 @@ into multiple smaller time intervals
 and to perform multiple likelihood fits in each time range.
 
 In some situations, the spatial and spectral part of a source do not nicely decouple.
-An example of this could be \glspl{SNR} which could show a spectral variation
+An example of this could be \acs{SNR} which could show a spectral variation
 across the source. 
 \cite{katsuta_2012_fermi-lat-observation} and \cite{hewitt_2012_fermi-lat-observations} have
 simplied this problem by
