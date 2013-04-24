@@ -1,3 +1,6 @@
+\section{Defining a Model of the Sources in the Sky}
+\seclabel{defining_model}
+
 % This notation folows page 23 of Matthew Kerr's Thesis.
 % with some parts adapted from 
 %   http://www-glast.slac.stanford.edu/software/datachallenges/dc2/JuneWorkshop/Downloads/Likelihood_performance.pdf
@@ -23,7 +26,7 @@ Here, \dnde is only a function of energy and \pdf(\solidangle) is only
 a function of position (\solidangle).  In this formulation, some of the
 model parameters \modelparams are taken by the $\dnde$ function and some
 by the $\pdf(\solidangle)$ function.
-In \ac{CGS}, \dnde is in units of \prefunits.
+In \ac{CGS}, \dnde has units of \prefunits.
 
 The spectrum \dnde is typically modeled by simple geometric functions.
 The most popular spectral model is a \ac{PL}:
@@ -64,32 +67,27 @@ It is traditionally normalized as though it was a probability:
     \int \dsolidangle \intspace \pdf(\solidangle).
   \end{equation}
 Therefore, in \ac{CGS} \pdf has units of \pdfunits
+
 For a point-like source at a position $\solidangle'$, the spatial model is:
   \begin{equation}
     \pdf(\solidangle) = \delta(\solidangle - \solidangle')
   \end{equation}
-and is a function of the position of the source.
+and is a function of the position of the source ($\solidangle'$).
 Example spatial models for spatially-extended sources will be presented
-in section XXXXX\todo{WHAT SECTION DESCRIBES EXTENDED SOURCE PDFs}
+in \subsecref{extension_fitting}.
 
+This formulation assumed that the source models are time independent.
+This is rarely a limitation because it is very difficult to find
+simple paremterized models to fit the time behavior of a variable
+source. Instead, the typical strategy to fit varaible sources is to
+divide a large range of time into multiple smaller time intervals and
+to perform likelihood fits independently in each time range.
 
-This formulation assumed that the source models are not time dependent.
-This is traditionally because it is difficult to find simple paremterized
-models to fit the time behavior of a variable source. Instead, the typtical
-strategy to fit varaible sources is to divide a large range of time
-into multiple smaller time intervals 
-and to perform multiple likelihood fits in each time range.
-
-In some situations, the spatial and spectral part of a source do not nicely decouple.
-An example of this could be \acs{SNR} which could show a spectral variation
-across the source. 
-\cite{katsuta_2012_fermi-lat-observation} and \cite{hewitt_2012_fermi-lat-observations} have
-simplied this problem by
-A simple method which has been adopted to study
-this kind of sourcc. \todo[inline]{FINISH DISCUSSION}
-In situations where spatial and spectral components couple, typical to make
-multiple spatial templates, each with an indepdnet spectra (e.g. the Puppis A paper's
-fitting multiple hemispheres).
-
-\todo[inline]{Discuss how diffuse background is more complciated and requires
-a mapcube.}
+In some situations, the spatial and spectral part of a
+source do not nicely decouple.  An example of this could be a
+spatially-extended \acs{SNR} or \acp{PWN} which show a spectral
+variation across the source, or alternately show an energy-dependent
+morphology.  \cite{katsuta_2012_fermi-lat-observation} and
+\cite{hewitt_2012_fermi-lat-observations} have avoided this issue by
+dividing the extended source into multiple non-overlaping extended source
+templates which are each allowed to have a different spectra.

@@ -1,21 +1,14 @@
+\section{The \Acstitle{LAT} Instrument Response Functions}
+\seclabel{lat_irfs}
 
 
-The performance of the LAT is composted of two effects.
-The efficiency of the LAT referes to its ability to to
-reconstruct a photon which comes into the detect.
-The disperson of the LAT refers to the probability of
-misreconstructing an event. 
-
-
-The efficiency is typically called the effective area.
-We write it as $\effectivearea(\energy,\time,\solidangle)$.
-It is a function of energy, time, and \ac{SA}.
-It is measured in units of area ($\cm^2$).
-
-\todo[inline]{LINK TO arXiv:1206.1896 for MORE THOUROUGH
-DISCUSSION OF EFFECTIVE AREA}
-
-\todo[inline]{DISCUSS HOW EFFECTIVE AREA IS A FUNCTION OF DIFFERENT THINGS}
+The performance of the LAT is quantified by its effective area, \ac{PSF},
+and energy dispersion (see \subsecref{Performance_lat}) We will write the
+effective area as $\effectivearea(\energy,\time,\solidangle)$.  It is a
+function of energy, time, and \ac{SA} and is measured in units of area
+($\cm^2$). The effective area is also a function of the conversion type
+of the $\gamma$-ray (front-entering or back-entering event), and the azimuthal
+angle of the $\gamma$-ray, but we will ignore these effects in what follows.
 
 The dispersion is the probability of a photon with true energy \energy
 and incoming direction $\solidangle$ at time \time being reconstructed to 

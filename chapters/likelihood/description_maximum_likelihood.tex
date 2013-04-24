@@ -1,3 +1,5 @@
+\section{Description of Maximum-Likelihood Analaysis}
+\seclabel{description_maximum_likelihood}
 
 The field of $\gamma$-ray astrophysics has generally
 found maximum-likelihood to be a dependable method to
@@ -17,29 +19,49 @@ probability of obtaining the observed data given an assumed model:
 \secref{defining_model} will provide describe the
 components that go into a model of the data.
 
-Generaly, a model of the sky depends upon a list
-of parameters that we denote as $\modelparams$.
-Therefore, the likelihood function itself becomes
-a function of the parameters of the model:
+Generaly, a model of the sky depends upon a list of parameters that we
+denote $\modelparams$.  Therefore, the likelihood function can e written
+as a function of these parameters:
 \begin{equation}
   \likelihood = \likelihood(\modelparams)
 \end{equation}
-In a maximum-likelihood analysis, one typically
-fits parametesr of a model by maximuzing the liklihood
-by varying parameters of the model:
+In a maximum-likelihood analysis, one typically fits parameters of a model
+by maximizing the liklihood as a function of the parameters of the model:
 
-\todo[inline]{Finish discussion of why maximum likelihood analysis is so good}
-The term maximum-likelihood refers to the fact that
-the best-fit parameters of a model can be estimated
-by maximizing the likelihood function.
+The term maximum-likelihood refers to the fact that the best-fit
+parameters of a model can be estimated by maximizing the likelihood
+function.
 \begin{equation}
 \modelparams_\text{max} = \underset{}{\text{arg }}\underset{\modelparams}{\text{max}} \likelihood(\modelparams)
 \end{equation}
 
-The primary benefits of the likelihood function is that it allows
-very data with varying sensitivities to be combined into
-a single quantitity which sensitivly probes the structure one is looking for.
+Assuming that you can have a reasonable model for the data and that
+you understand the distribution of the data points, maximum-likelihood
+analysis is can be used toe very sensitivly test for new features in
+your model.  This is because the likelihood function can naturally
+incoproate data with different significance levels.
 
-Typically, in a maximum likelihood analysis
+Typically, a \ac{LRT} is used to determine the significance of
+a new feature in your model. A common use case is searching for a new source
+or testing for a spectral break. In a \ac{LRT}, the likelihood
+under two hypothesis are compared. We define $\hypothesis_0$ to be 
+a background model and $\hypothesis_1$ to be a model including
+the background and in addition whatever feature is being tested for.
 
-\todo[inline]{Describe Wilk's Therorem and it's application to parameter error estimation}
+Under the assumption that $\hypothesis_0$ is nested within $\hypothesis_1$,
+we can use Wilks' theorem to compute the significance of
+of the detection of this feature \citep{wilks_1938a_large-sample-distribution}.
+We define the test statistic as
+\begin{equation}
+  \ts = 2\log(\likelihood\hypothesis_1/\likelihood\hypothesis_0)
+\end{equation}
+According to Wilks' theoroem, if $\hypothesis_1$ has $n$ additional
+degrees of freedom compared to $\hypothesis_0$, if none of the additional
+parameters lie on the edge of parameter space, and if the true data is
+distributed as $\hypothesis_0$, then the distribution of \ts should be
+\begin{equation}
+  \pdf(\ts) = \chi^2_n(\ts)
+\end{equation}
+Therefore, if one obtains a particular value of \ts, they can use
+this this chi-squared distribution to determine the significance of
+the detection.
