@@ -62,50 +62,120 @@ This data-driven model is described in \cite{nolan_2012_fermi-large}.
 \subsection{\Actitle{2FGL}}
 \subseclabel{2fgl}
 
-\Ac{2FGL} was a catalog by the \ac{LAT} collaboration containing XXX Sources.
-\todo[inline]{Describe Catalog}
+Using 2 years of observations, the \ac{LAT} collaboration produces
+a list of 1873 $\gamma$-ray-emitting sources detected significantly
+in the $100\unitspace\mev$ to $100\unitspace\gev$ energy range
+\cite{nolan_2012_fermi-large}.  Using the maximum-likelihood analysis
+method described in \chapref{maximum_likelihood_analysis}, \ac{2FGL}
+computed for each source the position and uncertainty on this error. In
+additon, the catalog produced the best-fit spectral parameters assuming
+this source has a power-law spectrum or a log-normal spectrum.
+Primarly, the catalog assumed sources to be point like. But twelve
+previously-publisehd sources were included as being spatially extended
+with the spatial model taken from the prior publciations.
 
-\begin{itemize}
-  \item Citation is \cite{nolan_2012_fermi-large}
-  \item Source classification method
-  \item Number of sources detected by the \ac{LAT}
-  \item Forward reference \chapref{maximum_likelihood_analysis},
-    which does a more thorough description of likelihood analysis method.
-  \item Source classes/associations
-\end{itemize}
+Of these 1873 sources, 127 were firmly identified with a multiwavelent
+counterpart.  A source is only firmly identifided if it meets one of three
+criteraia. First, it woulc have periodic variability.  This applies to
+pulsars and high-mass binaries.  Second, it could have a matching spatial
+morphology. This primarily applies to \acp{SNR} and \acp{PWN}. Finally,
+it could have correlated variablity. This applies primarily to \ac{AGN}.
+In total, \ac{2FGL} clearly identifies 83 pulsars, 28 \acp{AGN}, 6
+\acp{SNR}, 4 \acp{HMB}, 3 \acp{PWN}, 2 normal galaxies, and one nova
+\cite{nolan_2012_fermi-large}.
+
+In addition, 1171 souces are included in the looser critera that
+they are potentially associated with a multiwavelenth counterpart.
+Using these looser critera, 86 sources asre assocaited with pulsars, 25
+with \acp{PWN},  98 with \acp{SNR}.  Finally, 162 were flaged as being
+potentially spurious due to residuals incuded by incorrectly modeling
+the galactic diffuse emission.
+
 
 \subsection{\Actitle{2PC}}
 \subseclabel{2pc}
 
-\Ac{2PC} is a \ldots
-\seclabel{second_pulsar_catalog}
+Using 3 years of data, the \ac{LAT} collaboration produced a
+list of 117 pulsars significantly detected by the \ac{LAT} called
+\acf{2PC} \citep{abdo_2013a_second-fermi}.  To search for pulsars with
+\ac{LAT}-detected pulsations, commonly pulsars are first detected at
+either radio or x-ray energies. Then, a multiwavelenth model of the
+pulsar's rotational period is used to fold the $\gamma$-ray photons
+coming from the direction of the pulsar.  The H-test is used to compute
+the signifcance of pulsations \citep{de-jager_1989a_poweful-periodic}
+and typically a $5\sigma$ threshold is used for claiming a significant
+detection.  This method was used to discover 61 of the $\gamma$-ray
+emitting pulsars.
 
-\begin{itemize}
-  \item Process of detecting Pulsars with the \ac{LAT}
-  \item Number of pulsars detected by the \ac{LAT}
-\end{itemize}
+In addition, some pulsars are known to emitt only $\gamma$-rays.
+These sources search for by blindly searching in the $\gamma$-ray data
+for periodic emission. This method was used to detect 36 pulsars.
+
+Finally, in the third method, the positions of unidentifed \ac{LAT}
+sources which could potentially be associated with pulsars are search in
+radio to look for pulsar emission. This method has lead to the dtection
+of 20 new \acp{MSP}.
+
+In total \ac{2PC} contains a list of 42 radio-loud pulsars, 35 radio-quiet
+pulsars, and 40 $\gamma$-ray \acp{MSP}.
 
 \subsection{\Acptitle{PWN} Detected by \Actitle{LAT}}
 \subseclabel{pwn_detected_lat}
 
+In addition to detecting over 100 pulsars, the \ac{LAT} has detected
+several \acp{PWN}.  In situations where the \acp{PWN} has an associated
+\ac{LAT}-detected pulsar, most commonly the spectral analysis of the
+\ac{PWN} is performed only during times in the pulsar phase where the
+pulsar emission is at a minum. For some pulsars, such as \hessj{1825},
+there is no associated \ac{LAT}-detected pulsar and the spectral analysis
+can be performed without cutting on pulsar phase.
+
 \subsubsection{Crab}
+
+\begin{figure}[htbp]
+  \centering
+    \includegraphics{chapters/introduction/figures/crab_spectrum.pdf}
+  \caption{
+    The \ac{SED} of the Crab nebula observed by the \ac{LAT} as
+    well as a variety of other instruments.
+    This figure is from \cite{abdo_2010a_fermi-large}.
+  }
+  \figlabel{crab_spectrum}
+\end{figure}
+
+The Crab nebula was first detected in $\gamma$-rays by \ac{EGRET}.
+Observations of the Crab by the \ac{LAT} provide unprecedented resolution
+on the $\gamma$-ray emission \cite{abdo_2010a_fermi-large}.  The Crab
+nebula shows a very strong spectral break in the \ac{LAT} energy band,
+and the $\gamma$-ray emission is interpeted as being the combination of
+a synctroton component at low energy and an inverse compont component
+at high energy.
+
+In addition, $\gamma$-ray emission from the Crab nebula has
+been obseved to be variability in time and have flaring periods
+\citep{abdo_2011a_gamma-ray-flares}.  The Crab was observed to have
+an extreme flare in 2011 \citep{buehler_2012a_gamma-ray-activity}.
+This variability is challengeing to understand given conventional models
+of \ac{PWN} emission.
 
 \subsubsection{Vela X}
 
+TeV detection: 
+LAT detection: \cite{abdo_2010c_fermi-large}
+
 \subsubsection{MSH 15-52}
 
-\todo[inline]{Dig up HESS reference of HESS J1514-59.}
+LAT detection \cite{abdo_2010a_detection-energetic}
 
 \subsubsection{\hessj{1825}}
 
 \hessj{1825} is a cool source
 
 HESS Detection: 
+
 HESS Energy dependent morphology: \cite{aharonian_2006a_energy-dependent}
 
-LAT Detection: \cite{grondin_2011_detection-pulsar}
-
-
+LAT Detection: \cite{grondin_2011a_detection-pulsar}
 
 \subsubsection{\hessj{1640}}
 
