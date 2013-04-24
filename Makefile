@@ -6,6 +6,11 @@ lande_thesis_stanford:
 	pdflatex  $(base)
 	pdflatex  $(base)
 
+likelihood_include=\includeonly{chapters/likelihood/likelihood}
+likelihood : $(texfiles)
+	pdflatex "$(likelihood_include) \input{$(base)}"
+
+
 introduction_include=\includeonly{chapters/introduction/introduction}
 introduction : $(texfiles)
 	pdflatex "$(introduction_include) \input{$(base)}"

@@ -2,37 +2,65 @@
 \seclabel{lat_irfs}
 
 
-The performance of the LAT is quantified by its effective area, \ac{PSF},
-and energy dispersion (see \subsecref{Performance_lat}) We will write the
+The performance of the LAT is quantified by its effective area
+and its dispersion. The effecive area represents the collection area of the
+\ac{LAT} and the dispersion represents the probaility of misreconstructing
+the true parameters of the incident $\gamma$-ray.
+
+We will write the
 effective area as $\effectivearea(\energy,\time,\solidangle)$.  It is a
 function of energy, time, and \ac{SA} and is measured in units of area
 ($\cm^2$). The effective area is also a function of the conversion type
 of the $\gamma$-ray (front-entering or back-entering event), and the azimuthal
 angle of the $\gamma$-ray, but we will ignore these effects in what follows.
 
-The dispersion is the probability of a photon with true energy \energy
-and incoming direction $\solidangle$ at time \time being reconstructed to 
-to have an energy $\energy'$, an incomming direction $\solidangle'$ at a time $\time'$.
-The dispersion is written as $\dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle)$.
+The dispersion is the probability of a photon with true energy
+\energy and incoming direction $\solidangle$ at time \time being
+reconstructed to to have an energy $\energy'$, an incomming direction
+$\solidangle'$ at a time $\time'$.  The dispersion is written as
+$\dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle)$.
 It represents a probability and is therefore normalized such that
 \begin{equation}
-  \int \int \int \denergy \dsolidangle \dtime \dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle) = 1
+  \int \int \int \denergy \dsolidangle \dtime 
+  \dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle) = 1
 \end{equation}
-\todo[inline]{What is the range of the integrals}
-Therefore, $\dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle)$ 
+Therefore,
+$\dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle)$
 has units of 1/energy/\acl{SA}/time
 
-%We further break the diseprsion into two components, once associated with the
-%spatial 
 
-%\todo[inline]{What about temporal dispersion}
-
-We assume these two factors to decouple and write the LAT's instrument response as
+For LAT analysis, we conventionally make the simplifying assumption that
+the energy, spatial, and temporal dispersion decouple:
 \begin{equation}
-  \response(\energy',\solidangle',\time'|\energy,\solidangle,\time) = 
-\effectivearea(\energy,\time,\solidangle) \dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle)
+  \dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle) = 
+  \psf(\solidangle'|E,\solidangle) \edisp(\energy'|\energy) \tdisp(\time'|\time)
 \end{equation}
-Therefore, the instrument response has units of area/energy/\acl{SA}/time
+
+Here, \psf is the point-spread function and represents \ldots
+\todo[inline]{BETTER DISCUSSION OF PSF OF THE LAT, WHAT ITS SCALE IS\ldots}
+
+
+Finally, we note that in principle, there is a finite timing
+resolution of $\gamma$-rays measured by the \ac{LAT}. But
+the timing accuracy is $<10\unitspace\microsecond$
+\microsecond\cite{atwood_2009a_large-telescope} Since this is much
+less than the smallest timing signal which is expected to be observed
+by the \ac{LAT} (millisceond pulsars), issues with timing accuracy are
+typically ignored.
+
+For the \ac{LAT}, the effective area, \ac{PSF}, and energy dispersion
+are discussed in \subsecref{Performance_lat}.
+
+\edisp represents the energy dispersion of the LAT.
+The energy dispersion of the LAT is a function of both the
+incident energy and incident angle of the photon. It varies
+from $\sim$ 5\% to 20\%, degrading at lower energies due to energy
+losses in the tracker and at higher energy due to electromagnetic
+shower losses outside the calorimiter. Similarly, it improves
+for photons with higher incident angles that are 
+allowed a longer path through the calorimieter \citep{ackermann_2012a_fermi-large}.
+
+
 
 The convolution of the flux of a model with the instrument response 
 produces the expected counts per unit energy/time/\acl{SA}
@@ -48,27 +76,8 @@ at a position $\solidangle'$ and at a time $\time'$:
 Here, this integral is performed over all true energies, \acs{SA}, and times
 for which the source model has support.
 
-For LAT analysis, we conventionally make the simplifying assumption that
-the energy , spatial , and time dispersion decouple:
-\begin{equation}
-  \dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle) = 
-  \psf(\solidangle'|E,\solidangle) \times \edisp(\energy'|\energy) \times \tdisp(\time'|\time)
-\end{equation}
 
-Here, \psf is the point-spread function and represents \ldots
-\todo[inline]{BETTER DISCUSSION OF PSF OF THE LAT, WHAT ITS SCALE IS\ldots}
 
-% Information from section 7.1.3 of Eric Charles' calibration paper (arXiv:1206.1896)
-\edisp represents the energy dispersion of the LAT.
-The energy dispersion of the LAT is a function of both the
-incident energy and incident angle of the photon. It varies
-from $\sim$ 5\% to 20\%, degrading at lower energies due to energy
-losses in the tracker and at higher energy due to electromagnetic
-shower losses outside the calorimiter. Similarly, it improves
-for photons with higher incident angles that are 
-allowed a longer path through the calorimieter \citep{ackermann_2012a_fermi-large}.
-
-% This information comes from seciton 7.4 of Eric Charles' calibration paper (arXiv:1206.1896)
 For sources with smoothly-varying spectra, the effects of ignoring
 the inherent energy dispersion of the LAT are typically small.
 \cite{ackermann_2012a_fermi-large} performed a monte carlo simulation to show
@@ -78,16 +87,15 @@ dispersion is typicially ignored for standard likelihood analysis:
 \begin{equation}
 \edisp = \delta(\energy-\energy')
 \end{equation}
-We cauation that for analysis of sources extended to energies below 100
-MeV and for sources expected to have spectra that do not smoothly vary,
-the effects of energy dispersion could be more severe.
+We cauation that for analysis of sources extended to energies below
+$100\unitspace\mev$ and for sources expected to have spectra that do
+not smoothly vary, the effects of energy dispersion could be more severe.
 
 \begin{itemize}
-  \item \tdisp is the time dispersion. 
   \item \todo{Why discard time dispersion}
-  \item The timing dispersion is $<10$ \microsecond\cite{atwood_2009a_large-telescope}
 \item \todo[inline]{WRITE ENERGY DISPERSION AS A DELTA FUNCTION}
 \end{itemize}
+
 
 \todo{FINISH}
 Therefore, the instrument response is typically approximated as
@@ -115,3 +123,15 @@ convolved with the point-spread function.
 \todo[inline]{Figure out how the $\theta$ depedence of the IRFs factors into this calcualtion}
 
 
+
+
+
+
+
+We assume that the effective area and the dispersion decouple and
+we write the LAT's instrument response as
+\begin{equation}
+  \response(\energy',\solidangle',\time'|\energy,\solidangle,\time) = 
+\effectivearea(\energy,\time,\solidangle) \dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle)
+\end{equation}
+Therefore, the instrument response has units of area/energy/\acl{SA}/time
