@@ -7,16 +7,14 @@ and its dispersion. The effecive area represents the collection area of the
 \ac{LAT} and the dispersion represents the probaility of misreconstructing
 the true parameters of the incident $\gamma$-ray.
 
-We will write the
-effective area as $\effectivearea(\energy,\time,\solidangle)$.  It is a
-function of energy, time, and \ac{SA} and is measured in units of area
-($\cm^2$). The effective area is also a function of the conversion type
-of the $\gamma$-ray (front-entering or back-entering event), and the azimuthal
-angle of the $\gamma$-ray, but we will ignore these effects in what follows.
+The
+effective area $\effectivearea(\energy,\time,\solidangle)$
+is a function of energy, time, and \ac{SA} and is measured in units of 
+$\cm^2$. 
 
 The dispersion is the probability of a photon with true energy
 \energy and incoming direction $\solidangle$ at time \time being
-reconstructed to to have an energy $\energy'$, an incomming direction
+reconstructed to have an energy $\energy'$, an incomming direction
 $\solidangle'$ at a time $\time'$.  The dispersion is written as
 $\dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle)$.
 It represents a probability and is therefore normalized such that
@@ -28,40 +26,6 @@ Therefore,
 $\dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle)$
 has units of 1/energy/\acl{SA}/time
 
-
-For LAT analysis, we conventionally make the simplifying assumption that
-the energy, spatial, and temporal dispersion decouple:
-\begin{equation}
-  \dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle) = 
-  \psf(\solidangle'|E,\solidangle) \edisp(\energy'|\energy) \tdisp(\time'|\time)
-\end{equation}
-
-Here, \psf is the point-spread function and represents \ldots
-\todo[inline]{BETTER DISCUSSION OF PSF OF THE LAT, WHAT ITS SCALE IS\ldots}
-
-
-Finally, we note that in principle, there is a finite timing
-resolution of $\gamma$-rays measured by the \ac{LAT}. But
-the timing accuracy is $<10\unitspace\microsecond$
-\microsecond\cite{atwood_2009a_large-telescope} Since this is much
-less than the smallest timing signal which is expected to be observed
-by the \ac{LAT} (millisceond pulsars), issues with timing accuracy are
-typically ignored.
-
-For the \ac{LAT}, the effective area, \ac{PSF}, and energy dispersion
-are discussed in \subsecref{Performance_lat}.
-
-\edisp represents the energy dispersion of the LAT.
-The energy dispersion of the LAT is a function of both the
-incident energy and incident angle of the photon. It varies
-from $\sim$ 5\% to 20\%, degrading at lower energies due to energy
-losses in the tracker and at higher energy due to electromagnetic
-shower losses outside the calorimiter. Similarly, it improves
-for photons with higher incident angles that are 
-allowed a longer path through the calorimieter \citep{ackermann_2012a_fermi-large}.
-
-
-
 The convolution of the flux of a model with the instrument response 
 produces the expected counts per unit energy/time/\acl{SA}
 begin reconstructed to have 
@@ -71,67 +35,75 @@ at a position $\solidangle'$ and at a time $\time'$:
   \eqnlabel{eventrate}
   \eventrate(\energy',\solidangle',\time'|\modelparams)
   = \int \int \int \denergy \, \dsolidangle \, \dtime \,
-  \fluxdensity(\energy,\time,\vec\Omega|\modelparams) \response(\energy',\solidangle',\time'|\energy,\solidangle,\time)
+  \fluxdensity(\energy,\time,\vec\Omega|\modelparams) 
+  \effectivearea(\energy,\time,\solidangle) \dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle)
 \end{equation}
-Here, this integral is performed over all true energies, \acs{SA}, and times
+Here, this integral is performed over all energies, \acp{SA}, and times
 for which the source model has support.
 
 
 
-For sources with smoothly-varying spectra, the effects of ignoring
-the inherent energy dispersion of the LAT are typically small.
-\cite{ackermann_2012a_fermi-large} performed a monte carlo simulation to show
-that for power-law point-like sources, the bias introduced by ignoring
-energy dispersion was on the level of a few perect.  Therefore, energy
-dispersion is typicially ignored for standard likelihood analysis:
+
+For LAT analysis, we conventionally make the simplifying assumption that
+the energy, spatial, and temporal dispersion decouple:
 \begin{equation}
-\edisp = \delta(\energy-\energy')
+  \dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle) = 
+  \psf(\solidangle'|E,\solidangle) \edisp(\energy'|\energy) \tdisp(\time'|\time)
 \end{equation}
-We cauation that for analysis of sources extended to energies below
-$100\unitspace\mev$ and for sources expected to have spectra that do
-not smoothly vary, the effects of energy dispersion could be more severe.
 
-\begin{itemize}
-  \item \todo{Why discard time dispersion}
-\item \todo[inline]{WRITE ENERGY DISPERSION AS A DELTA FUNCTION}
-\end{itemize}
+\edisp represents the energy dispersion of the LAT.  The energy dispersion
+of the LAT is a function of both the incident energy and incident angle
+of the photon. It varies from $\sim$ 5\% to 20\%, degrading at lower
+energies due to energy losses in the tracker and at higher energy due
+to electromagnetic shower losses outside the calorimiter. Similarly,
+it improves for photons with higher incident angles that are allowed a
+longer path through the calorimieter \citep{ackermann_2012a_fermi-large}.
+
+Here, $\psf(\solidangle'|E,\solidangle)$ is the probability of
+reconstructing a $\gamma$-ray to have a position $\solidangle'$ if
+the true position of the $\gamma$-ray has a position $\solidangle$.
+\subsecref{performance_lat} includes a plot of the \psf of the \ac{LAT}.
 
 
-\todo{FINISH}
+Finally, we note that in principle, there is a finite timing resolution
+of $\gamma$-rays measured by the \ac{LAT}. But the timing accuracy is
+$<10\unitspace\microsecond$ \citep{atwood_2009a_large-telescope}. Since
+this is much less than the smallest timing signal which is expected to
+be observed by the \ac{LAT} (millisceond pulsars), issues with timing
+accuracy are typically ignored.  \subsecref{performance_lat} includes
+a plot of the \edisp of the \ac{LAT}.
+
+For a typical analysis of \ac{LAT} data, we also ingore the inherent
+energy dipsersion of the \ac{LAT}.  \cite{ackermann_2012a_fermi-large}
+performed a monte carlo simulation to show that for power-law point-like
+sources, the bias introduced by ignoring energy dispersion was on the
+level of a few perect.  
 Therefore, the instrument response is typically approximated as
 \begin{equation}
   \response(\energy',\solidangle',\time'|\energy,\solidangle,) = 
   \effectivearea(\energy,\time',\solidangle) \psf(\solidangle'|E,\solidangle)
 \end{equation}
+We cauation that for analysis of sources extended
+to energies below $100\unitspace\mev$, the effects of energy dispersion
+could be more severe.
+
 The expected count rate is then typically integrated over time
 to compute the total counts. Assuming that the source model
 is time indepdendent, we get: 
 \begin{equation}
   \eventrate(\energy',\solidangle'|\modelparams)
   = \int \dsolidangle \,
-  \fluxdensity(\energy,\vec\Omega|\modelparams) 
+  \fluxdensity(\energy',\vec\Omega|\modelparams) 
 \left(
-\int \dtime \intspace \effectivearea(\energy,\time,\solidangle) 
+\int \dtime \intspace \effectivearea(\energy',\time,\solidangle) 
 \right)
 \psf(\solidangle'|E,\solidangle)
 \end{equation}
-This equation essentially says that the counts expected by the LAT
-for the particular model
+This equation says that the counts expected by the LAT
+from a given model
 is the product of the source's flux with the effective area and then
 convolved with the point-spread function.
 
-\todo[inline]{Figure out how the $\theta$ depedence of the IRFs factors into this calcualtion}
-
-
-
-
-
-
-
-We assume that the effective area and the dispersion decouple and
-we write the LAT's instrument response as
-\begin{equation}
-  \response(\energy',\solidangle',\time'|\energy,\solidangle,\time) = 
-\effectivearea(\energy,\time,\solidangle) \dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle)
-\end{equation}
-Therefore, the instrument response has units of area/energy/\acl{SA}/time
+Finally, we note that the \psf and effective area is also a function of the conversion type
+of the $\gamma$-ray (front-entering or back-entering event), and the azimuthal
+angle of the $\gamma$-ray. These formulas can be readily generalized to include these effects.
