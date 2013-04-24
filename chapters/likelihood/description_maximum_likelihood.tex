@@ -1,12 +1,12 @@
 
-The field of $\gamma$-ray astrophysics has generally found
-maximum-likelihood to be a dependable method to avoid the issues
-discussed above.  The term likelihood was first introduced by
-\cite{fisher_1925_statistical-methods}.  Maximum-likelihood was applied
-to photon-counting experiments in the context of astrophysics by
-\cite{cash_1979_parameter-estimation}. \cite{mattox_1996_likelihood-analysis}
-described the maximum-likelihood analysis framework devoped to analyze
-EGRET data.
+The field of $\gamma$-ray astrophysics has generally
+found maximum-likelihood to be a dependable method to
+avoid the issues discussed above.  The term likelihood was
+first introduced by \cite{fisher_1925_statistical-methods}.
+Maximum-likelihood was applied to astrophysical photon-counting
+experiments by \cite{cash_1979_parameter-estimation}.
+\cite{mattox_1996_likelihood-analysis} described the maximum-likelihood
+analysis framework developed to analyze \ac{EGRET} data.
 
 In the formulation, one relies upon primarily upon the likelihood
 function.  The likelihood, denoted $\likelihood$, is quite simply the
@@ -24,10 +24,22 @@ a function of the parameters of the model:
 \begin{equation}
   \likelihood = \likelihood(\modelparams)
 \end{equation}
+In a maximum-likelihood analysis, one typically
+fits parametesr of a model by maximuzing the liklihood
+by varying parameters of the model:
+
+\todo[inline]{Finish discussion of why maximum likelihood analysis is so good}
 The term maximum-likelihood refers to the fact that
 the best-fit parameters of a model can be estimated
 by maximizing the likelihood function.
+\begin{equation}
+\vec{\lambda}_\text{max} = \underset{}{\text{arg }}\underset{\vec{\lambda}}{\text{max}} \mathcal{L}(\vec{\lambda})
+\end{equation}
 
-\todo[inline]{What are the benefits of maximum likelihood}
+The primary benefits of the likelihood function is that it allows
+very data with varying sensitivities to be combined into
+a single quantitity which sensitivly probes the structure one is looking for.
+
+Typically, in a maximum likelihood analysis
 
 \todo[inline]{Describe Wilk's Therorem and it's application to parameter error estimation}

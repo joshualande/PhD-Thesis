@@ -2,34 +2,29 @@
 
 The basic picture of the physics of \acp{PWN}
 comes from \cite{rees_1974_origin-magnetic} and
-\cite{kennel_1984_magnetohydrodynamic-model}.  More and more
+\cite{kennel_1984_magnetohydrodynamic-model}.  More 
 sophisticated models have emerged over the years.  See, for example,
 \cite{gelfand_2009_dynamical-model} and refernces therein.
 
-The wind ejected from the pulsar's magnetosphere is initially cold
-which means that it flows radially out from the pulsar.
+The wind ejected from the pulsar's magnetosphere is initially
+cold which means that it flows radially out from the pulsar.
 This unshocked pulsar wind only emittts radiation through \ac{IC}
-\cite{bogovalov_2000_very-high-energy-gamma}.
-This pulsar wind forms a bubble as it presses into
-the \ac{SNR} and forms a shock where the particle wind is furthere accelerated.
+\citep{bogovalov_2000_very-high-energy-gamma}.  This pulsar wind forms
+a bubble as it presses into the \ac{SNR} and forms a termination shock
+where the particle wind is furthere accelerated.
 
 
-As the wind
-leaves the magnetosphere, it is believed to be dominated by the energy
-carried off in electromagnetic fileds (the pointing flux \pointingflux).
-The rest of the energy is released as a particle flux (\particleflux).  We define
-the magnetization of the pulsar wind as
+As the wind leaves the magnetosphere, it is believed to be dominated
+by the energy carried off in electromagnetic fileds (the pointing flux
+\pointingflux).  The rest of the energy is released as a particle flux
+(\particleflux).  We define the magnetization of the pulsar wind as
 \begin{equation}
   \magnetization = \frac{\pointingflux}{\particleflux}
 \end{equation}
-
-"Between the pulsar light cylinder and the position of the wind
-termination shock the nature of the wind must thus change dramatically,
-although the mechanism for this transition is as yet unclear (see Arons
-2002, Melatos 1998)."
-
-
-
+Outside the pulsar light curve, typically $\magnetization>10^4$,
+but at the termination shock typical vlues for $\sigma\lesssim0.01$
+\cite{kennel_1984a_confinement-pulsars},
+but cause of this transition is uncertain \citep{gaensler_2006_evolution-structure}.
 
 \begin{figure}[htbp]
   \centering
@@ -47,56 +42,32 @@ although the mechanism for this transition is as yet unclear (see Arons
   \figlabel{termination_shock}
 \end{figure}
 
-The radius of the bubble (\radiusterminationshock) is the
-radius where the ram pressure from the wind equals the pressure of the
-gas in the \ac{SNR}. 
-The ram pressure is computed as the energy in the
+The radius of the bubble (\radiusterminationshock) is the radius
+where the ram pressure from the wind equals the pressure of the gas
+in the \ac{SNR}.  The ram pressure is computed as the energy in the
 bubble $\energydot \radiusterminationshock/c$ (assuming the particles
 travel with a velocity $\approx \speedoflight$) divided by the volume
 $4\pi\radiusterminationshock^3/3$:
 \begin{equation}
   \radiusterminationshock = \sqrt{\frac{\energydot}{\tfrac{4}{3}\pi \pressureISM \speedoflight}}.
 \end{equation}
-Here, \pressureISM is the pressure in the SNR.
-Typical values for the termination shock are 0.1\unitspace\parsec
-which is an angular size $\sim$ \ac{arcsec} for distances $\sim\kiloparsec$
+Here, \pressureISM is the pressure in the SNR.  Typical values
+for the termination shock are 0.1\unitspace\parsec which is an
+angular size $\sim$ \ac{arcsec} for distances $\sim\kiloparsec$
 \citep{gaensler_2006_evolution-structure}.
 
-At the termination shock, the particles are
-thermalized (given a random pitch angle), and accelerated
-to energies of $10^{15}\unitspace\electronvolt$
-\citep{arons_1996_pulsars-gamma-rays}.
-
+At the termination shock, the particles are thermalized
+(given a random pitch angle), and accelerated to energies of
+$10^{15}\unitspace\electronvolt$ \citep{arons_1996_pulsars-gamma-rays}.
 Downstream of the shock, the particles emit synchotron and \ac{IC}
 radiation as the thermalized electron population interacts with the
 magnetic filed and seed photons \citep{gaensler_2006_evolution-structure}.
+\figref{termination_shock} shows a diagram describing magnetosphere,
+unshocked wind, and synchrotron nebula which make up the Pulsar/\ac{PWN}
+system.
 
-\figref{termination_shock} shows a
-diagram describing magnetosphere, unshocked wind, and synchrotron
-nebula which make up the Pulsar/\ac{PWN} system.
-
-
-
-\begin{itemize}
-  \item ``Following this discovery, a theoretical understanding was
-  soon developed in which the central pulsar generates a magnetized
-  particle wind, whose ultrarelativistic electrons and positrons radiate
-  synchrotron emission across the electromagnetic spectrum (Pacini \&
-  Salvati 1973, Rees \& Gunn 1974). The pulsar has steadily released
-  about a third of its total reservoir of ???? ergs
-  of rotational energy into its surrounding nebula over the last 950
-  years. This is in sharp contrast to shell-like SNRs, in which the
-  dominant energy source is the ??? ergs of kinetic energy
-  released at the moment of the original SN explosion.''  -- \cite{gaensler_2006_evolution-structure}
-  \item How is pulsar outflow accelerated at shock?
-  \item Discuss magnetization stuff :
-    \begin{enumerate}
-      \item see page 76 in "Relativistic Astrophysics and Cosmology" by Shapiro
-    \end{enumerate}
-\end{itemize}
-
-\todo[inline]{Discuss pulsar evolution ``The Evolution and Structure of
-Pulsar Wind Nebulae'' -- Bryan M. Gaensler and Patrick O. Slane}
+In the pulsar wind nebula, accelerated electrons emitted radiation across
+the electromagnetic spectrum through synchrotron and \ac{IC} emission.
 
 \todo[inline]{Describe Mattana's work on \glspl{PWN}: ``On the evolution of
 the Gamma- and X-ray luminosities of Pulsar Wind Nebulae''}
