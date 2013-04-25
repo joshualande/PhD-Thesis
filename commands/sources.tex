@@ -69,10 +69,12 @@
 }[\PackageError{hess}{Undefined option to \\onefglj: #1}{}]
 }
 
-\newcommand{\basesnrg}[3]{SNR G$\,$J#1$#2$#3\xspace}
+\newcommand{\basesnrg}[3]{SNR$\,$G#1$#2$#3\xspace}
 \DeclareRobustCommand{\snrg}[1]{
 \IfEqCase{#1}{
 {284.3}{\basesnrg{284.3}{-}{1.8}}
+{320.4}{\basesnrg{320.4}{-}{1.2}}
+{338.3}{\basesnrg{338.3}{-}{0.0}}
 }[\PackageError{hess}{Undefined option to \\snrg: #1}{}]
 }
 
