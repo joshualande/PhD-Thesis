@@ -1,9 +1,47 @@
 \section{The Alternate Maximum-Likelihood Package \pointlike}
 \seclabel{pointlike_pacakge}
 
-\todo[inline]{Discuss pointlike package}
-\begin{itemize}
-  \item Developed for Speed
-  \item Sparce Matricies, 
-  \item Methods for computing integral model counts.
-\end{itemize}
+\pointlike is an alternative maximum-likelihood frameworked developed
+for analyzing \ac{LAT} data. In principle, both \pointlike and \gtlike
+perform the same binned maximum-likelihood analysis described in
+\secref{binned_science_tools}. \pointlike's major design difference
+is that it was written with efficiency in mind, for certain analysis
+procedures which which require multiple iterations, such as source
+finding, position and extension fitting, and making large residual
+\ts maps.
+
+What makes maximum-likelihood of \ac{LAT} data difficult
+is the strongly non-linear performance of the \ac{LAT} (see
+\subsecref{performance_lat}). At low energy, one typically finds lots
+of counts and each photon is not very important due to the poor angular
+resolution. At these energies, a binned analysis with coarse bins is
+perfectly adequate to study the sky.  But at high energy, there are
+limited numbers of phtoons due to the limited source fluxes, but the
+angular resolution is much improved.  At these energies, an unbinned
+analysis which loops only over the photons is more appropriate.
+
+The primary efficiency gain of \pointlike comes from scaling the bin
+size with energy, so that the bin size is always comparable to the
+\ac{psf}.  To do this, \pointlike bins the sky into \healpix pixels
+\citep{gorski_2005_healpix:-framework}, but only keeps bins with counts
+in them.
+
+At low energy, the bins are large and essentially every healpix bin
+has counts in it.  But at high energy, bins are very small and rarely
+have more than one count in them.  So \pointlike is essentially a binned
+analysis at low energy , approximates an unbinned analysis at high energy,
+and naturally interpolates between the two extremes.
+
+There is one obvious tradeoff for keeping only bins with counts in them.
+From \eqnref{log_likelihood_sum_theta}, we note that that the evalution
+of the $\sum_j k_j\log\theta_j$ term can easily be evaluation if only
+the counts and model counts are computed in bins with counts in them.
+But the $\sum_j \theta_j$ term (the overall model predicted counts in
+each bin) can no longer be easily computed since the model counts aren't
+computed in every bin. To avoid this, \pointlike has to independently
+compute this integral counts.
+
+More details about the implementation of \pointlike can be found in
+\cite{kerr_2010a_likelihood-methods}. We will discuss the implementation
+of extended sources in \pointlike in \chapref{extended_analysis}.
+

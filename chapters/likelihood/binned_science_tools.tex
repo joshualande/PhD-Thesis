@@ -31,6 +31,18 @@ is computed by summing over all sources:
   \theta_j = \sum_i \theta_{ij}
 \end{equation}
 
+We mention that that in most situations, it is more conveneint to work
+with the log of the likelihood, since that quantity varies more slowly.
+In addition, typically an analysis requires either 
+maximizing the likelihood or looking at a change in the likelihood.
+so we
+typically write
+the likelihood as
+\begin{equation}\eqnlabel{log_likelihood_sum_theta}
+  \log\likelihood = -\sum_j\theta_j + \sum_j k_j\log\theta_j 
+\end{equation}
+where we have dropped the arbitrary additive constant $-\log k_j!$.
+
 In the standard \fermi science tools, \gtbin can be used to perform
 basic cuts on the $\gamma$-ray data.  the binning of photons over
 position in the sky and energy is performed with \gtbin.  The tools
