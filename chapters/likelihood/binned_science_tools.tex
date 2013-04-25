@@ -6,7 +6,7 @@ data.  In this analysis, the data is binned in position and energy (and
 sometimes also separately into front-entering and back-entering events).
 The likelihood function comes from the Poisson nature of the observed
 emission:
-\begin{equation}
+\begin{equation}\eqnlabel{poisson_likelihood_counts_model}
   \likelihood=\prod_j \frac{\theta_j^{k_j} e^{-\theta_j}}{k_j!}.
 \end{equation}
 Here, $j$ is a sum over position/energy bins,
@@ -15,39 +15,51 @@ $\theta_j$ are the model counts predicted in the same bin.
 
 
 The model counts in bin $j$ are computed by integrating the differential
-model counts defined in \eqnref{eventrate} over the energy bin:
+model counts over the energy bin:
   \begin{equation}
     \theta_{ij} = \int_j \intspace \denergy \intspace 
     \dsolidangle \intspace \dtime \intspace 
     \eventrate(\energy,\solidangle,\time|\modelparams_i)
   \end{equation}
 Here, $j$ represents the integral over the $j$th position/energy bin,
-$i$ represents the $i$th source, and $\modelparams_i$ refers to the
-parmeters defining the $i$th source. The total model counts
+$i$ represents the $i$th source, $\modelparams_i$ refers to the
+parmeters defining the $i$th source,
+and $\eventrate$ is defined in \eqnref{eventrate} 
+. The total model counts
 is computed by summing over all sources:
 \begin{equation}
   \theta_j = \sum_i \theta_{ij}
 \end{equation}
 
+In the standard \fermi science tools, \gtbin can be used to perform
+basic cuts on the $\gamma$-ray data.  the binning of photons over
+position in the sky and energy is performed with \gtbin.  The tools
+required to compute exposure are \gtltcube and \gtexpcubetwo. Finally,
+the likelihood itself is computed with a combination of \gtsrcmaps and
+\gtlike.  Essentially, \gtsrcmaps is used to perform two-dimensional
+convolution integral in equation \eqnref{differential_model_counts} and
+\gtlike is used to compute the likelihood function defined in equation
+\eqnref{poisson_likelihood_counts_model}.
 
-\begin{itemize}
-  \item For time-serires analysis, typically a time-summed analysyis is performed successivly in
-    multiple time bins.
-    \begin{itemize}
-  \item In the standard \fermi science tools, 
-    the binning of photons over position in the sky and energy to compute $n_j$ 
-    is done with \gtbin.
-  \item In the standard \fermi science tools, the 
-    model counts $\theta_j$ are computed in several steps \ldots
+As was discussed in \secref{description_maximum_likelihood},
+we typically use \acp{LRT} to test for significant features in
+the $\gamma$-ray data.  For example, we compare a model with and
+without a source of interest to test if that source is significant.
+\cite{mattox_1996a_likelihood-analysis} shows that for \ac{EGRET} data,
+assuming the position of the source was known and that the spectrum was
+fixed, than the distribution of \ts values in the null hypothesis was
+\begin{equation}
+  \pdf(\ts) = \tfrac{1}{2} (\delta(\ts) + \chi^2_n(\ts))
+\end{equation}
+From this, one fins that $\ts^{1/2}$ can e used as a measure of the
+statistical significance of the detection of a source.
 
-  \item The instrument response is computed with a combination of \gtltcube,
-    \gtexpcube.
+We finaly mention that this formulation assumed that the source models
+are time independent.  In principle, these formulas could be generalized
+to be binned also in time. But this would almost never be useful because
+it is rarely possible to have a simple paremterized model for the time
+dependence of a source. Instead, the analyisis of a variable sources
+is typically done by dividing the analysis into multiple time intervals
+and performing the likelihood fits independently in each time range.
 
-  \item Convert a model of the sky into model predicted counts
-  \item poisson likelihood
-  \item Particular implemenation of maximum likelihood anlaysis
-  \item Describe \gtbin, \gtselect, \gtlike
-\end{itemize}
 
-
-\todo[inline]{put note about source significance testing}

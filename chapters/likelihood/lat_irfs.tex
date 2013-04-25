@@ -41,9 +41,6 @@ at a position $\solidangle'$ and at a time $\time'$:
 Here, this integral is performed over all energies, \acp{SA}, and times
 for which the source model has support.
 
-
-
-
 For LAT analysis, we conventionally make the simplifying assumption that
 the energy, spatial, and temporal dispersion decouple:
 \begin{equation}
@@ -90,7 +87,7 @@ could be more severe.
 The expected count rate is then typically integrated over time
 to compute the total counts. Assuming that the source model
 is time indepdendent, we get: 
-\begin{equation}
+\begin{equation}\eqnlabel{differential_model_counts}
   \eventrate(\energy',\solidangle'|\modelparams)
   = \int \dsolidangle \,
   \fluxdensity(\energy',\vec\Omega|\modelparams) 

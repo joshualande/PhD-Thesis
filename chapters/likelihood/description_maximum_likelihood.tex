@@ -7,7 +7,7 @@ avoid the issues discussed above.  The term likelihood was
 first introduced by \cite{fisher_1925_statistical-methods}.
 Maximum-likelihood was applied to astrophysical photon-counting
 experiments by \cite{cash_1979_parameter-estimation}.
-\cite{mattox_1996_likelihood-analysis} described the maximum-likelihood
+\cite{mattox_1996a_likelihood-analysis} described the maximum-likelihood
 analysis framework developed to analyze \ac{EGRET} data.
 
 In the formulation, one relies upon primarily upon the likelihood
@@ -26,7 +26,7 @@ as a function of these parameters:
   \likelihood = \likelihood(\modelparams)
 \end{equation}
 In a maximum-likelihood analysis, one typically fits parameters of a model
-by maximizing the liklihood as a function of the parameters of the model:
+by maximizing the likelihood as a function of the parameters of the model:
 
 The term maximum-likelihood refers to the fact that the best-fit
 parameters of a model can be estimated by maximizing the likelihood
@@ -55,6 +55,9 @@ We define the test statistic as
 \begin{equation}
   \ts = 2\log(\likelihood\hypothesis_1/\likelihood\hypothesis_0)
 \end{equation}
+Here, $\likelihood\hypothesis_0$ and $\likelihood\hypothesis_1$ are
+the likelihoods maximized by varing
+all the parameters of $\hypothesis_0$ and $\hypothesis_1$ respectively.
 According to Wilks' theoroem, if $\hypothesis_1$ has $n$ additional
 degrees of freedom compared to $\hypothesis_0$, if none of the additional
 parameters lie on the edge of parameter space, and if the true data is
