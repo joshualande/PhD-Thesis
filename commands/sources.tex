@@ -39,6 +39,11 @@
 }[\PackageError{psrj}{Undefined option to \\verj: #1}{}]}
 
 
+\newcommand{\basepsrb}[3]{PSR$\,$B#1$#2$#3\xspace}
+\DeclareRobustCommand{\psrb}[1]{\IfEqCase{#1}{
+{1823}{\basepsrb{1823}{-}{13}}
+}[\PackageError{psrb}{Undefined option to \\psrb: #1}{}]}
+
 
 \newcommand{\basepsrj}[3]{PSR$\,$J#1$#2$#3\xspace}
 \DeclareRobustCommand{\psrj}[1]{\IfEqCase{#1}{
@@ -46,7 +51,9 @@
 {1301}{\basepsrj{1301}{-}{6305}}
 {1420}{\basepsrj{1420}{-}{6048}}
 {1838}{\basepsrj{1838}{-}{0537}}
+{1826}{\basepsrj{1826}{-}{1334}}
 }[\PackageError{psrj}{Undefined option to \\psrj: #1}{}]}
+
 
 \newcommand{\basetwofglj}[3]{2FGL$\,$J#1$#2$#3\xspace}
 \DeclareRobustCommand{\twofglj}[1]{
