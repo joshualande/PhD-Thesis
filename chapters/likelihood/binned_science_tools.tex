@@ -1,43 +1,39 @@
 \section{Binned Maximum-Likelihood of \Acstitle{LAT} Data with the Science Tools}
 \seclabel{binned_science_tools}
 
-\todo[inline]{Write Section or Perform simple MC Simulation to demonstrate signficance of detection}
+We typically use binned maximum-likelihood analysis to analyze \ac{LAT}
+data.  In this analysis, the data is binned in position and energy (and
+sometimes also separately into front-entering and back-entering events).
+The likelihood function comes from the Poisson nature of the observed
+emission:
+\begin{equation}
+  \likelihood=\prod_j \frac{\theta_j^{k_j} e^{-\theta_j}}{k_j!}.
+\end{equation}
+Here, $j$ is a sum over position/energy bins,
+$k_j$ are the counts observed in bin $j$, and 
+$\theta_j$ are the model counts predicted in the same bin.
 
-% Terminology from James Chiang:
-%   http://www-glast.slac.stanford.edu/software/datachallenges/dc2/JuneWorkshop/Downloads/Likelihood_performance.pdf
-%   https://confluence.slac.stanford.edu/download/attachments/28521/likelihood.pdf
-%   https://confluence.slac.stanford.edu/download/attachments/3342362/binned.pdf
+
+The model counts in bin $j$ are computed by integrating the differential
+model counts defined in \eqnref{eventrate} over the energy bin:
+  \begin{equation}
+    \theta_{ij} = \int_j \intspace \denergy \intspace 
+    \dsolidangle \intspace \dtime \intspace 
+    \eventrate(\energy,\solidangle,\time|\modelparams_i)
+  \end{equation}
+Here, $j$ represents the integral over the $j$th position/energy bin,
+$i$ represents the $i$th source, and $\modelparams_i$ refers to the
+parmeters defining the $i$th source. The total model counts
+is computed by summing over all sources:
+\begin{equation}
+  \theta_j = \sum_i \theta_{ij}
+\end{equation}
+
+
 \begin{itemize}
-  \item For a standard LAT analysis, we perform a binned maximum-likelihood analysis:
-  \item In the standard science tools, the data is binned in position and energy.
-    and integrated in energy.
   \item For time-serires analysis, typically a time-summed analysyis is performed successivly in
     multiple time bins.
-  \item The likelihood comes from a sum over each bin
-  \item The likelihood is defined as
-    \begin{equation}
-      \likelihood=\prod_j \frac{\theta_j^{n_j} e^{-\theta_j}}{n_j!}
-    \end{equation}
     \begin{itemize}
-      \item Here, $j$ is a sum over position/energy bins.
-      \item $\theta_j$ is the counts predicted by the model, which
-        is defiend followign the discussion in \secref{defining_model}.
-      \item $n_j$ are the observed counts in the spatial/energy bin $j$
-    \end{itemize}
-  \item The model counts are computed by integrating the differential
-    counts defined in \eqnref{eventrate} over the energy bin:
-    \begin{equation}
-      \theta_{ij} = \int_j \intspace \denergy \intspace 
-      \dsolidangle \intspace \dtime \intspace 
-      \eventrate(\energy,\solidangle,\time|\modelparams_i)
-    \end{equation}
-    Here, $j$ represents the integral over the $j$th position/energy bin,
-    $i$ represents the $i$th source, and $\modelparams_i$ refers to the
-    parmeters defining the $i$th source. The total model counts
-    is computed by summing over all sources:
-    \begin{equation}
-      \theta_j = \sum_i \theta_{ij}
-    \end{equation}
   \item In the standard \fermi science tools, 
     the binning of photons over position in the sky and energy to compute $n_j$ 
     is done with \gtbin.
@@ -54,3 +50,4 @@
 \end{itemize}
 
 
+\todo[inline]{put note about source significance testing}
