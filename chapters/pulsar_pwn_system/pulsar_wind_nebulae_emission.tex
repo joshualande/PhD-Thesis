@@ -2,6 +2,61 @@
 
 In the pulsar wind nebula, accelerated electrons emitted radiation across
 the electromagnetic spectrum through synchrotron and \ac{IC} emission.
+Typically characteristic photon energies for Synctrotron and \ac{IC}
+emission from \ac{PWN} are $\sim1\kev$ and $\sim1\tev$ respectivly.
+Typical magnetic field strenghts are $\sim10\micro\gauss$.
+
+Using \eqnref{characteristic_freqnecy_synctotron}, we can show that
+photons with an energy $\energy_\kev$ in a magnetic field of strenth
+$\MagneticField_{-5}$ radiate electrons with a typical energy of
+$E_\electron$ given by
+\begin{equation}
+  \energy_\electron \approx  70\unitspace\tev \MagneticField_{-5}^{-1/2} \energy_\kev^{1/2},
+\end{equation}
+where the magnetic field is $\MagneticField=10^{-5}
+B_{-5}\gauss$ and $\energy_\kev$ is written in units of \kev
+\citep{de-jager_2009a_implications-observations}.  
+
+Similarly, if we assume the \ac{PWN} \ac{IC} emission
+is due to scattering off the \ac{CMB},
+the electron energy which will produce characteristic
+\tev $\gamma$-rays is:
+\begin{equation}
+  \energy_\electron \approx 20\unitspace\tev \energy_\tev^{1/2}
+\end{equation}
+where $\energy_\tev$ is the scattered photon energy in units
+of $\tev$ \citep{de-jager_2009a_implications-observations}.  
+This shows that for a typical \ac{PWN}, $\sim70\unitspace\tev$ electrons
+power the synchrotron emission and $\sim20\unitspace\tev$ electrons
+power the \ac{IC} emission.
+
+Similarly, we can write down the livetime of electrons
+due to Synctrotron and \ac{IC} emission. We define the lifetime as
+$\tau = \energy/\energydot$ and, using the power formulas from
+\cite{rybicki_1979a_radiative-processes}, we find
+\begin{equation}
+  \tau(\energy_\electron) = 
+  \left(
+  \tfrac{4}{3} \CrossSection_T \speedoflight (\EnergyDensity_\MagneticField + \EnergyDensity_\text{ph}) 
+  \energy_\electron/ \mass_\electron^2\speedoflight^4)^{-1}
+  \right)
+\end{equation}
+where $\EnergyDensity_\MagneticField = \MagneticField^2/8\pi$
+is the magnetic field energy density and and
+$\EnergyDensity_\text{ph}$ is the energy density of the photon field
+($\EnergyDensity_\text{ph}=0.25\unitspace\electronvolt\unitspace\cm^{-3}$ for the
+\ac{CMB} radiation field).
+
+for the synchrotron-emitting and \ac{IC}-emitting electrons.
+For synchrotron, the cooling time is
+\begin{equation}
+  \tau_\text{sync} = (1.2\unitspace\kilo\yearunit) B_{-5}^{-3/2} \energy_\kev^{-1/2}.
+\end{equation}
+For \ac{IC} scattering, the time scale is
+\begin{equation}
+  \tau_\text{IC} = 
+\end{equation}
+
 
 \todo[inline]{Describe Mattana's work on \glspl{PWN}: ``On the evolution of
 the Gamma- and X-ray luminosities of Pulsar Wind Nebulae''}
