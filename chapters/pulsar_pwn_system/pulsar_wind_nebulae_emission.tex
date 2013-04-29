@@ -15,112 +15,98 @@ $E_\electron$ given by
 \end{equation}
 where the magnetic field is $\MagneticField=10^{-5}
 B_{-5}\gauss$ and $\energy_\kev$ is written in units of \kev
-\citep{de-jager_2009a_implications-observations}.  
+\citep{de-jager_2009a_implications-observations}.
 
-Similarly, if we assume the \ac{PWN} \ac{IC} emission
-is due to scattering off the \ac{CMB},
-the electron energy which will produce characteristic
+Similarly, if we assume the \ac{PWN} \ac{IC} emission is due to scattering
+off the \ac{CMB}, the electron energy which will produce characteristic
 \tev $\gamma$-rays is:
 \begin{equation}
   \energy_\electron \approx 20\unitspace\tev \energy_\tev^{1/2}
 \end{equation}
-where $\energy_\tev$ is the scattered photon energy in units
-of $\tev$ \citep{de-jager_2009a_implications-observations}.  
-This shows that for a typical \ac{PWN}, $\sim70\unitspace\tev$ electrons
-power the synchrotron emission and $\sim20\unitspace\tev$ electrons
-power the \ac{IC} emission.
+where $\energy_\tev$ is the scattered photon energy in units of $\tev$
+\citep{de-jager_2009a_implications-observations}.  This shows that for a
+typical \ac{PWN}, $\sim70\unitspace\tev$ electrons power the synchrotron
+emission and $\sim20\unitspace\tev$ electrons power the \ac{IC} emission.
 
-Similarly, we can write down the livetime of electrons
-due to Synctrotron and \ac{IC} emission. We define the lifetime as
-$\tau = \energy/\energydot$ and, using the power formulas from
-\cite{rybicki_1979a_radiative-processes}, we find
+Similarly, we can write down the livetime of electrons due to
+Synctrotron and \ac{IC} emission. We define the lifetime as $\lifetime =
+\energy/\energydot$ and, using \cite{rybicki_1979a_radiative-processes},
+we find
 \begin{equation}
-  \tau(\energy_\electron) = 
+  \lifetime(\energy_\electron) = 
   \left(
   \tfrac{4}{3} \CrossSection_T \speedoflight (\EnergyDensity_\MagneticField + \EnergyDensity_\text{ph}) 
-  \energy_\electron/ \mass_\electron^2\speedoflight^4)^{-1}
-  \right)
+  \energy_\electron/ \mass_\electron^2\speedoflight^4
+  \right)^{-1}
 \end{equation}
 where $\EnergyDensity_\MagneticField = \MagneticField^2/8\pi$
 is the magnetic field energy density and and
 $\EnergyDensity_\text{ph}$ is the energy density of the photon field
-($\EnergyDensity_\text{ph}=0.25\unitspace\electronvolt\unitspace\cm^{-3}$ for the
-\ac{CMB} radiation field).
+($\EnergyDensity_\text{ph}=0.25\unitspace\electronvolt\unitspace\cm^{-3}$
+for the \ac{CMB} radiation field).  if $B>3\micro\gauss$, the synctrotron
+radiation dominates the cooling ($\EnergyDensity_\MagneticField >
+\EnergyDensity_\text{ph}$.
 
 for the synchrotron-emitting and \ac{IC}-emitting electrons.
-For synchrotron, the cooling time is
+For synchrotron-emitting electrons, the cooling time is
 \begin{equation}
-  \tau_\text{sync} = (1.2\unitspace\kilo\yearunit) B_{-5}^{-3/2} \energy_\kev^{-1/2}.
+  \lifetime_\text{sync} = (1.2\unitspace\kyr) B_{-5}^{-3/2} \energy_\kev^{-1/2}.
 \end{equation}
-For \ac{IC} scattering, the time scale is
+For \ac{IC}-scattering electrons, the cooling time (in the Thomson limit) is
 \begin{equation}
-  \tau_\text{IC} = 
+  \eqnlabel{ic_timescale}
+  \lifetime_\text{IC} = (4.8\kyr) B_{-5}^{-2} \energy_\tev^{-1/2}
 \end{equation}
+From this, we see that the typical timescale for cooling of
+synchrotron-emitting electrons ($1\unitspace\kyr$) is much shorter than
+the timescale for cooling of \ac{IC}-emitting electrons ($5\kyr$). Because
+of this, the \ac{IC}-emitting electrons have a longer time to diffuse
+away from the pulsar and \ac{PWN}.  For older \ac{PWN}, we therefore
+expected the observed \ac{VHE} emission to be larger than the observed
+X-ray emmission.  This has been observed in many \acp{PWN} such as
+\hessj{1825} \cite{aharonian_2006a_h.e.s.s.-survey}, but also makes
+identification of \ac{VHE} sources as \ac{PWN} more difficult.
 
+We also note that \eqnref{ic_timescale} predicts that the timescale
+of \ac{IC}-emitting electrons scales with inverse squre root of
+the emitted photon energy. From This leads to the prediction that
+the size of the \ac{VHE} $\gamma$-ray emission should decrease
+with increasing energy. This has been observed for \hessj{1825}
+\citep{aharonian_2006a_energy-dependent}.
 
-\todo[inline]{Describe Mattana's work on \glspl{PWN}: ``On the evolution of
-the Gamma- and X-ray luminosities of Pulsar Wind Nebulae''}
+Finally, we mention that \cite{mattana_2009_evolution-gamma-} discussed
+the relationship between the X-ray and $\gamma$-ray luminosity as a
+function of the pulsar spin-down energy \energydot and age \PulsarAge.
+The time integral of \eqnref{energy_dot_vs_time} can be used to compute
+the total number of particles that emmit synctrotron and \ac{IC} photons.
 
+Most $\gamma$-ray emitting \ac{PWN} have pulsars have a characteristic
+age of $\PulsarAge\sim1-20\unitspace\kyr$, so for most \ac{PWN}:
+\begin{equation}
+  \lifetime_\text{sync} < \PulsarAge < \lifetime_\text{IC}
+\end{equation}
+Therefore, for synchrotron emission the number of synchroton-emitting
+particles goes as
+\begin{equation}
+  n_\text{sync} \approx \energydot(\PulsarAge) \lifetime_\text{sync} \sim \energydot_0 \PulsarAge^{-2}
+\end{equation}
+where in the last step we have assumed a pure dipole magnetic field
+($\breakingindex=3$).
 
-Good stuff in ``anada\_2008a\_x-ray-study'' -- section 2.7.2 
-
-Another good approximation for PWN energetics:
-
-\url{http://arxiv.org/pdf/0803.0116v1.pdf}
-``3 Energy scales and lifetimes of X-ray synchrotron and
-VHE IC emitting electrons''
-
-``Implications of H.E.S.S. observations of pulsar wind nebulae'' de
-Jager \& Djannati-Atai
-
-"As has been discussed, pulsar wind nebulae are prominent sources of
-very high energy γ-rays. At these wavelengths, emission is caused
-by inverse Compton acceler- ation of seed photons by the relativistic
-electrons present in the nebula (see Section 1.3.5). As the electron
-energies needed to boost photons to these energies are not as large as
-that required for synchrotron emission to occur, inverse Compton emission
-is seen at the extremes of the nebula where synchrotron emission can no
-longer be observed and as such older pulsar wind nebulae are observed to
-be much larger in VHE γ-rays than their X-ray counterparts. In addition
-to this, inverse Compton emission is seen in the unshocked wind area of
-the PWN as the electrons present are energetic enough to produce inverse
-Compton radiation even if they are unable to produce synchroton radiation"
--- keogh\_2010\_search-pulsar
-
-
-
-In the Pulsar/\ac{PWN} model, a population of electrons
-is emitted from the magnetosphere, released as an unshocked wind,
-and then accelerated at the termination shock. In the surrounding
-nebula, the electrons emmit synchotron and inverse Compton
-
-\begin{itemize}
-  \item What is the characteristic synchotron energy
-  \item What is the characteristic \ac{IC} energy
-  \item look at: etten\_2012a\_particle-populations
-\end{itemize}
-
-
-
-
-Energetics of PWNe:
-
-``The efficiency of conversion of spin-down luminosity into synchrotron
-emission is defined by efficiency factors η and
-η LX/E  Typical values are η
-and η (Becker \& Trumper 1997, Frail
-\& Scharringhausen 1997), although wide excur- sions from this are
-observed. Note that if the synchrotron lifetime of emitting particles is
-a significant fraction of the PWN age (as is almost always the case at
-radio wavelengths, and sometimes also in X-rays), then the PWN emission
-represents an integrated history of the pulsas spin down,
-and ηR and ηX are not true instantaneous efficiency factor'' --gaensler\_2006\_evolution-structure
-
-X-ray energetics tabulated from: \url{http://arxiv.org/pdf/astro-ph/0006030v1.pdf}
-
-
-\todo[inline]{Include discussion of cooling in Matanna et al 2009 (equation 12}
-
-\todo[inline]{Look up scaling relationsips for IC and Sync
-radiation from Adam Van Etten's thesis}
+On the other hand, the nubmer of \ac{IC}-emitting particles
+is approximately independent of time because $\PulsarAge \gg
+\SpinDownTimescale$.  Furthermore, \cite{mattana_2009_evolution-gamma-}
+argues that $n_\text{IC}$ should be independent of \energydot because it
+more-strongly depends on other enivormentnetal factors.  Combining these
+relations, \cite{mattana_2009_evolution-gamma-} proposes
+\begin{equation}
+  \luminosity_\text{IC}/\luminosity_\text{sync} \approx n_\text{IC}/n_\text{sync}
+  \propto \PulsarAge^2 \propto \energydot^{-1}
+\end{equation}
+From observations of \ac{VHE} sources, they find empircally
+that $\luminosity_\text{IC}/\luminosity_\text{sync} \propto
+\PulsarAge^{2.2}$ and $\luminosity_\text{IC}/\luminosity_\text{sync}
+\propto \energydot^{-1.9}$ which is qualitatively consistent with the
+simple picture described above.  We will compare these scaling relations
+with \ac{LAT} observations in \chapref{population_study}
 

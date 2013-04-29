@@ -6,6 +6,10 @@ lande_thesis_stanford:
 	pdflatex  $(base)
 	pdflatex  $(base)
 
+pulsar_pwn_system_include=\includeonly{chapters/pulsar_pwn_system/pulsar_pwn_system}
+pulsar_pwn_system : $(texfiles)
+	pdflatex "$(pulsar_pwn_system_include) \input{$(base)}"
+
 likelihood_include=\includeonly{chapters/likelihood/likelihood}
 likelihood : $(texfiles)
 	pdflatex "$(likelihood_include) \input{$(base)}"
