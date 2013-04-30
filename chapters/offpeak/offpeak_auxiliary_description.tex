@@ -1,0 +1,44 @@
+% \clearpage
+\subsection{Description of Auxiliary information for Off-peak Analysis}
+\label{off_peak_auxiliary}
+
+A more complete list of the off-peak spectral and spatial 
+results from the analysis described in Section~\ref{unpulsed}
+is contained
+in a supplemental FITS table.
+\tabref{off_peak_aux} describes each of its columns.
+
+For sources reported with a PL spectral model,
+the differential spectrum is defined as
+\begin{equation}\eqnlabel{powerlaw_definition}
+  \dnde = \fitsformat{Prefactor} \left(\frac{E}{\fitsformat{Scale}}\right)^{-\fitsformat{Index}}
+\end{equation}
+\fitsformat{Prefactor}, \fitsformat{Index}, and \fitsformat{Scale} are specified in the table.
+For sources reported with a PLEC1 spectral model (\fitsformat{\PLSuperExpCutoff}), the differential spectrum is defined as:
+\begin{equation}\eqnlabel{cutoff_powerlaw_definition}
+  \dnde = \fitsformat{Prefactor} \left(\frac{E}{\fitsformat{Scale}}\right)^{-\fitsformat{Index}} \exp\left(-\frac{E}{\fitsformat{Energy\_Cutoff}}\right)
+\end{equation}
+and \fitsformat{Prefactor}, \fitsformat{Index}, \fitsformat{Scale}, and \fitsformat{Energy\_Cutoff} are specified in the table.
+
+For the Crab Nebula and Vela-X, we took the spectral shape and
+initial normalization from \citet{LAT_collaboration_crab_2012} and
+\cite{FermiVelaX2nd} respectively
+and fit only a
+multiplicative offset (see Section~\ref{off_peak_analysis}). For these two
+sources, the differential spectrum was defined as
+\begin{equation}\eqnlabel{filefunction_definition}
+  \dnde = \fitsformat{Normalization} \left.\frac{dN}{dE}\right|_\mathrm{file}
+\end{equation}
+and the \fitsformat{Normalization} is defined in the auxiliary table.
+
+% \clearpage
+\begin{deluxetable}{p{1in} p{1in} p{3.5in}}
+\tablewidth{0pt}
+\tabletypesize{\scriptsize}
+\tablecaption{Description of the Columns in the Off-Peak Auxiliary Fits Table
+\tablabel{off_peak_aux}
+}
+\tablewidth{6in}
+\input{OffPeak/tables/off_peak_auxiliary_table_description.tex}
+\end{deluxetable}
+\clearpage
