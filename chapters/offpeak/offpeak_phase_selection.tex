@@ -6,7 +6,7 @@ to define the off-peak interval of a pulsar light curve.
 
 We begin by deconstructing the light curve 
 into simple Bayesian Blocks using the algorithm described in
-\citet{Jackson_Bayesian_Blocks_2003} and \citet{Scargle2013}.  
+\citet{jackson_2005a_algorithm-optimal} and \citet{scargle_2013a_studies-astronomical}.  
 We could not apply the Bayesian Block algorithm to the weighted-counts
 light curves because they do not follow Poisson statistics, required
 by the algorithm.
@@ -28,7 +28,7 @@ to find more than one block and we had to decrease ncp$\rm _{prior}$ until the
 algorithm found a variable light curve. Finally, for a few pulsars the 
 Bayesian-block decomposition of the light curves failed to model 
 weak peaks found by the light-curve fitting method
-presented in Section~\ref{lightCurveFitting} or extended
+presented in \secref{lightCurveFitting} or extended
 too far into the other peaks. For these pulsars,
 we conservatively shrink the off-peak region.
 
