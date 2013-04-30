@@ -19,11 +19,11 @@ candidates detected at \tev energies for \gev-emitting \acp{PWN}
 and \hessj{1841}) and 1 new PWN (\hessj{1356})
 
 In this chapter, we take the population of $\gamma$-ray emitting \acp{PWN}
-and \acp{PWN} candidates and study how thier multiwavlenth properties
-vary with propergies of the associated pulsar.
+and \acp{PWN} candidates and study how thier multiwavelenth properties
+vary with properties of the associated pulsar.
 
 
-%\section{Summary of the \Acsptitle{PWN} detected by the \Acsptitle{LAT}}
+\input{chapters/population_study/tables/pwn_multiwavelenth_properties.tex}
 
 In \tabref{pwn_multiwavelenth_properties}, we compile the multiwavelenth
 properties of the \ac{VHE} sources studied in \chapref{tevcat}. In
@@ -31,15 +31,13 @@ particular, we include the spectrum observed at X-ray and \ac{VHE}
 energies, the name of the associated pulsar, and the observed spin-down
 power, age, and distance of the pulsar.
 
-\input{chapters/population_study/tables/pwn_multiwavelenth_properties.tex}
 
-%\section{The Evolution of $\gamma$-ray Emitting \Acsptitle{PWN} with the Properties of their Pulsars}
 
 \begin{figure}[htbp]
   \centering
   \includegraphics{chapters/population_study/figures/pwn_luminosity_vs_edot.pdf}
   \caption{The observed $\gamma$-ray luminosity compared to the observed
-  spin-down luminosity for all \ac{PWN} candidates presented in
+  spin-down luminosity for the \ac{PWN} candidates presented in
   \tabref{pwn_multiwavelenth_properties}.}
   \figlabel{pwn_luminosity_vs_edot}
 \end{figure}
@@ -47,29 +45,51 @@ power, age, and distance of the pulsar.
 In \figref{pwn_luminosity_vs_edot}, we compare the observed luminosity at
 \gev energies to the spin-down power of the observed pulsar.  This plot
 shows that all \ac{LAT}-detected \acp{PWN} emmit a fraction $\lesssim
-10\%$ of their spin-down energy into powering the $\gamma$-ray emission
-from the pulsar wind.
-
-\todo[inline]{Here we need to cite \cite{mattana_2009_evolution-gamma-}.}
-
-\todo[inline]{
-Next, we will discuss \figref{pwn_age_edot_vs_l_gev.pdf}\ldots
-}
+10\%$ of their spin-down energy goes into powering the $\gamma$-ray
+emission from the pulsar wind.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics{chapters/population_study/figures/pwn_age_edot_vs_l_gev.pdf}
-  \caption{...}
-  \figlabel{pwn_age_edot_vs_l_gev.pdf}
+  \caption{The observed $\gamma$-ray flux $\luminosity_\gev$ and the
+  \gev to \tev luminosity ratio as a
+  function of the pulsar's age and spin-down energy
+  for the \ac{PWN} candidates presented in
+  \tabref{pwn_multiwavelenth_properties}.  The dotted line
+  corresponds to the average luminosity ratio.  Because \hessj{1708}
+  is classified as being a \PSRClass-type source in \chapref{tevcat},
+  we consider it's observed $\gamma$-ray luminosity to be an upper limit
+  on the \ac{PWN} emission.  \figlabel{pwn_age_edot_vs_l_gev.pdf}.}
 \end{figure}
 
-\todo[inline]{
-Next, we will discuss \figref{pwn_age_edot_vs_l_xray}\ldots
-}
+Next, in \figref{pwn_age_edot_vs_l_gev.pdf} we compare compare \gev
+luminosity and \gev to \tev luminosity ratio as a function of age and
+spin-down energy.  These plots shows that there is no correlation between
+the \gev luminosity and the age and spin-down energy of the associate
+pulsar.  In addition, we calculated and overlay the mean between the
+\gev and \tev luminosity ($\MeanLuminosityRatio=2.7_{-1.4}^{+2.7}$).
+
+
 
 \begin{figure}[htbp]
   \centering
   \includegraphics{chapters/population_study/figures/pwn_age_edot_vs_l_xray.pdf}
-  \caption{...}
+  \caption{The observed X-ray flux and \gev to \tev luminosity ratio as
+  a function of the pulsar's age and spin-down energy for the \ac{PWN}
+  candidates presented in \tabref{pwn_multiwavelenth_properties}.
+  The dotted line corresponds to the scaling relationships from
+  \cite{mattana_2009_evolution-gamma-} for the \tev to X-ray luminosity
+  scaled by the average \gev to \tev luminosity (\MeanLuminosityRatio).}
   \figlabel{pwn_age_edot_vs_l_xray}
 \end{figure}
+
+Finally, in \figref{pwn_age_edot_vs_l_xray} we compare the distribution
+of the X-ray luminosity and the \gev to X-ray luminosity ratio as a
+function of the pulsar's age and spin-down energy.  This plot shows
+that the X-ray luminosity decreases with pulsar age and increases with
+spin-down energy. Similarly, the \gev to X-ray luminosity increases
+with age and decreases with energy.  These correlations are consistent
+simple model predicted in \cite{mattana_2009_evolution-gamma-} (See
+\secref{pwn_emission}) and also with the observed \ac{VHE} relationships
+from the same paper.
+
