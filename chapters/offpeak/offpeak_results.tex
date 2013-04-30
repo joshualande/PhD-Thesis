@@ -6,9 +6,9 @@ been evaluated by \citet{ackermann_2011a_fermi-lat-search} using 16 months of sk
 This led to the discovery of PWN-like emission
 in the off-peak interval of PSR J1023$-$5746, coincident with HESS
 J1023$-$575, and identification of 5 pulsars that appear to have near 100\%
-duty cycles.  Our results, summarized in Table \ref{tbl-off_peak_table},
+duty cycles.  Our results, summarized in \tabref{off_peak_table},
 extend the analysis to 116 pulsars over 3 years of data.  
-Sample off-peak spectra are shown in Figure \ref{off_peak_seds}.
+Sample off-peak spectra are shown in \figref{off_peak_seds}.
 Using the procedures outlined in \secref{peak_definition}
 and \secref{off_peak_analysis}, we have identified 34 pulsars that
 have significant emission ($TS\geq25$) in their off-peak intervals.
@@ -47,8 +47,8 @@ pulsar emission models. In addition, we identify ten
 For type `M' and `M*' sources, we present the best-fit spectral parameters using
 a point source at the pulsar's position with a PLEC1 spectral model in
 %columns 6, 7, and 8 of
-Table \ref{tbl-off_peak_table}.  For all other
-sources (except the Crab Nebula described in Sec. \ref{off_peak_analysis}), 
+\tabref{off_peak_table}.  For all other
+sources (except the Crab Nebula described in \secref{off_peak_analysis}), 
 we present the spectral results using a power-law spectral
 model and the best-fit spatial representation.
 
@@ -69,14 +69,15 @@ mainly caused by our use of a newer Galactic diffuse model. At lower
 energies, small changes in the diffuse model can have a significant
 impact on the analysis of a region.  For bright magnetospheric sources
 (including J0633+1746 and J2021+4026), the spectral discrepancy is mainly
-due to using different phase ranges (see Sec.~\ref{peak_definition}).
+due to using different phase ranges (see \secref{peak_definition}).
 
 
 \figref{off_peak_luminosity_vs_edot} shows that only
 a small fraction of the spindown power goes into 
 the gamma-ray emission from LAT-detected PWNe.
 Similarly, 
-Figure~\ref{P0_sqEDOTD2} shows that the LAT only detects
+\cite{abdo_2013a_second-fermi} includes a plot of $\sqrt{\energydot}/d^2$ vs $\PulsarAge$
+which shows that the LAT only detects
 PWNe from the youngest pulsars with the highest spindown power.
 GeV emission from the Crab Nebula is highly time variable (\secref{off_peak_analysis}).  
 Indeed, we find
@@ -87,9 +88,9 @@ and less-extreme variations limits our ability identify them as such.
 
 
 The off-peak results for several interesting sources are
-presented in Appendix~\ref{App-off_peak_individual_source_discussion}.
-The complete off-peak search results can be found in the accompanying
-auxiliary information described in Appendix \ref{off_peak_auxiliary}.
+presented in \secref{off_peak_individual_source_discussion}.
+The complete off-peak search results will be included in
+the auxiliary information accompanying \cite{abdo_2013a_second-fermi}.
 For regions where we find $TS<25$, the auxiliary information contains
 upper limits computed for both a power-law spectral model and a
 PLEC1 model with $E_{\rm cut}=3$ GeV and $\Gamma=1.7$.  The auxiliary
@@ -102,7 +103,7 @@ information also contains $TS_{\rm var}$ for each off-peak interval.
 \tablewidth{0pt}
 \tabletypesize{\scriptsize}
 \tablecaption{Off-Peak Spatial and Spectral Results
-\tablabel{tbl-off_peak_table}
+\tablabel{off_peak_table}
 }
 \input{chapters/offpeak/tables/off_peak_spatial_spectral.tex}
 
@@ -140,7 +141,8 @@ The quoted errors are statistical only. A few sources are discussed in \secref{o
   \includegraphics{chapters/offpeak/figures/off_peak_luminosity_vs_edot_color.pdf}
   \caption{The off-peak luminosity compared to the observed pulsar spindown power. 
   The luminosity is computed and plotted with the same convention as
-  Figure~\ref{EDotLumG}. A luminosity upper limit is plotted
+  luminosities in \cite{abdo_2013a_second-fermi}.
+  A luminosity upper limit is plotted
   when there is no significant off-peak emission or when there
   is only a distance upper limit.
   The

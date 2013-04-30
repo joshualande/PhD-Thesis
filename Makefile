@@ -19,6 +19,10 @@ introduction_include=\includeonly{chapters/introduction/introduction}
 introduction : $(texfiles)
 	pdflatex "$(introduction_include) \input{$(base)}"
 
+offpeak_include=\includeonly{chapters/offpeak/offpeak}
+offpeak : $(texfiles)
+	pdflatex "$(offpeak_include) \input{$(base)}"
+
 tevcat_include=\includeonly{chapters/tevcat/tevcat}
 tevcat : $(texfiles)
 	pdflatex "$(tevcat_include) \input{$(base)}"
