@@ -9,42 +9,38 @@ emission:
 \begin{equation}\eqnlabel{poisson_likelihood_counts_model}
   \likelihood=\prod_j \frac{\theta_j^{k_j} e^{-\theta_j}}{k_j!}.
 \end{equation}
-Here, $j$ is a sum over position/energy bins,
-$k_j$ are the counts observed in bin $j$, and 
-$\theta_j$ are the model counts predicted in the same bin.
-
+Here, $j$ is a sum over position/energy bins, $k_j$ are the counts
+observed in bin $j$, and $\theta_j$ are the model counts predicted in
+the same bin.
 
 The model counts in bin $j$ are computed by integrating the differential
 model counts over the energy bin:
-  \begin{equation}
-    \theta_{ij} = \int_j \intspace \denergy \intspace 
-    \dsolidangle \intspace \dtime \intspace 
-    \eventrate(\energy,\solidangle,\time|\modelparams_i)
-  \end{equation}
-Here, $j$ represents the integral over the $j$th position/energy bin,
-$i$ represents the $i$th source, $\modelparams_i$ refers to the
-parmeters defining the $i$th source,
-and $\eventrate$ is defined in \eqnref{eventrate} 
-. The total model counts
-is computed by summing over all sources:
+\begin{equation}
+  \theta_{ij} = \int_j \intspace \denergy \intspace 
+  \dsolidangle \intspace \dtime \intspace 
+  \eventrate(\energy,\solidangle,\time|\modelparams_i)
+\end{equation}
+Here, $j$ represents the integral over the $j$th position/energy
+bin, $i$ represents the $i$th source, $\modelparams_i$ refers to the
+parameters defining the $i$th source, and $\eventrate$ is defined in
+\eqnref{eventrate}. The total model counts is computed by summing over
+all sources:
 \begin{equation}
   \theta_j = \sum_i \theta_{ij}
 \end{equation}
 
-We mention that that in most situations, it is more conveneint to work
+We mention that that in most situations, it is more convenient to work
 with the log of the likelihood, since that quantity varies more slowly.
-In addition, typically an analysis requires either 
-maximizing the likelihood or looking at a change in the likelihood.
-so we
-typically write
-the likelihood as
+In addition, typically an analysis requires either maximizing the
+likelihood or looking at a change in the likelihood. So we typically
+write the likelihood as
 \begin{equation}\eqnlabel{log_likelihood_sum_theta}
   \log\likelihood = -\sum_j\theta_j + \sum_j k_j\log\theta_j 
 \end{equation}
 where we have dropped the arbitrary additive constant $-\log k_j!$.
 
 In the standard \fermi science tools, \gtbin can be used to perform
-basic cuts on the $\gamma$-ray data.  the binning of photons over
+basic cuts on the $\gamma$-ray data.  The binning of photons over
 position in the sky and energy is performed with \gtbin.  The tools
 required to compute exposure are \gtltcube and \gtexpcubetwo. Finally,
 the likelihood itself is computed with a combination of \gtsrcmaps and
@@ -63,15 +59,13 @@ fixed, than the distribution of \ts values in the null hypothesis was
 \begin{equation}
   \pdf(\ts) = \tfrac{1}{2} (\delta(\ts) + \chi^2_n(\ts))
 \end{equation}
-From this, one fins that $\ts^{1/2}$ can e used as a measure of the
+From this, one fins that $\ts^{1/2}$ can be used as a measure of the
 statistical significance of the detection of a source.
 
-We finaly mention that this formulation assumed that the source models
+We finally mention that this formulation assumed that the source models
 are time independent.  In principle, these formulas could be generalized
 to be binned also in time. But this would almost never be useful because
-it is rarely possible to have a simple paremterized model for the time
-dependence of a source. Instead, the analyisis of a variable sources
+it is rarely possible to have a simple parameterized model for the time
+dependence of a source. Instead, the analysis of a variable sources
 is typically done by dividing the analysis into multiple time intervals
 and performing the likelihood fits independently in each time range.
-
-

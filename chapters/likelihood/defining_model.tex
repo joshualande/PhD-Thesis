@@ -1,42 +1,35 @@
 \section{Defining a Model of the Sources in the Sky}
 \seclabel{defining_model}
 
-% This notation folows page 23 of Matthew Kerr's Thesis.
-% with some parts adapted from 
-%   http://www-glast.slac.stanford.edu/software/datachallenges/dc2/JuneWorkshop/Downloads/Likelihood_performance.pdf
-
-In order to perform a maximum-likelihood analysis, one requires
-a parameterized model of the sky. A model of the sky
-is composed of a set of $\gamma$-ray sources,
-each characterized by its photon flux density 
-  $\fluxdensity(\energy,\time,\solidangle|\modelparams)$.
-This represents
-the number of photons emitted per unit energy, per unit
-time, per units solid angle
-at a given energy, time, and position in the sky.
+In order to perform a maximum-likelihood analysis, one requires a
+parameterized model of the sky. A model of the sky is composed of a set
+of $\gamma$-ray sources, each characterized by its photon flux density
+$\fluxdensity(\energy,\time,\solidangle|\modelparams)$.  This represents
+the number of photons emitted per unit energy, per unit time, per
+units solid angle at a given energy, time, and position in the sky.
 In \ac{CGS}, it has units of \fluxdensityunits.
 
-Often, the spatial and spectral part of the source model
-are separable and independent of time. When that is the case,
-we like to write the source model as
+Often, the spatial and spectral part of the source model are separable
+and independent of time. When that is the case, we like to write the
+source model as
 \begin{equation}
   \fluxdensity(\energy,\time,\solidangle|\modelparams) = \dnde \times \pdf(\solidangle).
 \end{equation}
 Here, \dnde is only a function of energy and \pdf(\solidangle) is only
-a function of position (\solidangle).  In this formulation, some of the
-model parameters \modelparams are taken by the $\dnde$ function and some
-by the $\pdf(\solidangle)$ function.
-In \ac{CGS}, \dnde has units of \prefunits.
+a function of position (\solidangle).  In this formulation, some of
+the model parameters \modelparams are taken by the $\dnde$ function and
+some by the $\pdf(\solidangle)$ function.  In \ac{CGS}, \dnde has units
+of \prefunits.
 
 The spectrum \dnde is typically modeled by simple geometric functions.
 The most popular spectral model is a \ac{PL}:
 \begin{equation}
   \dnde = \prefactor \left(\frac{E}{\Escale}\right)^{-\spectralindex}
 \end{equation}
-Here, \dnde is a function of energy and also fo the two model parameters
+Here, \dnde is a function of energy and also of the two model parameters
 (the prefactor $\prefactor$ and the spectral index $\spectralindex$). The
-parameter \Escale is often called the energy scale or the pivot
-energy and is not considered a model parameter.
+parameter \Escale is often called the energy scale or the pivot energy
+and is not considered a model parameter.
 
 Another common spectral model is the \ac{BPL} spectral model
 \begin{equation}
@@ -46,32 +39,31 @@ Another common spectral model is the \ac{BPL} spectral model
       (E/\Ebreak)^{-\spectralindex_2} &\text{ if }E\ge\Ebreak
     \end{cases}
 \end{equation}
-This model represents a powerlaw with an index 
-of $\spectralindex_1$ which has a break at energy \Ebreak
-to having an index of $\spectralindex_2$.
+This model represents a power law with an index of $\spectralindex_1$ which
+has a break at energy \Ebreak to having an index of $\spectralindex_2$.
 
-Finally, the \ac{ECPL} spectral model is often
-used to model the $\gamma$-ray emission from pulsars:
+Finally, the \ac{ECPL} spectral model is often used to model the
+$\gamma$-ray emission from pulsars:
 \begin{equation}
   \dnde = \prefactor \left(\frac{E}{\Escale}\right)^{-\spectralindex}
   \exp\left(-\frac{E}{\Ecutoff}\right).
 \end{equation}
-For energies much below \Ecutoff, 
-the \ac{ECPL} is a \ac{PL} with spectral index \spectralindex.
-For energies much larger than \Ecutoff, the \ac{ECPL}
-exponentially decreases.
+For energies much below \Ecutoff, the \ac{ECPL} is a \ac{PL} with
+spectral index \spectralindex.  For energies much larger than \Ecutoff,
+the \ac{ECPL} exponentially decreases.
 
-\pdf represents the spatial distribution of the emisison.
-It is traditionally normalized as though it was a probability:
-  \begin{equation}
-    \int \dsolidangle \intspace \pdf(\solidangle).
-  \end{equation}
+\pdf represents the spatial distribution of the emission.  It is
+traditionally normalized as though it was a probability:
+\begin{equation}
+  \int \dsolidangle \intspace \pdf(\solidangle).
+\end{equation}
 Therefore, in \ac{CGS} \pdf has units of \pdfunits
 
-For a point-like source at a position $\solidangle'$, the spatial model is:
-  \begin{equation}
-    \pdf(\solidangle) = \delta(\solidangle - \solidangle')
-  \end{equation}
+For a point-like source at a position $\solidangle'$, the spatial
+model is:
+\begin{equation}
+  \pdf(\solidangle) = \delta(\solidangle - \solidangle')
+\end{equation}
 and is a function of the position of the source ($\solidangle'$).
 Example spatial models for spatially-extended sources will be presented
 in \subsecref{extension_fitting}.
@@ -82,5 +74,5 @@ spatially-extended \acs{SNR} or \acp{PWN} which show a spectral
 variation across the source, or alternately show an energy-dependent
 morphology.  \cite{katsuta_2012_fermi-lat-observation} and
 \cite{hewitt_2012_fermi-lat-observations} have avoided this issue by
-dividing the extended source into multiple non-overlaping extended source
+dividing the extended source into multiple non-overlapping extended source
 templates which are each allowed to have a different spectra.

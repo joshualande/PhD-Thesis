@@ -1,4 +1,4 @@
-\section{Description of Maximum-Likelihood Analaysis}
+\section{Description of Maximum-Likelihood Analysis}
 \seclabel{description_maximum_likelihood}
 
 The field of $\gamma$-ray astrophysics has generally
@@ -16,10 +16,10 @@ probability of obtaining the observed data given an assumed model:
 \begin{equation}
   \likelihood = P(\data|\model)
 \end{equation}
-\secref{defining_model} will provide describe the
-components that go into a model of the data.
+\secref{defining_model} will provide describe the components that go
+into a model of the data.
 
-Generaly, a model of the sky depends upon a list of parameters that we
+Generally, a model of the sky depends upon a list of parameters that we
 denote $\modelparams$.  Therefore, the likelihood function can e written
 as a function of these parameters:
 \begin{equation}
@@ -37,31 +37,32 @@ function.
 
 Assuming that you can have a reasonable model for the data and that
 you understand the distribution of the data points, maximum-likelihood
-analysis is can be used toe very sensitivly test for new features in
+analysis can be used to very sensitively test for new features in
 your model.  This is because the likelihood function can naturally
-incoproate data with different significance levels.
+incorporate data with different significance levels.
 
-Typically, a \ac{LRT} is used to determine the significance of
-a new feature in your model. A common use case is searching for a new source
-or testing for a spectral break. In a \ac{LRT}, the likelihood
-under two hypothesis are compared. We define $\hypothesis_0$ to be 
-a background model and $\hypothesis_1$ to be a model including
-the background and in addition whatever feature is being tested for.
+Typically, a \ac{LRT} is used to determine the significance of a new
+feature in your model. A common use case is searching for a new source
+or testing for a spectral break. In a \ac{LRT}, the likelihood under two
+hypothesis are compared. We define $\hypothesis_0$ to be a background
+model and $\hypothesis_1$ to be a model including the background and in
+addition whatever feature is being tested for.
 
-Under the assumption that $\hypothesis_0$ is nested within $\hypothesis_1$,
-we can use Wilks' theorem to compute the significance of
-of the detection of this feature \citep{wilks_1938a_large-sample-distribution}.
-We define the test statistic as
+Under the assumption that $\hypothesis_0$ is nested
+within $\hypothesis_1$, we can use Wilks' theorem to
+compute the significance of of the detection of this feature
+\citep{wilks_1938a_large-sample-distribution}.  We define the test
+statistic as
 \begin{equation}
   \ts = 2\log(\likelihood\hypothesis_1/\likelihood\hypothesis_0)
 \end{equation}
-Here, $\likelihood\hypothesis_0$ and $\likelihood\hypothesis_1$ are
-the likelihoods maximized by varing
-all the parameters of $\hypothesis_0$ and $\hypothesis_1$ respectively.
-According to Wilks' theoroem, if $\hypothesis_1$ has $n$ additional
-degrees of freedom compared to $\hypothesis_0$, if none of the additional
-parameters lie on the edge of parameter space, and if the true data is
-distributed as $\hypothesis_0$, then the distribution of \ts should be
+Here, $\likelihood\hypothesis_0$ and $\likelihood\hypothesis_1$ are the
+likelihoods maximized by varying all the parameters of $\hypothesis_0$
+and $\hypothesis_1$ respectively.  According to Wilks' theorem,
+if $\hypothesis_1$ has $n$ additional degrees of freedom compared to
+$\hypothesis_0$, if none of the additional parameters lie on the edge of
+parameter space, and if the true data is distributed as $\hypothesis_0$,
+then the distribution of \ts should be
 \begin{equation}
   \pdf(\ts) = \chi^2_n(\ts)
 \end{equation}

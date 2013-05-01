@@ -1,7 +1,7 @@
 \section{Motivations for Maximum-Likelihood Analysis of Gamma-ray Data}
 \seclabel{motivations_maximum_likelihood}
 
-Traditonally, spectral and spatial analysis of astrophysical data
+Traditionally, spectral and spatial analysis of astrophysical data
 relies on a process known as aperture photometry.  In this process,
 a source in the data is analyzed by directly measuring the number of
 photons coming from the object. This process is done by measuring the
@@ -9,47 +9,30 @@ counts within a given radius of the source and subtracting from it a
 background level estimated from a nearby region.  Often, the source's
 flux is calibrated by measurements of nearby objects with known fluxes.
 Otherwise, the flux can be obtained from by dividing the number of
-counts from the source by the telesocpe's size, the observation time,
+counts from the source by the telescope's size, the observation time,
 and the telescope's conversion efficiency.
 
-Similarly, for faint sources the statistical significance of the
-detection can be obtained from the Poission nature of the data. For
-TeV experiments such as \ac{HESS}, this analysis method is described in
+Similarly, for faint sources the statistical significance of the detection
+can be obtained from the Poisson nature of the data. For \ac{VHE}
+experiments such as \ac{HESS}, this analysis method is described in
 \cite{li_1983_analysis-methods}.
 
 Unfortunately, this simpler analysis method is inadequate for dealing
-with the complexities introduced in analyzing LAT data.  
+with the complexities introduced in analyzing LAT data.
 
 Most importantly, aperture photometry assumed that the
-background is istropic so that the background level below the source
-can be estimated from nearby regions.
-As was discussed in \subsecref{galactic_diffuse_and_isotropic},
-the Galactic diffuse emission is highly anistropic,
-rendering this assumption invalid.
+background is isotropic so that the background level below the
+source can be estimated from nearby regions.  As was discussed in
+\subsecref{galactic_diffuse_and_isotropic}, the Galactic diffuse emission
+is highly anisotropic, rendering this assumption invalid.
 
-
-% Note, number of square degrees in whole sky is 
-%  * solid angle = 4*pi(180/pi)^2 = 129600/pi ~ 41,253 deg^2
-%  * sqrt(41253 deg^2/1873) = 4.69 deg ~ 
-
-% Command to find number of sources with LAT<=5degrees
-% >>> import pyfits as pf,numpy as np
-% >>> x=pf.open("gll_psc_v07.fit")[1].data;
-% >>> lon,lat=x["GLON"],x["GLAT"]
-% >>> cut=(np.abs(lat)<=0.5)&((lon<=0+45)|(lon>=360-45))
-% >>> print np.sum(cut),len(cut)
-% ... 73 1873
-
-% Approximate Solid angle of plane ~ 90deg * 1deg = 90 deg^2
-
-In addition,
-this method is not optimal due to the high density of sources
+In addition, this method is not optimal due to the high density of sources
 detected in the Gamma-ray sky.  \Ac{2FGL} reported on the detection
 of 1873 sources, which corresponds to an average source spacing of
 $\sim5\degree$.  But within the inner $45\degree$ of the galactic plane
-in longitude and $0.5\degree$ of the galactic plane in latitidue, there
+in longitude and $0.5\degree$ of the galactic plane in latitude, there
 are 73 sources, corresponding to a source density of $\sim 1$ source per
-square degree.  The aperature photometry method is unable to effecitvly
+square degree.  The aperture photometry method is unable to effectively
 fit multiple sources when the tails of the PSF overlap and furthermore
 make background estimation problematic.
 
@@ -58,7 +41,6 @@ LAT observations.  A typical spectral analysis studies a source from an
 energy of 100 \mev to energies above 100 \gev.  Similarly, as was shown
 in \secref{fermi_telescope}, the PSF of the LAT is rather broad ($\gtrsim
 1\degree$) at low energy and much narrower ($\sim 0.1\degree$) at higher
-energies. Therefore, there is a much higher sensitivty to the higher
+energies. Therefore, there is a much higher sensitivity to the higher
 energy photons coming from a source.  But simple aperture photometry
 method would ignore this improvement by weighting each photon equally.
-

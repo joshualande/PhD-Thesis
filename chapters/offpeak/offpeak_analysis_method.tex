@@ -1,137 +1,124 @@
 \section{Off-peak Analysis Method}
 \seclabel{off_peak_analysis}
 
-Characterizing both the spatial and spectral
-characteristics of any off-peak emission helps discern its origin.
-We employ a somewhat different analysis procedure here than
-for the phase-averaged analysis described in \citep{abdo_2013a_second-fermi}.  
-To evaluate the spatial characteristics of
-any off-peak emission we use the likelihood fitting package \pointlike
-\citep[detailed in][]{lande_2012_search-spatially}, and
-to fit the spectrum we use \gtlike in binned mode via {\it pyLikelihood} as was done for the
-phase-averaged analysis.
+Characterizing both the spatial and spectral characteristics of any
+off-peak emission helps discern its origin.  We employ a somewhat
+different analysis procedure here than for the phase-averaged analysis
+described in \citep{abdo_2013a_second-fermi}.  To evaluate the spatial
+characteristics of any off-peak emission we use the likelihood fitting
+package \pointlike \citep[detailed in][]{lande_2012_search-spatially}, and
+to fit the spectrum we use \gtlike in binned mode via {\it pyLikelihood}
+as was done for the phase-averaged analysis.
 
-For each pulsar we start from
-the same temporal and spatial event selections described in 
-\citep{abdo_2013a_second-fermi} but we increase the maximum energy to 400 GeV (the
-highest event energy for any ROI under this selection is $\sim$316 GeV).
-For the \pointlike analysis we further select a 10$\degree$ radius ROI
-and for \gtlike a $14\degree\times14\degree$ square ROI, both centered
-on the pulsar postition.  Finally, we only consider photons with 
-pulse phases within the corresponding off-peak interval.
+For each pulsar we start from the same temporal and spatial event
+selections described in \citep{abdo_2013a_second-fermi} but we
+increase the maximum energy to 400 GeV (the highest event energy for
+any ROI under this selection is $\sim$316 GeV).  For the \pointlike
+analysis we further select a 10$\degree$ radius ROI and for \gtlike
+a $14\degree\times14\degree$ square ROI, both centered on the pulsar
+position.  Finally, we only consider photons with pulse phases within
+the corresponding off-peak interval.
 
-We search for off-peak emission
-assuming a point source and (except for the Crab Nebula and Vela-X, described below) 
-a power-law spectral model.  We fit the position of this
-putative off-peak source using \pointlike as described by \citet{nolan_2012_fermi-large}
-and then use the best-fit position in a spectral analysis with \gtlike.
-From the spectral analysis we require $TS\geq25$ (just over $4\sigma$)
-to claim a detection.  If $TS<25$, we compute upper limits on the flux 
-in the energy range from 100 \mev to 316 \gev
-assuming
-a power law with photon index fixed to 2.0 and a PLEC1 model with
-$\Gamma=1.7$ and $E_{\rm cut}=3$ GeV.
+We search for off-peak emission assuming a point source and (except for
+the Crab Nebula and Vela-X, described below) a power-law spectral model.
+We fit the position of this putative off-peak source using \pointlike
+as described by \citet{nolan_2012_fermi-large} and then use the best-fit
+position in a spectral analysis with \gtlike.  From the spectral analysis
+we require $TS\geq25$ (just over $4\sigma$) to claim a detection.
+If $TS<25$, we compute upper limits on the flux in the energy range
+from 100 \mev to 316 \gev assuming a power law with photon index fixed
+to 2.0 and a PLEC1 model with $\Gamma=1.7$ and $E_{\rm cut}=3$ GeV.
 
-The spectrum of the Crab Nebula (associated with PSR J0534+2200) is
-uniquely challenging because the GeV spectrum contains both a falling
-synchrotron and a rising inverse Compton component \citep{abdo_2010a_fermi-large}.
-For this particular source we used the best-fit two-component spectral
-model from \cite{buehler_2012a_gamma-ray-activity} and fit only the overall
-normalization of the source. 
-In addition, for Vela-X (associated with PSR J0835-4510) we took the
-best-fit spectral model from \cite{grondin_2013a_vela-x-pulsar} and fit only the overall
-normalization of this source. This spectrum has a smoothly broken power
-law spectral model and was fit assuming Vela-X to have an elliptical
-disk spatial model.
+The spectrum of the Crab Nebula (associated with PSR J0534+2200)
+is uniquely challenging because the GeV spectrum contains
+both a falling synchrotron and a rising inverse Compton
+component \citep{abdo_2010a_fermi-large}.  For this particular
+source we used the best-fit two-component spectral model from
+\cite{buehler_2012a_gamma-ray-activity} and fit only the overall
+normalization of the source.  In addition, for Vela-X (associated
+with PSR J0835-4510) we took the best-fit spectral model from
+\cite{grondin_2013a_vela-x-pulsar} and fit only the overall normalization
+of this source. This spectrum has a smoothly broken power law spectral
+model and was fit assuming Vela-X to have an elliptical disk spatial
+model.
 
-If the off-peak source is significant, we test whether the spectrum shows
-evidence for a cutoff, as described in 
-\citet{ackermann_2011a_fermi-lat-search}, assuming the source is at
-the pulsar position.  We say that the off-peak emission shows evidence for
+If the off-peak source is significant, we test whether
+the spectrum shows evidence for a cutoff, as described in
+\citet{ackermann_2011a_fermi-lat-search}, assuming the source is at the
+pulsar position.  We say that the off-peak emission shows evidence for
 a cutoff if $TS_{\rm cut}\geq9$, corresponding to a $3\sigma$ detection.
 
-For a significant off-peak point source,
-we use \pointlike to test if the emission is significantly
-extended.  We assume a radially-symmetric Gaussian source
-and fit the position and extension parameter ($\sigma$) as described
-in \citet{lande_2012_search-spatially}.  The best-fit
-extended source parameters are then given to \gtlike, which is used
-to fit the spectral parameters and the significance of the extension
-over a point source, $TS_{\rm ext}$, evaluated as described in
-\citet{lande_2012_search-spatially}.  
-That paper established that $TS_{\rm ext}\geq16$ means highly probable source extension.
-In the present work we aim only to flag possible extension, and use  $TS_{\rm ext}\geq9$.
-%% 
-%% We say that the off-peak emission shows evidence for extension if $TS_{\rm ext}\geq16$.
+For a significant off-peak point source, we use \pointlike to test if the
+emission is significantly extended.  We assume a radially-symmetric
+Gaussian source and fit the position and extension parameter
+($\sigma$) as described in \citet{lande_2012_search-spatially}.
+The best-fit extended source parameters are then given to \gtlike,
+which is used to fit the spectral parameters and the significance of the
+extension over a point source, $TS_{\rm ext}$, evaluated as described in
+\citet{lande_2012_search-spatially}.  That paper established that $TS_{\rm
+ext}\geq16$ means highly probable source extension.  In the present work
+we aim only to flag possible extension, and use  $TS_{\rm ext}\geq9$.
 
-To test for variability, even without significant emission over the 3-year time
-range, we divide the dataset into 36 intervals and fit the point-source
-flux independently in each interval, 
-computing $TS_{\rm var}$ as in 2FGL.  
-For sources with potential magnetospheric off-peak emission and for
-regions with no detection, we performed the test at the pulsar's position.
-Otherwise, we test at the best-fit position.
-The off-peak emission is said
-to show evidence for variability if $TS_{\rm var}\geq91.7$, corresponding
-to a $4\sigma$ significance.  
-%
-As noted in \citep{abdo_2013a_second-fermi}, our timing solutions for PSRs J0205+6449 and J1838$-$0537 are not  
-coherent across all three years.  
-For these two pulsars, we excluded the time ranges without ephemerides  
-and only tested for variability during months that were completely covered.  
-For J1838$-$0537 only one month is lost, whereas for J0205+6449 the 7\% data loss is spread across
-three separate months.
-As a result, $TS_{\rm var}$ for these pulsars is a conservative estimate of variability significance.
+To test for variability, even without significant emission over the
+3-year time range, we divide the dataset into 36 intervals and fit the
+point-source flux independently in each interval, computing $TS_{\rm
+var}$ as in 2FGL.  For sources with potential magnetospheric off-peak
+emission and for regions with no detection, we performed the test at
+the pulsar's position.  Otherwise, we test at the best-fit position.
+The off-peak emission is said to show evidence for variability if
+$TS_{\rm var}\geq91.7$, corresponding to a $4\sigma$ significance.  %
+As noted in \citep{abdo_2013a_second-fermi}, our timing solutions for
+PSRs J0205+6449 and J1838$-$0537 are not coherent across all three years.
+For these two pulsars, we excluded the time ranges without ephemerides and
+only tested for variability during months that were completely covered.
+For J1838$-$0537 only one month is lost, whereas for J0205+6449 the 7\%
+data loss is spread across three separate months.  As a result, $TS_{\rm
+var}$ for these pulsars is a conservative estimate of variability
+significance.
 
-The procedure described above, especially the extension analysis,
-is particularly sensitive to sources not included in 2FGL that are near the pulsar of interest,
-for two reasons.
-First, we are using an additional year of data and second,
-when ``turning off'' a bright pulsar nearby, faint sources become more
-important to the global fit.  Therefore, in many situations we had to run
-the analysis several times, iteratively improving the model by including
-new sources, until we removed all $TS>25$ residuals. The final
-\gtlike-formatted XML source model for each off-peak 
+The procedure described above, especially the extension analysis, is
+particularly sensitive to sources not included in 2FGL that are near the
+pulsar of interest, for two reasons.  First, we are using an additional
+year of data and second, when ``turning off'' a bright pulsar nearby,
+faint sources become more important to the global fit.  Therefore, in
+many situations we had to run the analysis several times, iteratively
+improving the model by including new sources, until we removed all $TS>25$
+residuals. The final \gtlike-formatted XML source model for each off-peak
 region is included in the auxiliary material.
 
-There are still, however, pulsars for which we were unable to obtain
-an unbiased fit of the off-peak emission,
-most likely due to inaccuracies in the model of the Galactic diffuse emission
-and incorrectly modeled nearby sources.  The most common symptom
-of a biased fit is an unphysically large extension.  In these cases,
-the extended source attempts to account for multiple point sources or
-incorrectly-modeled diffuse emission,
-not just the putative off-peak emission.  Systematics associated
-with modeling extended sources are discussed more thoroughly in
-\citet{lande_2012_search-spatially}.  For the purposes of this
-catalog, we have flagged the pulsars where off-peak analysis suffered from
-these issues and do not attempt a complete understanding of the emission.
+There are still, however, pulsars for which we were unable to obtain an
+unbiased fit of the off-peak emission, most likely due to inaccuracies in
+the model of the Galactic diffuse emission and incorrectly modeled
+nearby sources.  The most common symptom of a biased fit is an
+unphysically large extension.  In these cases, the extended source
+attempts to account for multiple point sources or incorrectly-modeled
+diffuse emission, not just the putative off-peak emission.  Systematics
+associated with modeling extended sources are discussed more thoroughly
+in \citet{lande_2012_search-spatially}.  For the purposes of this catalog,
+we have flagged the pulsars where off-peak analysis suffered from these
+issues and do not attempt a complete understanding of the emission.
 
-Observations of magnetospheric off-peak emission can be used to 
-constrain pulsar geometry. Therefore, it is important to know if 
-off-peak emission that is otherwise pulsar-like might instead
-be incorrectly-modeled Galactic diffuse emission. 
-We therefore performed a limited study of the systematics
-associated with our model of the Galactic diffuse emission.
+Observations of magnetospheric off-peak emission can be used to constrain
+pulsar geometry. Therefore, it is important to know if off-peak emission
+that is otherwise pulsar-like might instead be incorrectly-modeled
+Galactic diffuse emission.  We therefore performed a limited study of the
+systematics associated with our model of the Galactic diffuse emission.
 
-For sources which otherwise would be classified as magnetospheric, we
-tested the significance of the emission assuming eight different
-Galactic diffuse emission models as described in \citet{de-palma_2013a_method-exploring}. 
-These models were constructed using a different model building strategy,
-vary parameters of the Galactic diffuse emission model, and
-have additional degrees of freedom in the fit.
+For sources which otherwise would be classified as magnetospheric,
+we tested the significance of the emission assuming eight
+different Galactic diffuse emission models as described in
+\citet{de-palma_2013a_method-exploring}.  These models were constructed
+using a different model building strategy, vary parameters of the Galactic
+diffuse emission model, and have additional degrees of freedom in the fit.
 
-We define $\tsaltdiff$ as the minimum test statistic of any of the
-eight alternate diffuse models. This test statistic is computed
-assuming the emission to be pointlike at the best-fit position
-and is therefore comparable to \tspoint.
-For sources which would otherwise be considered magnetospheric,
-we flag the emission as potentially 
-spurious if $\tsaltdiff<25$.
-We caution that although this test can help to 
-flag problematic regions,
-these models do not probe the entirety of the uncertainty
-associated with our model of the Galactic diffuse emission.
+We define $\tsaltdiff$ as the minimum test statistic of any of
+the eight alternate diffuse models. This test statistic is computed
+assuming the emission to be pointlike at the best-fit position and is
+therefore comparable to \tspoint.  For sources which would otherwise be
+considered magnetospheric, we flag the emission as potentially spurious
+if $\tsaltdiff<25$.  We caution that although this test can help to
+flag problematic regions, these models do not probe the entirety of the
+uncertainty associated with our model of the Galactic diffuse emission.
 Therefore, some diffuse emission could still be incorrectly classified
 as magnetospheric.
 
