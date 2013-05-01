@@ -2,7 +2,7 @@
 \seclabel{radiation_processes}
 
 Nonthermal radiation observed from astrophysical sources is
-typically believed to originate in syncrotron \ac{IC}, and the
+typically believed to originate in synchrotron \ac{IC}, and the
 decay of neutral \pion particles.  We will discuss these processes
 in \subsecref{synchrotron}, \subsecref{inverse_compton}, and
 \subsecref{bremsstrahlung} respectively.
@@ -34,7 +34,7 @@ A charged particle of
 mass $\mass$ and charge $\charge$ in a magnetic field
 of strength 
 \MagneticFieldVector
-will experince an
+will experience an
 electromagnetic force:
 \begin{align}
 % equation 6.1a in R&L 1979
@@ -67,7 +67,7 @@ and
 \sin\alpha \equiv \nu_0 \gamma^2 \sin\alpha
 \end{equation}
 
-Because power is inversely-proportional to mass, synchotron radiation
+Because power is inversely-proportional to mass, synchrotron radiation
 is almost always assumed to come from electrons.
 
 Now, we assume a population of particles and compute the total
@@ -109,7 +109,7 @@ a power-law distribution of electrons written as
   \ParticleDistribution(\momentum) \derivative\momentum = 
   \kappa \momentum^{-\spectralindex} \derivative\momentum.
 \end{equation}
-For a powerlaw distribution of photons integrated over
+For a power-law distribution of photons integrated over
 pitch angle, we find
 \begin{equation}
 \TotalPower(\angularfrequency) \propto \kappa \MagneticField^{(p+1)/2} 
@@ -124,17 +124,17 @@ index.
 \subsection{\Actitle{IC}}
 \subseclabel{inverse_compton}
 
-Normal compoton scattering involves a photon colliding with a free electron
-and transfering energy to it. In \ac{IC} scattering, a high-energy 
+Normal Compton scattering involves a photon colliding with a free electron
+and transferring energy to it. In \ac{IC} scattering, a high-energy 
 electron interacts with a low-energy photon imparting energy to it.
 This process occurs when highly-energetic electrons interact with
 a dense photon field.
 
 The derivation of \Ac{IC} emission requires a quantum
-electrodynamical treatment. It was first computed in
+electro dynamical treatment. It was first computed in
 \cite{klein_1929a_streuung-strahlung}, and the derivation is described
 in \cite{blumenthal_1970a_bremsstrahlung-synchrotron}.  In what follows, we follow
-the notational convetion of \cite{houck_2006a_models-nonthermal}.
+the notational convention of \cite{houck_2006a_models-nonthermal}.
 
 We assume a population of relativistic ($\gamma\gg1$) electrons
 written as $\ParticleDistribution(\momentum)$ which is contained inside isotropic 
@@ -167,7 +167,7 @@ Here,
 \end{equation}
 $\tau \equiv 4\omega_i \gamma$, and $r_0 = e^2/(m_e c^2)$ is the classical
 electron radius.
-The threshold electron lorentz factor is
+The threshold electron Lorentz factor is
 \begin{equation}
   \gamma_\text{min} =
   \frac{1}{2} 
@@ -176,7 +176,7 @@ The threshold electron lorentz factor is
   \right)
 \end{equation}
 
-Typically, \ac{IC} emision is assumed to originate when
+Typically, \ac{IC} emission is assumed to originate when
 a power-law distribution of electrons
 (see \eqnref{ElectronPowerLawEnergyDistribution})
 interacts with
@@ -187,16 +187,16 @@ a thermal photon distribution
   \frac{\omega_i^2}{e^{\omega_i/\Theta} -1}
 \end{equation}
 where $\lambda=\hbar/(m_e c)$ and $\Theta=kT/(m_e c^2)$.
-Typically, \ac{IC} emission happens off CMB photons
+Typically, \ac{IC} emission happens off \ac{CMB} photons
 with $T=2.725\unitspace\kelvin$.
 We conclude by noting that the free-parameters of 
-\ac{IC} emission are the the assumed particle spectrum
+\ac{IC} emission are the assumed particle spectrum
 and photon field.
 
 \subsection{Bremsstrahlung}
 \subseclabel{bremsstrahlung}
 
-Bremsstrahlung radiation is compoosed of electron-electron and electron-ion interactions.
+Bremsstrahlung radiation is composed of electron-electron and electron-ion interactions.
 In either case, 
 we assume a 
 differential spectrum of accelerated electrons $\ParticleDistribution_\electron(\energy)$ 
@@ -225,7 +225,7 @@ in \cite{haug_1975a_bremsstrahlung-production}.  The electron-ion cross
 section is called the The Bethe-Heitler cross-section and is worked
 out in the Born approximation in \cite{heitler_1954a_quantum-theory}
 and \cite{koch_1959a_bremsstrahlung-cross-section}.  A more
-accurate relativisatic correction to this formula is given in
+accurate relativistic correction to this formula is given in
 \cite{haug_1997a_nonrelativistic-bremsstrahlung}.  We refer
 to \cite{houck_2006a_models-nonthermal} for a detailed numerical
 implementation of these formulas.
@@ -249,6 +249,6 @@ $\derivative\CrossSection_{\proton\proton}/\derivative\energy$
 is $\gamma$-ray cross section through proton-proton interactions, and
 $\HydrogenDensity$ is the target hydrogen density.  The computation
 of $\derivative\CrossSection_{\proton\proton}/\derivative\energy$ is
-rather invovled. Typically, people employ a parmaeteriztaion of 
-a very detaield calcuation of the cross section 
+rather involved. Typically, people employ a parameterization of 
+a very detailed calculation of the cross section 
 from \cite{kamae_2006a_parameterization-gamma}.
