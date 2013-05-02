@@ -1,11 +1,10 @@
 \section{The \Acstitle{LAT} Instrument Response Functions}
 \seclabel{lat_irfs}
 
-The performance of the LAT is quantified by its effective area and
+The performance of the \ac{LAT} is quantified by its effective area and
 its dispersion. The effective area represents the collection area of the
 \ac{LAT} and the dispersion represents the probability of misreconstructing
 the true parameters of the incident $\gamma$-ray.
-
 The effective area $\effectivearea(\energy,\time,\solidangle)$ is a
 function of energy, time, and \ac{SA} and is measured in units of $\cm^2$.
 
@@ -21,10 +20,10 @@ It represents a probability and is therefore normalized such that
 \end{equation}
 Therefore,
 $\dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle)$
-has units of 1/energy/\acl{SA}/time
+has units of 1/energy/\acs{SA}/time
 
-The convolution of the flux of a model with the \acp{IRF} produces the
-expected counts per unit energy/time/\acl{SA} begin reconstructed to have
+The convolution of the model a source with the \acp{IRF} produces the
+expected counts per unit energy/time/\acs{SA} begin reconstructed to have
 an energy $\energy'$ at a position $\solidangle'$ and at a time $\time'$:
 \begin{equation}
   \eqnlabel{eventrate}
@@ -33,18 +32,17 @@ an energy $\energy'$ at a position $\solidangle'$ and at a time $\time'$:
   \fluxdensity(\energy,\time,\vec\Omega|\modelparams) 
   \effectivearea(\energy,\time,\solidangle) \dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle)
 \end{equation}
-Here, this integral is performed over all energies, \acp{SA}, and times
-for which the source model has support.
+Here, this integral is performed over all energies, \acp{SA}, and times.
 
-For LAT analysis, we conventionally make the simplifying assumption that
+For \ac{LAT} analysis, we conventionally make the simplifying assumption that
 the energy, spatial, and temporal dispersion decouple:
 \begin{equation}
   \dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle) = 
   \psf(\solidangle'|E,\solidangle) \edisp(\energy'|\energy) \tdisp(\time'|\time)
 \end{equation}
 
-\edisp represents the energy dispersion of the LAT.  The energy dispersion
-of the LAT is a function of both the incident energy and incident angle
+\edisp represents the energy dispersion of the \ac{LAT}. The energy dispersion
+of the \ac{LAT} is a function of both the incident energy and incident angle
 of the photon. It varies from $\sim$ 5\% to 20\%, degrading at lower
 energies due to energy losses in the tracker and at higher energy due
 to electromagnetic shower losses outside the calorimeter. Similarly,
@@ -90,7 +88,7 @@ we get:
 \right)
 \psf(\solidangle'|E,\solidangle)
 \end{equation}
-This equation says that the counts expected by the LAT from a given
+This equation says that the counts expected by the \ac{LAT} from a given
 model is the product of the source's flux with the effective area and
 then convolved with the point-spread function.
 

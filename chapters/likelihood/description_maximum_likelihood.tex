@@ -1,62 +1,53 @@
 \section{Description of Maximum-Likelihood Analysis}
 \seclabel{description_maximum_likelihood}
 
-The field of $\gamma$-ray astrophysics has generally
-found maximum-likelihood to be a dependable method to
-avoid the issues discussed above.  The term likelihood was
-first introduced by \cite{fisher_1925_statistical-methods}.
+The field of $\gamma$-ray astrophysics has generally adopted
+maximum-likelihood analysis to avoid the issues discussed in
+\secref{motivations_maximum_likelihood}.  The term likelihood
+was first introduced by \cite{fisher_1925_statistical-methods}.
 Maximum-likelihood was applied to astrophysical photon-counting
 experiments by \cite{cash_1979_parameter-estimation}.
 \cite{mattox_1996a_likelihood-analysis} described the maximum-likelihood
 analysis framework developed to analyze \ac{EGRET} data.
 
-In the formulation, one relies upon primarily upon the likelihood
-function.  The likelihood, denoted $\likelihood$, is quite simply the
-probability of obtaining the observed data given an assumed model:
+In the formulation, one defines the likelihood, denoted $\likelihood$,
+as the probability of obtaining the observed data given an assumed model:
 \begin{equation}
-  \likelihood = P(\data|\model)
+  \likelihood = P(\data|\model).
 \end{equation}
-\secref{defining_model} will provide describe the components that go
-into a model of the data.
-
-Generally, a model of the sky depends upon a list of parameters that we
-denote $\modelparams$.  Therefore, the likelihood function can e written
-as a function of these parameters:
+Generally, a model of the sky is a function of a list of parameters
+that we denote as $\modelparams$.  The likelihood function can
+be written as:
 \begin{equation}
-  \likelihood = \likelihood(\modelparams)
+  \likelihood = \likelihood(\modelparams).
 \end{equation}
 In a maximum-likelihood analysis, one typically fits parameters of a model
-by maximizing the likelihood as a function of the parameters of the model:
-
-The term maximum-likelihood refers to the fact that the best-fit
-parameters of a model can be estimated by maximizing the likelihood
-function.
+by maximizing the likelihood as a function of the parameters of the model.
 \begin{equation}
 \modelparams_\text{max} = \underset{}{\text{arg }}\underset{\modelparams}{\text{max}} \likelihood(\modelparams)
 \end{equation}
 
-Assuming that you can have a reasonable model for the data and that
-you understand the distribution of the data points, maximum-likelihood
+Assuming that you have a good model for your data and that
+you understand the distribution of the data, maximum-likelihood
 analysis can be used to very sensitively test for new features in
-your model.  This is because the likelihood function can naturally
-incorporate data with different significance levels.
+your model.  This is because the likelihood function naturally
+incorporates data with different significance levels.
 
 Typically, a \ac{LRT} is used to determine the significance of a new
-feature in your model. A common use case is searching for a new source
+feature in a model. A common use case is searching for a new source
 or testing for a spectral break. In a \ac{LRT}, the likelihood under two
 hypothesis are compared. We define $\hypothesis_0$ to be a background
 model and $\hypothesis_1$ to be a model including the background and in
-addition whatever feature is being tested for.
-
+addition a feature that is being tested for.
 Under the assumption that $\hypothesis_0$ is nested
-within $\hypothesis_1$, we can use Wilks' theorem to
-compute the significance of of the detection of this feature
+within $\hypothesis_1$, we use Wilks' theorem to
+compute the significance of the detection of this feature
 \citep{wilks_1938a_large-sample-distribution}.  We define the test
 statistic as
 \begin{equation}
-  \ts = 2\log(\likelihood\hypothesis_1/\likelihood\hypothesis_0)
+  \ts = 2\log(\likelihood_{\hypothesis_1}/\likelihood_{\hypothesis_0})
 \end{equation}
-Here, $\likelihood\hypothesis_0$ and $\likelihood\hypothesis_1$ are the
+Here, $\likelihood_{\hypothesis_0}$ and $\likelihood_{\hypothesis_1}$ are the
 likelihoods maximized by varying all the parameters of $\hypothesis_0$
 and $\hypothesis_1$ respectively.  According to Wilks' theorem,
 if $\hypothesis_1$ has $n$ additional degrees of freedom compared to

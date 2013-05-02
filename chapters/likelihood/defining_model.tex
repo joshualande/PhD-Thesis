@@ -15,32 +15,32 @@ source model as
 \begin{equation}
   \fluxdensity(\energy,\time,\solidangle|\modelparams) = \dnde \times \pdf(\solidangle).
 \end{equation}
-Here, \dnde is only a function of energy and \pdf(\solidangle) is only
+Here, \dndeinline is a function of energy and \pdf(\solidangle) is 
 a function of position (\solidangle).  In this formulation, some of
-the model parameters \modelparams are taken by the $\dnde$ function and
-some by the $\pdf(\solidangle)$ function.  In \ac{CGS}, \dnde has units
+the model parameters \modelparams are taken by the $\dndeinline$ function and
+some by the $\pdf(\solidangle)$ function.  In \ac{CGS}, \dndeinline has units
 of \prefunits.
 
-The spectrum \dnde is typically modeled by simple geometric functions.
+The spectrum \dndeinline is typically modeled by simple geometric functions.
 The most popular spectral model is a \ac{PL}:
 \begin{equation}
   \dnde = \prefactor \left(\frac{E}{\Escale}\right)^{-\spectralindex}
 \end{equation}
-Here, \dnde is a function of energy and also of the two model parameters
+Here, \dndeinline is a function of energy and also of the two model parameters
 (the prefactor $\prefactor$ and the spectral index $\spectralindex$). The
 parameter \Escale is often called the energy scale or the pivot energy
-and is not considered a model parameter.
+and is not fit to the data (sinde it is degenerate with \prefactor).
 
-Another common spectral model is the \ac{BPL} spectral model
+Another common spectral model is the \ac{BPL}:
 \begin{equation}
   \dnde = \prefactor \times
     \begin{cases}
       (E/\Ebreak)^{-\spectralindex_1} &\text{ if }E<\Ebreak \\
-      (E/\Ebreak)^{-\spectralindex_2} &\text{ if }E\ge\Ebreak
+      (E/\Ebreak)^{-\spectralindex_2} &\text{ if }E\ge\Ebreak.
     \end{cases}
 \end{equation}
-This model represents a power law with an index of $\spectralindex_1$ which
-has a break at energy \Ebreak to having an index of $\spectralindex_2$.
+This model represents a \ac{PL} with an index of $\spectralindex_1$ which
+breaks at energy \Ebreak to having an index of $\spectralindex_2$.
 
 Finally, the \ac{ECPL} spectral model is often used to model the
 $\gamma$-ray emission from pulsars:
@@ -50,17 +50,15 @@ $\gamma$-ray emission from pulsars:
 \end{equation}
 For energies much below \Ecutoff, the \ac{ECPL} is a \ac{PL} with
 spectral index \spectralindex.  For energies much larger than \Ecutoff,
-the \ac{ECPL} exponentially decreases.
+the \ac{ECPL} spectrum exponentially decreases.
 
 \pdf represents the spatial distribution of the emission.  It is
 traditionally normalized as though it was a probability:
 \begin{equation}
   \int \dsolidangle \intspace \pdf(\solidangle).
 \end{equation}
-Therefore, in \ac{CGS} \pdf has units of \pdfunits
-
-For a point-like source at a position $\solidangle'$, the spatial
-model is:
+Therefore, \pdf has units of \pdfunits For a point-like source at a
+position $\solidangle'$, the spatial model is:
 \begin{equation}
   \pdf(\solidangle) = \delta(\solidangle - \solidangle')
 \end{equation}
@@ -68,11 +66,11 @@ and is a function of the position of the source ($\solidangle'$).
 Example spatial models for spatially-extended sources will be presented
 in \subsecref{extension_fitting}.
 
-In some situations, the spatial and spectral part of a
-source do not nicely decouple.  An example of this could be a
-spatially-extended \acs{SNR} or \acp{PWN} which show a spectral
-variation across the source, or alternately show an energy-dependent
+In some situations, the spatial and spectral part of a source do not
+nicely decouple.  An example of this could be a spatially-extended
+\acs{SNR} or \acp{PWN} which show a spectral variation
+across the source, or equivalently show an energy-dependent
 morphology.  \cite{katsuta_2012_fermi-lat-observation} and
 \cite{hewitt_2012_fermi-lat-observations} have avoided this issue by
-dividing the extended source into multiple non-overlapping extended source
-templates which are each allowed to have a different spectra.
+dividing the extended source into multiple non-overlapping extended
+source templates which are each allowed to have a different spectra.

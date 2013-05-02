@@ -1,15 +1,15 @@
 \section{\Actitle{PWN} Emission}
 \seclabel{pwn_emission}
 
-In the pulsar wind nebula, accelerated electrons emitted radiation across
-the electromagnetic spectrum through synchrotron and \ac{IC} emission.
-Typically characteristic photon energies for synchrotron and \ac{IC}
-emission from \ac{PWN} are $\sim1\kev$ and $\sim1\tev$ respectively.
-Typical magnetic field strengths are $\sim10\micro\gauss$.
+In a \acp{PWN}, accelerated electrons emit radiation across the
+electromagnetic spectrum through synchrotron and \ac{IC} emission.
+Typical photon energies for synchrotron and \ac{IC} emission from
+\acp{PWN} are $\sim1\kev$ and $\sim1\tev$ respectively.  A
+typical magnetic field strength is $\sim10\micro\gauss$.
 
 Using \eqnref{characteristic_freqnecy_synctotron}, we can show that
 photons with an energy $\energy_\kev$ in a magnetic field of strength
-$\MagneticField_{-5}$ radiate electrons with a typical energy of
+$\MagneticField$ radiate electrons with a typical energy of
 $E_\electron$ given by
 \begin{equation}
   \energy_\electron \approx  70\unitspace\tev \MagneticField_{-5}^{-1/2} \energy_\kev^{1/2},
@@ -29,10 +29,9 @@ where $\energy_\tev$ is the scattered photon energy in units of $\tev$
 typical \ac{PWN}, $\sim70\unitspace\tev$ electrons power the synchrotron
 emission and $\sim20\unitspace\tev$ electrons power the \ac{IC} emission.
 
-Similarly, we can write down the livetime of electrons due to
+Similarly, we can write down the lifetime of electrons due to
 synchrotron and \ac{IC} emission. We define the lifetime as $\lifetime =
-\energy/\energydot$ and, using \cite{rybicki_1979a_radiative-processes},
-we find
+\energy/\energydot$ and, using \cite{rybicki_1979a_radiative-processes}:
 \begin{equation}
   \lifetime(\energy_\electron) = 
   \left(
@@ -46,9 +45,8 @@ $\EnergyDensity_\text{ph}$ is the energy density of the photon field
 ($\EnergyDensity_\text{ph}=0.25\unitspace\electronvolt\unitspace\cm^{-3}$
 for the \ac{CMB} radiation field).  If $B>3\micro\gauss$, the synchrotron
 radiation dominates the cooling ($\EnergyDensity_\MagneticField >
-\EnergyDensity_\text{ph}$.
+\EnergyDensity_\text{ph}$).
 
-For the synchrotron-emitting and \ac{IC}-emitting electrons.
 For synchrotron-emitting electrons, the cooling time is
 \begin{equation}
   \lifetime_\text{sync} = (1.2\unitspace\kyr) B_{-5}^{-3/2} \energy_\kev^{-1/2}.
@@ -57,21 +55,21 @@ For \ac{IC}-scattering electrons, the cooling time (in the Thomson
 limit) is
 \begin{equation}
   \eqnlabel{ic_timescale}
-  \lifetime_\text{IC} = (4.8\kyr) B_{-5}^{-2} \energy_\tev^{-1/2}
+  \lifetime_\text{IC} = (4.8\kyr) B_{-5}^{-2} \energy_\tev^{-1/2}.
 \end{equation}
 From this, we see that the typical timescale for cooling of
-synchrotron-emitting electrons ($1\unitspace\kyr$) is much shorter than
-the timescale for cooling of \ac{IC}-emitting electrons ($5\kyr$). Because
-of this, the \ac{IC}-emitting electrons have a longer time to diffuse
-away from the pulsar and \ac{PWN}.  For older \ac{PWN}, we therefore
-expected the observed \ac{VHE} emission to be larger than the observed
-X-ray emission.  This has been observed in many \acp{PWN} such as
-\hessj{1825} \cite{aharonian_2006a_h.e.s.s.-survey}, but also makes
-identification of \ac{VHE} sources as \ac{PWN} more difficult.
+synchrotron-emitting electrons ($1\unitspace\kyr$) is much shorter
+than the timescale for cooling of \ac{IC}-emitting electrons
+($5\kyr$). Because of this, the \ac{IC}-emitting electrons have a
+longer time to diffuse away from the pulsar.  For older \ac{PWN}, we
+therefore expected the observed \ac{VHE} emission to be larger than
+the observed X-ray emission.  This has been observed in many \acp{PWN}
+such as \hessj{1825} \citep{aharonian_2006a_h.e.s.s.-survey} and in can
+also make identification of \ac{VHE} sources as \ac{PWN} difficult.
 
 We also note that \eqnref{ic_timescale} predicts that the timescale
 of \ac{IC}-emitting electrons scales with inverse square root of
-the emitted photon energy. From This leads to the prediction that
+the emitted photon energy. This leads to the prediction that
 the size of the \ac{VHE} $\gamma$-ray emission should decrease
 with increasing energy. This has been observed for \hessj{1825}
 \citep{aharonian_2006a_energy-dependent}.
@@ -82,20 +80,21 @@ function of the pulsar spin-down energy \energydot and age \PulsarAge.
 The time integral of \eqnref{energy_dot_vs_time} can be used to compute
 the total number of particles that emit synchrotron and \ac{IC} photons.
 
-Most $\gamma$-ray emitting \ac{PWN} have pulsars have a characteristic
-age of $\PulsarAge\sim1-20\unitspace\kyr$, so for most \ac{PWN}:
+Most $\gamma$-ray-emitting \ac{PWN} are connected to pulsars with a
+characteristic age $\PulsarAge\sim1-20\unitspace\kyr$. So for most
+\ac{PWN}:
 \begin{equation}
   \lifetime_\text{sync} < \PulsarAge < \lifetime_\text{IC}
 \end{equation}
 Therefore, for synchrotron emission the number of synchrotron-emitting
-particles goes as
+particles $n_\text{sync}$ goes as
 \begin{equation}
   n_\text{sync} \approx \energydot(\PulsarAge) \lifetime_\text{sync} \sim \energydot_0 \PulsarAge^{-2}
 \end{equation}
 where in the last step we have assumed a pure dipole magnetic field
-($\breakingindex=3$).
+($\breakingindex=3$) and used \eqnref{energy_dot_vs_time}.
 
-On the other hand, the number of \ac{IC}-emitting particles
+On the other hand, the number of \ac{IC}-emitting particles $n_\text{IC}$
 is approximately independent of time because $\PulsarAge \gg
 \SpinDownTimescale$.  Furthermore, \cite{mattana_2009_evolution-gamma-}
 argues that $n_\text{IC}$ should be independent of \energydot because it
@@ -105,10 +104,10 @@ relations, \cite{mattana_2009_evolution-gamma-} proposes
   \luminosity_\text{IC}/\luminosity_\text{sync} \approx n_\text{IC}/n_\text{sync}
   \propto \PulsarAge^2 \propto \energydot^{-1}
 \end{equation}
-From observations of \ac{VHE} sources, they find empirically
+\cite{mattana_2009_evolution-gamma-} 
+observed empirically for \ac{VHE} sources
 that $\luminosity_\text{IC}/\luminosity_\text{sync} \propto
 \PulsarAge^{2.2}$ and $\luminosity_\text{IC}/\luminosity_\text{sync}
-\propto \energydot^{-1.9}$ which is qualitatively consistent with the
-simple picture described above.  We will compare these scaling relations
-with \ac{LAT} observations in \chapref{population_study}
-
+\propto \energydot^{-1.9}$. This is qualitatively consistent with the
+simple picture described above.  We will compare these simple scaling
+relations with \ac{LAT} observations in \chapref{population_study}

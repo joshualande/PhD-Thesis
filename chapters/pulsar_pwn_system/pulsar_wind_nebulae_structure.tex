@@ -2,19 +2,18 @@
 \seclabel{pwn_structure}
 
 
-The basic picture of the physics of \acp{PWN}
+The basic picture of \acp{PWN}
 comes from \cite{rees_1974_origin-magnetic} and
 \cite{kennel_1984_magnetohydrodynamic-model}.  More 
 sophisticated models have emerged over the years.  See, for example,
 \cite{gelfand_2009_dynamical-model} and references therein.
 
 The wind ejected from the pulsar's magnetosphere is initially
-cold which means that it flows radially out from the pulsar.
-This unshocked pulsar wind only emits radiation through \ac{IC}
+cold which means that it flows radially out from the pulsar.  This
+unshocked pulsar wind only emits radiation through \ac{IC} scattering
 \citep{bogovalov_2000_very-high-energy-gamma}.  This pulsar wind forms
 a bubble as it presses into the \ac{SNR} and forms a termination shock
 where the particle wind is further accelerated.
-
 
 As the wind leaves the magnetosphere, it is believed to be dominated
 by the energy carried off in electromagnetic fields (the pointing flux
@@ -23,10 +22,10 @@ by the energy carried off in electromagnetic fields (the pointing flux
 \begin{equation}
   \magnetization = \frac{\pointingflux}{\particleflux}
 \end{equation}
-Outside the pulsar light curve, typically $\magnetization>10^4$,
-but at the termination shock typical values for $\sigma\lesssim0.01$
-\cite{kennel_1984a_confinement-pulsars},
-but cause of this transition is uncertain \citep{gaensler_2006_evolution-structure}.
+Outside the pulsar light curve, typically $\magnetization>10^4$, but
+at the termination shock typical values for $\sigma$ are $\lesssim0.01$
+\citep{kennel_1984a_confinement-pulsars}.  The cause of this transition
+is uncertain \citep{gaensler_2006_evolution-structure}.
 
 \begin{figure}[htbp]
   \centering
@@ -44,13 +43,12 @@ but cause of this transition is uncertain \citep{gaensler_2006_evolution-structu
   \figlabel{termination_shock}
 \end{figure}
 
-The radius of the bubble (\radiusterminationshock) is the radius
-where the ram pressure from the wind equals the pressure of the gas
-in the \ac{SNR}.  The ram pressure is computed as the energy in the
+The radius of the bubble (\radiusterminationshock) can be computed as the
+radius where the ram pressure from the wind equals the pressure of the
+gas in the \ac{SNR}.  The ram pressure is computed as the energy in the
 bubble $\energydot \radiusterminationshock/c$ (assuming the particles
 travel with a velocity $\approx \speedoflight$) divided by the volume
-$4\pi\radiusterminationshock^3/3$:
-\begin{equation}
+$4\pi\radiusterminationshock^3/3$: \begin{equation}
   \radiusterminationshock = \sqrt{\frac{\energydot}{\tfrac{4}{3}\pi \pressureISM \speedoflight}}.
 \end{equation}
 Here, \pressureISM is the pressure in the SNR.  Typical values
@@ -64,7 +62,6 @@ $10^{15}\unitspace\electronvolt$ \citep{arons_1996_pulsars-gamma-rays}.
 Downstream of the shock, the particles emit synchrotron and \ac{IC}
 radiation as the thermalized electron population interacts with the
 magnetic filed and seed photons \citep{gaensler_2006_evolution-structure}.
-\figref{termination_shock} shows a diagram describing magnetosphere,
-unshocked wind, and synchrotron nebula which make up the Pulsar/\ac{PWN}
-system.
-
+\figref{termination_shock} shows a diagram describing the pulsar
+magnetosphere, the unshocked wind, and the synchrotron nebula which make
+up the Pulsar/\ac{PWN} system.

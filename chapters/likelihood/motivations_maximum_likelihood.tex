@@ -2,45 +2,36 @@
 \seclabel{motivations_maximum_likelihood}
 
 Traditionally, spectral and spatial analysis of astrophysical data
-relies on a process known as aperture photometry.  In this process,
-a source in the data is analyzed by directly measuring the number of
-photons coming from the object. This process is done by measuring the
-counts within a given radius of the source and subtracting from it a
-background level estimated from a nearby region.  Often, the source's
-flux is calibrated by measurements of nearby objects with known fluxes.
-Otherwise, the flux can be obtained from by dividing the number of
-counts from the source by the telescope's size, the observation time,
-and the telescope's conversion efficiency.
+relies on a process known as aperture photometry.  This process is
+done by measuring the counts within a given radius of the source and
+subtracting from it a background level estimated from a nearby region.
+Often, the source's flux is calibrated by measurements of nearby objects
+with known fluxes.  Otherwise, the flux can be obtained by dividing the
+number of source counts by the telescope's size, the observation time,
+and the telescope's conversion efficiency.  The application of this
+method to \ac{VHE} data is described in \cite{li_1983_analysis-methods}.
 
-Similarly, for faint sources the statistical significance of the detection
-can be obtained from the Poisson nature of the data. For \ac{VHE}
-experiments such as \ac{HESS}, this analysis method is described in
-\cite{li_1983_analysis-methods}.
-
-Unfortunately, this simpler analysis method is inadequate for dealing
-with the complexities introduced in analyzing LAT data.
-
-Most importantly, aperture photometry assumed that the
-background is isotropic so that the background level below the
-source can be estimated from nearby regions.  As was discussed in
-\subsecref{galactic_diffuse_and_isotropic}, the Galactic diffuse emission
-is highly anisotropic, rendering this assumption invalid.
+Unfortunately, this simpler analysis method is inadequate for dealing with
+the complexities introduced in analyzing LAT data.  Most importantly,
+aperture photometry assumed that the background is isotropic so that
+the background level can be estimated from nearby regions.  As was
+discussed in \subsecref{galactic_diffuse_and_isotropic}, the Galactic
+diffuse emission is highly anisotropic, rendering this assumption invalid.
 
 In addition, this method is not optimal due to the high density of sources
-detected in the Gamma-ray sky.  \Ac{2FGL} reported on the detection
+detected in the $\gamma$-ray sky.  \Ac{2FGL} reported on the detection
 of 1873 sources, which corresponds to an average source spacing of
 $\sim5\degree$.  But within the inner $45\degree$ of the galactic plane
 in longitude and $0.5\degree$ of the galactic plane in latitude, there
 are 73 sources, corresponding to a source density of $\sim 1$ source per
 square degree.  The aperture photometry method is unable to effectively
-fit multiple sources when the tails of the PSF overlap and furthermore
-make background estimation problematic.
+fit multiple sources when the tails of their \acp{PSF} overlap.
 
 Finally, this method is suboptimal due to the large energy range of
-LAT observations.  A typical spectral analysis studies a source from an
-energy of 100 \mev to energies above 100 \gev.  Similarly, as was shown
-in \secref{fermi_telescope}, the PSF of the LAT is rather broad ($\gtrsim
+\ac{LAT} observations.  A typical spectral analysis studies a source in an
+energy from 100 \mev to above 100 \gev.  As was shown
+in \secref{fermi_telescope}, the \ac{PSF} of the \ac{LAT} is rather broad ($\gtrsim
 1\degree$) at low energy and much narrower ($\sim 0.1\degree$) at higher
-energies. Therefore, there is a much higher sensitivity to the higher
-energy photons coming from a source.  But simple aperture photometry
-method would ignore this improvement by weighting each photon equally.
+energies. Therefore, higher 
+energy photons coming from a source are much more sensitive, which
+is discarded by simple aperture photometry methods.
