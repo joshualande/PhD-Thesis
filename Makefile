@@ -15,6 +15,10 @@ likelihood : $(texfiles)
 	pdflatex "$(likelihood_include) \input{$(base)}"
 
 
+extended_search_include=\includeonly{chapters/extended_search/extended_search}
+extended_search : $(texfiles)
+	pdflatex "$(extended_search_include) \input{$(base)}"
+
 introduction_include=\includeonly{chapters/introduction/introduction}
 introduction : $(texfiles)
 	pdflatex "$(introduction_include) \input{$(base)}"
