@@ -23,8 +23,9 @@ $\dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle)$
 has units of 1/energy/\acs{SA}/time
 
 The convolution of the model a source with the \acp{IRF} produces the
-expected counts per unit energy/time/\acs{SA} begin reconstructed to have
-an energy $\energy'$ at a position $\solidangle'$ and at a time $\time'$:
+expected differential counts (counts per unit energy/time/\acs{SA})
+that are reconstructed to have an energy $\energy'$ at a position
+$\solidangle'$ and at a time $\time'$:
 \begin{equation}
   \eqnlabel{eventrate}
   \eventrate(\energy',\solidangle',\time'|\modelparams)
@@ -40,27 +41,27 @@ the energy, spatial, and temporal dispersion decouple:
   \dispersion(\energy',\time',\solidangle'|\energy,\time,\solidangle) = 
   \psf(\solidangle'|E,\solidangle) \edisp(\energy'|\energy) \tdisp(\time'|\time)
 \end{equation}
-
-\edisp represents the energy dispersion of the \ac{LAT}. The energy dispersion
-of the \ac{LAT} is a function of both the incident energy and incident angle
-of the photon. It varies from $\sim$ 5\% to 20\%, degrading at lower
+\edisp represents the energy dispersion of the \ac{LAT}. The energy
+dispersion is a function of both the incident energy and angle of
+the photon. It varies from $\sim$ 5\% to 20\%, degrading at lower
 energies due to energy losses in the tracker and at higher energy due
 to electromagnetic shower losses outside the calorimeter. Similarly,
-it improves for photons with higher incident angles that are allowed a
+it improves for photons with higher incident angles which are allowed a
 longer path through the calorimeter \citep{ackermann_2012a_fermi-large}.
+\subsecref{performance_lat} includes a plot of the \edisp of the \ac{LAT}.
 
-Here, $\psf(\solidangle'|E,\solidangle)$ is the probability of
-reconstructing a $\gamma$-ray to have a position $\solidangle'$ if
-the true position of the $\gamma$-ray has a position $\solidangle$.
-\subsecref{performance_lat} includes a plot of the \psf of the \ac{LAT}.
+$\psf(\solidangle'|E,\solidangle)$ is the probability of reconstructing
+a $\gamma$-ray to have a position $\solidangle'$ if the true position of
+the $\gamma$-ray has a position $\solidangle$.  For the \ac{LAT}, the
+\ac{PSF} is a strong function of energy.  \subsecref{performance_lat}
+plots the \ac{PSF} of the \ac{LAT}.
 
 Finally, we note that in principle, there is a finite timing resolution
 of $\gamma$-rays measured by the \ac{LAT}. But the timing accuracy is
 $<10\unitspace\microsecond$ \citep{atwood_2009a_large-telescope}. Since
 this is much less than the smallest timing signal which is expected to
 be observed by the \ac{LAT} (millisecond pulsars), issues with timing
-accuracy are typically ignored.  \subsecref{performance_lat} includes
-a plot of the \edisp of the \ac{LAT}.
+accuracy are typically ignored.
 
 For a typical analysis of \ac{LAT} data, we also ignore the inherent
 energy dispersion of the \ac{LAT}.  \cite{ackermann_2012a_fermi-large}
@@ -73,12 +74,11 @@ approximated as
   \effectivearea(\energy,\time',\solidangle) \psf(\solidangle'|E,\solidangle)
 \end{equation}
 We caution that for analysis of sources extended to energies below
-$100\unitspace\mev$, the effects of energy dispersion could be more
+$100\unitspace\mev$, the effects of energy dispersion are be more
 severe.
 
-The expected count rate is then typically integrated over time to compute
-the total counts. Assuming that the source model is time independent,
-we get:
+The differential count rate is typically integrated over time 
+assuming that the source model is time independent:
 \begin{equation}\eqnlabel{differential_model_counts}
   \eventrate(\energy',\solidangle'|\modelparams)
   = \int \dsolidangle \,
@@ -88,11 +88,11 @@ we get:
 \right)
 \psf(\solidangle'|E,\solidangle)
 \end{equation}
-This equation says that the counts expected by the \ac{LAT} from a given
-model is the product of the source's flux with the effective area and
-then convolved with the point-spread function.
+This equation says that the counts expected by the \ac{LAT} from a
+given model is the product of the source's flux with the effective
+area and then convolved with the \ac{PSF}.  Finally, we note that the
+\psf and effective area are also functions of the conversion type of the
+$\gamma$-ray (front-entering or back-entering photons), and the azimuthal
+angle of the $\gamma$-ray.  \eqnlabel{differential_model_counts} can be
+generalized to include these effects.
 
-Finally, we note that the \psf and effective area is also a function of
-the conversion type of the $\gamma$-ray (front-entering or back-entering
-event), and the azimuthal angle of the $\gamma$-ray. These formulas can
-be readily generalized to include these effects.
