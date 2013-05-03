@@ -8,7 +8,7 @@
 % is fragile and does not work well in section titles.
 % See http://tex.stackexchange.com/questions/4736/what-is-the-difference-between-fragile-and-robust-commands
 % Or http://tex.stackexchange.com/questions/61503/newcommand-vs-declarerobustcommand
-\newcommand{\basehessj}[3]{HESS$\,$J#1$#2$#3\xspace}
+\newcommand{\basehessj}[3]{HESS\allowbreak$\,$J#1$#2$#3\xspace}
 \DeclareRobustCommand{\hessj}[1]{\IfEqCase{#1}{
 {1825}{\basehessj{1825}{-}{137}}
 {1640}{\basehessj{1640}{-}{465}}
@@ -33,7 +33,7 @@
 {1834}{\basehessj{1834}{-}{087}}
 }[\PackageError{hess}{Undefined option to \\hessj: #1}{}]}
 
-\newcommand{\baseverj}[3]{VER$\,$J#1$#2$#3\xspace}
+\newcommand{\baseverj}[3]{VER\allowbreak$\,$J#1$#2$#3\xspace}
 \DeclareRobustCommand{\verj}[1]{\IfEqCase{#1}{
 {2016}{\baseverj{2016}{+}{372}}
 }[\PackageError{psrj}{Undefined option to \\verj: #1}{}]}
@@ -46,7 +46,7 @@
 }[\PackageError{psrb}{Undefined option to \\psrb: #1}{}]}
 
 
-\newcommand{\basepsrj}[3]{PSR$\,$J#1$#2$#3\xspace}
+\newcommand{\basepsrj}[3]{PSR\allowbreak$\,$J#1$#2$#3\xspace}
 \DeclareRobustCommand{\psrj}[1]{\IfEqCase{#1}{
 {1119}{\basepsrj{1119}{-}{6127}}
 {1301}{\basepsrj{1301}{-}{6305}}
@@ -58,14 +58,14 @@
 }[\PackageError{psrj}{Undefined option to \\psrj: #1}{}]}
 
 
-\newcommand{\basetwofglj}[3]{2FGL$\,$J#1$#2$#3\xspace}
+\newcommand{\basetwofglj}[3]{2FGL\allowbreak$\,$J#1$#2$#3\xspace}
 \DeclareRobustCommand{\twofglj}[1]{
 \IfEqCase{#1}{
 %{1857}{\basetwofglj{1857}{+}{026}}
 }[\PackageError{hess}{Undefined option to \\twofglj: #1}{}]
 }
 
-\newcommand{\baseonefglj}[3]{1FGL$\,$J#1$#2$#3\xspace}
+\newcommand{\baseonefglj}[3]{1FGL\allowbreak$\,$J#1$#2$#3\xspace}
 \DeclareRobustCommand{\onefglj}[1]{
 \IfEqCase{#1}{
 {1018.6}{\baseonefglj{1018.6}{-}{5856}}
@@ -78,6 +78,7 @@
 {284.3}{\basesnrg{284.3}{-}{1.8}}
 {320.4}{\basesnrg{320.4}{-}{1.2}}
 {338.3}{\basesnrg{338.3}{-}{0.0}}
+{8.7}{\basesnrg{8.7}{-}{0.1}}
 }[\PackageError{hess}{Undefined option to \\snrg: #1}{}]
 }
 

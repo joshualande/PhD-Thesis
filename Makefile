@@ -31,6 +31,10 @@ tevcat_include=\includeonly{chapters/tevcat/tevcat}
 tevcat : $(texfiles)
 	pdflatex "$(tevcat_include) \input{$(base)}"
 
+outlook_include=\includeonly{chapters/outlook/outlook}
+outlook : $(texfiles)
+	pdflatex "$(outlook_include) \input{$(base)}"
+
 population_study_include=\includeonly{chapters/population_study/population_study}
 population_study: $(texfiles)
 	pdflatex "$(population_study_include) \input{$(base)}"
